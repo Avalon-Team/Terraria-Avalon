@@ -1,0 +1,11 @@
+﻿{
+	"name" : "Avalon",
+	"author" : "Avalon Team",
+	"info" : "tAPI Avalon mod",
+    
+	"code" :
+	{
+		"modName": "Avalon",
+		"modBaseName" : "TAPI.Avalon.Mod"
+	}
+}

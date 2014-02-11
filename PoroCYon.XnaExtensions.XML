@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PoroCYon.XnaExtensions</name>
+    </assembly>
+    <members>
+        <member name="M:PoroCYon.XnaExtensions.IO.BinBufferResource.Close">
+            <summary>
+            Closes sockets/file handles/..., if any
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.IO.BinBufferStreamResource.Address">
+            <summary>
+            DO NOT FORGET TO FREE THE HANDLE!
+            eg. 'GCHandle.FromIntPtr(ptr).Free();' where 'ptr' is the return value of this getter.
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.IO.BinBuffer.WriteRGB(Microsoft.Xna.Framework.Color)">
+            <summary>
+            No alpha is written
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.IO.BinBuffer.WriteXRGB(Microsoft.Xna.Framework.Color[])">
+            <summary>
+            No alpha is written
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Interop.Shell.ExecuteCommand(System.String)">
+            <summary>
+            Executes cmd with the specified command
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="T:PoroCYon.XnaExtensions.WPF.GameControl">
+            <summary>
+            GameControl
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.WPF.GameControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PoroCYon.XnaExtensions.WPF.GameWindow">
+            <summary>
+            GameWindow
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.WPF.GameWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -28,7 +28,7 @@ build/
 *.meta
 *.obj
 *.pch
-*.pdb
+#*.pdb # need tAPI.pdb, PoroCYon.XnaExtensions.pdb and TAPI.SDK.pdb
 *.pgc
 *.pgd
 *.rsp

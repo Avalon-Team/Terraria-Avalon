@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TAPI.SDK</name>
+    </assembly>
+    <members>
+        <member name="T:TAPI.SDK.Content.ObjectLoader.BuffType">
+            <summary>
+            Type is marked as Flags
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.Parent">
+            <summary>
+            Null is TAPI.SDK.SdkUI
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.Position">
+            <summary>
+            Relative if the control is in a ControlContainer
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.Scale">
+            <summary>
+            Sometimes used a size (eg. Window)
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.SecondaryColour">
+            <summary>
+            Might not be used by every type of Control
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.Frame">
+            <summary>
+            Might not be used by every type of Control
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.OnAdded">
+            <summary>
+            Null as second argument is TAPI.SDK.GUI.Interface
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.OnRemoved">
+            <summary>
+            Null as second argument is TAPI.SDK.GUI.Interface
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.GlobalAdded">
+            <summary>
+            Null as second argument is TAPI.SDK.GUI.Interface
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.GlobalRemoved">
+            <summary>
+            Null as second argument is TAPI.SDK.GUI.Interface
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.Controls.Interop.ControlContainerWrapper">
+            <summary>
+            A ContorlContainer as a MenuPage
+            This class cannot be inherited
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.Controls.Interop.MenuButtonWrapper">
+            <summary>
+            A MenuButton as a Control
+            This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.Controls.Interop.MenuPageWrapper">
+            <summary>
+            A MenuPage as a Control
+            This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.GUI.Controls.KeyBox.Text">
+            <summary>
+            Setting it will thow a NotSupportedException. Includes the caret.
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.Controls.Interop.ControlWrapper">
+            <summary>
+            A Control as a MenuButton
+            This class cannot be inherited
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.GUI.Controls.Primitives.ControlContainer.Controls">
+            <summary>
+            Control positions are relative to the ControlContainer position
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.Controls.EnterMode">
+            <summary>
+            Enumeration is a set of flags
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.Controls.TabMode">
+            <summary>
+            You can specify any nonnegative and non-zero number as tab amount
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.GUI.Controls.TextBox.Text">
+            <summary>
+            Does not include the caret.
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.GUI.Controls.Window.Text">
+            <summary>
+            Window title
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.SdkUI">
+            <summary>
+            This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Sdk.Init">
+            <summary>
+            Initializes the SDK.
+            Call this in OnLoad.
+            If you do not call this, the SDK will not work (partially).
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.VanillaData.ProjData">
+            <summary>
+            Because 'Projectile' is too long
+            </summary>
+        </member>
+    </members>
+</doc>
