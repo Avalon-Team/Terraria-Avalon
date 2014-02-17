@@ -4,10 +4,514 @@
         <name>TAPI.SDK</name>
     </assembly>
     <members>
-        <member name="T:TAPI.SDK.Content.ObjectLoader.BuffType">
+        <member name="T:TAPI.SDK.Content.LoadParameters">
             <summary>
-            Type is marked as Flags
+            Common parameter values for ObjectLoader methods
             </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.LoadParameters.ModBase">
+            <summary>
+            The <see cref="T:TAPI.ModBase"/> of the parameters
+            (not required for some methods)
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.LoadParameters.Assembly">
+            <summary>
+            The mod assembly of the parameters
+            (not required for some methods)
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.LoadParameters.Name">
+            <summary>
+            The name of the object to be added
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.LoadParameters.SubClassTypeName">
+            <summary>
+            The name of the code class (which is in the given assembly)
+            (not required for some methods)
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Content.LoadParameters.#ctor(System.String,TAPI.ModBase,System.String,System.Reflection.Assembly)">
+            <summary>
+            Creates a new instance of the LoadParameters structure
+            </summary>
+            <param name="name">Sets the Name field</param>
+            <param name="base">Sets the ModBase field</param>
+            <param name="subClassName">Sets the SubClassTypeName field</param>
+            <param name="asm">Sets the Assembly field</param>
+        </member>
+        <member name="T:TAPI.SDK.Content.ArmorParameters">
+            <summary>
+            Parameter values for armor items
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.ArmorParameters.HeadTexture">
+            <summary>
+            The texture of the helmet. null for no helmet.
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.ArmorParameters.BodyTexture">
+            <summary>
+            The texture of the chainmail. null for no chainmail.
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.ArmorParameters.FemaleBodyTexture">
+            <summary>
+            The texture of the chainmail for female players. null for no alternate texture.
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.ArmorParameters.LegsTexture">
+            <summary>
+            The texture of the greaves. null for no greaves.
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Content.ArmorParameters.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Creates a new instance of the ArmorParameters sturcture
+            </summary>
+            <param name="head">Sets the HeadTexture field. null for no helmet.</param>
+            <param name="body">Sets the BodyTexture field. null for no chainmail.</param>
+            <param name="legs">Sets the LegsTexture field. null for no greaves.</param>
+            <param name="femaleBody">Sets the FemaleBodyTexture field. null for no alternate texture.</param>
+        </member>
+        <member name="T:TAPI.SDK.Content.ArmorReturnValues">
+            <summary>
+            Retur values for armor items
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.ArmorReturnValues.HeadID">
+            <summary>
+            The ID of the helmet. -1 for no helmet.
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.ArmorReturnValues.BodyID">
+            <summary>
+            The ID of the chainmail. -1 for no chainmail.
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.ArmorReturnValues.LegsID">
+            <summary>
+            The ID of the greaves. -1 for no greaves.
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Content.ArmorReturnValues.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of the ArmorReturnValues structure
+            </summary>
+            <param name="head">The ID of the helmet. -1 for no helmet.</param>
+            <param name="body">The ID of the chainmail. -1 for no chainmail.</param>
+            <param name="legs">The ID of the greaves. -1 for no greaves.</param>
+        </member>
+        <member name="T:TAPI.SDK.Content.TileParameters">
+            <summary>
+            Parameter values for Tiles
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Texture">
+            <summary>
+            The texture of the <see cref="T:TAPI.Tile"/> to add
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Width">
+            <summary>
+            The width of the <see cref="T:TAPI.Tile"/>
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Height">
+            <summary>
+            The height of the <see cref="T:TAPI.Tile"/>
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.FrameWidth">
+            <summary>
+            The frame width of the <see cref="T:TAPI.Tile"/>
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.FrameHeight">
+            <summary>
+            The frame height of the <see cref="T:TAPI.Tile"/>
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.SheetColumns">
+            <summary>
+            The amoutn of columns on the tile sheet
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.SheetLines">
+            <summary>
+            The amoutn of rows on the tile sheet
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.ShineChance">
+            <summary>
+            The chance the tile has to sparkle
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Frame">
+            <summary>
+            The current frame
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.FrameCounter">
+            <summary>
+            The total amount of frames
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Solid">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> is solid or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.SolidTop">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> has a solid top or not (like Wooden Planks)
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.FrameImportant">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> should only change frame when told or when tried to mine it
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BreaksFast">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> is destroyed by 1 'tick' of the tool or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByPic">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> is mineable by a pickaxe or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByAxe">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> is mineable by an axe or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByHammer">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> is mineable by a hammer or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByCut">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> breaks when hit with a melee item (sword, tool, ...), Projectile, ...
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByWater">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> breaks when it touches water or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByLava">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> breaks when it touches lava or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Table">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> counts as a table or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Rope">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> counts as a rope or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.NoAttach">
+            <summary>
+            Wether other tiles can be attached to <see cref="T:TAPI.Tile"/> tile or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Dungeon">
+            <summary>
+            Wether this <see cref="T:TAPI.Tile"/> counts as a dungeon tile or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BlocksAnyLight">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> blocks any light or not (including sunlight)
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.BlocksSunlight">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> blocks sunlight or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Brick">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> merges with bricks
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Moss">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> merges with moss
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Stone">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> merges with stone
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Dirt">
+            <summary>
+            Wether the Tiel merges with dirt
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Sand">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> merges with sand or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Flame">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> burns when you walk on it or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.AlchemyFlower">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> counts as an alchemy recepient or not (like the Bowl, Vase, ...)
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Glows">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> glows or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.TileParameters.Shines">
+            <summary>
+            Wether the <see cref="T:TAPI.Tile"/> shines or not
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Content.BuffType">
+            <summary>
+            The type of the buff - buff, debuff, or a weapon buff
+            This type is marked as Flags.
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.BuffType.Buff">
+            <summary>
+            The buff is a positive buff
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.BuffType.Debuff">
+            <summary>
+            The buff is a negative buff and its effects cannot be cancelled by the player
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.BuffType.WeaponBuff">
+            <summary>
+            The buff boosts weapon stats
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Content.BuffParameters">
+            <summary>
+            Parameter values for Buffs
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.BuffParameters.Texture">
+            <summary>
+            The icon texture of the Buff to add
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.BuffParameters.Tip">
+            <summary>
+            The description of the Buff to add
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.BuffParameters.VanityPet">
+            <summary>
+            Wether the Buff indicates that the player is having a pet that is meant for vanity purposes or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.BuffParameters.LightPet">
+            <summary>
+            Wether the Buff indicates that the player is having a pet that gives off light or not
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Content.BuffParameters.Type">
+            <summary>
+            The type of the Buff to add
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Content.ObjectLoader">
+            <summary>
+            Provides helper functions to add content by code
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddToGame(TAPI.Item,Microsoft.Xna.Framework.Graphics.Texture2D,TAPI.SDK.Content.LoadParameters,TAPI.SDK.Content.ArmorParameters)">
+            <summary>
+            Adds an Item to the default game data
+            </summary>
+            <param name="i">The Item to add</param>
+            <param name="texture">The texture of the Item to add</param>
+            <param name="param">Common object loading parameters</param>
+            <param name="Aparam">Parameters for armor items</param>
+            <returns>The IDs of the armor parts as an ArmorReturnValues</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddToGame(TAPI.Recipe)">
+            <summary>
+            Adds a Recipe to the game.
+            </summary>
+            <param name="r">The Recipe to add</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddToGame(TAPI.NPC,Microsoft.Xna.Framework.Graphics.Texture2D,TAPI.SDK.Content.LoadParameters)">
+            <summary>
+            Adds an NPC to the game.
+            </summary>
+            <param name="n">The NPC to add</param>
+            <param name="texture">The texture of the NPC to add</param>
+            <param name="param">Common object loading parameters</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddToGame(TAPI.Projectile,Microsoft.Xna.Framework.Graphics.Texture2D,TAPI.SDK.Content.LoadParameters,System.Boolean)">
+            <summary>
+            Adds a Projectile to the game
+            </summary>
+            <param name="p">The Projectile to add</param>
+            <param name="texture">The texture of the projectile to add</param>
+            <param name="param">Common object loading parameters</param>
+            <param name="pet">Wether the Projectile is a pet or not</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddToGame(TAPI.SDK.Content.TileParameters,TAPI.SDK.Content.LoadParameters)">
+            <summary>
+            Adds a Tile to the game
+            </summary>
+            <param name="Tparam">The Tile data to add to the game</param>
+            <param name="param">Common object loading parameters</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddWallToGame(Microsoft.Xna.Framework.Graphics.Texture2D,TAPI.SDK.Content.LoadParameters)">
+            <summary>
+            Adds a Wall to the game
+            </summary>
+            <param name="texture">The texture of the Wall to add</param>
+            <param name="param">Common object loading parameters</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddToGame(TAPI.Prefix,TAPI.SDK.Content.LoadParameters)">
+            <summary>
+            Adds a Prefix to the game
+            </summary>
+            <param name="pfix">The Prefix to add</param>
+            <param name="param">Common object loading parameters</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddGoreToGame(Microsoft.Xna.Framework.Graphics.Texture2D,TAPI.SDK.Content.LoadParameters)">
+            <summary>
+            Adds a Gore to the game
+            </summary>
+            <param name="texture">The texture of the Gore to add</param>
+            <param name="param">Common object loading parameters</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddToGame(TAPI.SDK.Content.BuffParameters,TAPI.SDK.Content.LoadParameters)">
+            <summary>
+            Adds a Buff to the game
+            </summary>
+            <param name="Bparam">The Buff data to add to the game</param>
+            <param name="param">Common object loading parameters</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddWingsToGame(Microsoft.Xna.Framework.Graphics.Texture2D,TAPI.SDK.Content.LoadParameters)">
+            <summary>
+            Adds Wings to the game
+            </summary>
+            <param name="texture">The texture of the Wings to add</param>
+            <param name="param">Common object loading parameters</param>
+            <returns>The ID of the newly added wings</returns>
+        </member>
+        <member name="T:TAPI.SDK.ModableObject">
+            <summary>
+            Represents an object where fields and hooks can be added and removed
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.Fields">
+            <summary>
+            The added fields the ModableObject has. Do not add or remove fields by calling Fields.Add/Remove
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.Hooks">
+            <summary>
+            The added hooks the ModableObject has. Do not add or remove hooks by calling Hooks.Add/Remove
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.OnFieldAdded">
+            <summary>
+            When a field is added
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.GlobalFieldAdded">
+            <summary>
+            When a field is added
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.OnFieldRemoved">
+            <summary>
+            When a field is removed
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.GlobalFieldRemoved">
+            <summary>
+            When a field is removed
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.ModableObject.AddField(System.String,System.Object)">
+            <summary>
+            Adds a field
+            </summary>
+            <param name="key">The key of the field to add</param>
+            <param name="field">The field to add</param>
+        </member>
+        <member name="M:TAPI.SDK.ModableObject.RemoveField(System.String)">
+            <summary>
+            Removes a field
+            </summary>
+            <param name="key">The key of the field to remove</param>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.OnInvoke">
+            <summary>
+            When a hook is invoked
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.GlobalInvoke">
+            <summary>
+            When a hook is invoked
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.OnHookAdded">
+            <summary>
+            When a hook is added
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.GlobalHookAdded">
+            <summary>
+            When a hook is added
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.OnHookRemoved">
+            <summary>
+            When a hook is removed
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.ModableObject.GlobalHookRemoved">
+            <summary>
+            When a hook is removed
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.ModableObject.Invoke(System.String,System.Object[])">
+            <summary>
+            Invokes a hook
+            </summary>
+            <param name="hook">The key of the hook to invoke</param>
+            <param name="args">The arguments to invoke the hook with</param>
+        </member>
+        <member name="M:TAPI.SDK.ModableObject.AddHook(System.String,System.Delegate)">
+            <summary>
+            Adds a hook
+            </summary>
+            <param name="key">The key of the hook to add</param>
+            <param name="hook">The hook to add</param>
+        </member>
+        <member name="M:TAPI.SDK.ModableObject.RemoveHook(System.String)">
+            <summary>
+            Removes a hook
+            </summary>
+            <param name="key">The key of the hook to remove</param>
         </member>
         <member name="F:TAPI.SDK.GUI.Controls.Control.Parent">
             <summary>
@@ -34,6 +538,11 @@
             Might not be used by every type of Control
             </summary>
         </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Control.Visibility">
+            <summary>
+            Default is Visibility.IngameInv
+            </summary>
+        </member>
         <member name="F:TAPI.SDK.GUI.Controls.Control.OnAdded">
             <summary>
             Null as second argument is TAPI.SDK.GUI.Interface
@@ -54,6 +563,11 @@
             Null as second argument is TAPI.SDK.GUI.Interface
             </summary>
         </member>
+        <member name="P:TAPI.SDK.GUI.Controls.Control.Hitbox">
+            <summary>
+            If not overridden in a deriving class, it uses the Scale fields as width/height
+            </summary>
+        </member>
         <member name="T:TAPI.SDK.GUI.Controls.Interop.ControlContainerWrapper">
             <summary>
             A ContorlContainer as a MenuPage
@@ -72,6 +586,76 @@
             This class cannot be inherited.
             </summary>
         </member>
+        <member name="T:TAPI.SDK.GUI.Controls.ItemContainer">
+            <summary>
+            An <see cref="T:TAPI.Item"/> slot
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.Primitives.Button.StaysPressed">
+            <summary>
+            Wether the Button keeps firing the Clicked event as long as the left mouse button is held down
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.ContainedItem">
+            <summary>
+            The Item the ItemContainer contains
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.OnItemChanged">
+            <summary>
+            When ContainedItem is changed
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.GlobalItemChanged">
+            <summary>
+            When ContainedItem is changed
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.OnTrySetItem">
+            <summary>
+            When trying to change ContainedItem
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.GlobalTrySetItem">
+            <summary>
+            When trying to change ContainedItem
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.Controls.ItemContainer.#ctor">
+            <summary>
+            Creates a new instance of the ItemContainer class
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.Controls.ItemContainer.#ctor(TAPI.Item)">
+            <summary>
+            Creates a new instance of the ItemContainer class
+            </summary>
+            <param name="i">Sets the ContainedItem field</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.Controls.ItemContainer.Clicked">
+            <summary>
+            When the Button is clicked
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.Controls.ItemContainer.ItemChanged(TAPI.Item,TAPI.Item)">
+            <summary>
+            When ContainedItem is changed
+            </summary>
+            <param name="old">The old ContainedItem</param>
+            <param name="new">The new ContainedItem</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.Controls.ItemContainer.TrySetItem(TAPI.Item)">
+            <summary>
+            When trying to change ContainedItem
+            </summary>
+            <param name="trying">The Item that might be the new ContainedItem</param>
+            <returns>true if ContainedItem can be changed, false otherwise.</returns>
+        </member>
+        <member name="P:TAPI.SDK.GUI.Controls.ItemContainer.Hitbox">
+            <summary>
+            The hitbox of the Control
+            </summary>
+        </member>
         <member name="P:TAPI.SDK.GUI.Controls.KeyBox.Text">
             <summary>
             Setting it will thow a NotSupportedException. Includes the caret.
@@ -81,6 +665,11 @@
             <summary>
             A Control as a MenuButton
             This class cannot be inherited
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.Controls.Visibility">
+            <summary>
+            Enumeration has the Flags attribute
             </summary>
         </member>
         <member name="P:TAPI.SDK.GUI.Controls.Primitives.ControlContainer.Controls">
@@ -113,6 +702,300 @@
             This class cannot be inherited.
             </summary>
         </member>
+        <member name="F:TAPI.SDK.GUI.SdkUI.OnControlAdded">
+            <summary>
+            Called when a control is added from the Controls list
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.SdkUI.OnControlRemoved">
+            <summary>
+            Called when a control is removed from the Controls list
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.PreDrawInterface(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the UI before all other UIs are drawn.
+            </summary>
+            <param name="sb">The SpriteBatch used to draw the UI</param>
+            <returns>Wether it should continue drawing or not</returns>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.PostDrawInterface(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the UI after all other UIs are drawn.
+            </summary>
+            <param name="sb">The SpriteBatch used to draw the UI</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.AddControl(TAPI.SDK.GUI.Controls.Control)">
+            <summary>
+            Adds a control to the GUI
+            </summary>
+            <param name="control">The control to add</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.RemoveControl(TAPI.SDK.GUI.Controls.Control)">
+            <summary>
+            Removes a control from the GUI
+            </summary>
+            <param name="control">The control to remove</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.RemoveControlAt(System.Int32)">
+            <summary>
+            Removes a control from the GUI
+            </summary>
+            <param name="index">The index of the control to remove</param>
+        </member>
+        <member name="P:TAPI.SDK.GUI.SdkUI.WhitePixel">
+            <summary>
+            A 1-by-1 white pixel texture
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.GUI.SdkUI.Controls">
+            <summary>
+            The controls in the GUI.
+            Adding or removing a control by calling Controls.Add/Remove is not a good idea.
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Input.GInput">
+            <summary>
+            Contains global mouse/keyboard input data
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.GInput.Keyboard">
+            <summary>
+            The Keyboard state of the current frame
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.GInput.Mouse">
+            <summary>
+            The Mouse state of the current frame
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.GInput.OldKeyboard">
+            <summary>
+            The Keyboard state of the previous frame
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.GInput.OldMouse">
+            <summary>
+            The Mouse state of the previous frame
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Input.MouseHandler">
+            <summary>
+            Custom structure to make calculations with the Mouse easier
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Input.MouseHandler.GetState">
+            <summary>
+            Retrieves the current mouse state
+            </summary>
+            <returns>The current mouse state</returns>
+        </member>
+        <member name="M:TAPI.SDK.Input.MouseHandler.SetPosition(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Sets the position of the mouse
+            </summary>
+            <param name="position">The new position of the mouse</param>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.Left">
+            <summary>
+            Wether the left mouse button is pressed or not (returns false when Main.blockMouse or Player.mouseInterface is true)
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.Right">
+            <summary>
+            Wether the right mouse button is pressed or not
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.Middle">
+            <summary>
+            Wether the middle button (scroll wheel) is pressed or not
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.XButton1">
+            <summary>
+            Wether the first X button is pressed or not
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.XButton2">
+            <summary>
+            Wether the second X button is pressed or not
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.Position">
+            <summary>
+            Gets the position of the mouse, relative to the Terraria window
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.Rectangle">
+            <summary>
+            Gets the hitbox of the mouse, relative to the Terraria window
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.WorldPosition">
+            <summary>
+            Gets the position of the mouse, relative to the Terraria world
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.WorldRectangle">
+            <summary>
+            Gets the hitbox of the mouse, relative to the Terraria world
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Input.MouseHandler.ScrollWheel">
+            <summary>
+            Gets the current scroll wheel value
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Interop.ModMessages">
+            <summary>
+            A collection of messages to send to the tAPI SDK, or that are sent by the tAPI SDK.
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Net.NetMode">
+            <summary>
+            The values Main.netMode can have.
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Net.NetMode.Singleplayer">
+            <summary>
+            The game is in singleplayer mode, or is in the menu
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Net.NetMode.Multiplayer_Client">
+            <summary>
+            The game is in multiplayer mode and the user joined a server
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.Net.NetMode.Multiplayer_Server">
+            <summary>
+            The game is in multiplayer mode an the user is hosting a server, or the game is running as the dedicated server
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Net.NetHelper">
+            <summary>
+            Provides helper functions for sending NetMessages
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Net.NetHelper.SendModData(System.String,System.Enum,System.Object[])">
+            <summary>
+            Sends data as a managed object
+            </summary>
+            <param name="name">The name of the mod which is sending a message</param>
+            <param name="message">The message ID</param>
+            <param name="toSend">The objects to send</param>
+        </member>
+        <member name="M:TAPI.SDK.Net.NetHelper.SendModData(System.String,System.Enum,System.Int32,System.Int32,System.Object[])">
+            <summary>
+            Sends data as a managed object
+            </summary>
+            <param name="name">The name of the mod which is sending a message</param>
+            <param name="message">The message ID</param>
+            <param name="remoteClient">The client ID where the message should be sent to if Main.netMode equals 2</param>
+            <param name="ignoreClient">The client ID where the message should not be sent to if Main.netMode equals 2</param>
+            <param name="toSend">The objects to send</param>
+        </member>
+        <member name="M:TAPI.SDK.Net.NetHelper.ReadObject(System.Type,TAPI.BinBuffer)">
+            <summary>
+            Retrieves a managed object sent by <see cref="T:TAPI.SDK.Net.NetHelper"/>.SendModData
+            </summary>
+            <param name="t">The type of the sent object to read. It must have a parameterless constructor defined.</param>
+            <param name="bb">The data that is received from the network</param>
+            <returns>The data as a managed object</returns>
+        </member>
+        <member name="M:TAPI.SDK.Net.NetHelper.SendText(System.String)">
+            <summary>
+            Sends a message to the chat lines.
+            If Main.netMode equals 0, the message is sent with Main.NewText.
+            If Main.netMode equals 1, nothing will happen.
+            If Main.netMode equals 2, the message is sent as NetMessage 25.
+            </summary>
+            <param name="text">The text to send</param>
+        </member>
+        <member name="M:TAPI.SDK.Net.NetHelper.SendText(System.String,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Sends a message to the chat lines.
+            If Main.netMode equals 0, the message is sent with Main.NewText.
+            If Main.netMode equals 1, nothing will happen.
+            If Main.netMode equals 2, the message is sent as NetMessage 25.
+            </summary>
+            <param name="text">The text to send</param>
+            <param name="c">The colour of the text to send; default is White</param>
+        </member>
+        <member name="T:TAPI.SDK.Net.SyncedRandom">
+            <summary>
+            A synced Pseudo-Random Number Generator.
+            Values are global.
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:TAPI.SDK.Net.SyncedRandom"/> class.
+            </summary>
+            <param name="groupName">The group name of the <see cref="T:TAPI.SDK.Net.SyncedRandom"/> instance (instances of the same group name return the same results)</param>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.#ctor(System.Int32,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:TAPI.SDK.Net.SyncedRandom"/> class.
+            </summary>
+            <param name="seed">The seed of the PRNG</param>
+            <param name="groupName">The group name of the <see cref="T:TAPI.SDK.Net.SyncedRandom"/> instance (instances of the same group name return the same results)</param>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.Finalize">
+            <summary>
+            Disposes the SyncedRandom instance by sending a NetMessage that decreases the group reference counter on the server/other clients,
+            decreases the group reference counter, and checks wether the group's random instance can be removed or not.
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.Next">
+            <summary>
+            Generates a nonnegative integral value
+            </summary>
+            <returns>A nonnegative integral value</returns>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.Next(System.Int32)">
+            <summary>
+            Generates a nonnegative integral value that is smaller than the specified maximum value 
+            </summary>
+            <param name="maxValue">The specified maximum value</param>
+            <returns>An integral value that is equal to or greater than 0 and smaller than the specified maximum value</returns>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.Next(System.Int32,System.Int32)">
+            <summary>
+            Generates an integral value that is equal to or bigger than the specified minimum value and smaller than the specified maximum value 
+            </summary>
+            <param name="minValue">The specified minimum value</param>
+            <param name="maxValue">The specified maximum value</param>
+            <returns>An integral value that is equal to or greater than the specified minimum value and smaller than the specified maximum value</returns>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.NextDouble">
+            <summary>
+            Returns a decimal value equal to or bigger than 0 and smaller than 1
+            </summary>
+            <returns>A decimal value</returns>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.NextBytes(System.Byte[])">
+            <summary>
+            Fills an array of bytes with random values
+            </summary>
+            <param name="array">The array to fill</param>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.Sample">
+            <summary>
+            Creates a sample value equal to or bigger than 0 and smaller than 1
+            </summary>
+            <returns>A sample value</returns>
+        </member>
+        <member name="P:TAPI.SDK.Net.SyncedRandom.GroupName">
+            <summary>
+            The group name of the <see cref="T:TAPI.SDK.Net.SyncedRandom"/> instance
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.Sdk">
+            <summary>
+            The main SDK class.
+            This is the entry point of the SDK.
+            </summary>
+        </member>
         <member name="M:TAPI.SDK.Sdk.Init">
             <summary>
             Initializes the SDK.
@@ -120,9 +1003,153 @@
             If you do not call this, the SDK will not work (partially).
             </summary>
         </member>
+        <member name="P:TAPI.SDK.Sdk.Inited">
+            <summary>
+            Wether the SDK is initalized or not
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.Sdk.SharedSpriteBatch">
+            <summary>
+            Gets the <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch"/> used by the game
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.VanillaData.BuffData">
+            <summary>
+            Contains vanilla Buff data
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.VanillaData.BuffData.BuffTypes">
+            <summary>
+            All vanilla Buff types as an enumeration (derives from System.Int32)
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.VanillaData.ItemData">
+            <summary>
+            Contains vanilla Item data
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.VanillaData.ItemData.NetIDs">
+            <summary>
+            All vanilla Item netIDs as an enumeration (derives from System.Int32)
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.VanillaData.NPCData">
+            <summary>
+            Contains vanilla NPC data
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.VanillaData.NPCData.AICode">
+            <summary>
+            The default AI codes as an Action
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.VanillaData.NPCData.NetIDs">
+            <summary>
+            All vanilla NPC types as an enumeration (derives from System.Int32)
+            </summary>
+        </member>
         <member name="T:TAPI.SDK.VanillaData.ProjData">
             <summary>
-            Because 'Projectile' is too long
+            Contains vanilla Projectile data
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.VanillaData.ProjData.AICode">
+            <summary>
+            The default AI codes as an Action
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.VanillaData.ProjData.Types">
+            <summary>
+            All vanilla Projectile types as an enumeration (derives from System.Int32)
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.InvasionType">
+            <summary>
+            The invasion types
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.InvasionType.None">
+            <summary>
+            No invasion (use <see cref="T:TAPI.SDK.World"/>.StopInvasion to stop an invasion)
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.InvasionType.GoblinArmy">
+            <summary>
+            The Goblin Army
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.InvasionType.FrostLegion">
+            <summary>
+            The Frost Legion
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.InvasionType.Pirates">
+            <summary>
+            The Pirates
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StartInvasion(TAPI.SDK.InvasionType)">
+            <summary>
+            Starts an invasion.
+            </summary>
+            <param name="invasion">
+            The invasion to start.
+            If <paramref name="invasion"/> equals <see cref="T:TAPI.SDK.InvasionType"/>.None, use <see cref="T:TAPI.SDK.World"/>.StopInvasion to stop all invasions.
+            </param>
+        </member>
+        <member name="M:TAPI.SDK.World.StopInvasion">
+            <summary>
+            Stops all active invasions
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StartRain">
+            <summary>
+            Makes it rain
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StopRain">
+            <summary>
+            Stop raining
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StartBloodMoon">
+            <summary>
+            Start a Blood Moon
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StopBloodMoon">
+            <summary>
+            Stops a Blood Moon
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StartEclipse">
+            <summary>
+            Starts a Solar Eclipse
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StopEclipse">
+            <summary>
+            Stops a Solar Eclipse
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StartPumpkinMoon">
+            <summary>
+            Starts a Pumpkin Moon
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StopPumpkinMoon">
+            <summary>
+            Stops a Pumpkin Moon
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StartFrostMoon">
+            <summary>
+            Starts a Frost Moon
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.StopFrostMoon">
+            <summary>
+            Stops a Frost Moon
             </summary>
         </member>
     </members>

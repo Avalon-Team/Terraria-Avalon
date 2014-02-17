@@ -4,6 +4,671 @@
         <name>PoroCYon.XnaExtensions</name>
     </assembly>
     <members>
+        <!-- Badly formed XML comment ignored for member "T:PoroCYon.XnaExtensions.BiDictionary`2" -->
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+            Tries to get a <typeparamref name="TReverse"/> value from the specified <typeparamref name="TForward"/> value
+            </summary>
+            <param name="tfw">The specified forward key</param>
+            <param name="trev">If the key exists, this will be the matching <typeparamref name="TReverse"/></param>
+            <returns>True wether the key exist (and the value is return by trev parameter) or not.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PoroCYon.XnaExtensions.BiDictionary`2.#ctor" -->
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.Add(`0,`1)">
+            <summary>
+            Adds a Key/Value pair to the collection
+            </summary>
+            <param name="tfw">The forward key to add</param>
+            <param name="trev">The forward value (reverse key) to add</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PoroCYon.XnaExtensions.BiDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})" -->
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.Clear">
+            <summary>
+            Clears the collection of Key/Value pairs
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.ContainsKey(`0)">
+            <summary>
+            Wether the Key/Value pair collection contains a specified <typeparamref name="TForward"/> as forward key
+            </summary>
+            <param name="tfw">The forward key to check</param>
+            <returns>Wether the forward key exists in the collection or not</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.ContainsValue(`1)">
+            <summary>
+            Wether the Key/Value pair collection contains a specified <typeparamref name="TReverse"/> as forward value
+            </summary>
+            <param name="trev">The forward value to check</param>
+            <returns>Wether the forward value exists in the collection or not</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.ForwardContainsKey(`0)">
+            <summary>
+            Wether the forward collection contains a specified <typeparamref name="TForward"/> as key
+            </summary>
+            <param name="tfw">The forward key to check</param>
+            <returns>Wether the forward collection contains the specified <typeparamref name="TForward"/> or not</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.ReverseContainsKey(`1)">
+            <summary>
+            Wether the reverse collection contains a specified <typeparamref name="TReverse"/> as key
+            </summary>
+            <param name="trev">The reverse key to check</param>
+            <returns>Wether the reverse collection contains the specified <typeparamref name="TReverse"/> or not</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PoroCYon.XnaExtensions.BiDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})" -->
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.Remove(`0)">
+            <summary>
+            Removes the Key/Value pair specified with the given <typeparamref name="TForward"/> as forward key
+            </summary>
+            <param name="tfw">The <typeparamref name="TForward"/> used as forward key</param>
+            <returns>Wether the items have been removed or not</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.Remove(`1)">
+            <summary>
+            Removes the Key/Value pair specified with the given <typeparamref name="TReverse"/> as reverse key
+            </summary>
+            <param name="trev">The <typeparamref name="TReverse"/> used as reverse key</param>
+            <returns>Wether the items have been removed or not</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PoroCYon.XnaExtensions.BiDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})" -->
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">
+            <summary>
+            Copies the colleciton data to an array of Key/Value pairs
+            </summary>
+            <param name="array">The array to copy the data to</param>
+            <param name="startIndex">The starting index of the copying; default is 0</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{TForward@TReverse}}#GetEnumerator">
+            <summary>
+            Gets the generic Enumerator of the Key/Value pair collection
+            </summary>
+            <returns>The generic Enumerator of the Key/Value pair collection</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.GetForwardEnumerator">
+            <summary>
+            Gets the forward Enumerator of the Key/Value pair collection
+            </summary>
+            <returns>The forward Enumerator of the Key/Value pair collection</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.GeReversetEnumerator">
+            <summary>
+            Gets the reverse Enumerator of the Key/Value pair collection
+            </summary>
+            <returns>The reverse Enumerator of the Key/Value pair collection</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BiDictionary`2.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets the Enumerator of the Key/Value pair collection
+            </summary>
+            <returns>The Enumerator of the Key/Value pair collection</returns>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BiDictionary`2.Forward">
+            <summary>
+            The forward accessor
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BiDictionary`2.Reverse">
+            <summary>
+            The reverse accossor
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BiDictionary`2.Keys">
+            <summary>
+            All keys of the current instance
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BiDictionary`2.Values">
+            <summary>
+            All values of the current instance
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BiDictionary`2.Item(`0)">
+            <summary>
+            Gets the <typeparamref name="TReverse"/> with the specified <typeparamref name="TForward"/>
+            </summary>
+            <param name="tfw">The <typeparamref name="TForward"/> used to retrieve the <typeparamref name="TReverse"/></param>
+            <returns>The <typeparamref name="TReverse"/> associated with the specified <typeparamref name="TForward"/></returns>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BiDictionary`2.Item(System.Int32)">
+            <summary>
+            Gets the Key/Value pair at the specified index
+            </summary>
+            <param name="index">The index of the Key/Value pair</param>
+            <returns>The Key/Value pair at the specified index</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:PoroCYon.XnaExtensions.BiDictionary`2.Count" -->
+        <!-- Badly formed XML comment ignored for member "P:PoroCYon.XnaExtensions.BiDictionary`2.IsReadOnly" -->
+        <!-- Badly formed XML comment ignored for member "P:PoroCYon.XnaExtensions.BiDictionary`2.Reversed" -->
+        <!-- Badly formed XML comment ignored for member "T:PoroCYon.XnaExtensions.BiDictionary`2.Indexer`2" -->
+        <!-- Badly formed XML comment ignored for member "P:PoroCYon.XnaExtensions.BiDictionary`2.Indexer`2.Item(`2)" -->
+        <member name="T:PoroCYon.XnaExtensions.BitsByte">
+            <summary>
+            Stores 8 <see cref="T:System.Boolean"/>s in 1 byte
+            </summary>
+        </member>
+        <member name="F:PoroCYon.XnaExtensions.BitsByte.value">
+            <summary>
+            Gets or sets the byte value associated with the <see cref="T:PoroCYon.XnaExtensions.BitsByte"/> structure
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Creates an instance of the <see cref="T:PoroCYon.XnaExtensions.BitsByte"/> structure
+            </summary>
+            <param name="b1">The <see cref="T:System.Boolean"/> at index 0; default is false</param>
+            <param name="b2">The <see cref="T:System.Boolean"/> at index 1; default is false</param>
+            <param name="b3">The <see cref="T:System.Boolean"/> at index 2; default is false</param>
+            <param name="b4">The <see cref="T:System.Boolean"/> at index 3; default is false</param>
+            <param name="b5">The <see cref="T:System.Boolean"/> at index 4; default is false</param>
+            <param name="b6">The <see cref="T:System.Boolean"/> at index 5; default is false</param>
+            <param name="b7">The <see cref="T:System.Boolean"/> at index 6; default is false</param>
+            <param name="b8">The <see cref="T:System.Boolean"/> at index 7; default is false</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.Retrieve(System.Boolean@)">
+            <summary>
+            Puts the current state into a <see cref="T:System.Boolean"/>
+            </summary>
+            <param name="b0">The <see cref="T:System.Boolean"/> at index 0</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.Retrieve(System.Boolean@,System.Boolean@)">
+            <summary>
+            Puts the current state into <see cref="T:System.Boolean"/>s
+            </summary>
+            <param name="b0">The <see cref="T:System.Boolean"/> at index 0</param>
+            <param name="b1">The <see cref="T:System.Boolean"/> at index 1</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.Retrieve(System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Puts the current state into <see cref="T:System.Boolean"/>s
+            </summary>
+            <param name="b0">The <see cref="T:System.Boolean"/> at index 0</param>
+            <param name="b1">The <see cref="T:System.Boolean"/> at index 1</param>
+            <param name="b2">The <see cref="T:System.Boolean"/> at index 2</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.Retrieve(System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Puts the current state into <see cref="T:System.Boolean"/>s
+            </summary>
+            <param name="b0">The <see cref="T:System.Boolean"/> at index 0</param>
+            <param name="b1">The <see cref="T:System.Boolean"/> at index 1</param>
+            <param name="b2">The <see cref="T:System.Boolean"/> at index 2</param>
+            <param name="b3">The <see cref="T:System.Boolean"/> at index 3</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.Retrieve(System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Puts the current state into <see cref="T:System.Boolean"/>s
+            </summary>
+            <param name="b0">The <see cref="T:System.Boolean"/> at index 0</param>
+            <param name="b1">The <see cref="T:System.Boolean"/> at index 1</param>
+            <param name="b2">The <see cref="T:System.Boolean"/> at index 2</param>
+            <param name="b3">The <see cref="T:System.Boolean"/> at index 3</param>
+            <param name="b4">The <see cref="T:System.Boolean"/> at index 4</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.Retrieve(System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Puts the current state into <see cref="T:System.Boolean"/>s
+            </summary>
+            <param name="b0">The <see cref="T:System.Boolean"/> at index 0</param>
+            <param name="b1">The <see cref="T:System.Boolean"/> at index 1</param>
+            <param name="b2">The <see cref="T:System.Boolean"/> at index 2</param>
+            <param name="b3">The <see cref="T:System.Boolean"/> at index 3</param>
+            <param name="b4">The <see cref="T:System.Boolean"/> at index 4</param>
+            <param name="b5">The <see cref="T:System.Boolean"/> at index 5</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.Retrieve(System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Puts the current state into <see cref="T:System.Boolean"/>s
+            </summary>
+            <param name="b0">The <see cref="T:System.Boolean"/> at index 0</param>
+            <param name="b1">The <see cref="T:System.Boolean"/> at index 1</param>
+            <param name="b2">The <see cref="T:System.Boolean"/> at index 2</param>
+            <param name="b3">The <see cref="T:System.Boolean"/> at index 3</param>
+            <param name="b4">The <see cref="T:System.Boolean"/> at index 4</param>
+            <param name="b5">The <see cref="T:System.Boolean"/> at index 5</param>
+            <param name="b6">The <see cref="T:System.Boolean"/> at index 6</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.Retrieve(System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@)">
+            <summary>
+            Puts the current state into <see cref="T:System.Boolean"/>s
+            </summary>
+            <param name="b0">The <see cref="T:System.Boolean"/> at index 0</param>
+            <param name="b1">The <see cref="T:System.Boolean"/> at index 1</param>
+            <param name="b2">The <see cref="T:System.Boolean"/> at index 2</param>
+            <param name="b3">The <see cref="T:System.Boolean"/> at index 3</param>
+            <param name="b4">The <see cref="T:System.Boolean"/> at index 4</param>
+            <param name="b5">The <see cref="T:System.Boolean"/> at index 5</param>
+            <param name="b6">The <see cref="T:System.Boolean"/> at index 6</param>
+            <param name="b7">The <see cref="T:System.Boolean"/> at index 7</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.op_Implicit(PoroCYon.XnaExtensions.BitsByte)~System.Byte">
+            <summary>
+            Casts a <see cref="T:System.Byte"/> to a <see cref="T:PoroCYon.XnaExtensions.BitsByte"/> implicitely
+            </summary>
+            <param name="bb">The <see cref="T:PoroCYon.XnaExtensions.BitsByte"/> to cast</param>
+            <returns>The specified <paramref name="b"/> as a <see cref="T:System.Byte"/></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsByte.op_Implicit(System.Byte)~PoroCYon.XnaExtensions.BitsByte">
+            <summary>
+            Casts a <see cref="T:System.Byte"/> to a <see cref="T:PoroCYon.XnaExtensions.BitsByte"/> implicitely
+            </summary>
+            <param name="b">The <see cref="T:System.Byte"/> to cast</param>
+            <returns>The specified <paramref name="b"/> as a <see cref="T:PoroCYon.XnaExtensions.BitsByte"/></returns>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BitsByte.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:System.Boolean"/> value at the speicifed <paramref name="index"/>
+            </summary>
+            <param name="index">The index of the <see cref="T:System.Boolean"/> to get/set (from 0 to 7)</param>
+            <returns>The <see cref="T:System.Boolean"/> value at the specified <paramref name="index"/></returns>
+        </member>
+        <member name="T:PoroCYon.XnaExtensions.BitsBytes">
+            <summary>
+            A <see cref="T:PoroCYon.XnaExtensions.BitsByte"/> as a <see cref="T:System.Int32"/>
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsBytes.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:PoroCYon.XnaExtensions.BitsBytes"/> structure with size 4
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsBytes.#ctor(System.Int32)">
+            <summary>
+            Creates a new instance of the <see cref="T:PoroCYon.XnaExtensions.BitsBytes"/> structure with the specified size in bytes
+            </summary>
+            <param name="bytes">The size of the <see cref="T:PoroCYon.XnaExtensions.BitsBytes"/> instance in bytes</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsBytes.AsBytes(System.Int32,System.Int32)">
+            <summary>
+            Gets the current instance as an array of bytes
+            </summary>
+            <param name="length">The amount of bytes to copy</param>
+            <param name="startIndex">Where to start copying; default is 0</param>
+            <returns>The current instance as an array of bytes</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsBytes.AsByte(System.Int32,System.Int32)">
+            <summary>
+            Gets the current instance as a <see cref="T:System.Byte"/>
+            </summary>
+            <param name="length">The amount of bytes to copy</param>
+            <param name="startIndex">Where to start copying; default is 0</param>
+            <returns>The current instance as a <see cref="T:System.Byte"/></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsBytes.FromBytes(System.Byte[],System.Int32)">
+            <summary>
+            Sets the current state from an array of bytes
+            </summary>
+            <param name="b">The array of bytes to copy from</param>
+            <param name="startIndex">Where to start copying</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.BitsBytes.FromBytes(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Sets the current state from an array of bytes
+            </summary>
+            <param name="b">The array of bytes to copy from</param>
+            <param name="length">The amount of bytes to copy</param>
+            <param name="startIndex">Where to start copying</param>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BitsBytes.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Boolean"/> at the specified index
+            </summary>
+            <param name="index">The index of the <see cref="T:System.Boolean"/></param>
+            <returns>The <see cref="T:System.Boolean"/> at the specified index</returns>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.BitsBytes.Item(System.Int32,System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Boolean"/> at the specified extended index
+            </summary>
+            <param name="index">The first index of the <see cref="T:System.Boolean"/></param>
+            <param name="indexExt">The second index of the <see cref="T:System.Boolean"/></param>
+            <returns>The <see cref="T:System.Boolean"/> at the specified index</returns>
+        </member>
+        <member name="T:PoroCYon.XnaExtensions.Circle">
+            <summary>
+            Repersents a 2D circle
+            </summary>
+        </member>
+        <member name="F:PoroCYon.XnaExtensions.Circle.None">
+            <summary>
+            Represents a circle with centre (0;0) and radius 0
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.#ctor(Microsoft.Xna.Framework.Vector2,System.Single)">
+            <summary>
+            Creates a circle with the given centre and radius
+            </summary>
+            <param name="Centre">The centre of the circle</param>
+            <param name="Radius">The radius of the circle</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.#ctor(Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            Creates a circle with the given centre and radius as a <see cref="T:Microsoft.Xna.Framework.Vector3"/>
+            </summary>
+            <param name="data">The centre and radius of the circle, the Z field is the radius of the circle</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.#ctor(System.Single,System.Single,System.Single)">
+            <summary>
+            Creates a circle with the given coordinates and the given radius
+            </summary>
+            <param name="X">The X position of the circle</param>
+            <param name="Y">The Y position of the circle</param>
+            <param name="Radius">The radius of the circle</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Intersects(PoroCYon.XnaExtensions.IShape2D)">
+            <summary>
+            Checks wether the circle intersects with a 2D shape
+            </summary>
+            <param name="other">The other 2D shape</param>
+            <returns>Wether the circle intersects with the <paramref name="other"/> or not</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Intersects(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Checks wether the circle intersects with a rectangle
+            </summary>
+            <param name="other">The other rectangle</param>
+            <returns>Wether the circle intersects with the <paramref name="other"/> or not</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Intersects(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Checks wether the circle intersects with a vector
+            </summary>
+            <param name="other">The other vector</param>
+            <returns>Wether the circle intersects with the <paramref name="other"/> or not</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Contains(PoroCYon.XnaExtensions.IShape2D)">
+            <summary>
+            Wether the circle contains a 2D shape or not
+            </summary>
+            <param name="other">The other 2D shape</param>
+            <returns>true if the circle contains the <paramref name="other"/>, false otherwise</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Contains(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Wether the circle contains a rectangle or not
+            </summary>
+            <param name="other">The other rectangle</param>
+            <returns>true if the circle contains the <paramref name="other"/>, false otherwise</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Contains(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Wether the circle contains a vector or not
+            </summary>
+            <param name="other">The other vector</param>
+            <returns>true if the circle contains the <paramref name="other"/>, false otherwise</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Equals(System.Object)">
+            <summary>
+            Wether the object's value is equal to the other one
+            </summary>
+            <param name="obj">The object to compare this instance with</param>
+            <returns>true if the objects have the same value, false otherwise.</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Equals(PoroCYon.XnaExtensions.Circle)">
+            <summary>
+            
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Equals(PoroCYon.XnaExtensions.IShape2D)">
+            <summary>
+            
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Equals(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Equals(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Clone">
+            <summary>
+            /
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.Copy">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.ToString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.ToString(System.IFormatProvider)">
+            <summary>
+            
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_Equality(PoroCYon.XnaExtensions.Circle,PoroCYon.XnaExtensions.IShape2D)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_Inequality(PoroCYon.XnaExtensions.Circle,PoroCYon.XnaExtensions.IShape2D)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_Equality(PoroCYon.XnaExtensions.Circle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_Inequality(PoroCYon.XnaExtensions.Circle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_Equality(PoroCYon.XnaExtensions.Circle,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_Inequality(PoroCYon.XnaExtensions.Circle,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_GreaterThan(PoroCYon.XnaExtensions.Circle,PoroCYon.XnaExtensions.Circle)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_LessThan(PoroCYon.XnaExtensions.Circle,PoroCYon.XnaExtensions.Circle)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_GreaterThanOrEqual(PoroCYon.XnaExtensions.Circle,PoroCYon.XnaExtensions.Circle)">
+            <summary>
+            /
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_LessThanOrEqual(PoroCYon.XnaExtensions.Circle,PoroCYon.XnaExtensions.Circle)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_Explicit(PoroCYon.XnaExtensions.Line)~PoroCYon.XnaExtensions.Circle">
+            <summary>
+            
+            </summary>
+            <param name="l"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Circle.op_Explicit(Microsoft.Xna.Framework.Rectangle)~PoroCYon.XnaExtensions.Circle">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Circle.Centre">
+            <summary>
+            The centre of the circle
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Circle.Radius">
+            <summary>
+            The radius of the circle
+            </summary>
+        </member>
+        <member name="T:PoroCYon.XnaExtensions.Input.MouseHandler">
+            <summary>
+            Custom structure to make calculations with the Mouse easier
+            </summary>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Input.MouseHandler.GetState">
+            <summary>
+            Retrieves the current mouse state
+            </summary>
+            <returns>The current mouse state</returns>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.Input.MouseHandler.SetPosition(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Sets the position of the mouse
+            </summary>
+            <param name="position">The new position of the mouse</param>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Input.MouseHandler.Left">
+            <summary>
+            Wether the left mouse button is pressed or not (returns false when Main.blockMouse or Player.mouseInterface is true)
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Input.MouseHandler.Right">
+            <summary>
+            Wether the right mouse button is pressed or not
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Input.MouseHandler.Middle">
+            <summary>
+            Wether the middle button (scroll wheel) is pressed or not
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Input.MouseHandler.XButton1">
+            <summary>
+            Wether the first X button is pressed or not
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Input.MouseHandler.XButton2">
+            <summary>
+            Wether the second X button is pressed or not
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Input.MouseHandler.Position">
+            <summary>
+            Gets the position of the mouse, relative to the Terraria window
+            </summary>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.Input.MouseHandler.ScrollWheel">
+            <summary>
+            Gets the current scroll wheel value
+            </summary>
+        </member>
+        <member name="T:PoroCYon.XnaExtensions.WeakReference`1">
+            <summary>
+            Represents a weak reference, which references an object while still allowing
+            that object to be reclaimed by garbage collection.
+            </summary>
+            <typeparam name="T">The type of the referenced object</typeparam>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.WeakReference`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the TAPI.SDK.WeakReference class, referencing
+            the specified object.
+            </summary>
+            <param name="target">The object to track or null.</param>
+        </member>
+        <member name="M:PoroCYon.XnaExtensions.WeakReference`1.#ctor(`0,System.Boolean)">
+            <summary>
+            Initializes a new instance of the TAPI.SDK.WeakReference class, referencing
+            the specified object and using the specified resurrection tracking.
+            </summary>
+            <param name="target">An object to track.</param>
+            <param name="trackResurrection">Indicates when to stop tracking the object. If true, the object is tracked after finalization; if false, the object is only tracked until finalization.</param>
+        </member>
+        <member name="P:PoroCYon.XnaExtensions.WeakReference`1.Target">
+            <summary>
+            Gets or sets the object (the target) referenced by the current TAPI.SDK.WeakReference object.
+            
+            Returns:
+                null if the object referenced by the current TAPI.SDK.WeakReference object
+                has been garbage collected; otherwise, a reference to the object referenced
+                by the current TAPI.SDK.WeakReference object.
+                
+            Exceptions:
+                The reference to the target object is invalid. This exception can be thrown while setting this property if the value is a null reference
+                or if the object has been finalized during the set operation.
+            </summary>
+        </member>
         <member name="M:PoroCYon.XnaExtensions.IO.BinBufferResource.Close">
             <summary>
             Closes sockets/file handles/..., if any

@@ -8,6 +8,9 @@ namespace TAPI.Avalon
     /// </summary>
     public sealed class Mod : ModBase
     {
+        /// <summary>
+        /// Called by the mod loader through reflection
+        /// </summary>
         public Mod()
 			: base()
         {
