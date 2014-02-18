@@ -667,14 +667,57 @@
             This class cannot be inherited
             </summary>
         </member>
-        <member name="T:TAPI.SDK.GUI.Controls.Visibility">
+        <member name="T:TAPI.SDK.GUI.MessageBoxButton">
             <summary>
-            Enumeration has the Flags attribute
+            The different buttons a <see cref="T:TAPI.SDK.GUI.MessageBox"/> can have.
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.MessageBox">
+            <summary>
+            A message box
             </summary>
         </member>
         <member name="P:TAPI.SDK.GUI.Controls.Primitives.ControlContainer.Controls">
             <summary>
             Control positions are relative to the ControlContainer position
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.GUI.Controls.Window.Text">
+            <summary>
+            Window title
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.MessageBox.#ctor(System.String,System.String,TAPI.SDK.GUI.MessageBoxButton)">
+            <summary>
+            Creates a new instance of the <see cref="T:TAPI.SDK.GUI.MessageBox"/> class.
+            </summary>
+            <param name="text">The text the message box contains</param>
+            <param name="caption">The caption of the message box</param>
+            <param name="btn">The button type of the message box</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.MessageBox.Show(System.String,System.String,TAPI.SDK.GUI.MessageBoxButton)">
+            <summary>
+            Displays a message box
+            </summary>
+            <param name="text">The text the message box contains</param>
+            <param name="caption">The title of the message box</param>
+            <param name="btn">The type of buttons the message box contains</param>
+            <returns>What happens when the message box is closed. Hook to this if you want something to happen when the message box is closed.</returns>
+        </member>
+        <member name="M:TAPI.SDK.GUI.MessageBox.Show">
+            <summary>
+            Displays the message box
+            </summary>
+            <returns>What happens when the message box is closed. Hook to this if you want something to happen when the message box is closed.</returns>
+        </member>
+        <member name="P:TAPI.SDK.GUI.MessageBox.OnResult">
+            <summary>
+            What happens when the message box is closed and the result is returned
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.Controls.Visibility">
+            <summary>
+            Enumeration has the Flags attribute
             </summary>
         </member>
         <member name="T:TAPI.SDK.GUI.Controls.EnterMode">
@@ -690,11 +733,6 @@
         <member name="P:TAPI.SDK.GUI.Controls.TextBox.Text">
             <summary>
             Does not include the caret.
-            </summary>
-        </member>
-        <member name="P:TAPI.SDK.GUI.Controls.Window.Text">
-            <summary>
-            Window title
             </summary>
         </member>
         <member name="T:TAPI.SDK.GUI.SdkUI">
@@ -1088,6 +1126,11 @@
             The Pirates
             </summary>
         </member>
+        <member name="T:TAPI.SDK.World">
+            <summary>
+            Provides easy event invocation
+            </summary>
+        </member>
         <member name="M:TAPI.SDK.World.StartInvasion(TAPI.SDK.InvasionType)">
             <summary>
             Starts an invasion.
@@ -1151,6 +1194,36 @@
             <summary>
             Stops a Frost Moon
             </summary>
+        </member>
+        <member name="M:TAPI.SDK.World.SpawnCustomDust(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Spawns a custom Dust
+            </summary>
+            <param name="position">The position of the particle</param>
+            <param name="size">The size of the particle</param>
+            <param name="texture">The sprite of the particle</param>
+            <param name="maskType">The masking type of the particle (mimic AI type)</param>
+            <param name="velocity">The velocity of the particle; default is {0;0}</param>
+            <param name="c">The colour (incl. alpha) of the particle; default is {255;255;255;0}</param>
+            <param name="scale">The scale of the particle</param>
+            <param name="noGravity">Wether the particle is bound to the laws of gravity or not; default is false (laws do apply)</param>
+            <param name="noLight">Weter the particle can emit light or not; default is false (can emit light)</param>
+            <returns>The ID of the newly spawned Dust instance</returns>
+        </member>
+        <member name="M:TAPI.SDK.World.SpawnCustomDust(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.Texture2D,System.Action,Microsoft.Xna.Framework.Vector2,System.Nullable{Microsoft.Xna.Framework.Color},System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Spawns a custom Dust
+            </summary>
+            <param name="position">The position of the particle</param>
+            <param name="size">The size of the particle</param>
+            <param name="texture">The sprite of the particle</param>
+            <param name="onUpdate">The behaviour of the particle</param>
+            <param name="velocity">The velocity of the particle; default is {0;0}</param>
+            <param name="c">The colour (incl. alpha) of the particle; default is {255;255;255;0}</param>
+            <param name="scale">The scale of the particle</param>
+            <param name="noGravity">Wether the particle is bound to the laws of gravity or not; default is false (laws do apply)</param>
+            <param name="noLight">Weter the particle can emit light or not; default is false (can emit light)</param>
+            <returns>The ID of the newly spawned Dust instance</returns>
         </member>
     </members>
 </doc>
