@@ -667,9 +667,144 @@
             This class cannot be inherited
             </summary>
         </member>
+        <member name="T:TAPI.SDK.GUI.CustomUI">
+            <summary>
+            The base class for all custom UIs
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.IControlParent">
+            <summary>
+            An object referenced by the <see cref="T:TAPI.SDK.GUI.Controls.Control"/>.Parent field
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.IControlParent.AddControl(TAPI.SDK.GUI.Controls.Control)">
+            <summary>
+            Adds a control to the controls list.
+            </summary>
+            <param name="control">The control to add</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.IControlParent.RemoveControl(TAPI.SDK.GUI.Controls.Control)">
+            <summary>
+            Removes a control from the control list
+            </summary>
+            <param name="control">The control to remove</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.IControlParent.RemoveControlAt(System.Int32)">
+            <summary>
+            Removes a control from the control list
+            </summary>
+            <param name="index">The index of the control to remove</param>
+        </member>
+        <member name="P:TAPI.SDK.GUI.IControlParent.Controls">
+            <summary>
+            The controls the parent has
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.CustomUI.OnControlAdded">
+            <summary>
+            Called when a control is added from the Controls list
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.CustomUI.OnControlRemoved">
+            <summary>
+            Called when a control is removed from the Controls list
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.CustomUI.GlobalControlAdded">
+            <summary>
+            Called when a control is added from the Controls list
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.CustomUI.GlobalControlRemoved">
+            <summary>
+            Called when a control is removed from the Controls list
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.CustomUI.Visibility">
+            <summary>
+            The visibility of the CustomUI
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.CustomUI.IsDrawnAfter">
+            <summary>
+            Wether the CustomUI is drawn at PreDrawInterface or PostDrawInterface
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.#ctor">
+            <summary>
+            Creates a new instance of the CustomUI class
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.Finalize">
+            <summary>
+            Disposes the CustomUI instance
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.Dispose">
+            <summary>
+            Disposes the CustomUI instance
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.Init">
+            <summary>
+            Initializes the CustomUI
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.Update">
+            <summary>
+            Updates the CustomUI
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Boolean)">
+            <summary>
+            Draws the CustomUI
+            </summary>
+            <param name="sb">The SpriteBatch used to draw things</param>
+            <param name="after">Wether it is called in Pre- or PostDrawInterface</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.Disposing(System.Boolean)">
+            <summary>
+            When the control is disposing
+            </summary>
+            <param name="forced">Wether the control is disposing by IDisposable.Dispose or the constructor</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.AddControl(TAPI.SDK.GUI.Controls.Control)">
+            <summary>
+            Adds a control to the GUI
+            </summary>
+            <param name="control">The control to add</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.RemoveControl(TAPI.SDK.GUI.Controls.Control)">
+            <summary>
+            Removes a control from the GUI
+            </summary>
+            <param name="control">The control to remove</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.CustomUI.RemoveControlAt(System.Int32)">
+            <summary>
+            Removes a control from the GUI
+            </summary>
+            <param name="index">The index of the control to remove</param>
+        </member>
+        <member name="P:TAPI.SDK.GUI.CustomUI.Controls">
+            <summary>
+            The controls in the GUI.
+            Adding or removing a control by calling Controls.Add/Remove is not a good idea.
+            </summary>
+        </member>
         <member name="T:TAPI.SDK.GUI.MessageBoxButton">
             <summary>
             The different buttons a <see cref="T:TAPI.SDK.GUI.MessageBox"/> can have.
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.MessageBoxButton.OK">
+            <summary>
+            'OK' button
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.MessageBoxButton.YesNo">
+            <summary>
+            'Yes' and 'No' buttons
             </summary>
         </member>
         <member name="T:TAPI.SDK.GUI.MessageBox">
@@ -687,6 +822,16 @@
             Window title
             </summary>
         </member>
+        <member name="F:TAPI.SDK.GUI.MessageBox.TextIsCopyable">
+            <summary>
+            Wether the text of the message box can be copied to the clipboard or not
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.MessageBox.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:TAPI.SDK.GUI.MessageBox"/> class.
+            </summary>
+        </member>
         <member name="M:TAPI.SDK.GUI.MessageBox.#ctor(System.String,System.String,TAPI.SDK.GUI.MessageBoxButton)">
             <summary>
             Creates a new instance of the <see cref="T:TAPI.SDK.GUI.MessageBox"/> class.
@@ -695,13 +840,14 @@
             <param name="caption">The caption of the message box</param>
             <param name="btn">The button type of the message box</param>
         </member>
-        <member name="M:TAPI.SDK.GUI.MessageBox.Show(System.String,System.String,TAPI.SDK.GUI.MessageBoxButton)">
+        <member name="M:TAPI.SDK.GUI.MessageBox.Show(System.String,System.String,TAPI.SDK.GUI.MessageBoxButton,System.Boolean)">
             <summary>
             Displays a message box
             </summary>
             <param name="text">The text the message box contains</param>
             <param name="caption">The title of the message box</param>
             <param name="btn">The type of buttons the message box contains</param>
+            <param name="copyable">Wether the text of the message box can be copied to the clipboard or not</param>
             <returns>What happens when the message box is closed. Hook to this if you want something to happen when the message box is closed.</returns>
         </member>
         <member name="M:TAPI.SDK.GUI.MessageBox.Show">
@@ -740,6 +886,16 @@
             This class cannot be inherited.
             </summary>
         </member>
+        <member name="F:TAPI.SDK.GUI.SdkUI.OnUIAdded">
+            <summary>
+            Called when a control is added from the Controls list
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.SdkUI.OnUIRemoved">
+            <summary>
+            Called when a control is removed from the Controls list
+            </summary>
+        </member>
         <member name="F:TAPI.SDK.GUI.SdkUI.OnControlAdded">
             <summary>
             Called when a control is added from the Controls list
@@ -762,6 +918,24 @@
             Draws the UI after all other UIs are drawn.
             </summary>
             <param name="sb">The SpriteBatch used to draw the UI</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.AddUI(TAPI.SDK.GUI.CustomUI)">
+            <summary>
+            Adds a control to the GUI
+            </summary>
+            <param name="ui">The control to add</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.RemoveUI(TAPI.SDK.GUI.CustomUI)">
+            <summary>
+            Removes a control from the GUI
+            </summary>
+            <param name="ui">The CustomUI to remove</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.RemoveUIAt(System.Int32)">
+            <summary>
+            Removes a CustomUI from the GUI
+            </summary>
+            <param name="index">The index of the CustomUI to remove</param>
         </member>
         <member name="M:TAPI.SDK.GUI.SdkUI.AddControl(TAPI.SDK.GUI.Controls.Control)">
             <summary>
@@ -786,11 +960,48 @@
             A 1-by-1 white pixel texture
             </summary>
         </member>
+        <member name="P:TAPI.SDK.GUI.SdkUI.CustomUIs">
+            <summary>
+            The controls in the (global) GUI.
+            Adding or removing a control by calling Controls.Add/Remove is not a good idea.
+            </summary>
+        </member>
         <member name="P:TAPI.SDK.GUI.SdkUI.Controls">
             <summary>
             The controls in the GUI.
             Adding or removing a control by calling Controls.Add/Remove is not a good idea.
             </summary>
+        </member>
+        <member name="P:TAPI.SDK.GUI.SdkUI.CurrentVisibility">
+            <summary>
+            The current visibility state of the game
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.GUI.XmlUIConstructor">
+            <summary>
+            A service to convert an XML document to a <see cref="T:TAPI.SDK.GUI.CustomUI"/>
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.GUI.XmlUIConstructor.FromFile(System.String)">
+            <summary>
+            Create a CustomUI from an .xml file
+            </summary>
+            <param name="file">The path to the .xml file</param>
+            <returns>The <see cref="T:TAPI.SDK.GUI.XmlUIConstructor"/> created from the .xml file</returns>
+        </member>
+        <member name="M:TAPI.SDK.GUI.XmlUIConstructor.FromString(System.String)">
+            <summary>
+            Creates a CustomUI from XML code
+            </summary>
+            <param name="xml">The XML code</param>
+            <returns>The <see cref="T:TAPI.SDK.GUI.XmlUIConstructor"/> created from the XML code</returns>
+        </member>
+        <member name="M:TAPI.SDK.GUI.XmlUIConstructor.FromDocument(System.Xml.XmlDocument)">
+            <summary>
+            Creates a CustomUI from an XmlDocument
+            </summary>
+            <param name="document">The XmlDocument</param>
+            <returns>The <see cref="T:TAPI.SDK.GUI.XmlUIConstructor"/> created from the XmlDocument</returns>
         </member>
         <member name="T:TAPI.SDK.Input.GInput">
             <summary>
