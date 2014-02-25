@@ -17,6 +17,9 @@ namespace TAPI.Avalon
 
         }
 
+        /// <summary>
+        /// Called when the mod is loaded
+        /// </summary>
 		public override void OnLoad()
 		{
 			// initializes most of the SDK features

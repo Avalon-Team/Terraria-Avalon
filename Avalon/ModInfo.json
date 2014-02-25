@@ -3,10 +3,10 @@
 	"author" : "Avalon Team",
 	"info" : "tAPI Avalon mod",
     
+	"internalName": "Avalon",
+
 	"code" :
 	{
-		"internalName": "Avalon",
-
 		"modBaseName" : "TAPI.Avalon.Mod"
 	}
 }
