@@ -762,7 +762,7 @@
             <param name="sb">The SpriteBatch used to draw things</param>
             <param name="after">Wether it is called in Pre- or PostDrawInterface</param>
         </member>
-        <member name="M:TAPI.SDK.GUI.CustomUI.Disposing(System.Boolean)">
+        <member name="M:TAPI.SDK.GUI.CustomUI.Dispose(System.Boolean)">
             <summary>
             When the control is disposing
             </summary>
