@@ -34,7 +34,7 @@
         </member>
         <member name="M:TAPI.SDK.Content.LoadParameters.#ctor(System.String,TAPI.ModBase,System.String,System.Reflection.Assembly)">
             <summary>
-            Creates a new instance of the LoadParameters structure
+            Creates a new instance of the LoadParameters class
             </summary>
             <param name="name">Sets the Name field</param>
             <param name="base">Sets the ModBase field</param>
@@ -68,7 +68,7 @@
         </member>
         <member name="M:TAPI.SDK.Content.ArmorParameters.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D)">
             <summary>
-            Creates a new instance of the ArmorParameters sturcture
+            Creates a new instance of the ArmorParameters class
             </summary>
             <param name="head">Sets the HeadTexture field. null for no helmet.</param>
             <param name="body">Sets the BodyTexture field. null for no chainmail.</param>
@@ -97,7 +97,7 @@
         </member>
         <member name="M:TAPI.SDK.Content.ArmorReturnValues.#ctor(System.Int32,System.Int32,System.Int32)">
             <summary>
-            Creates a new instance of the ArmorReturnValues structure
+            Creates a new instance of the ArmorReturnValues class
             </summary>
             <param name="head">The ID of the helmet. -1 for no helmet.</param>
             <param name="body">The ID of the chainmail. -1 for no chainmail.</param>
@@ -158,127 +158,127 @@
             The total amount of frames
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Solid">
+        <member name="P:TAPI.SDK.Content.TileParameters.Solid">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> is solid or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.SolidTop">
+        <member name="P:TAPI.SDK.Content.TileParameters.SolidTop">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> has a solid top or not (like Wooden Planks)
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.FrameImportant">
+        <member name="P:TAPI.SDK.Content.TileParameters.FrameImportant">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> should only change frame when told or when tried to mine it
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BreaksFast">
+        <member name="P:TAPI.SDK.Content.TileParameters.BreaksFast">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> is destroyed by 1 'tick' of the tool or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByPic">
+        <member name="P:TAPI.SDK.Content.TileParameters.BreaksByPic">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> is mineable by a pickaxe or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByAxe">
+        <member name="P:TAPI.SDK.Content.TileParameters.BreaksByAxe">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> is mineable by an axe or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByHammer">
+        <member name="P:TAPI.SDK.Content.TileParameters.BreaksByHammer">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> is mineable by a hammer or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByCut">
+        <member name="P:TAPI.SDK.Content.TileParameters.BreaksByCut">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> breaks when hit with a melee item (sword, tool, ...), Projectile, ...
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByWater">
+        <member name="P:TAPI.SDK.Content.TileParameters.BreaksByWater">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> breaks when it touches water or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BreaksByLava">
+        <member name="P:TAPI.SDK.Content.TileParameters.BreaksByLava">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> breaks when it touches lava or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Table">
+        <member name="P:TAPI.SDK.Content.TileParameters.Table">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> counts as a table or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Rope">
+        <member name="P:TAPI.SDK.Content.TileParameters.Rope">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> counts as a rope or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.NoAttach">
+        <member name="P:TAPI.SDK.Content.TileParameters.NoAttach">
             <summary>
             Wether other tiles can be attached to <see cref="T:TAPI.Tile"/> tile or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Dungeon">
+        <member name="P:TAPI.SDK.Content.TileParameters.Dungeon">
             <summary>
             Wether this <see cref="T:TAPI.Tile"/> counts as a dungeon tile or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BlocksAnyLight">
+        <member name="P:TAPI.SDK.Content.TileParameters.BlocksAnyLight">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> blocks any light or not (including sunlight)
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.BlocksSunlight">
+        <member name="P:TAPI.SDK.Content.TileParameters.BlocksSunlight">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> blocks sunlight or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Brick">
+        <member name="P:TAPI.SDK.Content.TileParameters.Brick">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> merges with bricks
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Moss">
+        <member name="P:TAPI.SDK.Content.TileParameters.Moss">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> merges with moss
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Stone">
+        <member name="P:TAPI.SDK.Content.TileParameters.Stone">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> merges with stone
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Dirt">
+        <member name="P:TAPI.SDK.Content.TileParameters.Dirt">
             <summary>
             Wether the Tiel merges with dirt
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Sand">
+        <member name="P:TAPI.SDK.Content.TileParameters.Sand">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> merges with sand or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Flame">
+        <member name="P:TAPI.SDK.Content.TileParameters.Flame">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> burns when you walk on it or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.AlchemyFlower">
+        <member name="P:TAPI.SDK.Content.TileParameters.AlchemyFlower">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> counts as an alchemy recepient or not (like the Bowl, Vase, ...)
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Glows">
+        <member name="P:TAPI.SDK.Content.TileParameters.Glows">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> glows or not
             </summary>
         </member>
-        <member name="F:TAPI.SDK.Content.TileParameters.Shines">
+        <member name="P:TAPI.SDK.Content.TileParameters.Shines">
             <summary>
             Wether the <see cref="T:TAPI.Tile"/> shines or not
             </summary>
@@ -568,6 +568,11 @@
             If not overridden in a deriving class, it uses the Scale fields as width/height
             </summary>
         </member>
+        <member name="P:TAPI.SDK.GUI.Controls.Control.IsVisible">
+            <summary>
+            Gets wether the control is visible or not
+            </summary>
+        </member>
         <member name="T:TAPI.SDK.GUI.Controls.Interop.ControlContainerWrapper">
             <summary>
             A ContorlContainer as a MenuPage
@@ -790,6 +795,11 @@
             <summary>
             The controls in the GUI.
             Adding or removing a control by calling Controls.Add/Remove is not a good idea.
+            </summary>
+        </member>
+        <member name="P:TAPI.SDK.GUI.CustomUI.IsVisible">
+            <summary>
+            Gets wether the interface is visible or not
             </summary>
         </member>
         <member name="T:TAPI.SDK.GUI.MessageBoxButton">
@@ -1190,6 +1200,12 @@
             <param name="groupName">The group name of the <see cref="T:TAPI.SDK.Net.SyncedRandom"/> instance (instances of the same group name return the same results)</param>
         </member>
         <member name="M:TAPI.SDK.Net.SyncedRandom.Finalize">
+            <summary>
+            Disposes the SyncedRandom instance by sending a NetMessage that decreases the group reference counter on the server/other clients,
+            decreases the group reference counter, and checks wether the group's random instance can be removed or not.
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Net.SyncedRandom.Dispose">
             <summary>
             Disposes the SyncedRandom instance by sending a NetMessage that decreases the group reference counter on the server/other clients,
             decreases the group reference counter, and checks wether the group's random instance can be removed or not.
