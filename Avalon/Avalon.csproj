@@ -75,7 +75,7 @@
   <PropertyGroup>
     <PostBuildEvent>if "$(ConfigurationName)"=="Release" (
   rem "invoke the tAPI SDK compiler"
-  "$(SolutionDir)tAPI SDK Mod Builder.exe" "$(TargetPath)"
+  "$(SolutionDir)tAPI SDK Tools.exe" /build "$(TargetPath)"
 )
 </PostBuildEvent>
   </PropertyGroup>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>tAPI SDK Tools</name>
+    </assembly>
+    <members>
+        <member name="T:TAPI.SDK.Tools.Builder.ModBuilder">
+            <summary>
+            The tAPI SDK Mod builder
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Tools.Builder.ModBuilder.Build(System.String)">
+            <summary>
+            Builds a mod from a managed .dll file
+            </summary>
+            <param name="dllFile">The .dll file to build</param>
+        </member>
+        <member name="T:TAPI.SDK.Tools.Decompiler.ModDecompiler">
+            <summary>
+            The tAPI SDK Mod decompiler
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Tools.Decompiler.ModDecompiler.Decompile(System.String)">
+            <summary>
+            Decompiles a .tapimod file
+            </summary>
+            <param name="modFile">The .tapimod file to decompile</param>
+        </member>
+        <member name="T:TAPI.SDK.Tools.Packer.CompilerException">
+            <summary>
+            An error occuring when compiling an assembly
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Tools.Packer.CompilerException.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the CompilerException class
+            </summary>
+            <param name="error">The compiler error as a string</param>
+        </member>
+        <member name="M:TAPI.SDK.Tools.Packer.CompilerException.#ctor(System.Exception)">
+            <summary>
+            Creates a new instance of the CompilerException class
+            </summary>
+            <param name="inner">The cause of this exception</param>
+        </member>
+        <member name="M:TAPI.SDK.Tools.Packer.CompilerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new instance of the CompilerException class
+            </summary>
+            <param name="error">The compiler error as a string</param>
+            <param name="inner">The cause of this exception</param>
+        </member>
+        <member name="M:TAPI.SDK.Tools.Packer.CompilerException.CreateException(System.Collections.IEnumerable)">
+            <summary>
+            Creates a CompilerException from an enumerable collection of CompilerErrors
+            </summary>
+            <param name="errors">The CompilerError collection</param>
+            <returns>The CompilerException of the <paramref name="errors"/></returns>
+        </member>
+        <member name="T:TAPI.SDK.Tools.Packer.ModPacker">
+            <summary>
+            The tAPI SDK Extended mod packed
+            </summary>
+        </member>
+        <member name="M:TAPI.SDK.Tools.Packer.ModPacker.Pack(System.String,System.String)">
+            <summary>
+            Packs a mod
+            </summary>
+            <param name="modDirectory">The directory of the mod to pack</param>
+            <param name="outputDirectory">The output directory</param>
+            <returns>A CompilerException if there are compiler errors, null if none.</returns>
+        </member>
+    </members>
+</doc>
