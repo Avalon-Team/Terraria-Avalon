@@ -26,37 +26,6 @@
             </summary>
             <param name="modFile">The .tapimod file to decompile</param>
         </member>
-        <member name="T:TAPI.SDK.Tools.Packer.CompilerException">
-            <summary>
-            An error occuring when compiling an assembly
-            </summary>
-        </member>
-        <member name="M:TAPI.SDK.Tools.Packer.CompilerException.#ctor(System.String)">
-            <summary>
-            Creates a new instance of the CompilerException class
-            </summary>
-            <param name="error">The compiler error as a string</param>
-        </member>
-        <member name="M:TAPI.SDK.Tools.Packer.CompilerException.#ctor(System.Exception)">
-            <summary>
-            Creates a new instance of the CompilerException class
-            </summary>
-            <param name="inner">The cause of this exception</param>
-        </member>
-        <member name="M:TAPI.SDK.Tools.Packer.CompilerException.#ctor(System.String,System.Exception)">
-            <summary>
-            Creates a new instance of the CompilerException class
-            </summary>
-            <param name="error">The compiler error as a string</param>
-            <param name="inner">The cause of this exception</param>
-        </member>
-        <member name="M:TAPI.SDK.Tools.Packer.CompilerException.CreateException(System.Collections.IEnumerable)">
-            <summary>
-            Creates a CompilerException from an enumerable collection of CompilerErrors
-            </summary>
-            <param name="errors">The CompilerError collection</param>
-            <returns>The CompilerException of the <paramref name="errors"/></returns>
-        </member>
         <member name="T:TAPI.SDK.Tools.Packer.ModPacker">
             <summary>
             The tAPI SDK Extended mod packed

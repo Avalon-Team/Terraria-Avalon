@@ -5,8 +5,5 @@
     
 	"internalName": "Avalon",
 
-	"code" :
-	{
-		"modBaseName" : "TAPI.Avalon.Mod"
-	}
+    "MSBuild": true
 }

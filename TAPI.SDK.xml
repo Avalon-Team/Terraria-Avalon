@@ -1014,6 +1014,12 @@
             Called when a control is removed from the Controls list
             </summary>
         </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.#ctor(TAPI.ModBase)">
+            <summary>
+            Do NOT call this outside tAPI and the tAPI SDK, you'll get an InvalidOperationException!
+            </summary>
+            <param name="base">The ModBase used to create the SdkUI instance</param>
+        </member>
         <member name="M:TAPI.SDK.GUI.SdkUI.PreDrawInterface(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
             <summary>
             Draws the UI before all other UIs are drawn.
@@ -1026,6 +1032,12 @@
             Draws the UI after all other UIs are drawn.
             </summary>
             <param name="sb">The SpriteBatch used to draw the UI</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.KeyboardInputFocused">
+            <summary>
+            Gets if something is listening to the keyboard, thus consuming the input.
+            </summary>
+            <returns>True if something is listening, false therwise.</returns>
         </member>
         <member name="M:TAPI.SDK.GUI.SdkUI.AddUI(TAPI.SDK.GUI.CustomUI)">
             <summary>
