@@ -415,6 +415,87 @@
             <param name="param">Common object loading parameters</param>
             <returns>The ID of the newly added wings</returns>
         </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadTexture(System.Byte[])">
+            <summary>
+            Loads a Texture2D from a byte array as a .png
+            </summary>
+            <param name="data">The .png file to load as a Texture2D</param>
+            <returns>The .png data as a Texture2D</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadSound(System.Byte[])">
+            <summary>
+            Loads a SoundEffect from a byte array as a .wav
+            </summary>
+            <param name="data">The .wav file to load as a SoundEffect</param>
+            <returns>The .wav data as a SoundEffect</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadTexture(System.IO.Stream)">
+            <summary>
+            Loads a Texture2D from a stream as a .png
+            </summary>
+            <param name="stream">The .png file to load as a Texture2D</param>
+            <returns>The .png data as a Texture2D</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadSound(System.IO.Stream)">
+            <summary>
+            Loads a SoundEffect from a stream as a .wav
+            </summary>
+            <param name="stream">The .wav file to load as a SoundEffect</param>
+            <returns>The .wav data as a SoundEffect</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadImage(System.Byte[])">
+            <summary>
+            Loads a Texture2D from a byte array through the Content Manager (.xnb) 
+            </summary>
+            <param name="data">The .xnb file to load as a Texture2D</param>
+            <returns>The .xnb data as a Texture2D</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadSoundEffect(System.Byte[])">
+            <summary>
+            Loads a SoundEffect from a byte array through the Content Manager (.xnb) 
+            </summary>
+            <param name="data">The .xnb file to load as a SoundEffect</param>
+            <returns>The .xnb data as a SoundEffect</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadEffect(System.Byte[])">
+            <summary>
+            Loads an Effect from a byte array through the Content Manager (.xnb) 
+            </summary>
+            <param name="data">The .xnb file to load as an Effect</param>
+            <returns>The .xnb data as an Effect</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadFont(System.Byte[])">
+            <summary>
+            Loads a SpriteFont from a byte array through the Content Manager (.xnb) 
+            </summary>
+            <param name="data">The .xnb file to load as a SpriteFont</param>
+            <returns>The .xnb data as a SpriteFont</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.LoadContentObject``1(System.Byte[])">
+            <summary>
+            Loads an object through the Content Manager (.xnb)
+            </summary>
+            <typeparam name="T">The type of the object to load</typeparam>
+            <param name="data">The data of the object to load</param>
+            <returns>The object loaded by the Content Manager</returns>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddComponent(Microsoft.Xna.Framework.IGameComponent)">
+            <summary>
+            Adds an IGameComponent to the Game Components
+            </summary>
+            <param name="component">The IGameComponent to add</param>
+        </member>
+        <member name="M:TAPI.SDK.Content.ObjectLoader.AddService(System.Object)">
+            <summary>
+            Adds a service provider to the Game Services
+            </summary>
+            <param name="serviceProvider">The service provider to add</param>
+        </member>
+        <member name="P:TAPI.SDK.Content.ObjectLoader.Content">
+            <summary>
+            Constants.mainInstance.Content
+            </summary>
+        </member>
         <member name="T:TAPI.SDK.ModableObject">
             <summary>
             Represents an object where fields and hooks can be added and removed
@@ -601,11 +682,6 @@
             Wether the Button keeps firing the Clicked event as long as the left mouse button is held down
             </summary>
         </member>
-        <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.ContainedItem">
-            <summary>
-            The Item the ItemContainer contains
-            </summary>
-        </member>
         <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.OnItemChanged">
             <summary>
             When ContainedItem is changed
@@ -614,6 +690,16 @@
         <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.GlobalItemChanged">
             <summary>
             When ContainedItem is changed
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.OnStackChanged">
+            <summary>
+            When ContainedItem.stack is changed
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.GlobalStackChanged">
+            <summary>
+            When ContainedItem.stack is changed
             </summary>
         </member>
         <member name="F:TAPI.SDK.GUI.Controls.ItemContainer.OnTrySetItem">
@@ -649,12 +735,24 @@
             <param name="old">The old ContainedItem</param>
             <param name="new">The new ContainedItem</param>
         </member>
+        <member name="M:TAPI.SDK.GUI.Controls.ItemContainer.StackChanged(System.Int32,System.Int32)">
+            <summary>
+            When ContainedItem.stack is changed
+            </summary>
+            <param name="old">The old stack</param>
+            <param name="new">The new stack</param>
+        </member>
         <member name="M:TAPI.SDK.GUI.Controls.ItemContainer.TrySetItem(TAPI.Item)">
             <summary>
             When trying to change ContainedItem
             </summary>
             <param name="trying">The Item that might be the new ContainedItem</param>
             <returns>true if ContainedItem can be changed, false otherwise.</returns>
+        </member>
+        <member name="P:TAPI.SDK.GUI.Controls.ItemContainer.ContainedItem">
+            <summary>
+            The Item the ItemContainer contains
+            </summary>
         </member>
         <member name="P:TAPI.SDK.GUI.Controls.ItemContainer.Hitbox">
             <summary>
@@ -964,6 +1062,23 @@
             Removes a control from the GUI
             </summary>
             <param name="index">The index of the control to remove</param>
+        </member>
+        <member name="M:TAPI.SDK.GUI.SdkUI.DrawOutlinedString(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Nullable{Microsoft.Xna.Framework.Color},System.Single,System.Nullable{Microsoft.Xna.Framework.Vector2},System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)">
+            <summary>
+            Draws a string with an outline
+            </summary>
+            <param name="sb">The SpriteBatch used to draw the string</param>
+            <param name="font">The font of the string to draw</param>
+            <param name="text">The text to draw</param>
+            <param name="position">The position of the string to draw</param>
+            <param name="foreground">The foreground colour of the string to draw</param>
+            <param name="background">The background colour of the string to draw; default is #000000</param>
+            <param name="offset">The offset of the outlines; default is 1</param>
+            <param name="scale">The scale of the string to draw; default is (1, 1)</param>
+            <param name="rotation">The rotation of the string to draw; default is 0</param>
+            <param name="origin">The origin of the rotation of the string to draw; default is (0, 0)</param>
+            <param name="spriteEffects">The sprite effect of the string to draw; default is None</param>
+            <param name="layerDepth">The layer depth of the string to draw; default is 0</param>
         </member>
         <member name="P:TAPI.SDK.GUI.SdkUI.WhitePixel">
             <summary>
@@ -1276,6 +1391,26 @@
         <member name="P:TAPI.SDK.Sdk.SharedSpriteBatch">
             <summary>
             Gets the <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch"/> used by the game
+            </summary>
+        </member>
+        <member name="T:TAPI.SDK.SdkConstants">
+            <summary>
+            Common constants of the tAPI SDK
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.SdkConstants.VERSION_STRING">
+            <summary>
+            The version of the tAPI SDK as a string
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.SdkConstants.VERSION_NUM">
+            <summary>
+            The version number of the tAPI SDK
+            </summary>
+        </member>
+        <member name="F:TAPI.SDK.SdkConstants.VERSION">
+            <summary>
+            The version of the tAPI SDK as a <see cref="T:System.Version"/>
             </summary>
         </member>
         <member name="T:TAPI.SDK.VanillaData.BuffData">
