@@ -13,7 +13,7 @@ namespace Avalon
         /// <summary>
         /// Creates a new instance of the MPlayer class
         /// </summary>
-        /// <param name="@base">The ModBase which belongs to the ModPlayer instance</param>
+        /// <param name="base">The ModBase which belongs to the ModPlayer instance</param>
         /// <param name="p">The Player instance which is modified by the ModPlayer</param>
         /// <remarks>Called by the mod loader</remarks>
         public MPlayer(ModBase @base, Player p)

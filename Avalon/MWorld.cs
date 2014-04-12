@@ -13,7 +13,7 @@ namespace Avalon
         /// <summary>
         /// Creates a new instance of the MWorld class
         /// </summary>
-        /// <param name="@base">The ModBase which belongs to the ModWorld instance</param>
+        /// <param name="base">The ModBase which belongs to the ModWorld instance</param>
         /// <remarks>Called by the mod loader</remarks>
         public MWorld(ModBase @base)
             : base(@base)
