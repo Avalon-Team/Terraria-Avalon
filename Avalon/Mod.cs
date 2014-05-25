@@ -16,7 +16,7 @@ namespace Avalon
         /// </summary>
         /// <remarks>Called by the mod loader</remarks>
         public Mod()
-			: base()
+            : base()
         {
 
         }
@@ -24,12 +24,13 @@ namespace Avalon
         /// <summary>
         /// Called when the mod is loaded
         /// </summary>
-		public override void OnLoad()
-		{
-			// initializes most of the MCT features
-			Mct.Init();
+        public override void OnLoad()
+        {
+            // initializes most of the MCT features
+            Mct.EnsureMct(modName);
+            Mct.Init();
 
-			base.OnLoad();
-		}
+            base.OnLoad();
+        }
     }
 }

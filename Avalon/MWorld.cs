@@ -22,27 +22,6 @@ namespace Avalon
         }
 
         /// <summary>
-        /// Called when the world is loaded
-        /// </summary>
-        /// <param name="bb">A binary buffer which contains save data</param>
-        public override void Load(BinBuffer bb)
-        {
-            base.Load(bb);
-
-
-        }
-        /// <summary>
-        /// Called when the world is saved
-        /// </summary>
-        /// <param name="bb">A binary buffer where to put save data in</param>
-        public override void Save(BinBuffer bb)
-        {
-            base.Save(bb);
-
-
-        }
-
-        /// <summary>
         /// Called when the world is opened on this client or server
         /// </summary>
         public override void Initialize()

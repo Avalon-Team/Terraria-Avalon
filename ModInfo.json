@@ -1,0 +1,14 @@
+﻿{
+    "$schema": "https://dl.dropboxusercontent.com/u/151130168/mct/Schemas/ModInfoSchema.json",
+
+    "displayName" : "Avalon",
+    "author" : "Avalon Team",
+    "info" : "tAPI Avalon mod",
+    "version": "1.0.0.0",
+    
+    "internalName": "Avalon",
+    "includePDB":  true,
+
+    "MSBuild": true,
+    "msBuildFile":  "Avalon\\Avalon.csproj"
+}

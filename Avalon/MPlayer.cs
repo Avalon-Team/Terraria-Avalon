@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terraria;
 using TAPI;
 
 namespace Avalon
@@ -28,27 +29,6 @@ namespace Avalon
         public override void Initialize()
         {
             base.Initialize();
-
-
-        }
-
-        /// <summary>
-        /// Called when a Player is loaded
-        /// </summary>
-        /// <param name="bb">A binary buffer which contains save data</param>
-        public override void Load(BinBuffer bb)
-        {
-            base.Load(bb);
-
-
-        }
-        /// <summary>
-        /// Called when a Player is saved
-        /// </summary>
-        /// <param name="bb">A binary buffer where to put save data in</param>
-        public override void Save(BinBuffer bb)
-        {
-            base.Save(bb);
 
 
         }
