@@ -1,17 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PoroCYon.MCT;
 using Terraria;
 using TAPI;
+using PoroCYon.MCT;
+using PoroCYon.MCT.Content;
 
 namespace Avalon
 {
     /// <summary>
-    /// Like 'Program' but for a mod
+    /// The entry point of the Avalon mod.
     /// </summary>
+    /// <remarks>Like 'Program' but for a mod</remarks>
     public sealed class Mod : ModBase
     {
+        /// <summary>
+        /// Gets the singleton instance of the mod's ModBase.
+        /// </summary>
+        public static Mod Instance
+        {
+            get;
+            private set;
+        }
+
         readonly static List<int> EmptyIntList = new List<int>() { }; // only alloc once
 
         /// <summary>
@@ -20,13 +31,22 @@ namespace Avalon
         public const int ExtraSlots = 3;
 
         /// <summary>
+        /// Gets the Wraiths invasion instance.
+        /// </summary>
+        public static Invasion Wraiths
+        {
+            get;
+            internal set;
+        }
+
+        /// <summary>
         /// Creates a new instance of the Mod class
         /// </summary>
         /// <remarks>Called by the mod loader</remarks>
         public Mod()
             : base()
         {
-
+            Instance = this;
         }
 
         /// <summary>
@@ -39,8 +59,18 @@ namespace Avalon
             Mct.Init();
 
             LoadBiomes();
+            LoadInvasions();
 
             base.OnLoad();
+        }
+        /// <summary>
+        /// Called when the mod is unloaded.
+        /// </summary>
+        public override void OnUnload()
+        {
+            Instance = null;
+
+            base.OnUnload();
         }
 
         static void LoadBiomes()
@@ -89,6 +119,42 @@ namespace Avalon
                 TileValid = (x, y, pid) => y < 200 && Biome.Biomes["Avalon:Clouds"].typesIncrease.Contains(Main.tile[x, y].type)
             }.AddToGame();
             #endregion
+        }
+        static void LoadInvasions()
+        {
+            ObjectLoader.AddInvasion(Instance, "Wraiths", Wraiths = new WraithInvasion());
+        }
+    }
+
+    class WraithInvasion : Invasion
+    {
+        public override string DisplayName
+        {
+            get
+            {
+                return "Wraiths";
+            }
+        }
+
+        public override string ArrivedText
+        {
+            get
+            {
+                return "The " + DisplayName + " have arrived!";
+            }
+        }
+        public override string DefeatedText
+        {
+            get
+            {
+                return "The " + DisplayName + " have been arrived!";
+            }
+        }
+
+        internal WraithInvasion()
+            : base()
+        {
+            StartText = d => DisplayName + " are coming from the " + d + "!";
         }
     }
 }

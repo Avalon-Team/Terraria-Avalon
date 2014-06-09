@@ -11,15 +11,6 @@ namespace Avalon
     public sealed class MWorld : ModWorld
     {
         /// <summary>
-        /// Gets wether a Wraith invasion is active or not.
-        /// </summary>
-        public static bool InWraithInvasion
-        {
-            get;
-            internal set;
-        }
-
-        /// <summary>
         /// Creates a new instance of the MWorld class
         /// </summary>
         /// <param name="base">The ModBase which belongs to the ModWorld instance</param>

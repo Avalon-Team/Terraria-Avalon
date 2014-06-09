@@ -33,7 +33,7 @@ namespace Avalon
         {
             base.UpdateSpawnRate(player);
 
-            if (MWorld.InWraithInvasion)
+            if (Mod.Wraiths.IsActive)
             {
                 NPC.spawnRate = 15;
                 NPC.maxSpawns = 20;
