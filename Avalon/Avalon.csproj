@@ -78,6 +78,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessorySlots.cs" />
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="MNPC.cs" />
     <Compile Include="Mod.cs" />
