@@ -383,6 +383,74 @@ namespace Avalon
         }
         #endregion
 
+        /// <summary>
+        /// Saves data to the player file.
+        /// </summary>
+        /// <param name="bb">The buffer to put data in.</param>
+        public override void Save(BinBuffer bb)
+        {
+            base.Save(bb);
+
+            for (int i = 0; i < accessories.Length; i++)
+                bb.Write(accessories[i]);
+        }
+        /// <summary>
+        /// Loads data from the player file.
+        /// </summary>
+        /// <param name="bb">The buffer to load data from.</param>
+        public override void Load(BinBuffer bb)
+        {
+            base.Load(bb);
+
+            for (int i = 0; i < accessories.Length; i++)
+                accessories[i] = bb.ReadItem();
+        }
+
+#pragma warning disable 1591
+        public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref bool crit, ref float critMult)
+        {
+            base.DamageNPC(npc, hitDir, ref damage, ref crit, ref critMult);
+
+            for (int i = 0; i < accessories.Length; i++)
+                accessories[i].DamageNPC(player, npc, hitDir, ref damage, ref crit, ref critMult);
+        }
+        public override void DealtNPC(NPC npc, int hitDir, int dmgDealt, bool crit)
+        {
+            base.DealtNPC(npc, hitDir, dmgDealt, crit);
+
+            for (int i = 0; i < accessories.Length; i++)
+                accessories[i].DealtNPC(player, npc, hitDir, dmgDealt, crit);
+        }
+        public override void DamagePlayer(NPC npc, int hitDir, ref int damage, ref bool crit, ref float critMult)
+        {
+            base.DamagePlayer(npc, hitDir, ref damage, ref crit, ref critMult);
+
+            for (int i = 0; i < accessories.Length; i++)
+                accessories[i].DamagePlayer(npc, player, hitDir, ref damage, ref crit, ref critMult);
+        }
+        public override void DealtPlayer(NPC npc, int hitDir, int dmgDealt, bool crit)
+        {
+            base.DealtPlayer(npc, hitDir, dmgDealt, crit);
+
+            for (int i = 0; i < accessories.Length; i++)
+                accessories[i].DealtPlayer(npc, player, hitDir, dmgDealt, crit);
+        }
+        public override void DamagePVP(Player p, int hitDir, ref int damage, ref bool crit, ref float critMult)
+        {
+            base.DamagePVP(p, hitDir, ref damage, ref crit, ref critMult);
+
+            for (int i = 0; i < accessories.Length; i++)
+                accessories[i].DamagePVP(player, p, hitDir, ref damage, ref crit, ref critMult);
+        }
+        public override void DealtPVP(Player p, int hitDir, int dmgDealt, bool crit)
+        {
+            base.DealtPVP(p, hitDir, dmgDealt, crit);
+
+            for (int i = 0; i < accessories.Length; i++)
+                accessories[i].DealtPVP(player, p, hitDir, dmgDealt, crit);
+        }
+#pragma warning restore 1591
+
         bool CheckHurtTile()
         {
             return player.armor.Count(i =>
