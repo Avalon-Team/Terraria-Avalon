@@ -18,11 +18,12 @@ namespace Avalon
             {
                 get
                 {
-                    return instance.slots[index].ContainedItem;
+                    return MWorld.accessories[Main.myPlayer][index];
                 }
                 set
                 {
-                    instance.slots[index].ContainedItem = value;
+                    MWorld.accessories[Main.myPlayer][index] = value;
+                    // instance.slots[index].ContainedItem = value; // pointers
                 }
             }
         }
@@ -40,7 +41,7 @@ namespace Avalon
             instance = this;
 
             for (int i = 0; i < slots.Length; i++)
-                slots[i] = new ItemContainer(new Item(), Mod.Instance, i, "Avalon:ExtraAccSlot") { InventoryBackTextureNum = 3 };
+                slots[i] = new ItemContainer(MWorld.accessories[Main.myPlayer][i], Mod.Instance, i, "Avalon:ExtraAccSlot") { InventoryBackTextureNum = 3 };
 
             Slots = new Items();
         }
@@ -51,6 +52,11 @@ namespace Avalon
 
             for (int i = 0; i < slots.Length; i++)
                 AddControl(slots[i]);
+        }
+
+        internal static LayerUI GetNewLayer()
+        {
+            return new LayerUI(new AccessorySlots(), "Avalon:AccessorySlots");
         }
     }
 }

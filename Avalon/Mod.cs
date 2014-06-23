@@ -5,9 +5,25 @@ using Terraria;
 using TAPI;
 using PoroCYon.MCT;
 using PoroCYon.MCT.Content;
+using Avalon.API.World;
 
 namespace Avalon
 {
+    /// <summary>
+    /// All Avalon NetMessages.
+    /// </summary>
+    public enum NetMessages
+    {
+        /// <summary>
+        /// Start the Wraith Invasion
+        /// </summary>
+        StartWraithInvasion,
+        /// <summary>
+        /// Something not really obvious
+        /// </summary>
+        SetMusicBox
+    }
+
     /// <summary>
     /// The entry point of the Avalon mod.
     /// </summary>
@@ -23,6 +39,7 @@ namespace Avalon
             private set;
         }
 
+        internal static List<BossSpawn> spawns = new List<BossSpawn>();
         readonly static List<int> EmptyIntList = new List<int>() { }; // only alloc once
 
         /// <summary>
@@ -34,6 +51,14 @@ namespace Avalon
         /// Gets the Wraiths invasion instance.
         /// </summary>
         public static Invasion Wraiths
+        {
+            get;
+            internal set;
+        }
+        /// <summary>
+        /// Gets wether the game is in superhardmode or not.
+        /// </summary>
+        public static bool IsInSuperHardmode
         {
             get;
             internal set;
@@ -60,6 +85,7 @@ namespace Avalon
 
             LoadBiomes();
             LoadInvasions();
+            LoadSpawns();
 
             base.OnLoad();
         }
@@ -69,6 +95,8 @@ namespace Avalon
         public override void OnUnload()
         {
             Instance = null;
+
+            spawns.Clear();
 
             base.OnUnload();
         }
@@ -124,6 +152,51 @@ namespace Avalon
         {
             ObjectLoader.AddInvasion(Instance, "Wraiths", Wraiths = new WraithInvasion());
         }
+        static void LoadSpawns()
+        {
+            RegisterBossSpawn(new BossSpawn()
+            {
+                CanSpawn = (r, p) => !Main.dayTime && Main.rand.Next(30000 * r / 5) == 0,
+                Type = 4 // Eye of Ctulhu
+            });
+            RegisterBossSpawn(new BossSpawn()
+            {
+                CanSpawn = (r, p) => !Main.dayTime && Main.rand.Next(36000 * r / 5) == 0,
+                Type = 134 // probably The Destroyer
+            });
+            RegisterBossSpawn(new BossSpawn()
+            {
+                CanSpawn = (r, p) => !Main.dayTime && Main.rand.Next(40000 * r / 5) == 0,
+                Type = 127 // probably The Twins or Skeletron Prime
+            });
+
+            RegisterBossSpawn(new BossSpawn()
+            {
+                CanSpawn = (r, p) => Main.dayTime && Main.sandTiles >= 100 && Main.rand.Next(30000 * r / 5) == 0,
+                NpcInternalName = "Avalon:Desert Beak"
+            });
+            RegisterBossSpawn(new BossSpawn()
+            {
+                CanSpawn = (r, p) => Main.dayTime && p.zoneJungle          && Main.rand.Next(30000 * r / 5) == 0,
+                NpcInternalName = "Avalon:King Sting"
+            });
+            RegisterBossSpawn(new BossSpawn()
+            {
+                CanSpawn = (r, p) => Main.dayTime && p.zoneHoly            && Main.rand.Next(42000 * r / 5) == 0,
+                NpcInternalName = "Avalon:Cataryst"
+            });
+
+            RegisterBossSpawn(new WraithSpawn());
+        }
+
+        /// <summary>
+        /// Registers a BossSpawn.
+        /// </summary>
+        /// <param name="bs">The BossSpawn to register.</param>
+        public static void RegisterBossSpawn(BossSpawn bs)
+        {
+            spawns.Add(bs);
+        }
     }
 
     class WraithInvasion : Invasion
@@ -155,6 +228,24 @@ namespace Avalon
             : base()
         {
             StartText = d => DisplayName + " are coming from the " + d + "!";
+        }
+    }
+    class WraithSpawn : BossSpawn
+    {
+        public override bool ShouldSpawn(int rate, Player p)
+        {
+            bool ret = Main.rand.Next(10) == 0 && Main.time == 0;
+
+            if (!MWorld.oldNight || Main.dayTime)
+                ret = false;
+
+            MWorld.oldNight = !Main.dayTime;
+
+            return ret;
+        }
+        public override void Spawn(int pid)
+        {
+            Mod.Wraiths.Start();
         }
     }
 }

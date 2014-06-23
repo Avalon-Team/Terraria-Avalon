@@ -80,13 +80,18 @@
   <ItemGroup>
     <Compile Include="AccessorySlots.cs" />
     <Compile Include="API\Biomes\Attributes.cs" />
+    <Compile Include="API\Items\Attributes.cs" />
+    <Compile Include="API\World\BossSpawn.cs" />
     <Compile Include="MNPC.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="MWorld.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Chains\CHAINS_HERE.txt" />
+    <Content Include="Other\MERMAN_TEXTURES_HERE.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

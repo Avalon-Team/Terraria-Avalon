@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terraria;
 using TAPI;
+using PoroCYon.MCT;
+using PoroCYon.MCT.Net;
 
 namespace Avalon
 {
@@ -10,6 +13,20 @@ namespace Avalon
     /// </summary>
     public sealed class MWorld : ModWorld
     {
+        internal static bool oldNight;
+        internal static Item[/* player ID */][/* item index */] accessories;
+        internal static Item[] loacalAccessories
+        {
+            get
+            {
+                return accessories[Main.myPlayer];
+            }
+            set
+            {
+                accessories[Main.myPlayer] = value;
+            }
+        }
+
         /// <summary>
         /// Creates a new instance of the MWorld class
         /// </summary>
@@ -52,6 +69,25 @@ namespace Avalon
         }
 
         /// <summary>
+        /// Called when the world is loaded.
+        /// </summary>
+        /// <param name="bb"></param>
+        public override void Load(BinBuffer bb)
+        {
+            base.Load(bb);
+
+            accessories = new Item[NetHelper.CurrentMode == NetMode.Singleplayer ? 1 : Main.numPlayers][];
+
+            for (int i = 0; i < accessories.Length; i++)
+            {
+                accessories[i] = new Item[Mod.ExtraSlots];
+
+                for (int j = 0; j < Mod.ExtraSlots; j++)
+                    accessories[i][j] = new Item();
+            }
+        }
+
+        /// <summary>
         /// Called after the world is generated
         /// </summary>
         public override void WorldGenPostInit()
@@ -79,6 +115,15 @@ namespace Avalon
             base.WorldGenModifyHardmodeTaskList(list);
 
 
+        }
+
+        /// <summary>
+        /// Gets wether a boss is active or not.
+        /// </summary>
+        /// <returns>true if a boss is active, false otherwise.</returns>
+        public static bool CheckForBosses()
+        {
+            return Main.npc.Count(n => n.boss) > 0; // LINQ++. again.
         }
     }
 }
