@@ -91,6 +91,7 @@
   <ItemGroup>
     <Content Include="Chains\CHAINS_HERE.txt" />
     <Content Include="Other\MERMAN_TEXTURES_HERE.txt" />
+    <Content Include="Wings\WING_TEXTURES_HERE.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using TAPI;
-using PoroCYon.MCT;
 using PoroCYon.MCT.Net;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using PoroCYon.MCT.Content;
 
 namespace Avalon
 {
@@ -13,7 +15,72 @@ namespace Avalon
     /// </summary>
     public sealed class MWorld : ModWorld
     {
-        internal static bool oldNight;
+        const int spawnSpaceX = 3, spawnSpaceY = 3;
+
+        static bool needsToLoadRecipes = true;
+        static bool addedWings = false;   // no idea
+        static bool scanned = false; // no idea
+
+        internal static bool oldNight = false;
+
+        /// <summary>
+        /// Wether UltraOblivion has already been killed or not.
+        /// </summary>
+        public static bool UltraOblivionDowned = false;
+        /// <summary>
+        /// Wether Berserker Ore is already generated in the world.
+        /// </summary>
+        public static bool SpawnedBerserkerOre = false;
+
+        /// <summary>
+        /// How many times Cataryst has been killed.
+        /// </summary>
+        public static int CatarystDownedCount = 0;
+        /// <summary>
+        /// How many times the Armageddon Slime has been defeated.
+        /// </summary>
+        public static int ArmageddonCount = 0;
+        /// <summary>
+        /// How many times something something something.
+        /// </summary>
+        public static int EverIceCount = 0;
+        /// <summary>
+        /// How many times a hallowed altar was broken.
+        /// </summary>
+        public static int HallowAltarsBroken = 0;
+        /// <summary>
+        /// How many times something something wraith invasion something.
+        /// </summary>
+        public static int WraithInvasionCount = 0;
+
+        /// <summary>
+        /// Gets the ID of the Golden Wings texture.
+        /// </summary>
+        public static int GoldenWings
+        {
+            get;
+            private set;
+        }
+
+        static int grassCounter = 0, jungleEx = 0;
+
+        /// <summary>
+        /// Gets the rectangle for the Tropics biome.
+        /// </summary>
+        public static Rectangle TropicsRect
+        {
+            get;
+            private set;
+        }
+        /// <summary>
+        /// Gets the layer containing the extra accessory slots.
+        /// </summary>
+        public static InterfaceLayer AccessoryLayer
+        {
+            get;
+            private set;
+        }
+
         internal static Item[/* player ID */][/* item index */] accessories;
         internal static Item[] loacalAccessories
         {
@@ -45,7 +112,26 @@ namespace Avalon
         {
             base.Initialize();
 
+            CatarystDownedCount = EverIceCount = ArmageddonCount = HallowAltarsBroken = 0;
+            Mod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
 
+            Texture2D gWings = modBase.textures["Wings/Golden Wings"];
+            foreach (Texture2D t in Main.wingsTexture.Values)
+                if (gWings == t)
+                {
+                    addedWings = true;
+                    break;
+                }
+
+            if (!addedWings)
+            {
+                GoldenWings = Main.dedServ ? Main.wingsTexture.Count :  ObjectLoader.AddWingsToGame(gWings, null /* param not used */);
+
+                addedWings = true;
+            }
+
+            if (!Main.dedServ)
+                InterfaceLayer.Add(InterfaceLayer.cachedList, AccessoryLayer = AccessorySlots.GetNewLayer(), InterfaceLayer.LayerInventory, false);
         }
         /// <summary>
         /// Called after the world is updated
