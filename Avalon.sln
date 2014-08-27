@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30516.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22013.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalon", "Avalon\Avalon.csproj", "{0DE28193-FBFE-41CF-90CB-54C5866476D4}"
 EndProject
@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ModInfo.json = ModInfo.json
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalon.Tests", "Avalon.Tests\Avalon.Tests.csproj", "{F1E6FF78-A415-4B86-AB70-0DC08514F250}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,16 @@ Global
 		{0DE28193-FBFE-41CF-90CB-54C5866476D4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{0DE28193-FBFE-41CF-90CB-54C5866476D4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{0DE28193-FBFE-41CF-90CB-54C5866476D4}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F1E6FF78-A415-4B86-AB70-0DC08514F250}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

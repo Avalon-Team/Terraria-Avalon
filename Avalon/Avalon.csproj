@@ -39,7 +39,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x86</PlatformTarget>
     <LangVersion>5</LangVersion>
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <DocumentationFile>bin\Release\Avalon.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
@@ -50,17 +49,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\Common\Terraria\Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="PoroCYon.MCT">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\Common\Terraria\PoroCYon.MCT.dll</HintPath>
-    </Reference>
-    <Reference Include="PoroCYon.XnaExtensions, Version=1.0.5.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\Common\Terraria\PoroCYon.XnaExtensions.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -82,6 +75,9 @@
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="API\Items\Attributes.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
+    <Compile Include="MCTImport\Content\ObjectLoader.cs" />
+    <Compile Include="MCTImport\Invasion.cs" />
+    <Compile Include="MCTImport\Net\NetHelper.cs" />
     <Compile Include="MNPC.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="MPlayer.cs" />
@@ -89,14 +85,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Chains\CHAINS_HERE.txt" />
-    <Content Include="Other\MERMAN_TEXTURES_HERE.txt" />
-    <Content Include="Wings\WING_TEXTURES_HERE.txt" />
+    <None Include="Resources\CHAINS_HERE.txt" />
+    <None Include="Resources\MERMAN_TEXTURES_HERE.txt" />
+    <None Include="Resources\WING_TEXTURES_HERE.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>rem Build the mod. The directory must be the one where the ModInfo.json file resides in. The directory to the csproj is given in the ModInfo.json file.
-mct compile "$(SolutionDir)"
+rem mct compile "$(SolutionDir)"
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

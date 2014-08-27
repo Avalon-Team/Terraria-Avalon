@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Terraria;
-using TAPI;
-using PoroCYon.MCT.Net;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using TAPI;
 using PoroCYon.MCT.Content;
+using PoroCYon.MCT.Net;
 
 namespace Avalon
 {
@@ -113,6 +113,10 @@ namespace Avalon
             CatarystDownedCount = EverIceCount = ArmageddonCount = HallowAltarsBroken = 0;
             Mod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
 
+            // insert all graphical/UI-related stuff AFTER this check!
+            if (Main.dedServ)
+                return;
+
             Texture2D gWings = modBase.textures["Wings/Golden Wings"];
             foreach (Texture2D t in Main.wingsTexture.Values)
                 if (gWings == t)
@@ -123,13 +127,12 @@ namespace Avalon
 
             if (!addedWings)
             {
-                GoldenWings = Main.dedServ ? Main.wingsTexture.Count :  ObjectLoader.AddWingsToGame(gWings, null /* param not used */);
+                GoldenWings = Main.dedServ ? Main.wingsTexture.Count :  ObjectLoader.AddWingsToGame(gWings);
 
                 addedWings = true;
             }
 
-            if (!Main.dedServ)
-                InterfaceLayer.Add(InterfaceLayer.cachedList, AccessoryLayer = AccessorySlots.GetNewLayer(), InterfaceLayer.LayerInventory, false);
+            InterfaceLayer.Add(InterfaceLayer.cachedList, AccessoryLayer = new AccessorySlots(), InterfaceLayer.LayerInventory, false);
         }
         /// <summary>
         /// Called after the world is updated
@@ -232,7 +235,7 @@ namespace Avalon
         {
             base.Load(bb);
 
-            accessories = new Item[NetHelper.CurrentMode == NetMode.Singleplayer ? 1 : Main.numPlayers][];
+            accessories = new Item[Main.netMode == 0 ? 1 : Main.numPlayers][];
 
             for (int i = 0; i < accessories.Length; i++)
             {

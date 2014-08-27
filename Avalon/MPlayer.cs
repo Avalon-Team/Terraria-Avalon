@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PoroCYon.MCT.Net;
 using Terraria;
 using TAPI;
+using PoroCYon.MCT.Net;
 using Avalon.API.Items;
 
 namespace Avalon

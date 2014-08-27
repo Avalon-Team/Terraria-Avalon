@@ -4,7 +4,6 @@ using System.Linq;
 using Terraria;
 using TAPI;
 using PoroCYon.MCT;
-using PoroCYon.MCT.Content;
 using Avalon.API.World;
 
 namespace Avalon
@@ -79,9 +78,7 @@ namespace Avalon
         /// </summary>
         public override void OnLoad()
         {
-            // initializes most of the MCT features
-            Mct.EnsureMct(modName);
-            Mct.Init();
+            Invasion.LoadVanilla();
 
             LoadBiomes();
             LoadInvasions();
@@ -150,7 +147,7 @@ namespace Avalon
         }
         static void LoadInvasions()
         {
-            ObjectLoader.AddInvasion(Instance, "Wraiths", Wraiths = new WraithInvasion());
+            Invasion.Load(Instance, "Wraiths", Wraiths = new WraithInvasion());
         }
         static void LoadSpawns()
         {

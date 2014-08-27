@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using TAPI;
-using PoroCYon.MCT.UI.Interface;
-using PoroCYon.MCT.UI.Interface.Controls;
 
 namespace Avalon
 {
-    class AccessorySlots : CustomUI
+    class AccessorySlots : InterfaceLayer
     {
         static AccessorySlots instance;
 
-        public class Items
+        public sealed class Items
         {
+            // ha. ha. ha.
+            internal Items() { }
+
             public Item this[int index]
             {
                 get
@@ -33,30 +35,26 @@ namespace Avalon
             private set;
         }
 
-        ItemContainer[] slots = new ItemContainer[Mod.ExtraSlots];
+        Interface.ItemSlot[] slots = new Interface.ItemSlot[Mod.ExtraSlots];
+        Item[] items = new Item[Mod.ExtraSlots];
 
         internal AccessorySlots()
-            : base()
+            : base("Avalon:AccessorySlots")
         {
             instance = this;
 
             for (int i = 0; i < slots.Length; i++)
-                slots[i] = new ItemContainer(MWorld.accessories[Main.myPlayer][i], Mod.Instance, i, "Avalon:ExtraAccSlot") { InventoryBackTextureNum = 3 };
+                slots[i] = new Interface.ItemSlot(Mod.Instance, "Avalon:ExtraAccSlot", i,
+                    (s, it) => MWorld.accessories[Main.myPlayer][s.index] = it,
+                     s      => MWorld.accessories[Main.myPlayer][s.index]);
 
             Slots = new Items();
         }
 
-        public override void Init()
+        protected override void OnDraw(SpriteBatch sb)
         {
-            base.Init();
-
             for (int i = 0; i < slots.Length; i++)
-                AddControl(slots[i]);
-        }
-
-        internal static LayerUI GetNewLayer()
-        {
-            return new LayerUI(new AccessorySlots(), "Avalon:AccessorySlots");
+                slots[i].UpdateAndDraw(sb);
         }
     }
 }
