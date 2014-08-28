@@ -1,0 +1,37 @@
+﻿{
+    "code": "Items.Weapons.Flails.HeavensTear",
+    "displayName": "Heaven's Tear",
+    "size": [ 32, 32 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 50,
+    "useTime": 50,
+    "maxStack": 1,
+    "damage": 59,
+    "knockback": 9,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 4,
+    "shootSpeed": 16,
+    "shoot": "Avalon:Heaven Ball",
+    "tooltip": "'Heaven splits with each swing.'",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 5, 0, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Avalon:Cobalt Flail": 1,
+                "Avalon:Mythril Flail": 1,
+                "Avalon:Adamantite Flail": 1,
+                "Avalon:Soul of Fright": 1
+            },
+            "tiles": [
+                "Mythril or Orichalcum Anvil"
+            ],
+            "creates": 1
+        }
+    ]
+}

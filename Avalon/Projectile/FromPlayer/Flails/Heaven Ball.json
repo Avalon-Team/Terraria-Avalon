@@ -1,0 +1,13 @@
+﻿{
+    "code": "Projectiles.FromPlayer.Flails.HeavenBall",
+    "displayName": "Heaven Ball",
+    "size": [ 34, 34 ],
+    "aiStyle": 15,
+    "scale": 0.8,
+    "penetrate": -1,
+    "timeLeft": 3600,
+    "friendly": true,
+    "hostile": false,
+    "tileCollide": true,
+    "melee": true
+}

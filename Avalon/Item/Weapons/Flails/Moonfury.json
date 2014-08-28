@@ -1,0 +1,36 @@
+﻿{
+    "code": "Items.Weapons.Flails.Moonfury",
+    "displayName": "Moonfury",
+    "size": [ 32, 32 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 50,
+    "useTime": 50,
+    "maxStack": 1,
+    "damage": 41,
+    "knockback": 8,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 4,
+    "shootSpeed": 16,
+    "shoot": "Avalon:Moonfury Ball",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 5, 0, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Ball O' Hurt": 1,
+                "Avalon:Sporalash": 1,
+                "Sunfury": 1,
+                "Blue Moon": 1
+            },
+            "tiles": [
+                "Demon Altar"
+            ],
+            "creates": 1
+        }
+    ]
+}

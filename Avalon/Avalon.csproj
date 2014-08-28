@@ -75,10 +75,15 @@
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="API\Items\Attributes.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
-    <Compile Include="Item\Materials\Soul of Plight.cs" />
+    <Compile Include="Item\Materials\Souls\Soul.cs" />
+    <Compile Include="Item\Weapons\Flails\Mythril Flail.cs" />
+    <Compile Include="Item\Weapons\Flails\Heaven%27s Tear.cs" />
+    <Compile Include="Item\Weapons\Flails\Eclipse%27s Waning.cs" />
     <Compile Include="Item\Weapons\Flails\Cobalt Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Adamantite Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Berserker Nightmare.cs" />
+    <Compile Include="Item\Weapons\Flails\Moonfury.cs" />
+    <Compile Include="Item\Weapons\Flails\Sporalash.cs" />
     <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Caesium Flail.cs" />
     <Compile Include="MCTImport\Content\ObjectLoader.cs" />
@@ -88,6 +93,10 @@
     <Compile Include="Mod.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="MWorld.cs" />
+    <Compile Include="Projectile\FromPlayer\Flails\Heaven Ball.cs" />
+    <Compile Include="Projectile\FromPlayer\Flails\Sporalash Ball.cs" />
+    <Compile Include="Projectile\FromPlayer\Flails\Moonfury Ball.cs" />
+    <Compile Include="Projectile\FromPlayer\Flails\Eclipse Ball.cs" />
     <Compile Include="Projectile\FromPlayer\Flails\Cursed Ball.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tile\Crafting Stations\Hallowed Altar.cs" />
@@ -97,26 +106,49 @@
     <Content Include="Item\Crafting Stations\Berserker Anvil.png" />
     <Content Include="Item\Crafting Stations\Caesium Forge.json" />
     <Content Include="Item\Crafting Stations\Hallowed Altar.png" />
+    <Content Include="Item\Crafting Stations\Resistant Work Bench.png" />
     <Content Include="Item\Materials\Berserker\Berserker Bar.png" />
     <Content Include="Item\Materials\Berserker\Berserker Ore.png" />
+    <Content Include="Item\Materials\Corrupted\Corrupted Bar.png" />
+    <Content Include="Item\Materials\Corrupted\Corrupted Ore.png" />
     <Content Include="Item\Materials\Hallowstone Block.png" />
-    <Content Include="Item\Materials\Soul of Plight.png" />
+    <Content Include="Item\Materials\Illegal Weapon Instructions.png" />
+    <Content Include="Item\Materials\Jungle\Jungle Ore.png" />
+    <Content Include="Item\Materials\Jungle\Jungle Shard.png" />
+    <Content Include="Item\Materials\Jungle\Jungle Bar.png" />
+    <Content Include="Item\Materials\Resistant Wood.png" />
+    <Content Include="Item\Materials\Souls\Soul of Blight.png" />
+    <Content Include="Item\Materials\Souls\Soul of Plight.png" />
     <Content Include="Item\Weapons\Flails\Berserker Nightmare.png" />
     <Content Include="Item\Weapons\Flails\Caesium Flail.json" />
     <Content Include="Item\Weapons\Flails\Cobalt Flail.png" />
+    <Content Include="Item\Weapons\Flails\Eclipse%27s Waning.png" />
+    <Content Include="Item\Weapons\Flails\Heaven%27s Tear.png" />
+    <Content Include="Item\Weapons\Flails\Moonfury.png" />
+    <Content Include="Item\Weapons\Flails\Mythril Flail.png" />
     <Content Include="Item\Weapons\Flails\Silver Flail.png" />
     <Content Include="Item\Materials\Caesium\Caesium Bar.json" />
     <Content Include="Item\Materials\Caesium\Caesium Ore.json" />
     <Content Include="Item\Materials\Coal.json" />
     <Content Include="Item\Materials\Steel\Steel Bar.json" />
     <Content Include="Item\Materials\Steel\Steel Chain.json" />
+    <Content Include="Item\Weapons\Flails\Sporalash.png" />
     <Content Include="Projectile\FromPlayer\Flails\Berserker Sphere.png" />
     <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Eclipse Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Heaven Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Moonfury Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Mythril Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Silver Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Sporalash Ball.png" />
     <Content Include="Tile\Blocks\Hallowstone Block.png" />
+    <Content Include="Tile\Blocks\Resistant Wood.png" />
     <Content Include="Tile\Crafting Stations\Berserker Anvil.png" />
+    <Content Include="Tile\Crafting Stations\Resistant Work Bench.png" />
     <Content Include="Tile\Ores\Berserker Ore.png" />
     <Content Include="Tile\Crafting Stations\Hallowed Altar.png" />
+    <Content Include="Tile\Ores\Corrupted Ore.png" />
+    <Content Include="Tile\Ores\Jungle Ore.png" />
     <EmbeddedResource Include="ModInfo.json" />
     <Content Include="Projectile\FromPlayer\Flails\Adamantite Ball.json" />
     <Content Include="Projectile\FromPlayer\Flails\Cursed Ball.json" />
@@ -204,7 +236,7 @@
     <Content Include="Tile\Blocks\Hallowstone Block.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Soul of Plight.json" />
+    <Content Include="Item\Materials\Souls\Soul of Plight.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tile\Crafting Stations\Hallowed Altar.json" />
@@ -220,6 +252,75 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Eclipse%27s Waning.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Eclipse Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Moonfury.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Moonfury Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Heaven%27s Tear.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Heaven Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Mythril Flail.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Mythril Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Illegal Weapon Instructions.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Souls\Soul of Blight.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Corrupted\Corrupted Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Corrupted\Corrupted Bar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Ores\Corrupted Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Crafting Stations\Resistant Work Bench.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Crafting Stations\Resistant Work Bench.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Resistant Wood.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Blocks\Resistant Wood.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Sporalash.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Sporalash Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Jungle\Jungle Shard.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Jungle\Jungle Bar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Jungle\Jungle Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Ores\Jungle Ore.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

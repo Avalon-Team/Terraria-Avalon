@@ -4,19 +4,19 @@ using System.Linq;
 using Terraria;
 using TAPI;
 
-namespace Avalon.Items.Materials
+namespace Avalon.Items.Materials.Souls
 {
     /// <summary>
-    /// The Soul of Plight.
+    /// A soul.
     /// </summary>
-    public sealed class SoulOfPlight : ModItem
+    public class Soul : ModItem
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="SoulOfPlight" /> class.
+        /// Creates a new instance of the <see cref="Soul" /> class.
         /// </summary>
         /// <param name="base">The mod that owns this item.</param>
         /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public SoulOfPlight(ModBase @base, Item i)
+        public Soul(ModBase @base, Item i)
             : base(@base, i)
         {
 

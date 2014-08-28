@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework;
 using Terraria;
 using TAPI;
 using Avalon.API.Items;
@@ -8,17 +9,17 @@ using Avalon.API.Items;
 namespace Avalon.Items.Weapons.Flails
 {
     /// <summary>
-    /// The Cobalt Flail
+    /// The Heaven's Tear.
     /// </summary>
-    [ChainTexture("Cobalt Chain.png", ReplaceFlailChain = true)]
-    public sealed class CobaltFlail : ModItem
+    [ChainTexture("Heaven Chain.png", ReplaceFlailChain = true)]
+    public sealed class HeavensTear : ModItem
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="CobaltFlail" /> class.
+        /// Creates a new instance of the <see cref="HeavensTear" /> class.
         /// </summary>
         /// <param name="base">The mod that owns this item.</param>
         /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public CobaltFlail(ModBase @base, Item i)
+        public HeavensTear(ModBase @base, Item i)
             : base(@base, i)
         {
 

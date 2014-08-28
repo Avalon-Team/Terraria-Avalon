@@ -1,0 +1,19 @@
+﻿{
+    "displayName": "Jungle Bar",
+    "size": [ 16, 16 ],
+    "maxStack": 999,
+    "rare": 4,
+    "value": [ 0, 0, 45, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Avalon:Jungle Ore": 3
+            },
+            "tiles": [
+                "Furnace"
+            ],
+            "creates": 1
+        }
+    ]
+}

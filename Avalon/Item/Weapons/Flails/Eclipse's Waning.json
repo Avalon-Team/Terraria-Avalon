@@ -1,0 +1,38 @@
+﻿{
+    "code": "Items.Weapons.Flails.EclipsesWaning",
+    "displayName": "Eclipse's Waning",
+    "size": [ 32, 32 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 38,
+    "useTime": 38,
+    "maxStack": 1,
+    "damage": 67,
+    "knockback": 7,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 6,
+    "shootSpeed": 16,
+    "shoot": "Avalon:Eclipse Ball",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 65, 0, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Avalon:Moonfury": 1,
+                "Avalon:Heaven's Tear": 1,
+                "Avalon:Illegal Weapon Instructions": 1,
+                "Avalon:Soul of Blight": 50,
+                "Avalon:Corrupted Bar": 10,
+                "Hallowed Bar": 10
+            },
+            "tiles": [
+                "Hallowed Altar"
+            ],
+            "creates": 1
+        }
+    ]
+}

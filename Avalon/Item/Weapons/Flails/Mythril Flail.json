@@ -1,0 +1,35 @@
+﻿{
+    "code": "Items.Weapons.Flails.MythrilFlail",
+    "displayName": "Mythril Flail",
+
+    "size": [ 32, 32 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 45,
+    "useTime": 45,
+    "maxStack": 1,
+    "damage": 42,
+    "knockback": 6,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 4,
+    "shootSpeed": 12,
+    "shoot": "Avalon:Mythril Ball",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 19, 40, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "g:HMTier2Bar": 15,
+                "Avalon:Steel Chain": 2
+            },
+            "tiles": [
+                "Mythril or Orichalcum Anvil"
+            ],
+            "creates": 1
+        }
+    ]
+}

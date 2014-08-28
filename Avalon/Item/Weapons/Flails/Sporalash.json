@@ -1,0 +1,36 @@
+﻿{
+    "code": "Items.Weapons.Flails.Sporalash",
+    "displayName": "Sporalash",
+    "size": [ 32, 32 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 50,
+    "useTime": 50,
+    "maxStack": 1,
+    "damage": 28,
+    "knockback": 7,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 3,
+    "shootSpeed": 16,
+    "shoot": "Avalon:Sporalash Ball",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 5, 0, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Avalon:Jungle Bar": 10,
+                "Avalon:Jungle Shard": 4,
+                "Jungle Spores": 15,
+                "Stinger": 10
+            },
+            "tiles": [
+                "Anvil"
+            ],
+            "creates": 1
+        }
+    ]
+}
