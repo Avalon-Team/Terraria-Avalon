@@ -8,5 +8,6 @@
     "createTile": "Avalon:Coal",
     "consumable": true,
     "autoReuse": true,
+    "useTurn": true,
     "value": [ 0, 0, 15, 0 ]
 }

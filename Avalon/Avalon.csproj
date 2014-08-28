@@ -76,6 +76,8 @@
     <Compile Include="API\Items\Attributes.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
     <Compile Include="Item\Flails\Adamantite Flail.cs" />
+    <Compile Include="Item\Flails\Silver Flail.cs" />
+    <Compile Include="Item\Flails\Caesium Flail.cs" />
     <Compile Include="MCTImport\Content\ObjectLoader.cs" />
     <Compile Include="MCTImport\Invasion.cs" />
     <Compile Include="MCTImport\Net\NetHelper.cs" />
@@ -83,21 +85,39 @@
     <Compile Include="Mod.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="MWorld.cs" />
+    <Compile Include="Projectile\Flails\Cursed Ball.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Item\Materials\Coal.json" />
-    <None Include="Item\Materials\Steel Bar.json" />
-    <None Include="Item\Materials\Steel Chain.json" />
+    <Content Include="Item\Crafting Stations\Adamantite Anvil.json" />
+    <Content Include="Item\Crafting Stations\Caesium Forge.json" />
+    <Content Include="Item\Flails\Caesium Flail.json" />
+    <Content Include="Item\Flails\Silver Flail.png" />
+    <Content Include="Item\Materials\Caesium Bar.json" />
+    <Content Include="Item\Materials\Caesium Ore.json" />
+    <Content Include="Item\Materials\Coal.json" />
+    <Content Include="Item\Materials\Steel Bar.json" />
+    <Content Include="Item\Materials\Steel Chain.json" />
+    <Content Include="Projectile\Flails\Silver Ball.png" />
     <EmbeddedResource Include="ModInfo.json" />
-    <None Include="Projectile\Flails\Adamantite Ball.json" />
-    <None Include="Tile\Ores\Coal.json" />
+    <Content Include="Projectile\Flails\Adamantite Ball.json" />
+    <Content Include="Projectile\Flails\Cursed Ball.json" />
+    <Content Include="Tile\Crafting Stations\Adamantite Anvil.json" />
+    <Content Include="Tile\Crafting Stations\Caesium Forge.json" />
+    <Content Include="Tile\Ores\Caesium Ore.json" />
+    <Content Include="Tile\Ores\Coal.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Item\Crafting Stations\Adamantite Anvil.png" />
+    <Content Include="Item\Crafting Stations\Caesium Forge.png" />
+    <Content Include="Item\Flails\Caesium Flail.png" />
+    <Content Include="Item\Materials\Caesium Bar.png" />
+    <Content Include="Item\Materials\Caesium Ore.png" />
     <Content Include="Item\Materials\Coal.png" />
     <Content Include="Item\Materials\Steel Bar.png" />
     <Content Include="Item\Materials\Steel Chain.png" />
     <Content Include="Projectile\Flails\Adamantite Ball.png" />
+    <Content Include="Projectile\Flails\Cursed Ball.png" />
     <Content Include="Resources\Chains\Adamantite Chain.png" />
     <Content Include="Resources\Chains\Berserker Chain.png" />
     <Content Include="Resources\Chains\Blue Moon Chain.png" />
@@ -121,6 +141,9 @@
     <Content Include="Resources\Misc\MermanHead.png" />
     <Content Include="Resources\Misc\MermanLegs.png" />
     <Content Include="Resources\Wings\Golden Wings.png" />
+    <Content Include="Tile\Crafting Stations\Adamantite Anvil.png" />
+    <Content Include="Tile\Crafting Stations\Caesium Forge.png" />
+    <Content Include="Tile\Ores\Caesium Ore.png" />
     <Content Include="Tile\Ores\Coal.png" />
   </ItemGroup>
   <ItemGroup>
@@ -129,7 +152,12 @@
   <ItemGroup>
     <Content Include="Item\Flails\Adamantite Flail.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Item\Flails\Silver Flail.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\Flails\Silver Ball.json" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>rem Build the mod. The directory must be the one where the ModInfo.json file resides in. The directory to the csproj is given in the ModInfo.json file.

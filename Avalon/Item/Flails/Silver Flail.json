@@ -1,0 +1,33 @@
+﻿{
+    "code": "Items.Flails.SilverFlail",
+    "displayName": "Silver Flail",
+    "size": [ 32, 32 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 50,
+    "useTime": 50,
+    "maxStack": 1,
+    "damage": 10,
+    "knockback": 6,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 4,
+    "shootSpeed": 16,
+    "shoot": "Avalon:Silver Ball",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 5, 40, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "g:Tier2Bar": 10
+            },
+            "tiles": [
+                "Anvil"
+            ],
+            "creates": 1
+        }
+    ]
+}
