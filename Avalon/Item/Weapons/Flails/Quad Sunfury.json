@@ -1,0 +1,36 @@
+﻿{
+    "code": "Items.Weapons.Flails.QuadSunfury",
+    "displayName": "Quad Sunfury",
+
+    "size": [ 52, 48 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 61,
+    "useTime": 61,
+    "maxStack": 1,
+    "damage": 45,
+    "knockback": 8,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 5,
+    "shootSpeed": 12,
+    "tooltip": "Press the right mouse button to change mode.",
+    "shoot": "Avalon:Quad Ball",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 19, 40, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Sunfury": 4,
+                "Avalon:Magmatic bar": 20
+            },
+            "tiles": [
+                "Adamantite Anvil"
+            ],
+            "creates": 1
+        }
+    ]
+}

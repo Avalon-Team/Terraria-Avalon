@@ -16,7 +16,7 @@ namespace Avalon.API.Items
         public string TextureName
         {
             get;
-            set;
+            private set;
         }
         /// <summary>
         /// Gets or sets wether it should repace chain 3 (flail) instead of chain 1 (grappling hook).

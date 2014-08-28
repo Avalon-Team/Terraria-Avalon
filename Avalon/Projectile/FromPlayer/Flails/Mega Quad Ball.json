@@ -1,0 +1,12 @@
+﻿{
+    "displayName": "MegaQuad Ball",
+    "size": [ 34, 34 ],
+    "aiStyle": 15,
+    "scale": 1.8,
+    "penetrate": -1,
+    "timeLeft": 3600,
+    "friendly": true,
+    "hostile": false,
+    "tileCollide": true,
+    "melee": true
+}

@@ -84,6 +84,7 @@
     <Compile Include="Item\Weapons\Flails\Berserker Nightmare.cs" />
     <Compile Include="Item\Weapons\Flails\Moonfury.cs" />
     <Compile Include="Item\Weapons\Flails\Meteor Masher.cs" />
+    <Compile Include="Item\Weapons\Flails\Quad Sunfury.cs" />
     <Compile Include="Item\Weapons\Flails\Sporalash.cs" />
     <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Caesium Flail.cs" />
@@ -117,6 +118,8 @@
     <Content Include="Item\Materials\Jungle\Jungle Ore.png" />
     <Content Include="Item\Materials\Jungle\Jungle Shard.png" />
     <Content Include="Item\Materials\Jungle\Jungle Bar.png" />
+    <Content Include="Item\Materials\Magmatic\Magmatic Bar.png" />
+    <Content Include="Item\Materials\Magmatic\Magmatic Ore.png" />
     <Content Include="Item\Materials\Resistant Wood.png" />
     <Content Include="Item\Materials\Souls\Soul of Blight.png" />
     <Content Include="Item\Materials\Souls\Soul of Plight.png" />
@@ -128,6 +131,7 @@
     <Content Include="Item\Weapons\Flails\Meteor Masher.png" />
     <Content Include="Item\Weapons\Flails\Moonfury.png" />
     <Content Include="Item\Weapons\Flails\Mythril Flail.png" />
+    <Content Include="Item\Weapons\Flails\Quad Sunfury.png" />
     <Content Include="Item\Weapons\Flails\Silver Flail.png" />
     <Content Include="Item\Materials\Caesium\Caesium Bar.json" />
     <Content Include="Item\Materials\Caesium\Caesium Ore.json" />
@@ -139,9 +143,11 @@
     <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Eclipse Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Heaven Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Mega Quad Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Meteor Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Moonfury Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Mythril Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Quad Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Silver Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Sporalash Ball.png" />
     <Content Include="Tile\Blocks\Hallowstone Block.png" />
@@ -152,6 +158,7 @@
     <Content Include="Tile\Crafting Stations\Hallowed Altar.png" />
     <Content Include="Tile\Ores\Corrupted Ore.png" />
     <Content Include="Tile\Ores\Jungle Ore.png" />
+    <Content Include="Tile\Ores\Magmatic Ore.png" />
     <EmbeddedResource Include="ModInfo.json" />
     <Content Include="Projectile\FromPlayer\Flails\Adamantite Ball.json" />
     <Content Include="Projectile\FromPlayer\Flails\Cursed Ball.json" />
@@ -330,6 +337,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Projectile\FromPlayer\Flails\Meteor Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Quad Sunfury.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Magmatic\Magmatic Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Magmatic\Magmatic Bar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Ores\Magmatic Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Quad Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Mega Quad Ball.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
