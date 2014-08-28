@@ -83,6 +83,7 @@
     <Compile Include="Item\Weapons\Flails\Adamantite Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Berserker Nightmare.cs" />
     <Compile Include="Item\Weapons\Flails\Moonfury.cs" />
+    <Compile Include="Item\Weapons\Flails\Meteor Masher.cs" />
     <Compile Include="Item\Weapons\Flails\Sporalash.cs" />
     <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Caesium Flail.cs" />
@@ -124,6 +125,7 @@
     <Content Include="Item\Weapons\Flails\Cobalt Flail.png" />
     <Content Include="Item\Weapons\Flails\Eclipse%27s Waning.png" />
     <Content Include="Item\Weapons\Flails\Heaven%27s Tear.png" />
+    <Content Include="Item\Weapons\Flails\Meteor Masher.png" />
     <Content Include="Item\Weapons\Flails\Moonfury.png" />
     <Content Include="Item\Weapons\Flails\Mythril Flail.png" />
     <Content Include="Item\Weapons\Flails\Silver Flail.png" />
@@ -137,6 +139,7 @@
     <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Eclipse Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Heaven Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Meteor Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Moonfury Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Mythril Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Silver Ball.png" />
@@ -321,6 +324,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tile\Ores\Jungle Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Meteor Masher.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Meteor Ball.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

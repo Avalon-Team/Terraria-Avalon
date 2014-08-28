@@ -1,0 +1,33 @@
+﻿{
+    "code": "Items.Weapons.Flails.MeteorMasher",
+    "displayName": "Meteor Masher",
+    "size": [ 32, 32 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 44,
+    "useTime": 44,
+    "maxStack": 1,
+    "damage": 25,
+    "knockback": 7,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 2,
+    "shootSpeed": 12,
+    "shoot": "Avalon:Meteor Ball",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 2, 70, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Meteorite Bar": 35
+            },
+            "tiles": [
+                "Anvil"
+            ],
+            "creates": 1
+        }
+    ]
+}
