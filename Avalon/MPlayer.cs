@@ -77,7 +77,7 @@ namespace Avalon
             U_SpawnBosses();
             U_ExtraAccs();
             U_LavaMerman();
-            U_TileInteract();
+            //U_TileInteract();
         }
         #region OnUpdate submethods
         void U_SetChainTexture()
@@ -86,26 +86,41 @@ namespace Avalon
             if (player.itemAnimation < 0 && !player.delayUseItem) // not using it
                 return;
 
-            object[] attr = sel.subClass.GetType().GetCustomAttributes(typeof(ChainTextureAttribute), true);
+            object attr = null;
 
-            if (attr == null || attr.Length == 0)
+            for (int i = 0; i < sel.allSubClasses.Length; i++)
+            {
+                object[] attrArr = sel.allSubClasses[i].GetType().GetCustomAttributes(typeof(ChainTextureAttribute), true);
+
+                if (attrArr.Length > 0)
+                    attr = attrArr[0]; // there should be only one
+            }
+
+            if (attr == null)
             {
                 // reset
-                if (Main.chainTexture != modBase.textures["Chains/Grapple Chain"])
-                    Main.chainTexture = modBase.textures["Chains/Grapple Chain"];
+                if (Main.chainTexture != modBase.textures["Resources/Chains/Grapple Chain.png"])
+                    Main.chainTexture  = modBase.textures["Resources/Chains/Grapple Chain.png"];
 
-                if (Main.chain3Texture != modBase.textures["Chains/Blue Moon Chain"])
-                    Main.chain3Texture = modBase.textures["Chains/Blue Moon Chain"];
+                if (Main.chain3Texture != modBase.textures["Resources/Chains/Blue Moon Chain.png"])
+                    Main.chain3Texture  = modBase.textures["Resources/Chains/Blue Moon Chain.png"];
             }
             else
             {
-                ChainTextureAttribute cta = (ChainTextureAttribute)attr[0]; // there should be only one
+                ChainTextureAttribute cta = (ChainTextureAttribute)attr;
                 ModBase @base = Mods.modBases.FirstOrDefault(mb => mb.modName == cta.ModInternalName) ?? modBase; // LINQ++
 
-                if (!@base.textures.ContainsKey(cta.TextureName))
+                string path = cta.TextureName;
+
+                if (!path.StartsWith("/"))
+                    path = "Resources/Chains/" + cta.TextureName;
+                else
+                    path = path.Substring(1); // remove the leading '/'
+
+                if (!@base.textures.ContainsKey(path))
                     return; // hmmm....
 
-                Texture2D tex = @base.textures["Chains/" + cta.TextureName];
+                Texture2D tex = @base.textures[path];
 
                 if (cta.ReplaceFlailChain)
                     Main.chain3Texture = tex;
@@ -341,10 +356,14 @@ namespace Avalon
             if (LavaMerman)
                 player.fireWalk = player.lavaImmune = player.gills = player.accFlipper = player.merman = true;
 
-            Main.armorHeadTexture[39] = LavaMerman ? modBase.textures["Other/LavaMermanHead"] : modBase.textures["Other/MermanHead"];
-            Main.armorArmTexture [22] = LavaMerman ? modBase.textures["Other/LavaMermanArm" ] : modBase.textures["Other/MermanArm" ];
-            Main.armorBodyTexture[22] = LavaMerman ? modBase.textures["Other/LavaMermanBody"] : modBase.textures["Other/MermanBody"];
-            Main.armorLegTexture [21] = LavaMerman ? modBase.textures["Other/LavaMermanLegs"] : modBase.textures["Other/MermanLegs"];
+            Main.armorHeadTexture[39] = LavaMerman
+                ? modBase.textures["Resources/Misc/LavaMermanHead.png"] : modBase.textures["Resources/Misc/MermanHead.png"];
+            Main.armorArmTexture [22] = LavaMerman
+                ? modBase.textures["Resources/Misc/LavaMermanArm.png" ] : modBase.textures["Resources/Misc/MermanArm.png" ];
+            Main.armorBodyTexture[22] = LavaMerman
+                ? modBase.textures["Resources/Misc/LavaMermanBody.png"] : modBase.textures["Resources/Misc/MermanBody.png"];
+            Main.armorLegTexture [21] = LavaMerman
+                ? modBase.textures["Resources/Misc/LavaMermanLegs.png"] : modBase.textures["Resources/Misc/MermanLegs.png"];
         }
         void U_Chests()
         {
@@ -370,9 +389,11 @@ namespace Avalon
         }
         void U_TileInteract()
         {
-            TileHurtPlayer(player, TileDef.type["Avalon:Magmatic Ore"], 20, CheckHurtMagma, " got burned..."           );
-            TileHurtPlayer(player, TileDef.type["Avalon:Dark Matter" ], 30, null,           " got burned..."           );
-            TileHurtPlayer(player, TileDef.type["Avalon:Black Sand"  ], 20, null,           " got stuck in sand...", -1);
+            // to future me/reader: method call is uncommented (in OnUpdate) for the sake of performance.
+
+            TileHurtPlayer(player, TileDef.type["Avalon:Magmatic Ore"], 20, CheckHurtMagma, " got burned...");
+            TileHurtPlayer(player, TileDef.type["Avalon:Dark Matter"], 30, null, " got burned...");
+            TileHurtPlayer(player, TileDef.type["Avalon:Black Sand"], 20, null, " got stuck in sand...", -1);
 
             if (TouchesTile(player, 0, new[] { (int)TileDef.type["Avalon:Ice Block"] }))
             {
@@ -389,8 +410,11 @@ namespace Avalon
         {
             base.Save(bb);
 
-            for (int i = 0; i < accessories.Length; i++)
-                bb.Write(accessories[i]);
+            bb.Write(Main.gameMenu);
+
+            if (!Main.gameMenu)
+                for (int i = 0; i < accessories.Length; i++)
+                    bb.Write(accessories[i]);
         }
         /// <summary>
         /// Loads data from the player file.
@@ -400,8 +424,9 @@ namespace Avalon
         {
             base.Load(bb);
 
-            for (int i = 0; i < accessories.Length; i++)
-                accessories[i] = bb.ReadItem();
+            if (!bb.ReadBool())
+                for (int i = 0; i < accessories.Length; i++)
+                    accessories[i] = bb.ReadItem();
         }
 
 #pragma warning disable 1591

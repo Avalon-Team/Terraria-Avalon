@@ -11,12 +11,12 @@ namespace Avalon.API.Items
     public sealed class ChainTextureAttribute : Attribute
     {
         /// <summary>
-        /// Gets or sets the texture name of the chain texture (in the './Chain/' folder)
+        /// Gets or sets the texture name of the chain texture (in the 'Resources/Chain/' folder), not including the file extension.
         /// </summary>
         public string TextureName
         {
             get;
-            private set;
+            set;
         }
         /// <summary>
         /// Gets or sets wether it should repace chain 3 (flail) instead of chain 1 (grappling hook).
@@ -24,7 +24,7 @@ namespace Avalon.API.Items
         public bool ReplaceFlailChain
         {
             get;
-            private set;
+            set;
         }
         /// <summary>
         /// Gets or sets the name of the mod base that contains the texture. Default is 'Avalon'.
@@ -32,7 +32,7 @@ namespace Avalon.API.Items
         public string ModInternalName
         {
             get;
-            private set;
+            set;
         }
 
         /// <summary>

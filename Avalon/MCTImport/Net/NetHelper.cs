@@ -35,7 +35,7 @@ namespace PoroCYon.MCT.Net
         {
             SendModData(@base, Convert.ToInt32(message), remoteClient, ignoreClient, toSend);
         }
-        internal static unsafe void SendModData(ModBase @base, int message, int remoteClient, int ignoreClient, params object[] toSend)
+        internal static void SendModData(ModBase @base, int message, int remoteClient, int ignoreClient, params object[] toSend)
         {
             if (Main.netMode == 0)
                 return;
@@ -129,7 +129,7 @@ namespace PoroCYon.MCT.Net
 
                         bb.Write(size);
                         for (IntPtr ptr = offset; ptr.ToInt64() < offset.ToInt64() + size; ptr += 1)
-                            bb.Write(*(byte*)ptr.ToPointer());
+                            bb.Write(Marshal.ReadByte(ptr));
 
                         argHandle.Free(); // HELLO.
                     }
@@ -206,7 +206,7 @@ namespace PoroCYon.MCT.Net
             }
         }
 
-        internal static unsafe object ReadObject(Type t, BinBuffer bb)
+        internal static object ReadObject(Type t, BinBuffer bb)
         {
             object ret = null;
 
@@ -270,11 +270,17 @@ namespace PoroCYon.MCT.Net
                 int size = bb.ReadInt();
                 byte[] data = bb.ReadBytes(size);
 
-                // ret = *(T*)data, but with objects
-                fixed (byte* dataPtr = data)
-                {
-                    ret = Marshal.PtrToStructure(new IntPtr(dataPtr), t);
-                }
+                // void* src = malloc(size);
+                IntPtr src = Marshal.AllocHGlobal(size);
+
+                // memcpy
+                Marshal.Copy(data, 0, src, size);
+
+                // ret = *src;
+                ret = Marshal.PtrToStructure(src, t);
+
+                // free(src);
+                Marshal.FreeHGlobal(src);
             }
             #endregion
 

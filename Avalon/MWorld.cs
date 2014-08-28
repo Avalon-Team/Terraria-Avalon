@@ -113,11 +113,21 @@ namespace Avalon
             CatarystDownedCount = EverIceCount = ArmageddonCount = HallowAltarsBroken = 0;
             Mod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
 
+            accessories = new Item[Main.netMode == 0 ? 1 : Main.numPlayers][];
+
+            for (int i = 0; i < accessories.Length; i++)
+            {
+                accessories[i] = new Item[Mod.ExtraSlots];
+
+                for (int j = 0; j < accessories[i].Length; j++)
+                    accessories[i][j] = new Item();
+            }
+            
             // insert all graphical/UI-related stuff AFTER this check!
             if (Main.dedServ)
                 return;
 
-            Texture2D gWings = modBase.textures["Wings/Golden Wings"];
+            Texture2D gWings = modBase.textures["Resources/Wings/Golden Wings.png"];
             foreach (Texture2D t in Main.wingsTexture.Values)
                 if (gWings == t)
                 {

@@ -8,5 +8,7 @@
     "includePDB":  true,
 
     "MSBuild": true,
-    "msBuildFile":  "Avalon\\Avalon.csproj"
+    "msBuildFile":  "Avalon.csproj",
+
+    "outputName": "Avalon"
 }

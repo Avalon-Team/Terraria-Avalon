@@ -75,6 +75,7 @@
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="API\Items\Attributes.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
+    <Compile Include="Item\Flails\Adamantite Flail.cs" />
     <Compile Include="MCTImport\Content\ObjectLoader.cs" />
     <Compile Include="MCTImport\Invasion.cs" />
     <Compile Include="MCTImport\Net\NetHelper.cs" />
@@ -85,14 +86,54 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CHAINS_HERE.txt" />
-    <None Include="Resources\MERMAN_TEXTURES_HERE.txt" />
-    <None Include="Resources\WING_TEXTURES_HERE.txt" />
+    <None Include="Item\Materials\Coal.json" />
+    <None Include="Item\Materials\Steel Bar.json" />
+    <None Include="Item\Materials\Steel Chain.json" />
+    <EmbeddedResource Include="ModInfo.json" />
+    <None Include="Projectile\Flails\Adamantite Ball.json" />
+    <None Include="Tile\Ores\Coal.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Coal.png" />
+    <Content Include="Item\Materials\Steel Bar.png" />
+    <Content Include="Item\Materials\Steel Chain.png" />
+    <Content Include="Projectile\Flails\Adamantite Ball.png" />
+    <Content Include="Resources\Chains\Adamantite Chain.png" />
+    <Content Include="Resources\Chains\Berserker Chain.png" />
+    <Content Include="Resources\Chains\Blue Moon Chain.png" />
+    <Content Include="Resources\Chains\Cobalt Chain.png" />
+    <Content Include="Resources\Chains\Cursed Chain.png" />
+    <Content Include="Resources\Chains\Eclipse Chain.png" />
+    <Content Include="Resources\Chains\Grapple Chain.png" />
+    <Content Include="Resources\Chains\Heaven Chain.png" />
+    <Content Include="Resources\Chains\Meteor Chain.png" />
+    <Content Include="Resources\Chains\Moonfury Chain.png" />
+    <Content Include="Resources\Chains\Mythril Chain.png" />
+    <Content Include="Resources\Chains\Quad Whip Chain.png" />
+    <Content Include="Resources\Chains\Silver Chain.png" />
+    <Content Include="Resources\Chains\Sporalash Chain.png" />
+    <Content Include="Resources\Misc\LavaMermanArm.png" />
+    <Content Include="Resources\Misc\LavaMermanBody.png" />
+    <Content Include="Resources\Misc\LavaMermanHead.png" />
+    <Content Include="Resources\Misc\LavaMermanLegs.png" />
+    <Content Include="Resources\Misc\MermanArm.png" />
+    <Content Include="Resources\Misc\MermanBody.png" />
+    <Content Include="Resources\Misc\MermanHead.png" />
+    <Content Include="Resources\Misc\MermanLegs.png" />
+    <Content Include="Resources\Wings\Golden Wings.png" />
+    <Content Include="Tile\Ores\Coal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Flails\Adamantite Flail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Flails\Adamantite Flail.json" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>rem Build the mod. The directory must be the one where the ModInfo.json file resides in. The directory to the csproj is given in the ModInfo.json file.
-rem mct compile "$(SolutionDir)"
+mct compile "%25userprofile%25\Dropbox\Avalon\Avalon tAPI Solution\Avalon"
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

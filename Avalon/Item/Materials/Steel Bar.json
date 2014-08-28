@@ -1,0 +1,16 @@
+﻿{
+    "displayName": "Steel Bar",
+    "size": [ 30, 24 ],
+    "maxStack": 999,
+    "value": [ 0, 0, 15, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Avalon:Coal": 2,
+                "Iron Ore": 1
+            },
+            "tiles": [ "Furnace" ]
+        }
+    ]
+}
