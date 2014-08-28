@@ -76,6 +76,7 @@
     <Compile Include="API\Items\Attributes.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
     <Compile Include="Item\Materials\Soul of Plight.cs" />
+    <Compile Include="Item\Weapons\Flails\Cobalt Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Adamantite Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Berserker Nightmare.cs" />
     <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
@@ -102,6 +103,7 @@
     <Content Include="Item\Materials\Soul of Plight.png" />
     <Content Include="Item\Weapons\Flails\Berserker Nightmare.png" />
     <Content Include="Item\Weapons\Flails\Caesium Flail.json" />
+    <Content Include="Item\Weapons\Flails\Cobalt Flail.png" />
     <Content Include="Item\Weapons\Flails\Silver Flail.png" />
     <Content Include="Item\Materials\Caesium\Caesium Bar.json" />
     <Content Include="Item\Materials\Caesium\Caesium Ore.json" />
@@ -109,6 +111,7 @@
     <Content Include="Item\Materials\Steel\Steel Bar.json" />
     <Content Include="Item\Materials\Steel\Steel Chain.json" />
     <Content Include="Projectile\FromPlayer\Flails\Berserker Sphere.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Silver Ball.png" />
     <Content Include="Tile\Blocks\Hallowstone Block.png" />
     <Content Include="Tile\Crafting Stations\Berserker Anvil.png" />
@@ -211,6 +214,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tile\Crafting Stations\Berserker Anvil.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Cobalt Flail.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

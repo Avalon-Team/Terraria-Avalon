@@ -1,33 +1,33 @@
 ﻿{
-    "code": "Items.Weapons.Flails.AdamantiteFlail",
-    "displayName": "Adamantite Flail",
+    "code": "Items.Weapons.Flails.CobaltFlail",
+    "displayName": "Cobalt Flail",
 
     "size": [ 32, 32 ],
     "useStyle": 5,
     "channel": true,
-    "useAnimation": 44,
-    "useTime": 44,
+    "useAnimation": 45,
+    "useTime": 45,
     "maxStack": 1,
-    "damage": 48,
-    "knockback": 8,
+    "damage": 42,
+    "knockback": 6,
     "scale": 1.1,
     "useSound": 1,
     "rare": 4,
     "shootSpeed": 12,
-    "shoot": "Avalon:Adamantite Ball",
+    "shoot": "Avalon:Cobalt Ball",
     "noUseGraphic": true,
     "noMelee": true,
     "melee": true,
-    "value": [ 0, 20, 50, 0 ],
+    "value": [ 0, 15, 50, 0 ],
 
     "recipes": [
         {
             "items": {
-                "g:HMTier3Bar": 20,
+                "g:HMTier1Bar": 15,
                 "Avalon:Steel Chain": 2
             },
             "tiles": [
-                "Mythril or Orichalcum Anvil"
+                "Anvil"
             ],
             "creates": 1
         }
