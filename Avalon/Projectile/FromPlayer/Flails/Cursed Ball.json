@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Projectiles.Flails.CursedBall",
+    "code": "Projectiles.FromPlayer.Flails.CursedBall",
     "displayName": "Cursed Ball",
     "size": [ 34, 34 ],
     "aiStyle": 15,

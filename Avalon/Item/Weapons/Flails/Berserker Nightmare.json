@@ -1,33 +1,32 @@
 ﻿{
-    "code": "Items.Flails.AdamantiteFlail",
-    "displayName": "Adamantite Flail",
-
-    "size": [ 32, 32 ],
+    "code": "Items.Weapons.Flails.BerserkerNightmare",
+    "displayName": "Berserker Nightmare",
+    "size": [ 34, 32 ],
     "useStyle": 5,
     "channel": true,
     "useAnimation": 44,
     "useTime": 44,
     "maxStack": 1,
-    "damage": 48,
+    "damage": 74,
     "knockback": 8,
     "scale": 1.1,
     "useSound": 1,
-    "rare": 4,
-    "shootSpeed": 12,
-    "shoot": "Avalon:Adamantite Ball",
+    "rare": 6,
+    "shootSpeed": 16,
+    "shoot": "Avalon:Berserker Sphere",
     "noUseGraphic": true,
     "noMelee": true,
     "melee": true,
-    "value": [ 0, 20, 50, 0 ],
+    "value": [ 0, 50, 50, 0 ],
 
     "recipes": [
         {
             "items": {
-                "Adamantite Bar": 20,
-                "Avalon:Steel Chain": 2
+                "Avalon:Berserker Bar": 30,
+                "Steel Chain": 1
             },
             "tiles": [
-                "Mythril or Orichalcum Anvil"
+                "Berserker Anvil"
             ],
             "creates": 1
         }

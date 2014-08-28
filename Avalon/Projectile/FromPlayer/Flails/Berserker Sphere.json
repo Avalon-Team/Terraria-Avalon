@@ -1,0 +1,12 @@
+﻿{
+    "displayName": "Berserker Sphere",
+    "aiStyle": 15,
+    "size": [ 34, 34 ],
+    "scale": 0.8,
+    "penetrate": -1,
+    "timeLeft": 5400,
+    "friendly": true,
+    "hostile": false,
+    "tileCollide": true,
+    "melee": true
+}

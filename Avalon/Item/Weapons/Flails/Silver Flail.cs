@@ -5,20 +5,20 @@ using Terraria;
 using TAPI;
 using Avalon.API.Items;
 
-namespace Avalon.Items.Flails
+namespace Avalon.Items.Weapons.Flails
 {
     /// <summary>
-    /// The Adamantite Flail
+    /// The Silver Flail.
     /// </summary>
-    [ChainTexture("Adamantite Chain.png", ReplaceFlailChain = true)] // well this is easy
-    public sealed class AdamantiteFlail : ModItem
+    [ChainTexture("Silver Chain.png", ReplaceFlailChain = true)]
+    public sealed class SilverFlail : ModItem
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="AdamantiteFlail" /> class.
+        /// Creates a new instance of the <see cref="SilverFlail" /> class.
         /// </summary>
         /// <param name="base">The mod that owns this item.</param>
         /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public AdamantiteFlail(ModBase @base, Item i)
+        public SilverFlail(ModBase @base, Item i)
             : base(@base, i)
         {
 

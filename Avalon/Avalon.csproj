@@ -75,9 +75,11 @@
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="API\Items\Attributes.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
-    <Compile Include="Item\Flails\Adamantite Flail.cs" />
-    <Compile Include="Item\Flails\Silver Flail.cs" />
-    <Compile Include="Item\Flails\Caesium Flail.cs" />
+    <Compile Include="Item\Materials\Soul of Plight.cs" />
+    <Compile Include="Item\Weapons\Flails\Adamantite Flail.cs" />
+    <Compile Include="Item\Weapons\Flails\Berserker Nightmare.cs" />
+    <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
+    <Compile Include="Item\Weapons\Flails\Caesium Flail.cs" />
     <Compile Include="MCTImport\Content\ObjectLoader.cs" />
     <Compile Include="MCTImport\Invasion.cs" />
     <Compile Include="MCTImport\Net\NetHelper.cs" />
@@ -85,23 +87,36 @@
     <Compile Include="Mod.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="MWorld.cs" />
-    <Compile Include="Projectile\Flails\Cursed Ball.cs" />
+    <Compile Include="Projectile\FromPlayer\Flails\Cursed Ball.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tile\Crafting Stations\Hallowed Altar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Item\Crafting Stations\Adamantite Anvil.json" />
+    <Content Include="Item\Crafting Stations\Berserker Anvil.png" />
     <Content Include="Item\Crafting Stations\Caesium Forge.json" />
-    <Content Include="Item\Flails\Caesium Flail.json" />
-    <Content Include="Item\Flails\Silver Flail.png" />
-    <Content Include="Item\Materials\Caesium Bar.json" />
-    <Content Include="Item\Materials\Caesium Ore.json" />
+    <Content Include="Item\Crafting Stations\Hallowed Altar.png" />
+    <Content Include="Item\Materials\Berserker\Berserker Bar.png" />
+    <Content Include="Item\Materials\Berserker\Berserker Ore.png" />
+    <Content Include="Item\Materials\Hallowstone Block.png" />
+    <Content Include="Item\Materials\Soul of Plight.png" />
+    <Content Include="Item\Weapons\Flails\Berserker Nightmare.png" />
+    <Content Include="Item\Weapons\Flails\Caesium Flail.json" />
+    <Content Include="Item\Weapons\Flails\Silver Flail.png" />
+    <Content Include="Item\Materials\Caesium\Caesium Bar.json" />
+    <Content Include="Item\Materials\Caesium\Caesium Ore.json" />
     <Content Include="Item\Materials\Coal.json" />
-    <Content Include="Item\Materials\Steel Bar.json" />
-    <Content Include="Item\Materials\Steel Chain.json" />
-    <Content Include="Projectile\Flails\Silver Ball.png" />
+    <Content Include="Item\Materials\Steel\Steel Bar.json" />
+    <Content Include="Item\Materials\Steel\Steel Chain.json" />
+    <Content Include="Projectile\FromPlayer\Flails\Berserker Sphere.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Silver Ball.png" />
+    <Content Include="Tile\Blocks\Hallowstone Block.png" />
+    <Content Include="Tile\Crafting Stations\Berserker Anvil.png" />
+    <Content Include="Tile\Ores\Berserker Ore.png" />
+    <Content Include="Tile\Crafting Stations\Hallowed Altar.png" />
     <EmbeddedResource Include="ModInfo.json" />
-    <Content Include="Projectile\Flails\Adamantite Ball.json" />
-    <Content Include="Projectile\Flails\Cursed Ball.json" />
+    <Content Include="Projectile\FromPlayer\Flails\Adamantite Ball.json" />
+    <Content Include="Projectile\FromPlayer\Flails\Cursed Ball.json" />
     <Content Include="Tile\Crafting Stations\Adamantite Anvil.json" />
     <Content Include="Tile\Crafting Stations\Caesium Forge.json" />
     <Content Include="Tile\Ores\Caesium Ore.json" />
@@ -110,14 +125,14 @@
   <ItemGroup>
     <Content Include="Item\Crafting Stations\Adamantite Anvil.png" />
     <Content Include="Item\Crafting Stations\Caesium Forge.png" />
-    <Content Include="Item\Flails\Caesium Flail.png" />
-    <Content Include="Item\Materials\Caesium Bar.png" />
-    <Content Include="Item\Materials\Caesium Ore.png" />
+    <Content Include="Item\Weapons\Flails\Caesium Flail.png" />
+    <Content Include="Item\Materials\Caesium\Caesium Bar.png" />
+    <Content Include="Item\Materials\Caesium\Caesium Ore.png" />
     <Content Include="Item\Materials\Coal.png" />
-    <Content Include="Item\Materials\Steel Bar.png" />
-    <Content Include="Item\Materials\Steel Chain.png" />
-    <Content Include="Projectile\Flails\Adamantite Ball.png" />
-    <Content Include="Projectile\Flails\Cursed Ball.png" />
+    <Content Include="Item\Materials\Steel\Steel Bar.png" />
+    <Content Include="Item\Materials\Steel\Steel Chain.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Adamantite Ball.png" />
+    <Content Include="Projectile\FromPlayer\Flails\Cursed Ball.png" />
     <Content Include="Resources\Chains\Adamantite Chain.png" />
     <Content Include="Resources\Chains\Berserker Chain.png" />
     <Content Include="Resources\Chains\Blue Moon Chain.png" />
@@ -147,16 +162,55 @@
     <Content Include="Tile\Ores\Coal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Flails\Adamantite Flail.png" />
+    <Content Include="Item\Weapons\Flails\Adamantite Flail.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Flails\Adamantite Flail.json" />
+    <Content Include="Item\Weapons\Flails\Adamantite Flail.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Flails\Silver Flail.json" />
+    <Content Include="Item\Weapons\Flails\Silver Flail.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\Flails\Silver Ball.json" />
+    <Content Include="Projectile\FromPlayer\Flails\Silver Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Weapons\Flails\Berserker Nightmare.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Projectile\FromNPC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projectile\FromPlayer\Flails\Berserker Sphere.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Berserker\Berserker Bar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Berserker\Berserker Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Crafting Stations\Berserker Anvil.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Crafting Stations\Hallowed Altar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Hallowstone Block.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Blocks\Hallowstone Block.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Soul of Plight.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Crafting Stations\Hallowed Altar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Ores\Berserker Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Crafting Stations\Berserker Anvil.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

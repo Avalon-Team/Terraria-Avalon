@@ -1,0 +1,35 @@
+﻿{
+    "code": "Items.Weapons.Flails.CaesiumFlail",
+    "displayName": "Caesium Flail",
+    "size": [ 32, 32 ],
+    "useStyle": 5,
+    "channel": true,
+    "useAnimation": 44,
+    "useTime": 44,
+    "maxStack": 1,
+    "damage": 55,
+    "knockback": 3.5,
+    "scale": 1.1,
+    "useSound": 1,
+    "rare": 4,
+    "shootSpeed": 16,
+    "shoot": "Avalon:Cursed Ball",
+    "noUseGraphic": true,
+    "noMelee": true,
+    "melee": true,
+    "value": [ 0, 5, 40, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "Avalon:Caesium Bar": 30,
+                "Hellstone Bar": 10,
+                "Avalon:Silver Flail": 1
+            },
+            "tiles": [
+                "Adamantite Anvil"
+            ],
+            "creates": 1
+        }
+    ]
+}

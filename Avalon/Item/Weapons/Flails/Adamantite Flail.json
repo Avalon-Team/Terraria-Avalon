@@ -1,33 +1,33 @@
 ﻿{
-    "code": "Items.Flails.CaesiumFlail",
-    "displayName": "Caesium Flail",
+    "code": "Items.Weapons.Flails.AdamantiteFlail",
+    "displayName": "Adamantite Flail",
+
     "size": [ 32, 32 ],
     "useStyle": 5,
     "channel": true,
     "useAnimation": 44,
     "useTime": 44,
     "maxStack": 1,
-    "damage": 55,
-    "knockback": 3.5,
+    "damage": 48,
+    "knockback": 8,
     "scale": 1.1,
     "useSound": 1,
     "rare": 4,
-    "shootSpeed": 16,
-    "shoot": "Avalon:Cursed Ball",
+    "shootSpeed": 12,
+    "shoot": "Avalon:Adamantite Ball",
     "noUseGraphic": true,
     "noMelee": true,
     "melee": true,
-    "value": [ 0, 5, 40, 0 ],
+    "value": [ 0, 20, 50, 0 ],
 
     "recipes": [
         {
             "items": {
-                "Avalon:Caesium Bar": 30,
-                "Hellstone Bar": 10,
-                "Avalon:Silver Flail": 1
+                "Adamantite Bar": 20,
+                "Avalon:Steel Chain": 2
             },
             "tiles": [
-                "Adamantite Anvil"
+                "Mythril or Orichalcum Anvil"
             ],
             "creates": 1
         }

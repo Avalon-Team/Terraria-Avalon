@@ -4,7 +4,7 @@ using System.Linq;
 using Terraria;
 using TAPI;
 
-namespace Avalon.Projectiles.Flails
+namespace Avalon.Projectiles.FromPlayer.Flails
 {
     /// <summary>
     /// The Cursed Ball.

@@ -341,5 +341,10 @@ namespace Avalon
             WorldGen.SquareTileFrame(x, y - 2);
             WorldGen.SquareTileFrame(x, y + 2);
         }
+
+        internal static void SmashHallowAltar(int x, int y)
+        {
+
+        }
     }
 }
