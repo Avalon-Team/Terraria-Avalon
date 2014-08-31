@@ -20,7 +20,11 @@ namespace Avalon
         /// <summary>
         /// Something not really obvious
         /// </summary>
-        SetMusicBox
+        SetMusicBox,
+        /// <summary>
+        /// Request tiles when teleporting with the <see cref="Items.Other.ShadowMirror" />.
+        /// </summary>
+        RequestTiles
     }
 
     /// <summary>
@@ -71,6 +75,27 @@ namespace Avalon
             : base()
         {
             Instance = this;
+        }
+
+        /// <summary>
+        /// When the mod receives data from a peer connection.
+        /// </summary>
+        /// <param name="msg">The message type.</param>
+        /// <param name="bb">The content of the message.</param>
+        public override void NetReceive(int msg, BinBuffer bb)
+        {
+            switch ((NetMessages)msg)
+            {
+                case NetMessages.StartWraithInvasion:
+                    // todo
+                    break;
+                case NetMessages.SetMusicBox:
+                    // todo
+                    break;
+                case NetMessages.RequestTiles:
+                    NetMessage.SendTileSquare(bb.ReadInt(), bb.ReadInt(), bb.ReadInt(), bb.ReadInt());
+                    break;
+            }
         }
 
         /// <summary>

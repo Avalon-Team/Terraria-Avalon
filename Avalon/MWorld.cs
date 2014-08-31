@@ -61,6 +61,47 @@ namespace Avalon
         }
 
         static int grassCounter = 0, jungleEx = 0, gCount = 0;
+        static int jungleX = -1, jungleY = -1, lOceanY, rOceanY;
+
+        /// <summary>
+        /// Gets the position of the Jungle (in tile coordinates).
+        /// </summary>
+        public static Point JunglePosition
+        {
+            get
+            {
+                if (jungleX == -1 || jungleY == -1)
+                    CorrectJunglePos();
+
+                return new Point(jungleX, jungleY);
+            }
+        }
+        /// <summary>
+        /// Gets the position of the left Ocean (in tile coordinates).
+        /// </summary>
+        public static Point LeftOceanPosition
+        {
+            get
+            {
+                if (lOceanY == -1)
+                    CorrectOceanPos();
+
+                return new Point(250, lOceanY);
+            }
+        }
+        /// <summary>
+        /// Gets the position of the right Ocean (in tile coordinates).
+        /// </summary>
+        public static Point RightOceanPosition
+        {
+            get
+            {
+                if (rOceanY == -1)
+                    CorrectOceanPos();
+
+                return new Point(Main.maxTilesX - 250, rOceanY);
+            }
+        }
 
         /// <summary>
         /// Gets the rectangle for the Tropics biome.
@@ -101,6 +142,51 @@ namespace Avalon
             : base(@base)
         {
 
+        }
+
+        static void CorrectJunglePos()
+        {
+            if (jungleX == -1 || jungleY == -1)
+            {
+                jungleX = Main.maxTilesX - Main.dungeonX;
+                jungleY = Main.dungeonY;
+
+                if (Main.tile[jungleX, jungleY].active())
+                    do jungleY--; while (Main.tile[jungleX, jungleY].active());
+                else
+                    while (!Main.tile[jungleX, jungleY].active())
+                        jungleY++;
+
+                jungleY -= 3; // make sure it won't be IN the ground
+            }
+        }
+        static void CorrectOceanPos()
+        {
+            if (lOceanY == -1)
+            {
+                lOceanY = (int)Main.worldSurface - 25;
+
+                if (Main.tile[250, lOceanY].active())
+                    do lOceanY--; while (Main.tile[250, lOceanY].active());
+                else
+                    while (!Main.tile[250, lOceanY].active())
+                        lOceanY++;
+
+                lOceanY -= 3; // make sure it won't be IN the ground
+            }
+
+            if (rOceanY == -1)
+            {
+                rOceanY = (int)Main.worldSurface - 25;
+
+                if (Main.tile[Main.maxTilesX - 250, rOceanY].active())
+                    do rOceanY--; while (Main.tile[Main.maxTilesX - 250, rOceanY].active());
+                else
+                    while (!Main.tile[Main.maxTilesX - 250, rOceanY].active())
+                        rOceanY++;
+
+                rOceanY -= 3; // make sure it won't be IN the ground
+            }
         }
 
         /// <summary>
@@ -235,7 +321,11 @@ namespace Avalon
                 EverIceCount,
                 WraithsDowned);
 
-            bb.WriteX(TropicsRect.X, TropicsRect.Y, TropicsRect.Width, TropicsRect.Height);
+            CorrectJunglePos();
+            CorrectOceanPos();
+
+            bb.WriteX(TropicsRect.X, TropicsRect.Y, TropicsRect.Width, TropicsRect.Height,
+                jungleX, jungleY, lOceanY, rOceanY);
         }
         /// <summary>
         /// Loads binary data from a world save file. Called when the world is loaded.
@@ -267,6 +357,15 @@ namespace Avalon
             WraithsDowned = bb.ReadInt();
 
             TropicsRect = new Rectangle(bb.ReadInt(), bb.ReadInt(), bb.ReadInt(), bb.ReadInt());
+
+            jungleX = bb.ReadInt();
+            jungleY = bb.ReadInt();
+
+            lOceanY = bb.ReadInt();
+            rOceanY = bb.ReadInt();
+
+            CorrectJunglePos();
+            CorrectOceanPos();
         }
 
         /// <summary>

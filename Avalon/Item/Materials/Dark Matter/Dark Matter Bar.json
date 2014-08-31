@@ -1,17 +1,17 @@
 ﻿{
-    "displayName": "Jungle Bar",
+    "displayName": "Dark Matter Bar",
     "size": [ 30, 24 ],
     "maxStack": 999,
-    "rare": 4,
-    "value": [ 0, 0, 45, 0 ],
+    "rare": 6,
+    "value": [ 0, 9, 45, 0 ],
 
     "recipes": [
         {
             "items": {
-                "Avalon:Jungle Ore": 3
+                "Avalon:Dark Matter Ore": 9
             },
             "tiles": [
-                "Furnace"
+                "Caesium Forge"
             ],
             "creates": 1
         }

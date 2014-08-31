@@ -1,6 +1,6 @@
 ﻿{
     "displayName": "Magmatic Bar",
-    "size": [ 16, 16 ],
+    "size": [ 30, 24 ],
     "maxStack": 999,
     "rare": 4,
     "value": [ 0, 7, 35, 0 ],

@@ -75,7 +75,10 @@
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="API\Items\Attributes.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
+    <Compile Include="Buff\Shadows.cs" />
     <Compile Include="Item\Materials\Souls\Soul.cs" />
+    <Compile Include="Item\Other\Shadow Mirror.cs" />
+    <Compile Include="Item\Potions\Shadow Potion.cs" />
     <Compile Include="Item\Weapons\Flails\Mythril Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Heaven%27s Tear.cs" />
     <Compile Include="Item\Weapons\Flails\Eclipse%27s Waning.cs" />
@@ -104,15 +107,19 @@
     <Compile Include="Tile\Crafting Stations\Hallowed Altar.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Buff\Shadows.png" />
     <Content Include="Item\Crafting Stations\Adamantite Anvil.json" />
     <Content Include="Item\Crafting Stations\Berserker Anvil.png" />
     <Content Include="Item\Crafting Stations\Caesium Forge.json" />
     <Content Include="Item\Crafting Stations\Hallowed Altar.png" />
+    <Content Include="Item\Crafting Stations\Navigator%27s Array.png" />
     <Content Include="Item\Crafting Stations\Resistant Work Bench.png" />
     <Content Include="Item\Materials\Berserker\Berserker Bar.png" />
     <Content Include="Item\Materials\Berserker\Berserker Ore.png" />
     <Content Include="Item\Materials\Corrupted\Corrupted Bar.png" />
     <Content Include="Item\Materials\Corrupted\Corrupted Ore.png" />
+    <Content Include="Item\Materials\Dark Matter\Dark Matter Bar.png" />
+    <Content Include="Item\Materials\Dark Matter\Dark Matter Ore.png" />
     <Content Include="Item\Materials\Hallowstone Block.png" />
     <Content Include="Item\Materials\Illegal Weapon Instructions.png" />
     <Content Include="Item\Materials\Jungle\Jungle Ore.png" />
@@ -123,6 +130,8 @@
     <Content Include="Item\Materials\Resistant Wood.png" />
     <Content Include="Item\Materials\Souls\Soul of Blight.png" />
     <Content Include="Item\Materials\Souls\Soul of Plight.png" />
+    <Content Include="Item\Other\Shadow Mirror.png" />
+    <Content Include="Item\Potions\Shadow Potion.png" />
     <Content Include="Item\Weapons\Flails\Berserker Nightmare.png" />
     <Content Include="Item\Weapons\Flails\Caesium Flail.json" />
     <Content Include="Item\Weapons\Flails\Cobalt Flail.png" />
@@ -153,10 +162,12 @@
     <Content Include="Tile\Blocks\Hallowstone Block.png" />
     <Content Include="Tile\Blocks\Resistant Wood.png" />
     <Content Include="Tile\Crafting Stations\Berserker Anvil.png" />
+    <Content Include="Tile\Crafting Stations\Navigator%27s Array.png" />
     <Content Include="Tile\Crafting Stations\Resistant Work Bench.png" />
     <Content Include="Tile\Ores\Berserker Ore.png" />
     <Content Include="Tile\Crafting Stations\Hallowed Altar.png" />
     <Content Include="Tile\Ores\Corrupted Ore.png" />
+    <Content Include="Tile\Ores\Dark Matter Ore.png" />
     <Content Include="Tile\Ores\Jungle Ore.png" />
     <Content Include="Tile\Ores\Magmatic Ore.png" />
     <EmbeddedResource Include="ModInfo.json" />
@@ -355,6 +366,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Projectile\FromPlayer\Flails\Mega Quad Ball.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Other\Shadow Mirror.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Dark Matter\Dark Matter Bar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Materials\Dark Matter\Dark Matter Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Ores\Dark Matter Ore.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tile\Crafting Stations\Navigator%27s Array.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Crafting Stations\Navigator%27s Array.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Item\Potions\Shadow Potion.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Buff\Shadows.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
