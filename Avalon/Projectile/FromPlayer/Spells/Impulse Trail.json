@@ -1,0 +1,13 @@
+﻿{
+    "code": "Projectiles.FromPlayer.Spells.ImpulseTrail",
+    "displayName": "Impulse Trail",
+    "aiStyle": -1,
+    "size": [ 8, 8 ],
+    "penetrate": -1,
+    "timeLeft": 100,
+    "friendly": true,
+    "hostile": false,
+    "tileCollide": false,
+    "light": 1,
+    "magic": true
+}

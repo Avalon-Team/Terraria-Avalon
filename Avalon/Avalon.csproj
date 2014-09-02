@@ -91,6 +91,7 @@
     <Compile Include="Item\Weapons\Flails\Sporalash.cs" />
     <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Caesium Flail.cs" />
+    <Compile Include="Item\Weapons\Spells\Impulse Strike.cs" />
     <Compile Include="MCTImport\Content\ObjectLoader.cs" />
     <Compile Include="MCTImport\Invasion.cs" />
     <Compile Include="MCTImport\Net\NetHelper.cs" />
@@ -103,6 +104,8 @@
     <Compile Include="Projectile\FromPlayer\Flails\Moonfury Ball.cs" />
     <Compile Include="Projectile\FromPlayer\Flails\Eclipse Ball.cs" />
     <Compile Include="Projectile\FromPlayer\Flails\Cursed Ball.cs" />
+    <Compile Include="Projectile\FromPlayer\Spells\Impulse Bolt.cs" />
+    <Compile Include="Projectile\FromPlayer\Spells\Impulse Trail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tile\Crafting Stations\Hallowed Altar.cs" />
   </ItemGroup>
@@ -123,13 +126,15 @@
     <Content Include="Item\Materials\Hallowstone Block.png" />
     <Content Include="Item\Materials\Illegal Weapon Instructions.png" />
     <Content Include="Item\Materials\Jungle\Jungle Ore.png" />
-    <Content Include="Item\Materials\Jungle\Jungle Shard.png" />
+    <Content Include="Item\Materials\Shards\Fire Shard.png" />
+    <Content Include="Item\Materials\Shards\Jungle Shard.png" />
     <Content Include="Item\Materials\Jungle\Jungle Bar.png" />
     <Content Include="Item\Materials\Magmatic\Magmatic Bar.png" />
     <Content Include="Item\Materials\Magmatic\Magmatic Ore.png" />
     <Content Include="Item\Materials\Resistant Wood.png" />
     <Content Include="Item\Materials\Souls\Soul of Blight.png" />
     <Content Include="Item\Materials\Souls\Soul of Plight.png" />
+    <Content Include="Item\Materials\Souls\Soul of Vigor.png" />
     <Content Include="Item\Other\Shadow Mirror.png" />
     <Content Include="Item\Potions\Shadow Potion.png" />
     <Content Include="Item\Weapons\Flails\Berserker Nightmare.png" />
@@ -148,6 +153,7 @@
     <Content Include="Item\Materials\Steel\Steel Bar.json" />
     <Content Include="Item\Materials\Steel\Steel Chain.json" />
     <Content Include="Item\Weapons\Flails\Sporalash.png" />
+    <Content Include="Item\Weapons\Spells\Impulse Strike.png" />
     <Content Include="Projectile\FromPlayer\Flails\Berserker Sphere.png" />
     <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Eclipse Ball.png" />
@@ -159,6 +165,8 @@
     <Content Include="Projectile\FromPlayer\Flails\Quad Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Silver Ball.png" />
     <Content Include="Projectile\FromPlayer\Flails\Sporalash Ball.png" />
+    <Content Include="Projectile\FromPlayer\Spells\Impulse Bolt.png" />
+    <Content Include="Projectile\FromPlayer\Spells\Impulse Trail.png" />
     <Content Include="Tile\Blocks\Hallowstone Block.png" />
     <Content Include="Tile\Blocks\Resistant Wood.png" />
     <Content Include="Tile\Crafting Stations\Berserker Anvil.png" />
@@ -332,7 +340,7 @@
     <Content Include="Projectile\FromPlayer\Flails\Sporalash Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Jungle\Jungle Shard.json" />
+    <Content Include="Item\Materials\Shards\Jungle Shard.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Item\Materials\Jungle\Jungle Bar.json" />
@@ -390,6 +398,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Buff\Shadows.json" />
+    <Content Include="Item\Weapons\Spells\Impulse Strike.json" />
+    <Content Include="Projectile\FromPlayer\Spells\Impulse Bolt.json" />
+    <Content Include="Projectile\FromPlayer\Spells\Impulse Trail.json" />
+    <Content Include="Item\Materials\Souls\Soul of Vigor.json" />
+    <Content Include="Item\Materials\Shards\Fire Shard.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

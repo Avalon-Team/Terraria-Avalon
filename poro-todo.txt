@@ -1,3 +1,2 @@
-- shadow mirror
+- shadow mirror (fix a bug)
 - whirlwind
-- impulse strike

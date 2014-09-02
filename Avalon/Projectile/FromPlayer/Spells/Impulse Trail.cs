@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Xna.Framework;
 using Terraria;
 using TAPI;
 
-namespace Avalon.Projectiles.FromPlayer.Flails
+namespace Avalon.Projectiles.FromPlayer.Spells
 {
     /// <summary>
-    /// The Eclipse Ball.
+    /// The Impulse Trail.
     /// </summary>
-    public sealed class EclipseBall : ModProjectile
+    public sealed class ImpulseTrail : ModProjectile
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="EclipseBall" /> class.
+        /// Creates a new instance of the <see cref="ImpulseTrail" /> class.
         /// </summary>
         /// <param name="base">The mod that owns this projectile.</param>
         /// <param name="p">The <see cref="Projectile" /> to attach the <see cref="ModProjectile" /> to.</param>
-        public EclipseBall(ModBase @base, Projectile p)
+        public ImpulseTrail(ModBase @base, Projectile p)
             : base(@base, p)
         {
 
@@ -31,7 +30,10 @@ namespace Avalon.Projectiles.FromPlayer.Flails
         {
             base.PostAI();
 
-            Main.dust[Dust.NewDust(projectile.Hitbox, 58, 0f, 0f, 80, Color.White, 1.5f)].noGravity = true;
+            projectile.alpha = 255 - projectile.timeLeft * 2 - (int)(25f * projectile.scale);
+
+            //if (projectile.alpha < 100)
+            //    projectile.alpha = 0;
         }
     }
 }

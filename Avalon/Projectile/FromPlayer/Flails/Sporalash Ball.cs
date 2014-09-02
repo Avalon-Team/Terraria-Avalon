@@ -16,7 +16,7 @@ namespace Avalon.Projectiles.FromPlayer.Flails
         /// Creates a new instance of the <see cref="SporalashBall" /> class.
         /// </summary>
         /// <param name="base">The mod that owns this projectile.</param>
-        /// <param name="p">The <see cref="Item" /> to attach the <see cref="ModProjectile" /> to.</param>
+        /// <param name="p">The <see cref="Projectile" /> to attach the <see cref="ModProjectile" /> to.</param>
         public SporalashBall(ModBase @base, Projectile p)
             : base(@base, p)
         {
