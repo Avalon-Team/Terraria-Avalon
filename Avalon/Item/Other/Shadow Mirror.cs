@@ -90,7 +90,8 @@ namespace Avalon.Items.Other
                 case Mode.RightOcean:
                     return new Vector2(MWorld.RightOceanPosition.X, MWorld.RightOceanPosition.Y) * 16f;
                 case Mode.Spawn:
-                    return new Vector2(p.SpawnX, p.SpawnY) * 16f;
+                    p.Spawn();
+                    break;
                 case Mode.Underworld:
                     return new Vector2(MWorld.UnderworldPosition.X, MWorld.UnderworldPosition.Y) * 16f;
             }
