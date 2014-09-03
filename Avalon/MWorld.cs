@@ -61,7 +61,7 @@ namespace Avalon
         }
 
         static int grassCounter = 0, jungleEx = 0, gCount = 0;
-        static int jungleX = -1, jungleY = -1, lOceanY, rOceanY;
+        static int jungleX = -1, jungleY = -1, lOceanY = -1, rOceanY = -1, hellY;
 
         /// <summary>
         /// Gets the position of the Jungle (in tile coordinates).
@@ -100,6 +100,19 @@ namespace Avalon
                     CorrectOceanPos();
 
                 return new Point(Main.maxTilesX - 250, rOceanY);
+            }
+        }
+        /// <summary>
+        /// Gets the position of the Underworld (in tile coordinates).
+        /// </summary>
+        public static Point UnderworldPosition
+        {
+            get
+            {
+                if (hellY == -1)
+                    CorrectHellPos();
+
+                return new Point(Main.maxTilesX / 2, hellY);
             }
         }
 
@@ -144,6 +157,22 @@ namespace Avalon
 
         }
 
+        /// <summary>
+        /// Corrects a Y position so the tile at the given position is inactive.
+        /// </summary>
+        /// <param name="x">The X coördinate.</param>
+        /// <param name="y">The Y coördinate.</param>
+        public static void CorrectY(int x, ref int y)
+        {
+            if (Main.tile[x, y].active())
+                do y--; while (Main.tile[x, y].active());
+            else
+                while (!Main.tile[x, y].active())
+                    y++;
+
+            y -= 3; // make sure it won't be IN the ground
+        }
+
         static void CorrectJunglePos()
         {
             if (jungleX == -1 || jungleY == -1)
@@ -151,41 +180,32 @@ namespace Avalon
                 jungleX = Main.maxTilesX - Main.dungeonX;
                 jungleY = Main.dungeonY;
 
-                if (Main.tile[jungleX, jungleY].active())
-                    do jungleY--; while (Main.tile[jungleX, jungleY].active());
-                else
-                    while (!Main.tile[jungleX, jungleY].active())
-                        jungleY++;
-
-                jungleY -= 3; // make sure it won't be IN the ground
+                CorrectY(jungleX, ref jungleY);
             }
         }
-        static void CorrectOceanPos()
+        static void CorrectOceanPos ()
         {
             if (lOceanY == -1)
             {
                 lOceanY = (int)Main.worldSurface - 25;
 
-                if (Main.tile[250, lOceanY].active())
-                    do lOceanY--; while (Main.tile[250, lOceanY].active());
-                else
-                    while (!Main.tile[250, lOceanY].active())
-                        lOceanY++;
-
-                lOceanY -= 3; // make sure it won't be IN the ground
+                CorrectY(250, ref lOceanY);
             }
 
             if (rOceanY == -1)
             {
                 rOceanY = (int)Main.worldSurface - 25;
 
-                if (Main.tile[Main.maxTilesX - 250, rOceanY].active())
-                    do rOceanY--; while (Main.tile[Main.maxTilesX - 250, rOceanY].active());
-                else
-                    while (!Main.tile[Main.maxTilesX - 250, rOceanY].active())
-                        rOceanY++;
+                CorrectY(Main.maxTilesX - 250, ref rOceanY);
+            }
+        }
+        static void CorrectHellPos  ()
+        {
+            if (hellY == -1)
+            {
+                hellY = Main.maxTilesY - 150;
 
-                rOceanY -= 3; // make sure it won't be IN the ground
+                CorrectY(Main.maxTilesX / 2, ref hellY);
             }
         }
 
@@ -322,10 +342,11 @@ namespace Avalon
                 WraithsDowned);
 
             CorrectJunglePos();
-            CorrectOceanPos();
+            CorrectOceanPos ();
+            CorrectHellPos  ();
 
             bb.WriteX(TropicsRect.X, TropicsRect.Y, TropicsRect.Width, TropicsRect.Height,
-                jungleX, jungleY, lOceanY, rOceanY);
+                jungleX, jungleY, lOceanY, rOceanY, hellY);
         }
         /// <summary>
         /// Loads binary data from a world save file. Called when the world is loaded.
@@ -364,8 +385,11 @@ namespace Avalon
             lOceanY = bb.ReadInt();
             rOceanY = bb.ReadInt();
 
+            hellY = bb.ReadInt();
+
             CorrectJunglePos();
-            CorrectOceanPos();
+            CorrectOceanPos ();
+            CorrectHellPos  ();
         }
 
         /// <summary>

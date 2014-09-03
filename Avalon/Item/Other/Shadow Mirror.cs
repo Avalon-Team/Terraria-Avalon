@@ -92,9 +92,7 @@ namespace Avalon.Items.Other
                 case Mode.Spawn:
                     return new Vector2(p.SpawnX, p.SpawnY) * 16f;
                 case Mode.Underworld:
-                    // this makes the game chrash for an unknown reason .__.
-                    //return new Vector2(Main.maxTilesX / 2, Main.maxTilesX - 1000) * 16f;
-                    return p.position;
+                    return new Vector2(MWorld.UnderworldPosition.X, MWorld.UnderworldPosition.Y) * 16f;
             }
 
             throw new ArgumentOutOfRangeException("mode", "Invalid value " + mode);
