@@ -108,6 +108,7 @@
     <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Caesium Flail.cs" />
     <Compile Include="Item\Weapons\Spells\Impulse Strike.cs" />
+    <Compile Include="UI\ExtraAccessorySlot.cs" />
     <Compile Include="UI\MysticalTomeSlot.cs" />
     <Compile Include="UI\TomeSlotLayer.cs" />
     <Compile Include="_MCTImport\Content\ObjectLoader.cs" />

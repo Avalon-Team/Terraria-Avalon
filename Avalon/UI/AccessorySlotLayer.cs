@@ -56,7 +56,7 @@ namespace Avalon.UI
             private set;
         }
 
-        Interface.ItemSlot[] slots = new Interface.ItemSlot[Mod.ExtraSlots];
+        ExtraAccessorySlot[] slots = new ExtraAccessorySlot[Mod.ExtraSlots];
         Item[] items = new Item[Mod.ExtraSlots];
 
         internal AccessorySlotLayer()
@@ -65,9 +65,7 @@ namespace Avalon.UI
             Instance = this;
 
             for (int i = 0; i < slots.Length; i++)
-                slots[i] = new Interface.ItemSlot(Mod.Instance, "Avalon:ExtraAccSlot", i,
-                    (s, it) => MWorld.accessories[Main.myPlayer][s.index] = it,
-                     s      => MWorld.accessories[Main.myPlayer][s.index]);
+                slots[i] = new ExtraAccessorySlot(i);
 
             Slots = new Items();
         }
