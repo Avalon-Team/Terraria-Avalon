@@ -38,7 +38,7 @@ namespace Avalon.UI
         /// <param name="sb"></param>
         protected override void OnDraw(SpriteBatch sb)
         {
-            slot.UpdateAndDraw(sb, new Vector2(Main.screenWidth - 180f, 160f));
+            slot.UpdateAndDraw(sb, new Vector2(Main.screenWidth - 190f, 120f));
         }
     }
 }
