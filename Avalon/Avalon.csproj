@@ -71,6 +71,19 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Item\Mystical Tomes\Adventures and Mishaps.cs" />
+    <Compile Include="Item\Mystical Tomes\Tome of the River Spirit.cs" />
+    <Compile Include="Item\Mystical Tomes\Tome of Distance.cs" />
+    <Compile Include="Item\Mystical Tomes\The Voidlands.cs" />
+    <Compile Include="Item\Mystical Tomes\Tale of the Red Lotus.cs" />
+    <Compile Include="Item\Mystical Tomes\Tale of the Dolt.cs" />
+    <Compile Include="Item\Mystical Tomes\Misty Peach Blossoms.cs" />
+    <Compile Include="Item\Mystical Tomes\Mediation%27s Flame.cs" />
+    <Compile Include="Item\Mystical Tomes\Love Up and Down.cs" />
+    <Compile Include="Item\Mystical Tomes\Flanker%27s Tome.cs" />
+    <Compile Include="Item\Mystical Tomes\Creator%27s Tome.cs" />
+    <Compile Include="Item\Mystical Tomes\Christmas Tome.cs" />
+    <Compile Include="Item\Mystical Tomes\Burning Desire.cs" />
     <Compile Include="MUI.cs" />
     <Compile Include="UI\AccessorySlotLayer.cs" />
     <Compile Include="API\Biomes\Attributes.cs" />
@@ -160,7 +173,7 @@
     <Content Include="Item\Mystical Tomes\Creator%27s Tome.png" />
     <Content Include="Item\Mystical Tomes\Flanker%27s Tome.png" />
     <Content Include="Item\Mystical Tomes\Love Up and Down.png" />
-    <Content Include="Item\Mystical Tomes\Meditation%27s Flame.png" />
+    <Content Include="Item\Mystical Tomes\Mediation%27s Flame.png" />
     <Content Include="Item\Mystical Tomes\Misty Peach Blossoms.png" />
     <Content Include="Item\Mystical Tomes\Tale of the Dolt.png" />
     <Content Include="Item\Mystical Tomes\Tale of the Red Lotus.png" />
@@ -449,6 +462,19 @@
     <Content Include="Item\Materials\Mystical Tomes\Sandstone.json" />
     <Content Include="Item\Materials\Mystical Tomes\Scroll of Tome.json" />
     <Content Include="Item\Materials\Mystical Tomes\Strong Venom.json" />
+    <Content Include="Item\Mystical Tomes\Adventures and Mishaps.json" />
+    <Content Include="Item\Mystical Tomes\Burning Desire.json" />
+    <Content Include="Item\Mystical Tomes\Christmas Tome.json" />
+    <Content Include="Item\Mystical Tomes\Creator%27s Tome.json" />
+    <Content Include="Item\Mystical Tomes\Flanker%27s Tome.json" />
+    <Content Include="Item\Mystical Tomes\Love Up and Down.json" />
+    <Content Include="Item\Mystical Tomes\Mediation%27s Flame.json" />
+    <Content Include="Item\Mystical Tomes\Misty Peach Blossoms.json" />
+    <Content Include="Item\Mystical Tomes\Tale of the Dolt.json" />
+    <Content Include="Item\Mystical Tomes\Tale of the Red Lotus.json" />
+    <Content Include="Item\Mystical Tomes\The Voidlands.json" />
+    <Content Include="Item\Mystical Tomes\Tome of Distance.json" />
+    <Content Include="Item\Mystical Tomes\Tome of the River Spirits.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

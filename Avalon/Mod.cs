@@ -38,7 +38,7 @@ namespace Avalon
         /// <summary>
         /// Activates a <see cref="SkillManager" />.
         /// </summary>
-        Activate
+        ActivateSkill
     }
 
     /// <summary>
@@ -132,13 +132,14 @@ namespace Avalon
                     MWorld.tomes   [id] = bb.ReadItem();
                     MWorld.managers[id] = SkillManager.FromItem(MWorld.tomes[id]);
                     break;
-                case NetMessages.Activate:
+                case NetMessages.ActivateSkill:
                     id = bb.ReadInt();
 
                     if (MWorld.managers[id] == null)
                         MWorld.managers[id] = SkillManager.FromItem(MWorld.tomes[id]);
 
-                    MWorld.managers[id].Activate();
+                    if (MWorld.managers[id] != null)
+                        MWorld.managers[id].Activate(Main.player[id]); // id is both client id and player id.
                     break;
             }
         }

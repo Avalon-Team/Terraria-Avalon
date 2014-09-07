@@ -407,12 +407,16 @@ namespace Avalon
             if (MWorld.localTome.IsBlank() || MWorld.localManager == null)
                 return;
 
+            MWorld.localTome.Effects(player);
+
             if (--skillCD <= 0)
                 skillCD = 0;
 
             if (Main.keyState.IsKeyDown(Keys.R) && skillCD <= 0)
             {
-                MWorld.localManager.Activate();
+                MWorld.localManager.Activate(player);
+
+                NetHelper.SendModData(modBase, NetMessages.ActivateSkill, Main.myPlayer);
 
                 skillCD = MWorld.localManager.Cooldown;
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
+using TAPI;
 
 namespace Avalon.API.Items.MysticalTomes
 {
@@ -40,10 +41,11 @@ namespace Avalon.API.Items.MysticalTomes
         }
 
         /// <summary>
-        /// Activates the tome.
+        /// Activates the tome skill.
         /// </summary>
+        /// <param name="p">The <see cref="Player" /> that activated the skill.</param>
         /// <remarks>No NetMessages have to be sent, this method is called on all clients and the server.</remarks>
-        public abstract void Activate(); // oh noes!
+        public abstract void Activate(Player p); // oh noes!
 
         internal static SkillManager FromItem(Item it)
         {
