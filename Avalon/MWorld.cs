@@ -7,6 +7,8 @@ using Terraria;
 using TAPI;
 using PoroCYon.MCT.Content;
 using PoroCYon.MCT.Net;
+using Avalon.API.Items.MysticalTomes;
+using Avalon.UI;
 
 namespace Avalon
 {
@@ -127,14 +129,38 @@ namespace Avalon
         /// <summary>
         /// Gets the layer containing the extra accessory slots.
         /// </summary>
-        public static InterfaceLayer AccessoryLayer
+        public static AccessorySlotLayer AccessoryLayer
         {
             get;
-            private set;
+            internal set;
+        }
+        /// <summary>
+        /// Gets the layer containing the Mystical Tome slot.
+        /// </summary>
+        public static TomeSlotLayer      TomeSlotLayer
+        {
+            get;
+            internal set;
+        }
+
+        internal static SkillManager[/* player ID */] managers;
+        internal static SkillManager localManager
+        {
+            get
+            {
+                if (managers[Main.myPlayer] == null)
+                    managers[Main.myPlayer] = SkillManager.FromItem(tomes[Main.myPlayer]);
+
+                return managers[Main.myPlayer];
+            }
+            set
+            {
+                managers[Main.myPlayer] = value;
+            }
         }
 
         internal static Item[/* player ID */][/* item index */] accessories;
-        internal static Item[] loacalAccessories
+        internal static Item                 [/* item index */] localAccessories
         {
             get
             {
@@ -143,6 +169,20 @@ namespace Avalon
             set
             {
                 accessories[Main.myPlayer] = value;
+            }
+        }
+
+        internal static Item[/* player id*/] tomes;
+        internal static Item localTome
+        {
+            get
+            {
+                return tomes[Main.myPlayer];
+            }
+            set
+            {
+                tomes[Main.myPlayer] = value;
+                localManager = SkillManager.FromItem(value);
             }
         }
 
@@ -219,7 +259,9 @@ namespace Avalon
             CatarystDownedCount = EverIceCount = ArmageddonCount = HallowAltarsBroken = 0;
             Mod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
 
-            accessories = new Item[Main.netMode == 0 ? 1 : Main.numPlayers][];
+            accessories = new Item        [Main.netMode == 0 ? 1 : Main.numPlayers][];
+            tomes       = new Item        [Main.netMode == 0 ? 1 : Main.numPlayers]  ;
+            managers    = new SkillManager[Main.netMode == 0 ? 1 : Main.numPlayers]  ;
 
             for (int i = 0; i < accessories.Length; i++)
             {
@@ -228,7 +270,9 @@ namespace Avalon
                 for (int j = 0; j < accessories[i].Length; j++)
                     accessories[i][j] = new Item();
             }
-            
+            for (int i = 0; i < tomes.Length; i++)
+                tomes[i] = new Item();
+
             // insert all graphical/UI-related stuff AFTER this check!
             if (Main.dedServ)
                 return;
@@ -248,7 +292,6 @@ namespace Avalon
                 addedWings = true;
             }
 
-            InterfaceLayer.Add(InterfaceLayer.cachedList, AccessoryLayer = new AccessorySlots(), InterfaceLayer.LayerInventory, false);
         }
         /// <summary>
         /// Called after the world is updated
@@ -317,7 +360,7 @@ namespace Avalon
         {
             base.PlayerConnected(index);
 
-
+            NetHelper.SendModData(modBase, NetMessages.RequestCustomSlots, index, -1, Main.myPlayer);
         }
 
         /// <summary>

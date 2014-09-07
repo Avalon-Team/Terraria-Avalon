@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Terraria;
 using TAPI;
 using PoroCYon.MCT.Net;
 using Avalon.API.Items;
+using Avalon.API.Items.MysticalTomes;
+using Avalon.UI;
 
 namespace Avalon
 {
@@ -24,7 +27,8 @@ namespace Avalon
         static int
             hook = 0,
             jungleChestId,
-            hellfireChestId;
+            hellfireChestId,
+            skillCD = 0;
         readonly static int[] MUSIC_BOXES = new int[] { -1, 0, 1, 2, 4, 5, -1, 6, 7, 9, 8, 11, 10, 12 };
 
         Item[] accessories
@@ -67,9 +71,6 @@ namespace Avalon
         /// </summary>
         public override void OnUpdate()
         {
-            for (int i = 0; i < Mod.ExtraSlots; i++)
-                accessories[i] = AccessorySlots.Slots[i];
-
             base.OnUpdate();
 
             U_SetChainTexture();
@@ -78,6 +79,7 @@ namespace Avalon
             U_ExtraAccs();
             U_LavaMerman();
             //U_TileInteract();
+            U_MysticalTomes();
         }
         #region OnUpdate submethods
         void U_SetChainTexture()
@@ -400,6 +402,21 @@ namespace Avalon
                 // p.baseSlideFactor = 0.1f;
             }
         }
+        void U_MysticalTomes()
+        {
+            if (MWorld.localTome.IsBlank() || MWorld.localManager == null)
+                return;
+
+            if (--skillCD <= 0)
+                skillCD = 0;
+
+            if (Main.keyState.IsKeyDown(Keys.R) && skillCD <= 0)
+            {
+                MWorld.localManager.Activate();
+
+                skillCD = MWorld.localManager.Cooldown;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -413,8 +430,12 @@ namespace Avalon
             bb.Write(Main.gameMenu);
 
             if (!Main.gameMenu)
+            {
                 for (int i = 0; i < accessories.Length; i++)
                     bb.Write(accessories[i]);
+
+                bb.Write(MWorld.localTome);
+            }
         }
         /// <summary>
         /// Loads data from the player file.
@@ -425,8 +446,12 @@ namespace Avalon
             base.Load(bb);
 
             if (!bb.ReadBool())
+            {
                 for (int i = 0; i < accessories.Length; i++)
                     accessories[i] = bb.ReadItem();
+
+                MWorld.localTome = bb.ReadItem();
+            }
         }
 
 #pragma warning disable 1591

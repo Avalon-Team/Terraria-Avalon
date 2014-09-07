@@ -4,6 +4,8 @@ using System.Linq;
 using Terraria;
 using TAPI;
 using PoroCYon.MCT;
+using PoroCYon.MCT.Net;
+using Avalon.API.Items.MysticalTomes;
 using Avalon.API.World;
 
 namespace Avalon
@@ -24,7 +26,19 @@ namespace Avalon
         /// <summary>
         /// Request tiles when teleporting with the <see cref="Items.Other.ShadowMirror" />.
         /// </summary>
-        RequestTiles
+        RequestTiles,
+        /// <summary>
+        /// Request the content of the extra accessory slots and the tome slot.
+        /// </summary>
+        RequestCustomSlots,
+        /// <summary>
+        /// Send the content of the extra accessory slots and the tome slot. Usually sent as a response to <see cref="RequestCustomSlots" />.
+        /// </summary>
+        SendCustomSlots,
+        /// <summary>
+        /// Activates a <see cref="SkillManager" />.
+        /// </summary>
+        Activate
     }
 
     /// <summary>
@@ -84,6 +98,9 @@ namespace Avalon
         /// <param name="bb">The content of the message.</param>
         public override void NetReceive(int msg, BinBuffer bb)
         {
+            // commonly used vars
+            int id;
+
             switch ((NetMessages)msg)
             {
                 case NetMessages.StartWraithInvasion:
@@ -94,6 +111,34 @@ namespace Avalon
                     break;
                 case NetMessages.RequestTiles:
                     NetMessage.SendTileSquare(bb.ReadInt(), bb.ReadInt(), bb.ReadInt(), bb.ReadInt());
+                    break;
+                case NetMessages.RequestCustomSlots:
+                    BinBuffer itemB = new BinBuffer();
+
+                    itemB.Write (Main.myPlayer);
+                    itemB.WriteX(MWorld.localAccessories);
+                    itemB.Write (MWorld.localTome);
+
+                    itemB.Pos = 0;
+
+                    NetHelper.SendModData(this, NetMessages.SendCustomSlots, bb.ReadInt(), -1, itemB.ReadBytes());
+                    break;
+                case NetMessages.SendCustomSlots:
+                    id = bb.ReadInt();
+
+                    for (int i = 0; i < ExtraSlots; i++)
+                        MWorld.accessories[id][i] = bb.ReadItem();
+
+                    MWorld.tomes   [id] = bb.ReadItem();
+                    MWorld.managers[id] = SkillManager.FromItem(MWorld.tomes[id]);
+                    break;
+                case NetMessages.Activate:
+                    id = bb.ReadInt();
+
+                    if (MWorld.managers[id] == null)
+                        MWorld.managers[id] = SkillManager.FromItem(MWorld.tomes[id]);
+
+                    MWorld.managers[id].Activate();
                     break;
             }
         }

@@ -71,9 +71,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessorySlots.cs" />
+    <Compile Include="MUI.cs" />
+    <Compile Include="UI\AccessorySlotLayer.cs" />
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="API\Items\Attributes.cs" />
+    <Compile Include="API\Items\Mystical Tomes\Attributes.cs" />
+    <Compile Include="API\Items\Mystical Tomes\SkillManager.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
     <Compile Include="Buff\Shadows.cs" />
     <Compile Include="Item\Materials\Souls\Soul.cs" />
@@ -92,9 +95,11 @@
     <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
     <Compile Include="Item\Weapons\Flails\Caesium Flail.cs" />
     <Compile Include="Item\Weapons\Spells\Impulse Strike.cs" />
-    <Compile Include="MCTImport\Content\ObjectLoader.cs" />
-    <Compile Include="MCTImport\Invasion.cs" />
-    <Compile Include="MCTImport\Net\NetHelper.cs" />
+    <Compile Include="UI\MysticalTomeSlot.cs" />
+    <Compile Include="UI\TomeSlotLayer.cs" />
+    <Compile Include="_MCTImport\Content\ObjectLoader.cs" />
+    <Compile Include="_MCTImport\Invasion.cs" />
+    <Compile Include="_MCTImport\Net\NetHelper.cs" />
     <Compile Include="MNPC.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="MPlayer.cs" />
@@ -241,6 +246,7 @@
     <Content Include="Item\Weapons\Flails\Berserker Nightmare.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Item\Mystical Tomes\" />
     <Folder Include="Projectile\FromNPC\" />
   </ItemGroup>
   <ItemGroup>
