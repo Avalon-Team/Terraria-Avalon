@@ -39,7 +39,7 @@ namespace Avalon.UI
                 attr = it.allSubClasses[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
                     .FirstOrDefault() as TomeSkillAttribute; // there should be only one
 
-            return base.AllowsItem(it) && attr != null && it.CanEquip(Main.localPlayer, 0);
+            return base.AllowsItem(it) && ((attr != null && it.CanEquip(Main.localPlayer, 0)) || it.IsBlank());
         }
     }
 }
