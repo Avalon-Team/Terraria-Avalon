@@ -8,7 +8,16 @@
     "recipes": [
         {
             "items": {
-                "g:Tier2Ore": 50
+                "Iron Ore": 50
+            },
+            "tiles": [
+                "Hellforge"
+            ],
+            "creates": 10
+        },
+        {
+            "items": {
+                "Lead Ore": 50
             },
             "tiles": [
                 "Hellforge"

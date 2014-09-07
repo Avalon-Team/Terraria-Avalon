@@ -68,7 +68,7 @@ namespace Avalon.Items.MysticalTomes
 
             double rot = p.AngleTo(Main.mouseWorld);
 
-            Projectile.NewProjectile(p.Centre, new Vector2((float)Math.Cos(rot) * -2f, (float)Math.Sin(rot) * -2f), 10, 35, 1.2f, p.whoAmI);
+            Projectile.NewProjectile(p.Centre, new Vector2((float)Math.Cos(rot) * -15f, (float)Math.Sin(rot) * -15f), 10, 35, 1.2f, p.whoAmI);
         }
     }
 }

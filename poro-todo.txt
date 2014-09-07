@@ -1,2 +1,1 @@
-- whirlwind
-- mystical tomes (tomes + skill code)
+- whirlwind (need stats & sprites)

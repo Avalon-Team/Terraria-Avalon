@@ -65,8 +65,9 @@ namespace Avalon.Items.MysticalTomes
                 return;
             p.statMana = (int)(p.statMana - 3f * p.manaCost);
 
-            for (double d = 0d; d < Math.PI * 2d; d += 0.2d)
-                Projectile.NewProjectile(p.Centre, new Vector2((float)Math.Cos(d) * -10f, (float)Math.Sin(d) * -10f), 85, (int)(32f * p.magicDamage), 1.1f, p.whoAmI);
+            double rot = p.AngleTo(Main.mouseWorld);
+
+            Projectile.NewProjectile(p.Centre, new Vector2((float)Math.Cos(rot) * 10f, (float)Math.Sin(rot) * 10f), 85, (int)(32f * p.magicDamage), 1.1f, p.whoAmI);
         }
     }
 }
