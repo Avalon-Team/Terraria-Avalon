@@ -1,2 +1,2 @@
 - whirlwind
-- mystical tomes
+- mystical tomes (tomes + skill code)

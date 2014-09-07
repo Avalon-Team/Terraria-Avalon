@@ -1,0 +1,19 @@
+﻿{
+    "displayName": "Carbon Steel",
+    "size": [ 34, 28 ],
+    "maxStack": 999,
+    "rare": 1,
+    "value": [ 0, 0, 20, 0 ],
+
+    "recipes": [
+        {
+            "items": {
+                "g:Tier2Ore": 50
+            },
+            "tiles": [
+                "Hellforge"
+            ],
+            "creates": 10
+        }
+    ]
+}
