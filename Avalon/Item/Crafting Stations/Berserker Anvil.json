@@ -16,7 +16,7 @@
     "recipes": [
         {
             "items": {
-                "Berserker Bar": 16
+                "Avalon:Berserker Bar": 16
             },
             "tiles": [
                 "Caesium Forge",
