@@ -480,7 +480,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>rem Build the mod. The directory must be the one where the ModInfo.json file resides in. The directory to the csproj is given in the ModInfo.json file.
-mct compile "%25userprofile%25\Dropbox\Avalon\Avalon tAPI Solution\Avalon"
+mct -inv compile "%25userprofile%25\Dropbox\Avalon\Avalon tAPI Solution\Avalon"
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
