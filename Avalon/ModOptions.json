@@ -1,0 +1,13 @@
+﻿{
+    "options": [
+        {
+            "name": "SkillHotkey",
+            "displayName": "Mystical Tomes skill hotkey",
+            "type": "Keybinding",
+            "notify": true,
+            "notifyOnChange": true,
+            "sync": false,
+            "default": "R"
+        }
+    ]
+}

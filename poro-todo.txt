@@ -1,1 +1,2 @@
+- implement modOptions for mystical tomes hotkey
 - whirlwind (need stats & sprites)

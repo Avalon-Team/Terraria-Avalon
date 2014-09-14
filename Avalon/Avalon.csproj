@@ -476,6 +476,7 @@
     <Content Include="Item\Mystical Tomes\The Voidlands.json" />
     <Content Include="Item\Mystical Tomes\Tome of Distance.json" />
     <Content Include="Item\Mystical Tomes\Tome of the River Spirits.json" />
+    <EmbeddedResource Include="ModOptions.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

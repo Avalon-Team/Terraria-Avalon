@@ -60,7 +60,7 @@ namespace Avalon
         readonly static List<int> EmptyIntList = new List<int>() { }; // only alloc once
 
         /// <summary>
-        /// The amount of extra accessory slots
+        /// The amount of extra accessory slots.
         /// </summary>
         public const int ExtraSlots = 3;
 
@@ -82,9 +82,9 @@ namespace Avalon
         }
 
         /// <summary>
-        /// Creates a new instance of the Mod class
+        /// Creates a new instance of the Mod class.
         /// </summary>
-        /// <remarks>Called by the mod loader</remarks>
+        /// <remarks>Called by the mod loader.</remarks>
         public Mod()
             : base()
         {
@@ -145,7 +145,7 @@ namespace Avalon
         }
 
         /// <summary>
-        /// Called when the mod is loaded
+        /// Called when the mod is loaded.
         /// </summary>
         public override void OnLoad()
         {
@@ -167,6 +167,24 @@ namespace Avalon
             spawns.Clear();
 
             base.OnUnload();
+        }
+
+        /// <summary>
+        /// <!-- I have no idea what this is. -->
+        /// </summary>
+        /// <param name="option"></param>
+        /// <returns></returns>
+        public override List<string> OptionList(Option option)
+        {
+            return base.OptionList(option);
+        }
+        /// <summary>
+        /// Called when an option is changed.
+        /// </summary>
+        /// <param name="option">The options that has changed.</param>
+        public override void OptionChanged(Option option)
+        {
+            base.OptionChanged(option);
         }
 
         static void LoadBiomes()
