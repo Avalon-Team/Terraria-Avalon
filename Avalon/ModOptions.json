@@ -1,7 +1,7 @@
 ﻿{
     "options": [
         {
-            "name": "SkillHotkey",
+            "name": "TomeSkillHotkey",
             "displayName": "Mystical Tomes skill hotkey",
             "type": "Keybinding",
             "notify": true,

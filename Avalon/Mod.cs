@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework.Input;
 using Terraria;
 using TAPI;
 using PoroCYon.MCT;
@@ -56,13 +57,31 @@ namespace Avalon
             private set;
         }
 
-        internal static List<BossSpawn> spawns = new List<BossSpawn>();
-        readonly static List<int> EmptyIntList = new List<int>() { }; // only alloc once
-
         /// <summary>
         /// The amount of extra accessory slots.
         /// </summary>
         public const int ExtraSlots = 3;
+
+        Option
+            tomeSkillHotkey = null;
+
+        internal static List<BossSpawn> spawns = new List<BossSpawn>();
+        readonly static List<int> EmptyIntList = new List<int>(); // only alloc once
+
+        /// <summary>
+        /// Gets or sets the Mystical Tomes skill hotkey.
+        /// </summary>
+        public static Keys TomeSkillHotkey
+        {
+            get
+            {
+                return (Keys)Instance.tomeSkillHotkey.Value;
+            }
+            set
+            {
+                Instance.tomeSkillHotkey.Value = Instance.tomeSkillHotkey.Value /* value */;
+            }
+        }
 
         /// <summary>
         /// Gets the Wraiths invasion instance.
@@ -185,6 +204,16 @@ namespace Avalon
         public override void OptionChanged(Option option)
         {
             base.OptionChanged(option);
+
+            switch (option.name)
+            {
+                case "TomeSkillHotkey":
+                    if (tomeSkillHotkey != option)
+                        tomeSkillHotkey =  option;
+
+                    //TomeSkillHotkey = (Keys)option.Value;
+                    break;
+            }
         }
 
         static void LoadBiomes()

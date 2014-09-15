@@ -172,10 +172,10 @@ namespace Avalon
                 if (acc == null || acc.IsBlank())
                     continue;
 
-                player.statDefense += acc.defense;
+                player.statDefense += acc.defense  ;
                 player.lifeRegen   += acc.lifeRegen;
 
-                if (acc.prefix != null && !acc.prefix.Equals(Prefix.None) && acc.prefix.id < Defs.prefixes.Count)
+                if (acc.prefix != null && acc.prefix.id > 0 /*&& !acc.prefix.Equals(Prefix.None)*/ && acc.prefix.id < Defs.prefixes.Count)
                     acc.prefix.ApplyToPlayer(player);
 
                 acc.Effects(player);
@@ -320,6 +320,8 @@ namespace Avalon
                         player.manaFlower = true;
                         player.manaCost -= .08f;
                         break;
+
+                        // 1.2 accs?
                     #endregion
 
                     default:
