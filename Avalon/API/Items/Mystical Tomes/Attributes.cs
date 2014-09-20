@@ -13,15 +13,6 @@ namespace Avalon.API.Items.MysticalTomes
         Type type;
 
         /// <summary>
-        /// Gets or sets wether the <see cref="SkillManager" /> is marked public or not.
-        /// </summary>
-        public bool IsNonPublic
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Creates a new instance of the <see cref="TomeSkillAttribute" /> class.
         /// </summary>
         /// <param name="managerType">The type of the <see cref="SkillManager" /> to instantiate.</param>
@@ -38,7 +29,7 @@ namespace Avalon.API.Items.MysticalTomes
             SkillManager manager;
             try
             {
-                manager = Activator.CreateInstance(type, IsNonPublic) as SkillManager;
+                manager = Activator.CreateInstance(type, type.IsNotPublic) as SkillManager;
             }
             catch (Exception e)
             {
