@@ -7,7 +7,7 @@ using TAPI;
 namespace Avalon.API.World
 {
     /// <summary>
-    /// A boss automatically spawning when the world is in superhardmode.
+    /// A boss that spawns automatically when the world is in superhardmode.
     /// </summary>
     public class BossSpawn
     {
@@ -34,7 +34,7 @@ namespace Avalon.API.World
             }
         }
         /// <summary>
-        /// Gets or sets wether the boss should spawn. ShouldSpawn() has a higher priority.
+        /// Gets or sets wether the boss should spawn. <see cref="ShouldSpawn(int, Player)" /> has a higher priority.
         /// </summary>
         public Func<int, Player, bool> CanSpawn
         {

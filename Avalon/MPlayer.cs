@@ -414,7 +414,7 @@ namespace Avalon
             if (--skillCD <= 0)
                 skillCD = 0;
 
-            if (Main.keyState.IsKeyDown(Keys.R) && skillCD <= 0)
+            if (Main.keyState.IsKeyDown(Mod.TomeSkillHotkey) && skillCD <= 0)
             {
                 MWorld.localManager.Activate(player);
 

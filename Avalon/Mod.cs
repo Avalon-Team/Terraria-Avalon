@@ -49,7 +49,7 @@ namespace Avalon
     public sealed class Mod : ModBase
     {
         /// <summary>
-        /// Gets the singleton instance of the mod's ModBase.
+        /// Gets the singleton instance of the mod's <see cref="ModBase" />.
         /// </summary>
         public static Mod Instance
         {
@@ -73,20 +73,20 @@ namespace Avalon
         /// </summary>
         public static Keys TomeSkillHotkey
         {
-            get
-            {
-                return (Keys)Instance.tomeSkillHotkey.Value;
-            }
-            set
-            {
-                Instance.tomeSkillHotkey.Value = Instance.tomeSkillHotkey.Value /* value */;
-            }
-        }
+			get
+			{
+				return (Keys)Instance.tomeSkillHotkey.Value;
+			}
+			set
+			{
+				Instance.tomeSkillHotkey.Value = value;
+			}
+		}
 
-        /// <summary>
-        /// Gets the Wraiths invasion instance.
-        /// </summary>
-        public static Invasion Wraiths
+		/// <summary>
+		/// Gets the Wraiths invasion instance.
+		/// </summary>
+		public static Invasion Wraiths
         {
             get;
             internal set;
@@ -101,7 +101,7 @@ namespace Avalon
         }
 
         /// <summary>
-        /// Creates a new instance of the Mod class.
+        /// Creates a new instance of the <see cref="Mod" /> class.
         /// </summary>
         /// <remarks>Called by the mod loader.</remarks>
         public Mod()
@@ -166,7 +166,7 @@ namespace Avalon
         /// <summary>
         /// Called when the mod is loaded.
         /// </summary>
-        public override void OnLoad()
+        public override void OnLoad  ()
         {
             Invasion.LoadVanilla();
 
@@ -189,18 +189,9 @@ namespace Avalon
         }
 
         /// <summary>
-        /// <!-- I have no idea what this is. -->
-        /// </summary>
-        /// <param name="option"></param>
-        /// <returns></returns>
-        public override List<string> OptionList(Option option)
-        {
-            return base.OptionList(option);
-        }
-        /// <summary>
         /// Called when an option is changed.
         /// </summary>
-        /// <param name="option">The options that has changed.</param>
+        /// <param name="option">The option that has changed.</param>
         public override void OptionChanged(Option option)
         {
             base.OptionChanged(option);
@@ -208,11 +199,10 @@ namespace Avalon
             switch (option.name)
             {
                 case "TomeSkillHotkey":
-                    if (tomeSkillHotkey != option)
-                        tomeSkillHotkey =  option;
-
-                    //TomeSkillHotkey = (Keys)option.Value;
-                    break;
+					// dirty hack so you can change the option from anywhere
+					if (tomeSkillHotkey != option)
+						tomeSkillHotkey = option;
+					break;
             }
         }
 
