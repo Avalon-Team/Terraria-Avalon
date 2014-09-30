@@ -46,11 +46,9 @@ namespace Avalon
         /// <summary>
         /// Creates a new instance of the MPlayer class
         /// </summary>
-        /// <param name="base">The ModBase which belongs to the ModPlayer instance</param>
-        /// <param name="p">The Player instance which is modified by the ModPlayer</param>
         /// <remarks>Called by the mod loader</remarks>
-        public MPlayer(ModBase @base, Player p)
-            : base(@base, p)
+        public MPlayer()
+            : base()
         {
 
         }
@@ -69,20 +67,21 @@ namespace Avalon
         /// <summary>
         /// Called when the Player is updated
         /// </summary>
-        public override void OnUpdate()
+        public override void MidUpdate()
         {
-            base.OnUpdate();
+            base.MidUpdate();
 
             U_SetChainTexture();
             // U_GetAchievements();
             U_SpawnBosses();
             U_ExtraAccs();
             U_LavaMerman();
+			//U_Chests();
             //U_TileInteract();
             U_MysticalTomes();
         }
-        #region OnUpdate submethods
-        void U_SetChainTexture()
+		#region MidUpdate submethods
+		void U_SetChainTexture()
         {
             Item sel = player.inventory[player.selectedItem];
             if (player.itemAnimation < 0 && !player.delayUseItem) // not using it
@@ -90,9 +89,9 @@ namespace Avalon
 
             object attr = null;
 
-            for (int i = 0; i < sel.allSubClasses.Length; i++)
+            for (int i = 0; i < sel.modEntities.Count; i++)
             {
-                object[] attrArr = sel.allSubClasses[i].GetType().GetCustomAttributes(typeof(ChainTextureAttribute), true);
+                object[] attrArr = sel.modEntities[i].GetType().GetCustomAttributes(typeof(ChainTextureAttribute), true);
 
                 if (attrArr.Length > 0)
                     attr = attrArr[0]; // there should be only one
@@ -110,7 +109,7 @@ namespace Avalon
             else
             {
                 ChainTextureAttribute cta = (ChainTextureAttribute)attr;
-                ModBase @base = Mods.modBases.FirstOrDefault(mb => mb.modName == cta.ModInternalName) ?? modBase; // LINQ++
+                ModBase @base = (Mods.mods.FirstOrDefault(m => m.InternalName == cta.ModInternalName) ?? Mod.Instance.mod).modBase; // LINQ++
 
                 string path = cta.TextureName;
 
@@ -331,10 +330,10 @@ namespace Avalon
                                 break;
 
                             if (acc.type == 576 && Main.rand.Next(18000) == 0 &&
-                                !AudioDef.current.StartsWith("Vanilla:") ||
-                                (AudioDef.current.StartsWith("Vanilla:") && String.IsNullOrEmpty(AudioDef.current)))
+                                !WavebankDef.current.StartsWith("Vanilla:") ||
+                                (WavebankDef.current.StartsWith("Vanilla:") && String.IsNullOrEmpty(WavebankDef.current)))
                             {
-                                int id = String.IsNullOrEmpty(AudioDef.current) ? 0 : Convert.ToInt32(AudioDef.current.Substring("Vanilla:".Length));
+                                int id = String.IsNullOrEmpty(WavebankDef.current) ? 0 : Convert.ToInt32(WavebankDef.current.Substring("Vanilla:".Length));
 
                                 int mid = id <= MUSIC_BOXES.Length - 1 ? MUSIC_BOXES[id] : -1;
                                 if (mid <= -1)
@@ -343,13 +342,13 @@ namespace Avalon
                                 acc.SetDefaults(562 + mid, false);
                                 BinBuffer bb = new BinBuffer(new BinBufferByte());
                                 bb.Write((byte)player.whoAmI);
-                                acc.SaveCustomData(bb);
+								acc.Save(bb);
 
                                 bb.Pos = 0;
                                 NetHelper.SendModData(modBase, NetMessages.SetMusicBox, toSend: bb.ReadBytes());
                             }
                             if (acc.type >= 562 && acc.type <= 574)
-                                AudioDef.musicBox = "Vanilla:" + (acc.type - 562);
+                                WavebankDef.musicBox = "Vanilla:" + (acc.type - 562);
                         }
                         break;
                 }
@@ -370,32 +369,34 @@ namespace Avalon
                 ? modBase.textures["Resources/Misc/LavaMermanLegs.png"] : modBase.textures["Resources/Misc/MermanLegs.png"];
         }
         void U_Chests()
-        {
-            if (player.whoAmI == Main.myPlayer && player.chest >= 0)
-            {
-                Chest c = Main.chest[player.chest];
+		{
+			// to future me/reader: method call is uncommented (in MidUpdate) for the sake of performance.
 
-                if (Main.tile[c.x, c.y].type == 21)
-                    switch (Main.tile[c.x, c.y].frameX)
-                    {
-                        case 2 * 18:
-                            Main.chestText = "Gold Chest";
-                            break;
-                        case 6 * 18:
-                            Main.chestText = "Shadow Chest";
-                            break;
-                    }
-                else if (Main.tile[c.x, c.y].type == jungleChestId)
-                    Main.chestText = "Jungle Chest";
-                else if (Main.tile[c.x, c.y].type == hellfireChestId)
-                    Main.chestText = "Hellfire Chest";
-            }
-        }
-        void U_TileInteract()
-        {
-            // to future me/reader: method call is uncommented (in OnUpdate) for the sake of performance.
+			//if (player.whoAmI == Main.myPlayer && player.chest >= 0)
+			//{
+			//    Chest c = Main.chest[player.chest];
 
-            TileHurtPlayer(player, TileDef.type["Avalon:Magmatic Ore"], 20, CheckHurtMagma, " got burned...");
+			//    if (Main.tile[c.x, c.y].type == 21)
+			//        switch (Main.tile[c.x, c.y].frameX)
+			//        {
+			//            case 2 * 18:
+			//                Main.chestText = "Gold Chest";
+			//                break;
+			//            case 6 * 18:
+			//                Main.chestText = "Shadow Chest";
+			//                break;
+			//        }
+			//    else if (Main.tile[c.x, c.y].type == jungleChestId)
+			//        Main.chestText = "Jungle Chest";
+			//    else if (Main.tile[c.x, c.y].type == hellfireChestId)
+			//        Main.chestText = "Hellfire Chest";
+			//}
+		}
+		void U_TileInteract()
+        {
+			// to future me/reader: method call is uncommented (in MidUpdate) for the sake of performance.
+
+			TileHurtPlayer(player, TileDef.type["Avalon:Magmatic Ore"], 20, CheckHurtMagma, " got burned...");
             TileHurtPlayer(player, TileDef.type["Avalon:Dark Matter"], 30, null, " got burned...");
             TileHurtPlayer(player, TileDef.type["Avalon:Black Sand"], 20, null, " got stuck in sand...", -1);
 
@@ -413,8 +414,8 @@ namespace Avalon
 
             if (--skillCD <= 0)
                 skillCD = 0;
-
-            if (Main.keyState.IsKeyDown(Mod.TomeSkillHotkey) && skillCD <= 0)
+			
+            if (KState.Down(Mod.TomeSkillHotkey) && skillCD <= 0)
             {
                 MWorld.localManager.Activate(player);
 
@@ -461,20 +462,20 @@ namespace Avalon
         }
 
 #pragma warning disable 1591
-        public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref bool crit, ref float critMult)
-        {
-            base.DamageNPC(npc, hitDir, ref damage, ref crit, ref critMult);
+		public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
+		{
+			base.DamageNPC(npc, hitDir, ref damage, ref knockback, ref crit, ref critMult);
 
-            for (int i = 0; i < accessories.Length; i++)
-                accessories[i].DamageNPC(player, npc, hitDir, ref damage, ref crit, ref critMult);
-        }
-        public override void DealtNPC(NPC npc, int hitDir, int dmgDealt, bool crit)
-        {
-            base.DealtNPC(npc, hitDir, dmgDealt, crit);
+			for (int i = 0; i < accessories.Length; i++)
+				accessories[i].DamageNPC(player, npc, hitDir, ref damage, ref knockback, ref crit, ref critMult);
+		}
+		public override void DealtNPC(NPC npc, int hitDir, int dmgDealt, float knockback, bool crit)
+		{
+			base.DealtNPC(npc, hitDir, dmgDealt, knockback, crit);
 
-            for (int i = 0; i < accessories.Length; i++)
-                accessories[i].DealtNPC(player, npc, hitDir, dmgDealt, crit);
-        }
+			for (int i = 0; i < accessories.Length; i++)
+				accessories[i].DealtNPC(player, npc, hitDir, dmgDealt, knockback, crit);
+		}
         public override void DamagePlayer(NPC npc, int hitDir, ref int damage, ref bool crit, ref float critMult)
         {
             base.DamagePlayer(npc, hitDir, ref damage, ref crit, ref critMult);
@@ -508,8 +509,8 @@ namespace Avalon
         bool CheckHurtTile()
         {
             return player.armor.Count(i =>
-                i.type == Defs.items["Avalon:Tome of Luck"].type ||
-                i.type == Defs.items["Avalon:Kinetic Boots Gold"].type) > 0;
+                i.type == ItemDef.byName["Avalon:Tome of Luck"      ].type ||
+                i.type == ItemDef.byName["Avalon:Kinetic Boots Gold"].type) > 0;
         }
         bool CheckHurtMagma()
         {

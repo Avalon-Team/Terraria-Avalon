@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using TAPI;
+using TAPI.UIKit;
 
 namespace Avalon.UI
 {
     /// <summary>
     /// An item slot for an accessory.
     /// </summary>
-    public sealed class ExtraAccessorySlot : Interface.ItemSlot
+    public sealed class ExtraAccessorySlot : ItemSlot
     {
         /// <summary>
         /// Creates a new instance of the <see cref="ExtraAccessorySlot" /> class.
@@ -27,10 +28,10 @@ namespace Avalon.UI
         }
 
         /// <summary>
-        /// Gets whether the <see cref="Interface.ItemSlot" /> allows the given <see cref="Item" /> or not.
+        /// Gets whether the <see cref="ItemSlot" /> allows the given <see cref="Item" /> or not.
         /// </summary>
         /// <param name="i">The <see cref="Item" /> to check.</param>
-        /// <returns>true if the <see cref="Item" /> can be placed in the <see cref="Interface.ItemSlot" />, false otherwise.</returns>
+        /// <returns>true if the <see cref="Item" /> can be placed in the <see cref="ItemSlot" />, false otherwise.</returns>
         public override bool AllowsItem(Item i)
         {
             return base.AllowsItem(i) && ((i.accessory && i.CanEquip(Main.localPlayer, index)) || i.IsBlank());

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using TAPI;
+using TAPI.UIKit;
 using Avalon.API.Items.MysticalTomes;
 
 namespace Avalon.UI
@@ -10,7 +11,7 @@ namespace Avalon.UI
     /// <summary>
     /// An item slot for a <see cref="SkillManager" />.
     /// </summary>
-    public class MysticalTomeSlot : Interface.ItemSlot
+    public class MysticalTomeSlot : ItemSlot
     {
         /// <summary>
         /// Creates a new instance of the <see cref="MysticalTomeSlot" /> class.
@@ -27,16 +28,16 @@ namespace Avalon.UI
         }
 
         /// <summary>
-        /// Gets whether the <see cref="Interface.ItemSlot" /> allows the given <see cref="Item" /> or not.
+        /// Gets whether the <see cref="ItemSlot" /> allows the given <see cref="Item" /> or not.
         /// </summary>
         /// <param name="it">The <see cref="Item" /> to check.</param>
-        /// <returns>true if the <see cref="Item" /> can be placed in the <see cref="Interface.ItemSlot" />, false otherwise.</returns>
+        /// <returns>true if the <see cref="Item" /> can be placed in the <see cref="ItemSlot" />, false otherwise.</returns>
         public override bool AllowsItem(Item it)
         {
             TomeSkillAttribute attr = null;
 
-            for (int i = 0; i < it.allSubClasses.Length; i++)
-                attr = it.allSubClasses[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
+            for (int i = 0; i < it.modEntities.Count; i++)
+                attr = it.modEntities[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
                     .FirstOrDefault() as TomeSkillAttribute; // there should be only one
 
             return base.AllowsItem(it) && ((attr != null && it.CanEquip(Main.localPlayer, 0)) || it.IsBlank());

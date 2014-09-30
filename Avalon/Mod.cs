@@ -115,7 +115,7 @@ namespace Avalon
         /// </summary>
         /// <param name="msg">The message type.</param>
         /// <param name="bb">The content of the message.</param>
-        public override void NetReceive(int msg, BinBuffer bb)
+        public override void NetReceive(byte msg, BinBuffer bb)
         {
             // commonly used vars
             int id;
