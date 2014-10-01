@@ -26,12 +26,14 @@ namespace Avalon.API.World
         {
             get
             {
-                return Defs.npcNames[Type];
+				//var kvp = NPCDef.byName.FirstOrDefault(p => p.Value.type == Type);
+				//return kvp.Key == null || kvp.Value == null ? null : kvp.Key;
+				return NPCDef.byType[Type].name;
             }
-            set
-            {
-                Type = Defs.npcs[value].type;
-            }
+            //set
+            //{
+            //    Type = Defs.npcs[value].type;
+            //}
         }
         /// <summary>
         /// Gets or sets wether the boss should spawn. <see cref="ShouldSpawn(int, Player)" /> has a higher priority.

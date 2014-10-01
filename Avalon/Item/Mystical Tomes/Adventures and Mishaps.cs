@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using TAPI;
+using Avalon.API;
 using Avalon.API.Items.MysticalTomes;
 
 namespace Avalon.Items.MysticalTomes
@@ -14,17 +15,6 @@ namespace Avalon.Items.MysticalTomes
     [TomeSkill(typeof(AdventuresAndMishapsSkill))]
     public sealed class AdventuresAndMishaps : ModItem
     {
-        /// <summary>
-        /// Creates a new instance of the <see cref="AdventuresAndMishaps" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this item.</param>
-        /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public AdventuresAndMishaps(ModBase @base, Item i)
-            : base(@base, i)
-        {
-
-        }
-
         /// <summary>
         /// Called when the <see cref="Player" /> has the <see cref="Item" /> equipped.
         /// </summary>
@@ -72,7 +62,7 @@ namespace Avalon.Items.MysticalTomes
             p.statMana = (int)(p.statMana - 20f * p.manaCost);
 
             for (double d = 0d; d < MathHelper.TwoPi; d += 0.2d)
-                Main.projectile[Projectile.NewProjectile(p.Centre,
+                Main.projectile[ExtendedSpawning.NewProj(p.Centre,
                     new Vector2((float)Math.Cos(d) * -12f, (float)Math.Sin(d) * -12f), 14, (int)(25f * p.magicDamage), 1.1f, p.whoAmI)].timeLeft = 600;
         }
     }

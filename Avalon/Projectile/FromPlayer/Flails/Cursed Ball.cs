@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using TAPI;
+using Avalon.API;
 
 namespace Avalon.Projectiles.FromPlayer.Flails
 {
@@ -12,17 +13,6 @@ namespace Avalon.Projectiles.FromPlayer.Flails
     public sealed class CursedBall : ModProjectile
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="CursedBall" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this projectile.</param>
-        /// <param name="p">The <see cref="Projectile" /> to attach the <see cref="ModProjectile" /> to.</param>
-        public CursedBall(ModBase @base, Projectile p)
-            : base(@base, p)
-        {
-
-        }
-
-        /// <summary>
         /// Executed after <see cref="Projectile.AI" /> is executed.
         /// </summary>
         /// <remarks>Still executes, even if the preceding <see cref="Projectile" />.PreAI returned false.</remarks>
@@ -30,7 +20,7 @@ namespace Avalon.Projectiles.FromPlayer.Flails
         {
             base.PostAI();
 
-            Main.dust[Dust.NewDust(projectile.Hitbox, 74)].noGravity = true;
+            Main.dust[ExtendedSpawning.NewDust(projectile.Hitbox, 74)].noGravity = true;
         }
 
         /// <summary>

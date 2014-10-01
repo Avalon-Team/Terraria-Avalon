@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using TAPI;
+using Avalon.API;
 using Avalon.API.Items.MysticalTomes;
 
 namespace Avalon.Items.MysticalTomes
@@ -14,17 +15,6 @@ namespace Avalon.Items.MysticalTomes
     [TomeSkill(typeof(MediationsFlameSkill))]
     public sealed class MediationsFlame : ModItem
     {
-        /// <summary>
-        /// Creates a new instance of the <see cref="MediationsFlame" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this item.</param>
-        /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public MediationsFlame(ModBase @base, Item i)
-            : base(@base, i)
-        {
-
-        }
-
         /// <summary>
         /// Called when the <see cref="Player" /> has the <see cref="Item" /> equipped.
         /// </summary>
@@ -70,7 +60,7 @@ namespace Avalon.Items.MysticalTomes
 
             double rot = p.AngleTo(Main.mouseWorld);
 
-            Projectile.NewProjectile(p.Centre, new Vector2((float)Math.Cos(rot) * 8f, (float)Math.Sin(rot) * 8f), 95, (int)(37f * p.magicDamage), 1.1f, p.whoAmI);
+			ExtendedSpawning.NewProj(p.Centre, new Vector2((float)Math.Cos(rot) * 8f, (float)Math.Sin(rot) * 8f), 95, (int)(37f * p.magicDamage), 1.1f, p.whoAmI);
         }
     }
 }

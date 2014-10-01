@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using TAPI;
+using Avalon.API;
 using Avalon.API.Items.MysticalTomes;
 
 namespace Avalon.Items.MysticalTomes
@@ -14,17 +15,6 @@ namespace Avalon.Items.MysticalTomes
     [TomeSkill(typeof(ChristmasTomeSkill))]
     public sealed class ChristmasTome : ModItem
     {
-        /// <summary>
-        /// Creates a new instance of the <see cref="ChristmasTome" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this item.</param>
-        /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public ChristmasTome(ModBase @base, Item i)
-            : base(@base, i)
-        {
-
-        }
-
         /// <summary>
         /// Called when the <see cref="Player" /> has the <see cref="Item" /> equipped.
         /// </summary>
@@ -68,7 +58,7 @@ namespace Avalon.Items.MysticalTomes
 
             double rot = p.AngleTo(Main.mouseWorld);
 
-            Projectile.NewProjectile(p.Centre, new Vector2((float)Math.Cos(rot) * -15f, (float)Math.Sin(rot) * -15f), 10, 35, 1.2f, p.whoAmI);
+            ExtendedSpawning.NewProj(p.Centre, new Vector2((float)Math.Cos(rot) * -15f, (float)Math.Sin(rot) * -15f), 10, 35, 1.2f, p.whoAmI);
         }
     }
 }

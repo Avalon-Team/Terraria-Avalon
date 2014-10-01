@@ -18,16 +18,6 @@ namespace Avalon.Tiles.CraftingStations
         // need the candestorytile, canexplode and candestoryaround hooks
 
         /// <summary>
-        /// Creates a new instance of the <see cref="HallowedAltar" /> class.
-        /// </summary>
-        /// <param name="base">The <see cref="ModBase" /> that owns this <see cref="Tile" />.</param>
-        public HallowedAltar(ModBase @base)
-            : base(@base)
-        {
-
-        }
-
-        /// <summary>
         /// Called when the <see cref="Tile" /> is mined, blown up, etc.
         /// </summary>
         /// <param name="x">The X position of the <see cref="Tile" />.</param>

@@ -17,7 +17,7 @@ namespace Avalon.UI
         /// </summary>
         /// <param name="index">The index of the accessory slot.</param>
         public ExtraAccessorySlot(int index)
-            : base(Mod.Instance, "Avalon:ExtraAccSlot", index, (s, i) =>
+            : base(AvalonMod.Instance, "Avalon:ExtraAccSlot", index, (s, i) =>
             {
                 MWorld.localAccessories[s.index].OnUnEquip(Main.localPlayer, s.index);
                 MWorld.localAccessories[s.index] = i;

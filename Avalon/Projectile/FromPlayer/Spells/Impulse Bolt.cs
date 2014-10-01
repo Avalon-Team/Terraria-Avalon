@@ -12,17 +12,6 @@ namespace Avalon.Projectiles.FromPlayer.Spells
     public sealed class ImpulseBolt : ModProjectile
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="ImpulseBolt" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this projectile.</param>
-        /// <param name="p">The <see cref="Projectile" /> to attach the <see cref="ModProjectile" /> to.</param>
-        public ImpulseBolt(ModBase @base, Projectile p)
-            : base(@base, p)
-        {
-
-        }
-
-        /// <summary>
         /// Executed after <see cref="Projectile.AI" /> is executed.
         /// </summary>
         /// <remarks>Still executes, even if the preceding <see cref="Projectile" />.PreAI returned false.</remarks>

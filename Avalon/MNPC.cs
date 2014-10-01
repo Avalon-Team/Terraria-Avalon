@@ -14,18 +14,6 @@ namespace Avalon
     public class MNPC : ModNPC
     {
         /// <summary>
-        /// Creates a new instance of the MNPC class
-        /// </summary>
-        /// <param name="base">The ModBase which belongs to the ModNPC instance</param>
-        /// <param name="n">The NPC instance which is modified by the ModNPC</param>
-        /// <remarks>Called by the mod loader</remarks>
-        public MNPC(ModBase @base, NPC n)
-            : base(@base, n)
-        {
-
-        }
-
-        /// <summary>
         /// Updates the spawn rate for every player. Called every tick.
         /// </summary>
         /// <param name="player">The Player where the NPC(s) could spawn.</param>
@@ -33,7 +21,7 @@ namespace Avalon
         {
             base.UpdateSpawnRate(player);
 
-            if (Mod.Wraiths.IsActive)
+            if (AvalonMod.Wraiths.IsActive)
             {
                 NPC.spawnRate = 15;
                 NPC.maxSpawns = 20;

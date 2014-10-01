@@ -15,17 +15,6 @@ namespace Avalon.Items.MysticalTomes
     public sealed class TaleOfTheDolt : ModItem
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="TaleOfTheDolt" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this item.</param>
-        /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public TaleOfTheDolt(ModBase @base, Item i)
-            : base(@base, i)
-        {
-
-        }
-
-        /// <summary>
         /// Called when the <see cref="Player" /> has the <see cref="Item" /> equipped.
         /// </summary>
         /// <param name="p">The <see cref="Player" /> that owns the <see cref="Item" />.</param>

@@ -17,7 +17,7 @@ namespace Avalon.UI
         /// Creates a new instance of the <see cref="MysticalTomeSlot" /> class.
         /// </summary>
         public MysticalTomeSlot()
-            : base(Mod.Instance, "Avalon:MysticalTomeSlot", 0, (s, i) =>
+            : base(AvalonMod.Instance, "Avalon:MysticalTomeSlot", 0, (s, i) =>
             {
                 s.MyItem.OnUnEquip(Main.localPlayer, 0);
                 MWorld.localManager = SkillManager.FromItem(MWorld.localTome = i);

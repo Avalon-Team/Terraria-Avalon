@@ -12,16 +12,6 @@ namespace Avalon
     public sealed class MUI : ModInterface
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="MUI" /> class.
-        /// </summary>
-        /// <param name="base">The <see cref="ModBase" /> that owns this <see cref="ModInterface" />.</param>
-        public MUI(ModBase @base)
-            : base(@base)
-        {
-
-        }
-
-        /// <summary>
         /// Modifies the given interface layer list.
         /// </summary>
         /// <param name="list">The interface layer list to modify.</param>

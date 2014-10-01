@@ -8,6 +8,7 @@ using PoroCYon.MCT;
 using PoroCYon.MCT.Net;
 using Avalon.API.Items.MysticalTomes;
 using Avalon.API.World;
+using Avalon.Items.Other;
 
 namespace Avalon
 {
@@ -46,12 +47,12 @@ namespace Avalon
     /// The entry point of the Avalon mod.
     /// </summary>
     /// <remarks>Like 'Program' but for a mod</remarks>
-    public sealed class Mod : ModBase
+    public sealed class AvalonMod : ModBase
     {
         /// <summary>
         /// Gets the singleton instance of the mod's <see cref="ModBase" />.
         /// </summary>
-        public static Mod Instance
+        public static AvalonMod Instance
         {
             get;
             private set;
@@ -62,8 +63,9 @@ namespace Avalon
         /// </summary>
         public const int ExtraSlots = 3;
 
-        Option
-            tomeSkillHotkey = null;
+		Option
+			tomeSkillHotkey    = null,
+			shadowMirrorHotkey = null;
 
         internal static List<BossSpawn> spawns = new List<BossSpawn>();
         readonly static List<int> EmptyIntList = new List<int>(); // only alloc once
@@ -80,6 +82,20 @@ namespace Avalon
 			set
 			{
 				Instance.tomeSkillHotkey.Value = value;
+			}
+		}
+		/// <summary>
+		/// Gets or sets the <see cref="ShadowMirror" /> hotkey.
+		/// </summary>
+		public static Keys ShadowMirrorHotkey
+		{
+			get
+			{
+				return (Keys)Instance.shadowMirrorHotkey.Value;
+			}
+			set
+			{
+				Instance.shadowMirrorHotkey.Value = value;
 			}
 		}
 
@@ -101,10 +117,10 @@ namespace Avalon
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="Mod" /> class.
+        /// Creates a new instance of the <see cref="AvalonMod" /> class.
         /// </summary>
         /// <remarks>Called by the mod loader.</remarks>
-        public Mod()
+        public AvalonMod()
             : base()
         {
             Instance = this;
@@ -201,7 +217,11 @@ namespace Avalon
                 case "TomeSkillHotkey":
 					// dirty hack so you can change the option from anywhere
 					if (tomeSkillHotkey != option)
-						tomeSkillHotkey = option;
+						tomeSkillHotkey  = option;
+					break;
+				case "ShadowMirrorHotkey":
+					if (shadowMirrorHotkey != option)
+						shadowMirrorHotkey  = option;
 					break;
             }
         }
@@ -350,7 +370,7 @@ namespace Avalon
         }
         public override void Spawn(int pid)
         {
-            Mod.Wraiths.Start();
+            AvalonMod.Wraiths.Start();
         }
     }
 }

@@ -23,7 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <LangVersion>5</LangVersion>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
@@ -36,7 +36,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <PlatformTarget>x86</PlatformTarget>
     <LangVersion>5</LangVersion>
     <DocumentationFile>bin\Release\Avalon.xml</DocumentationFile>
@@ -71,6 +71,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\ExtendedSpawning.cs" />
     <Compile Include="Item\Mystical Tomes\Adventures and Mishaps.cs" />
     <Compile Include="Item\Mystical Tomes\Tome of the River Spirit.cs" />
     <Compile Include="Item\Mystical Tomes\Tome of Distance.cs" />
@@ -115,7 +116,7 @@
     <Compile Include="_MCTImport\Invasion.cs" />
     <Compile Include="_MCTImport\Net\NetHelper.cs" />
     <Compile Include="MNPC.cs" />
-    <Compile Include="Mod.cs" />
+    <Compile Include="AvalonMod.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="MWorld.cs" />
     <Compile Include="Projectile\FromPlayer\Flails\Heaven Ball.cs" />

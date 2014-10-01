@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using TAPI;
+using Avalon.API;
 
 namespace Avalon.Projectiles.FromPlayer.Flails
 {
@@ -13,17 +14,6 @@ namespace Avalon.Projectiles.FromPlayer.Flails
     public sealed class SporalashBall : ModProjectile
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="SporalashBall" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this projectile.</param>
-        /// <param name="p">The <see cref="Projectile" /> to attach the <see cref="ModProjectile" /> to.</param>
-        public SporalashBall(ModBase @base, Projectile p)
-            : base(@base, p)
-        {
-
-        }
-
-        /// <summary>
         /// Executed after <see cref="Projectile.AI" /> is executed.
         /// </summary>
         /// <remarks>Still executes, even if the preceding <see cref="Projectile" />.PreAI returned false.</remarks>
@@ -32,7 +22,7 @@ namespace Avalon.Projectiles.FromPlayer.Flails
             base.PostAI();
 
             if (Main.rand.Next(2) == 0)
-                Main.dust[Dust.NewDust(projectile.Hitbox, 40, 0f, 0f, 80, Color.White, 1.5f)].noGravity = true;
+                Main.dust[ExtendedSpawning.NewDust(projectile.Hitbox, 40, Vector2.Zero, 80, Color.White, 1.5f)].noGravity = true;
         }
 
         /// <summary>

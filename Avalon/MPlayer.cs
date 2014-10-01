@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using Terraria;
 using TAPI;
 using PoroCYon.MCT.Net;
 using Avalon.API.Items;
-using Avalon.API.Items.MysticalTomes;
-using Avalon.UI;
 
 namespace Avalon
 {
@@ -16,8 +13,9 @@ namespace Avalon
     /// Global player stuff
     /// </summary>
     public sealed class MPlayer : ModPlayer
-    {
-        static float rot = 0f;
+	{
+#pragma warning disable 414
+		static float rot = 0f;
         static bool
             isImmuneToSlimes = false,
             LavaMerman = false,
@@ -30,8 +28,9 @@ namespace Avalon
             hellfireChestId,
             skillCD = 0;
         readonly static int[] MUSIC_BOXES = new int[] { -1, 0, 1, 2, 4, 5, -1, 6, 7, 9, 8, 11, 10, 12 };
+#pragma warning restore 414
 
-        Item[] accessories
+		Item[] accessories
         {
             get
             {
@@ -41,16 +40,6 @@ namespace Avalon
             {
                 MWorld.accessories[player.whoAmI] = value;
             }
-        }
-
-        /// <summary>
-        /// Creates a new instance of the MPlayer class
-        /// </summary>
-        /// <remarks>Called by the mod loader</remarks>
-        public MPlayer()
-            : base()
-        {
-
         }
 
         /// <summary>
@@ -109,7 +98,7 @@ namespace Avalon
             else
             {
                 ChainTextureAttribute cta = (ChainTextureAttribute)attr;
-                ModBase @base = (Mods.mods.FirstOrDefault(m => m.InternalName == cta.ModInternalName) ?? Mod.Instance.mod).modBase; // LINQ++
+                ModBase @base = (Mods.mods.FirstOrDefault(m => m.InternalName == cta.ModInternalName) ?? AvalonMod.Instance.mod).modBase; // LINQ++
 
                 string path = cta.TextureName;
 
@@ -150,21 +139,21 @@ namespace Avalon
         }
         void U_SpawnBosses()
         {
-            if (NPC.spawnRate <= 0 || !Mod.IsInSuperHardmode || MWorld.CheckForBosses() || player.townNPCs > 0 || Main.invasionType != 0)
+            if (NPC.spawnRate <= 0 || !AvalonMod.IsInSuperHardmode || MWorld.CheckForBosses() || player.townNPCs > 0 || Main.invasionType != 0)
                 return;
 
             int rate = (NPC.spawnRate * 2) * (Main.eclipse ? 3 : (Main.bloodMoon ? 2 : 1));
 
-            for (int i = 0; i < Mod.spawns.Count; i++)
-                if (Mod.spawns[i].ShouldSpawn(rate, player))
-                    Mod.spawns[i].Spawn(player.whoAmI);
+            for (int i = 0; i < AvalonMod.spawns.Count; i++)
+                if (AvalonMod.spawns[i].ShouldSpawn(rate, player))
+                    AvalonMod.spawns[i].Spawn(player.whoAmI);
         }
         void U_ExtraAccs()
         {
             if (!player.active || String.IsNullOrEmpty(player.name) || player.dead || player.ghost)
                 return;
 
-            for (int i = 0; i < Mod.ExtraSlots; i++)
+            for (int i = 0; i < AvalonMod.ExtraSlots; i++)
             {
                 Item acc = MWorld.accessories[player.whoAmI][i];
 
@@ -415,7 +404,7 @@ namespace Avalon
             if (--skillCD <= 0)
                 skillCD = 0;
 			
-            if (KState.Down(Mod.TomeSkillHotkey) && skillCD <= 0)
+            if (KState.Down(AvalonMod.TomeSkillHotkey) && skillCD <= 0)
             {
                 MWorld.localManager.Activate(player);
 

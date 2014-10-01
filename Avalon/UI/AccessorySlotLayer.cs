@@ -56,8 +56,8 @@ namespace Avalon.UI
             private set;
         }
 
-        ExtraAccessorySlot[] slots = new ExtraAccessorySlot[Mod.ExtraSlots];
-        Item[] items = new Item[Mod.ExtraSlots];
+        ExtraAccessorySlot[] slots = new ExtraAccessorySlot[AvalonMod.ExtraSlots];
+        Item[] items = new Item[AvalonMod.ExtraSlots];
 
         internal AccessorySlotLayer()
             : base("Avalon:AccessorySlotLayer")

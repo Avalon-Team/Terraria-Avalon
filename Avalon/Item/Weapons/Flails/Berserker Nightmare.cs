@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using TAPI;
+using Avalon.API;
 using Avalon.API.Items;
 
 namespace Avalon.Items.Weapons.Flails
@@ -14,17 +15,6 @@ namespace Avalon.Items.Weapons.Flails
     [ChainTexture("Berserker Chain.png", ReplaceFlailChain = true)]
     public sealed class BerserkerNightmare : ModItem
     {
-        /// <summary>
-        /// Creates a new instance of the <see cref="BerserkerNightmare" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this item.</param>
-        /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public BerserkerNightmare(ModBase @base, Item i)
-            : base(@base, i)
-        {
-
-        }
-
         /// <summary>
         /// Called before the <see cref="Player" /> shoots a <see cref="Projectile" /> with h[is|er] held <see cref="Item" />.
         /// </summary>
@@ -40,7 +30,7 @@ namespace Avalon.Items.Weapons.Flails
             int spr = 24;
 
             for (int i = 0; i < 2; i++)
-                Projectile.NewProjectile(pos, vel + new Vector2(Main.rand.Next(-spr, spr + 1), Main.rand.Next(-spr, spr + 1)) * 0.05f, type, dmg, kb, p.whoAmI);
+                ExtendedSpawning.NewProj(pos, vel + new Vector2(Main.rand.Next(-spr, spr + 1), Main.rand.Next(-spr, spr + 1)) * 0.05f, type, dmg, kb, p.whoAmI);
 
             return false;
         }

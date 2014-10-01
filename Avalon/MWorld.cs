@@ -19,9 +19,11 @@ namespace Avalon
     {
         const int spawnSpaceX = 3, spawnSpaceY = 3;
 
-        static bool needsToLoadRecipes = true, addedWings = false, scanned = false; // no idea
+#pragma warning disable 414
+		static bool needsToLoadRecipes = true, addedWings = false, scanned = false;	// no idea
+#pragma warning restore 414
 
-        internal static bool oldNight = false;
+		internal static bool oldNight = false;
 
         /// <summary>
         /// Wether UltraOblivion has already been killed or not.
@@ -62,8 +64,10 @@ namespace Avalon
             private set;
         }
 
-        static int grassCounter = 0, jungleEx = 0, gCount = 0;
-        static int jungleX = -1, jungleY = -1, lOceanY = -1, rOceanY = -1, hellY;
+#pragma warning disable 414
+		static int grassCounter = 0, jungleEx = 0, gCount = 0;
+#pragma warning restore 414
+		static int jungleX = -1, jungleY = -1, lOceanY = -1, rOceanY = -1, hellY;
 
         /// <summary>
         /// Gets the position of the Jungle (in tile coordinates).
@@ -187,17 +191,6 @@ namespace Avalon
         }
 
         /// <summary>
-        /// Creates a new instance of the MWorld class
-        /// </summary>
-        /// <param name="base">The ModBase which belongs to the ModWorld instance</param>
-        /// <remarks>Called by the mod loader</remarks>
-        public MWorld(ModBase @base)
-            : base(@base)
-        {
-
-        }
-
-        /// <summary>
         /// Corrects a Y position so the tile at the given position is inactive.
         /// </summary>
         /// <param name="x">The X coördinate.</param>
@@ -257,7 +250,7 @@ namespace Avalon
             base.Initialize();
 
             CatarystDownedCount = EverIceCount = ArmageddonCount = HallowAltarsBroken = 0;
-            Mod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
+            AvalonMod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
 
             accessories = new Item        [Main.netMode == 0 ? 1 : Main.numPlayers][];
             tomes       = new Item        [Main.netMode == 0 ? 1 : Main.numPlayers]  ;
@@ -265,7 +258,7 @@ namespace Avalon
 
             for (int i = 0; i < accessories.Length; i++)
             {
-                accessories[i] = new Item[Mod.ExtraSlots];
+                accessories[i] = new Item[AvalonMod.ExtraSlots];
 
                 for (int j = 0; j < accessories[i].Length; j++)
                     accessories[i][j] = new Item();
@@ -300,7 +293,7 @@ namespace Avalon
         {
             base.PostUpdate();
 
-            if (!Mod.IsInSuperHardmode && !UltraOblivionDowned)
+            if (!AvalonMod.IsInSuperHardmode && !UltraOblivionDowned)
                 return;
 
             NPC n, n2;
@@ -309,12 +302,12 @@ namespace Avalon
             {
                 n = Main.npc[i];
 
-                if (n.type == 94 && n.active && Mod.IsInSuperHardmode)
+                if (n.type == 94 && n.active && AvalonMod.IsInSuperHardmode)
                     for (int j = 0; j < Main.npc.Length; j++)
                     {
                         n2 = Main.npc[j];
 
-                        if (n2.type == Defs.npcs["Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
+                        if (n2.type == NPCDef.byName["Avalon:Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
                         {
                             Make3x3Circle((int)n.position.X / 16, (int)n.position.Y / 16, TileDef.type["Oblivion Ore"]);
 
@@ -328,12 +321,12 @@ namespace Avalon
                         }
                     }
 
-                if (n.type == Defs.npcs["Guardian Corruptor"].type && n.active && UltraOblivionDowned)
+                if (n.type == NPCDef.byName["Avalon:Guardian Corruptor"].type && n.active && UltraOblivionDowned)
                     for (int j = 0; j < Main.npc.Length; j++)
                     {
                         n2 = Main.npc[j];
 
-                        if (n2.type == Defs.npcs["Aegis Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
+                        if (n2.type == NPCDef.byName["Avalon:Aegis Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
                         {
                             Make3x3Circle((int)n.position.X / 16, (int)n.position.Y / 16, TileDef.type["Berserker Ore"]);
 
@@ -349,7 +342,7 @@ namespace Avalon
             }
 
             if (WraithsDowned >= 200)
-                Mod.Wraiths.Stop();
+                AvalonMod.Wraiths.Stop();
         }
 
         /// <summary>
@@ -372,7 +365,7 @@ namespace Avalon
             base.Save(bb);
 
             bb.WriteX(
-                Mod.IsInSuperHardmode,
+                AvalonMod.IsInSuperHardmode,
                 UltraOblivionDowned,
                 SpawnedBerserkerOre,
                 scanned);
@@ -403,13 +396,13 @@ namespace Avalon
 
             for (int i = 0; i < accessories.Length; i++)
             {
-                accessories[i] = new Item[Mod.ExtraSlots];
+                accessories[i] = new Item[AvalonMod.ExtraSlots];
 
-                for (int j = 0; j < Mod.ExtraSlots; j++)
+                for (int j = 0; j < AvalonMod.ExtraSlots; j++)
                     accessories[i][j] = new Item();
             }
 
-            Mod.IsInSuperHardmode = bb.ReadBool();
+            AvalonMod.IsInSuperHardmode = bb.ReadBool();
             UltraOblivionDowned = bb.ReadBool();
             SpawnedBerserkerOre = bb.ReadBool();
             scanned = bb.ReadBool();

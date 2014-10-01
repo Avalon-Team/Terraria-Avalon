@@ -12,17 +12,6 @@ namespace Avalon.Items.Weapons.Spells
     public sealed class ImpulseStrike : ModItem
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="ImpulseStrike" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this item.</param>
-        /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public ImpulseStrike(ModBase @base, Item i)
-            : base(@base, i)
-        {
-
-        }
-
-        /// <summary>
         /// When the <see cref="Player" /> is holding the <see cref="Item" />.
         /// </summary>
         /// <param name="p">The <see cref="Player" /> that is holding the <see cref="Item" />.</param>

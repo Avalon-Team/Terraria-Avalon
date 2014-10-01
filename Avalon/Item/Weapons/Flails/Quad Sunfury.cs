@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using TAPI;
+using Avalon.API;
 using Avalon.API.Items;
 
 namespace Avalon.Items.Weapons.Flails
@@ -52,17 +53,6 @@ namespace Avalon.Items.Weapons.Flails
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="QuadSunfury" /> class.
-        /// </summary>
-        /// <param name="base">The <see cref="ModBase" /> that owns the <see cref="Item" />.</param>
-        /// <param name="i">The <see cref="Item" /> the <see cref="ModItem" /> is attached to.</param>
-        public QuadSunfury(ModBase @base, Item i)
-            : base(@base, i)
-        {
-
-        }
-
-        /// <summary>
         /// Called when the <see cref="Player" /> is using the <see cref="Item" />.
         /// </summary>
         /// <param name="p">The <see cref="Player" /> that is currently using the <see cref="Item" />.</param>
@@ -77,7 +67,7 @@ namespace Avalon.Items.Weapons.Flails
                     vY = Main.mouseY + Main.screenPosition.Y - p.Centre.Y,
                     dist = 12f / (float)Math.Sqrt(vX * vX + vY * vY);
 
-                Projectile.NewProjectile(p.Centre, new Vector2(vX * dist, vY * dist), Defs.projectiles["Avalon:Quad Ball"].type, item.damage, item.knockBack, p.whoAmI);
+				ExtendedSpawning.NewProj(p.Centre, new Vector2(vX * dist, vY * dist), ProjDef.byName["Avalon:Quad Ball"].type, item.damage, item.knockBack, p.whoAmI);
             }
         }
 
@@ -98,13 +88,13 @@ namespace Avalon.Items.Weapons.Flails
             switch (UseMode)
             {
                 case Mode.FourDirections:
-                    Projectile.NewProjectile(pos,  vel, type, dmg, kb, p.whoAmI);
-                    Projectile.NewProjectile(pos, -vel, type, dmg, kb, p.whoAmI);
+					ExtendedSpawning.NewProj(pos,  vel, type, dmg, kb, p.whoAmI);
+					ExtendedSpawning.NewProj(pos, -vel, type, dmg, kb, p.whoAmI);
                     Projectile.NewProjectile(pos.X, pos.Y, -vel.X,  vel.Y, type, dmg, kb, p.whoAmI);
                     Projectile.NewProjectile(pos.X, pos.Y,  vel.X, -vel.Y, type, dmg, kb, p.whoAmI);
                     break;
                 case Mode.OneBig:
-                    Projectile.NewProjectile(pos, vel, Defs.projectiles["Avalon:Mega Quad Ball"].type, dmg, kb, p.whoAmI);
+					ExtendedSpawning.NewProj(pos, vel, ProjDef.byName["Avalon:Mega Quad Ball"].type, dmg, kb, p.whoAmI);
                     break;
                 case Mode.Sequiental:
                     // see UseStyle
@@ -113,7 +103,7 @@ namespace Avalon.Items.Weapons.Flails
                     byte spread = 24;
 
                     for (int i = 0; i < 4; i++)
-                        Projectile.NewProjectile(pos, vel + new Vector2(Main.rand.Next(-spread, spread + 1), Main.rand.Next(-spread, spread + 1)) * 0.1f, type, dmg, kb, p.whoAmI);
+						ExtendedSpawning.NewProj(pos, vel + new Vector2(Main.rand.Next(-spread, spread + 1), Main.rand.Next(-spread, spread + 1)) * 0.1f, type, dmg, kb, p.whoAmI);
                     break;
             }
 
@@ -127,8 +117,8 @@ namespace Avalon.Items.Weapons.Flails
         {
             base.HoldStyle(p);
 
-            if (item.toolTips.Count <= 1 || String.IsNullOrEmpty(item.toolTip2))
-                item.toolTip2 = "Mode: " + UseMode;
+            if (item.tooltips.Count <= 1 || String.IsNullOrEmpty(item.tooltip2))
+                item.tooltip2 = "Mode: " + UseMode;
 
             if (cd < CD_MAX)
                 cd++;
@@ -141,7 +131,7 @@ namespace Avalon.Items.Weapons.Flails
                     UseMode = Mode.Sequiental;
 
                 Main.NewText("Mode: " + UseMode);
-                item.toolTip2 = "Mode: " + UseMode;
+                item.tooltip2 = "Mode: " + UseMode;
             }
         }
 
@@ -164,7 +154,7 @@ namespace Avalon.Items.Weapons.Flails
             base.Load(bb);
 
             UseMode = (Mode)bb.ReadByte();
-            item.toolTip2 = "Mode: " + UseMode;
+            item.tooltip2 = "Mode: " + UseMode;
         }
     }
 }

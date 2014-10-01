@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using Terraria;
 using TAPI;
 using PoroCYon.MCT.Net;
+using Avalon.API;
 
 namespace Avalon.Items.Other
 {
@@ -61,17 +62,6 @@ namespace Avalon.Items.Other
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ShadowMirror" /> class.
-        /// </summary>
-        /// <param name="base">The mod that owns this item.</param>
-        /// <param name="i">The <see cref="Item" /> to attach the <see cref="ModItem" /> to.</param>
-        public ShadowMirror(ModBase @base, Item i)
-            : base(@base, i)
-        {
-
-        }
-
-        /// <summary>
         /// Gets where the <see cref="Player" /> should teleport to in the given <see cref="Mode" />.
         /// </summary>
         /// <param name="p">The <see cref="Player" /> that will teleport.</param>
@@ -109,7 +99,7 @@ namespace Avalon.Items.Other
             p.position = PositionOf(p, UseMode);
 
             if (Main.netMode == 1 && p.whoAmI == Main.myPlayer)
-                NetHelper.SendModData(Mod.Instance, NetMessages.RequestTiles, p.whoAmI,
+                NetHelper.SendModData(AvalonMod.Instance, NetMessages.RequestTiles, p.whoAmI,
                     (int)(p.position.X / 16f), (int)(p.position.Y / 16f), Math.Max(Main.screenWidth, Main.screenHeight) * 2); // usually screenWidth is greater, but you never know..
 
             return base.UseItem(p);
@@ -139,17 +129,17 @@ namespace Avalon.Items.Other
                 modeCd = MODE_CD_MAX;
             }
 
-            if (Main.keyState.IsKeyDown(Keys.J) && Main.oldKeyState.IsKeyUp(Keys.J) && tpCd <= 0) // TODO: mod settings?
+            if (KState.Down(AvalonMod.ShadowMirrorHotkey) && KState.WasUp(AvalonMod.ShadowMirrorHotkey) && tpCd <= 0)
             {
                 for (int i = 0; i < 10; i++)
-                    Dust.NewDust(p.Hitbox, 15);
+					ExtendedSpawning.NewDust(p.Hitbox, 15);
 
                 p.position = new Vector2(Main.mouseX, Main.mouseY) + Main.screenPosition;
 
                 Main.PlaySound(2, (int)p.position.X, (int)p.position.Y, 8);
 
                 for (int i = 0; i < 10; i++)
-                    Dust.NewDust(p.Hitbox, 15);
+					ExtendedSpawning.NewDust(p.Hitbox, 15);
 
                 tpCd = TP_CD_MAX;
             }
@@ -163,17 +153,17 @@ namespace Avalon.Items.Other
         {
             base.Effects(p);
 
-            if (Main.keyState.IsKeyDown(Keys.J) && Main.oldKeyState.IsKeyUp(Keys.J) && tpCd <= 0) // TODO: mod settings?
+            if (KState.Down(AvalonMod.ShadowMirrorHotkey) && KState.WasUp(AvalonMod.ShadowMirrorHotkey) && tpCd <= 0)
             {
                 for (int i = 0; i < 10; i++)
-                    Dust.NewDust(p.Hitbox, 15);
+                    ExtendedSpawning.NewDust(p.Hitbox, 15);
 
                 p.position = new Vector2(Main.mouseX, Main.mouseY) + Main.screenPosition;
 
                 Main.PlaySound(2, (int)p.position.X, (int)p.position.Y, 8);
 
                 for (int i = 0; i < 10; i++)
-                    Dust.NewDust(p.Hitbox, 15);
+					ExtendedSpawning.NewDust(p.Hitbox, 15);
             }
         }
     }
