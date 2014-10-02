@@ -72,19 +72,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\ExtendedSpawning.cs" />
-    <Compile Include="Item\Mystical Tomes\Adventures and Mishaps.cs" />
-    <Compile Include="Item\Mystical Tomes\Tome of the River Spirit.cs" />
-    <Compile Include="Item\Mystical Tomes\Tome of Distance.cs" />
-    <Compile Include="Item\Mystical Tomes\The Voidlands.cs" />
-    <Compile Include="Item\Mystical Tomes\Tale of the Red Lotus.cs" />
-    <Compile Include="Item\Mystical Tomes\Tale of the Dolt.cs" />
-    <Compile Include="Item\Mystical Tomes\Misty Peach Blossoms.cs" />
-    <Compile Include="Item\Mystical Tomes\Mediation%27s Flame.cs" />
-    <Compile Include="Item\Mystical Tomes\Love Up and Down.cs" />
-    <Compile Include="Item\Mystical Tomes\Flanker%27s Tome.cs" />
-    <Compile Include="Item\Mystical Tomes\Creator%27s Tome.cs" />
-    <Compile Include="Item\Mystical Tomes\Christmas Tome.cs" />
-    <Compile Include="Item\Mystical Tomes\Burning Desire.cs" />
+    <Compile Include="Items\Mystical Tomes\Adventures and Mishaps.cs" />
+    <Compile Include="Items\Mystical Tomes\Tome of the River Spirit.cs" />
+    <Compile Include="Items\Mystical Tomes\Tome of Distance.cs" />
+    <Compile Include="Items\Mystical Tomes\The Voidlands.cs" />
+    <Compile Include="Items\Mystical Tomes\Tale of the Red Lotus.cs" />
+    <Compile Include="Items\Mystical Tomes\Tale of the Dolt.cs" />
+    <Compile Include="Items\Mystical Tomes\Misty Peach Blossoms.cs" />
+    <Compile Include="Items\Mystical Tomes\Mediation%27s Flame.cs" />
+    <Compile Include="Items\Mystical Tomes\Love Up and Down.cs" />
+    <Compile Include="Items\Mystical Tomes\Flanker%27s Tome.cs" />
+    <Compile Include="Items\Mystical Tomes\Creator%27s Tome.cs" />
+    <Compile Include="Items\Mystical Tomes\Christmas Tome.cs" />
+    <Compile Include="Items\Mystical Tomes\Burning Desire.cs" />
     <Compile Include="MUI.cs" />
     <Compile Include="UI\AccessorySlotLayer.cs" />
     <Compile Include="API\Biomes\Attributes.cs" />
@@ -92,23 +92,23 @@
     <Compile Include="API\Items\Mystical Tomes\Attributes.cs" />
     <Compile Include="API\Items\Mystical Tomes\SkillManager.cs" />
     <Compile Include="API\World\BossSpawn.cs" />
-    <Compile Include="Buff\Shadows.cs" />
-    <Compile Include="Item\Materials\Souls\Soul.cs" />
-    <Compile Include="Item\Other\Shadow Mirror.cs" />
-    <Compile Include="Item\Potions\Shadow Potion.cs" />
-    <Compile Include="Item\Weapons\Flails\Mythril Flail.cs" />
-    <Compile Include="Item\Weapons\Flails\Heaven%27s Tear.cs" />
-    <Compile Include="Item\Weapons\Flails\Eclipse%27s Waning.cs" />
-    <Compile Include="Item\Weapons\Flails\Cobalt Flail.cs" />
-    <Compile Include="Item\Weapons\Flails\Adamantite Flail.cs" />
-    <Compile Include="Item\Weapons\Flails\Berserker Nightmare.cs" />
-    <Compile Include="Item\Weapons\Flails\Moonfury.cs" />
-    <Compile Include="Item\Weapons\Flails\Meteor Masher.cs" />
-    <Compile Include="Item\Weapons\Flails\Quad Sunfury.cs" />
-    <Compile Include="Item\Weapons\Flails\Sporalash.cs" />
-    <Compile Include="Item\Weapons\Flails\Silver Flail.cs" />
-    <Compile Include="Item\Weapons\Flails\Caesium Flail.cs" />
-    <Compile Include="Item\Weapons\Spells\Impulse Strike.cs" />
+    <Compile Include="Buffs\Shadows.cs" />
+    <Compile Include="Items\Materials\Souls\Soul.cs" />
+    <Compile Include="Items\Other\Shadow Mirror.cs" />
+    <Compile Include="Items\Potions\Shadow Potion.cs" />
+    <Compile Include="Items\Weapons\Flails\Mythril Flail.cs" />
+    <Compile Include="Items\Weapons\Flails\Heaven%27s Tear.cs" />
+    <Compile Include="Items\Weapons\Flails\Eclipse%27s Waning.cs" />
+    <Compile Include="Items\Weapons\Flails\Cobalt Flail.cs" />
+    <Compile Include="Items\Weapons\Flails\Adamantite Flail.cs" />
+    <Compile Include="Items\Weapons\Flails\Berserker Nightmare.cs" />
+    <Compile Include="Items\Weapons\Flails\Moonfury.cs" />
+    <Compile Include="Items\Weapons\Flails\Meteor Masher.cs" />
+    <Compile Include="Items\Weapons\Flails\Quad Sunfury.cs" />
+    <Compile Include="Items\Weapons\Flails\Sporalash.cs" />
+    <Compile Include="Items\Weapons\Flails\Silver Flail.cs" />
+    <Compile Include="Items\Weapons\Flails\Caesium Flail.cs" />
+    <Compile Include="Items\Weapons\Spells\Impulse Strike.cs" />
     <Compile Include="UI\ExtraAccessorySlot.cs" />
     <Compile Include="UI\MysticalTomeSlot.cs" />
     <Compile Include="UI\TomeSlotLayer.cs" />
@@ -119,131 +119,131 @@
     <Compile Include="AvalonMod.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="MWorld.cs" />
-    <Compile Include="Projectile\FromPlayer\Flails\Heaven Ball.cs" />
-    <Compile Include="Projectile\FromPlayer\Flails\Sporalash Ball.cs" />
-    <Compile Include="Projectile\FromPlayer\Flails\Moonfury Ball.cs" />
-    <Compile Include="Projectile\FromPlayer\Flails\Eclipse Ball.cs" />
-    <Compile Include="Projectile\FromPlayer\Flails\Cursed Ball.cs" />
-    <Compile Include="Projectile\FromPlayer\Spells\Impulse Bolt.cs" />
-    <Compile Include="Projectile\FromPlayer\Spells\Impulse Trail.cs" />
+    <Compile Include="Projectiles\FromPlayer\Flails\Heaven Ball.cs" />
+    <Compile Include="Projectiles\FromPlayer\Flails\Sporalash Ball.cs" />
+    <Compile Include="Projectiles\FromPlayer\Flails\Moonfury Ball.cs" />
+    <Compile Include="Projectiles\FromPlayer\Flails\Eclipse Ball.cs" />
+    <Compile Include="Projectiles\FromPlayer\Flails\Cursed Ball.cs" />
+    <Compile Include="Projectiles\FromPlayer\Spells\Impulse Bolt.cs" />
+    <Compile Include="Projectiles\FromPlayer\Spells\Impulse Trail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tile\Crafting Stations\Hallowed Altar.cs" />
+    <Compile Include="Tiles\Crafting Stations\Hallowed Altar.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Buff\Shadows.png" />
-    <Content Include="Item\Crafting Stations\Adamantite Anvil.json" />
-    <Content Include="Item\Crafting Stations\Berserker Anvil.png" />
-    <Content Include="Item\Crafting Stations\Caesium Forge.json" />
-    <Content Include="Item\Crafting Stations\Hallowed Altar.png" />
-    <Content Include="Item\Crafting Stations\Navigator%27s Array.png" />
-    <Content Include="Item\Crafting Stations\Resistant Work Bench.png" />
-    <Content Include="Item\Materials\Berserker\Berserker Bar.png" />
-    <Content Include="Item\Materials\Berserker\Berserker Ore.png" />
-    <Content Include="Item\Materials\Corrupted\Corrupted Bar.png" />
-    <Content Include="Item\Materials\Corrupted\Corrupted Ore.png" />
-    <Content Include="Item\Materials\Dark Matter\Dark Matter Bar.png" />
-    <Content Include="Item\Materials\Dark Matter\Dark Matter Ore.png" />
-    <Content Include="Item\Materials\Hallowstone Block.png" />
-    <Content Include="Item\Materials\Illegal Weapon Instructions.png" />
-    <Content Include="Item\Materials\Jungle\Jungle Ore.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Carbon Steel.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Dew of Herbs.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Dew Orb.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Dragon Orb.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Element Diamond.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Element Dust.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Fine Lumber.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Gravel.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Mysterious Page.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Mystical Totem.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Rubybead Herb.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Sandstone.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Scroll of Tome.png" />
-    <Content Include="Item\Materials\Mystical Tomes\Strong Venom.png" />
-    <Content Include="Item\Materials\Shards\Fire Shard.png" />
-    <Content Include="Item\Materials\Shards\Jungle Shard.png" />
-    <Content Include="Item\Materials\Jungle\Jungle Bar.png" />
-    <Content Include="Item\Materials\Magmatic\Magmatic Bar.png" />
-    <Content Include="Item\Materials\Magmatic\Magmatic Ore.png" />
-    <Content Include="Item\Materials\Resistant Wood.png" />
-    <Content Include="Item\Materials\Souls\Soul of Blight.png" />
-    <Content Include="Item\Materials\Souls\Soul of Plight.png" />
-    <Content Include="Item\Materials\Souls\Soul of Vigor.png" />
-    <Content Include="Item\Mystical Tomes\Adventures and Mishaps.png" />
-    <Content Include="Item\Mystical Tomes\Burning Desire.png" />
-    <Content Include="Item\Mystical Tomes\Christmas Tome.png" />
-    <Content Include="Item\Mystical Tomes\Creator%27s Tome.png" />
-    <Content Include="Item\Mystical Tomes\Flanker%27s Tome.png" />
-    <Content Include="Item\Mystical Tomes\Love Up and Down.png" />
-    <Content Include="Item\Mystical Tomes\Mediation%27s Flame.png" />
-    <Content Include="Item\Mystical Tomes\Misty Peach Blossoms.png" />
-    <Content Include="Item\Mystical Tomes\Tale of the Dolt.png" />
-    <Content Include="Item\Mystical Tomes\Tale of the Red Lotus.png" />
-    <Content Include="Item\Mystical Tomes\The Voidlands.png" />
-    <Content Include="Item\Mystical Tomes\Tome of Distance.png" />
-    <Content Include="Item\Mystical Tomes\Tome of the River Spirits.png" />
-    <Content Include="Item\Other\Shadow Mirror.png" />
-    <Content Include="Item\Potions\Shadow Potion.png" />
-    <Content Include="Item\Weapons\Flails\Berserker Nightmare.png" />
-    <Content Include="Item\Weapons\Flails\Caesium Flail.json" />
-    <Content Include="Item\Weapons\Flails\Cobalt Flail.png" />
-    <Content Include="Item\Weapons\Flails\Eclipse%27s Waning.png" />
-    <Content Include="Item\Weapons\Flails\Heaven%27s Tear.png" />
-    <Content Include="Item\Weapons\Flails\Meteor Masher.png" />
-    <Content Include="Item\Weapons\Flails\Moonfury.png" />
-    <Content Include="Item\Weapons\Flails\Mythril Flail.png" />
-    <Content Include="Item\Weapons\Flails\Quad Sunfury.png" />
-    <Content Include="Item\Weapons\Flails\Silver Flail.png" />
-    <Content Include="Item\Materials\Caesium\Caesium Bar.json" />
-    <Content Include="Item\Materials\Caesium\Caesium Ore.json" />
-    <Content Include="Item\Materials\Coal.json" />
-    <Content Include="Item\Materials\Steel\Steel Bar.json" />
-    <Content Include="Item\Materials\Steel\Steel Chain.json" />
-    <Content Include="Item\Weapons\Flails\Sporalash.png" />
-    <Content Include="Item\Weapons\Spells\Impulse Strike.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Berserker Sphere.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Eclipse Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Heaven Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Mega Quad Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Meteor Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Moonfury Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Mythril Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Quad Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Silver Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Sporalash Ball.png" />
-    <Content Include="Projectile\FromPlayer\Spells\Impulse Bolt.png" />
-    <Content Include="Projectile\FromPlayer\Spells\Impulse Trail.png" />
-    <Content Include="Tile\Blocks\Hallowstone Block.png" />
-    <Content Include="Tile\Blocks\Resistant Wood.png" />
-    <Content Include="Tile\Crafting Stations\Berserker Anvil.png" />
-    <Content Include="Tile\Crafting Stations\Navigator%27s Array.png" />
-    <Content Include="Tile\Crafting Stations\Resistant Work Bench.png" />
-    <Content Include="Tile\Ores\Berserker Ore.png" />
-    <Content Include="Tile\Crafting Stations\Hallowed Altar.png" />
-    <Content Include="Tile\Ores\Corrupted Ore.png" />
-    <Content Include="Tile\Ores\Dark Matter Ore.png" />
-    <Content Include="Tile\Ores\Jungle Ore.png" />
-    <Content Include="Tile\Ores\Magmatic Ore.png" />
+    <Content Include="Buffs\Shadows.png" />
+    <Content Include="Items\Crafting Stations\Adamantite Anvil.json" />
+    <Content Include="Items\Crafting Stations\Berserker Anvil.png" />
+    <Content Include="Items\Crafting Stations\Caesium Forge.json" />
+    <Content Include="Items\Crafting Stations\Hallowed Altar.png" />
+    <Content Include="Items\Crafting Stations\Navigator%27s Array.png" />
+    <Content Include="Items\Crafting Stations\Resistant Work Bench.png" />
+    <Content Include="Items\Materials\Berserker\Berserker Bar.png" />
+    <Content Include="Items\Materials\Berserker\Berserker Ore.png" />
+    <Content Include="Items\Materials\Corrupted\Corrupted Bar.png" />
+    <Content Include="Items\Materials\Corrupted\Corrupted Ore.png" />
+    <Content Include="Items\Materials\Dark Matter\Dark Matter Bar.png" />
+    <Content Include="Items\Materials\Dark Matter\Dark Matter Ore.png" />
+    <Content Include="Items\Materials\Hallowstone Block.png" />
+    <Content Include="Items\Materials\Illegal Weapon Instructions.png" />
+    <Content Include="Items\Materials\Jungle\Jungle Ore.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Carbon Steel.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Dew of Herbs.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Dew Orb.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Dragon Orb.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Element Diamond.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Element Dust.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Fine Lumber.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Gravel.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Mysterious Page.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Mystical Totem.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Rubybead Herb.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Sandstone.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Scroll of Tome.png" />
+    <Content Include="Items\Materials\Mystical Tomes\Strong Venom.png" />
+    <Content Include="Items\Materials\Shards\Fire Shard.png" />
+    <Content Include="Items\Materials\Shards\Jungle Shard.png" />
+    <Content Include="Items\Materials\Jungle\Jungle Bar.png" />
+    <Content Include="Items\Materials\Magmatic\Magmatic Bar.png" />
+    <Content Include="Items\Materials\Magmatic\Magmatic Ore.png" />
+    <Content Include="Items\Materials\Resistant Wood.png" />
+    <Content Include="Items\Materials\Souls\Soul of Blight.png" />
+    <Content Include="Items\Materials\Souls\Soul of Plight.png" />
+    <Content Include="Items\Materials\Souls\Soul of Vigor.png" />
+    <Content Include="Items\Mystical Tomes\Adventures and Mishaps.png" />
+    <Content Include="Items\Mystical Tomes\Burning Desire.png" />
+    <Content Include="Items\Mystical Tomes\Christmas Tome.png" />
+    <Content Include="Items\Mystical Tomes\Creator%27s Tome.png" />
+    <Content Include="Items\Mystical Tomes\Flanker%27s Tome.png" />
+    <Content Include="Items\Mystical Tomes\Love Up and Down.png" />
+    <Content Include="Items\Mystical Tomes\Mediation%27s Flame.png" />
+    <Content Include="Items\Mystical Tomes\Misty Peach Blossoms.png" />
+    <Content Include="Items\Mystical Tomes\Tale of the Dolt.png" />
+    <Content Include="Items\Mystical Tomes\Tale of the Red Lotus.png" />
+    <Content Include="Items\Mystical Tomes\The Voidlands.png" />
+    <Content Include="Items\Mystical Tomes\Tome of Distance.png" />
+    <Content Include="Items\Mystical Tomes\Tome of the River Spirits.png" />
+    <Content Include="Items\Other\Shadow Mirror.png" />
+    <Content Include="Items\Potions\Shadow Potion.png" />
+    <Content Include="Items\Weapons\Flails\Berserker Nightmare.png" />
+    <Content Include="Items\Weapons\Flails\Caesium Flail.json" />
+    <Content Include="Items\Weapons\Flails\Cobalt Flail.png" />
+    <Content Include="Items\Weapons\Flails\Eclipse%27s Waning.png" />
+    <Content Include="Items\Weapons\Flails\Heaven%27s Tear.png" />
+    <Content Include="Items\Weapons\Flails\Meteor Masher.png" />
+    <Content Include="Items\Weapons\Flails\Moonfury.png" />
+    <Content Include="Items\Weapons\Flails\Mythril Flail.png" />
+    <Content Include="Items\Weapons\Flails\Quad Sunfury.png" />
+    <Content Include="Items\Weapons\Flails\Silver Flail.png" />
+    <Content Include="Items\Materials\Caesium\Caesium Bar.json" />
+    <Content Include="Items\Materials\Caesium\Caesium Ore.json" />
+    <Content Include="Items\Materials\Coal.json" />
+    <Content Include="Items\Materials\Steel\Steel Bar.json" />
+    <Content Include="Items\Materials\Steel\Steel Chain.json" />
+    <Content Include="Items\Weapons\Flails\Sporalash.png" />
+    <Content Include="Items\Weapons\Spells\Impulse Strike.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Berserker Sphere.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Cobalt Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Eclipse Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Heaven Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Mega Quad Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Meteor Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Moonfury Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Mythril Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Quad Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Silver Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Sporalash Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Spells\Impulse Bolt.png" />
+    <Content Include="Projectiles\FromPlayer\Spells\Impulse Trail.png" />
+    <Content Include="Tiles\Blocks\Hallowstone Block.png" />
+    <Content Include="Tiles\Blocks\Resistant Wood.png" />
+    <Content Include="Tiles\Crafting Stations\Berserker Anvil.png" />
+    <Content Include="Tiles\Crafting Stations\Navigator%27s Array.png" />
+    <Content Include="Tiles\Crafting Stations\Resistant Work Bench.png" />
+    <Content Include="Tiles\Ores\Berserker Ore.png" />
+    <Content Include="Tiles\Crafting Stations\Hallowed Altar.png" />
+    <Content Include="Tiles\Ores\Corrupted Ore.png" />
+    <Content Include="Tiles\Ores\Dark Matter Ore.png" />
+    <Content Include="Tiles\Ores\Jungle Ore.png" />
+    <Content Include="Tiles\Ores\Magmatic Ore.png" />
     <EmbeddedResource Include="ModInfo.json" />
-    <Content Include="Projectile\FromPlayer\Flails\Adamantite Ball.json" />
-    <Content Include="Projectile\FromPlayer\Flails\Cursed Ball.json" />
-    <Content Include="Tile\Crafting Stations\Adamantite Anvil.json" />
-    <Content Include="Tile\Crafting Stations\Caesium Forge.json" />
-    <Content Include="Tile\Ores\Caesium Ore.json" />
-    <Content Include="Tile\Ores\Coal.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Adamantite Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Cursed Ball.json" />
+    <Content Include="Tiles\Crafting Stations\Adamantite Anvil.json" />
+    <Content Include="Tiles\Crafting Stations\Caesium Forge.json" />
+    <Content Include="Tiles\Ores\Caesium Ore.json" />
+    <Content Include="Tiles\Ores\Coal.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Crafting Stations\Adamantite Anvil.png" />
-    <Content Include="Item\Crafting Stations\Caesium Forge.png" />
-    <Content Include="Item\Weapons\Flails\Caesium Flail.png" />
-    <Content Include="Item\Materials\Caesium\Caesium Bar.png" />
-    <Content Include="Item\Materials\Caesium\Caesium Ore.png" />
-    <Content Include="Item\Materials\Coal.png" />
-    <Content Include="Item\Materials\Steel\Steel Bar.png" />
-    <Content Include="Item\Materials\Steel\Steel Chain.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Adamantite Ball.png" />
-    <Content Include="Projectile\FromPlayer\Flails\Cursed Ball.png" />
+    <Content Include="Items\Crafting Stations\Adamantite Anvil.png" />
+    <Content Include="Items\Crafting Stations\Caesium Forge.png" />
+    <Content Include="Items\Weapons\Flails\Caesium Flail.png" />
+    <Content Include="Items\Materials\Caesium\Caesium Bar.png" />
+    <Content Include="Items\Materials\Caesium\Caesium Ore.png" />
+    <Content Include="Items\Materials\Coal.png" />
+    <Content Include="Items\Materials\Steel\Steel Bar.png" />
+    <Content Include="Items\Materials\Steel\Steel Chain.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Adamantite Ball.png" />
+    <Content Include="Projectiles\FromPlayer\Flails\Cursed Ball.png" />
     <Content Include="Resources\Chains\Adamantite Chain.png" />
     <Content Include="Resources\Chains\Berserker Chain.png" />
     <Content Include="Resources\Chains\Blue Moon Chain.png" />
@@ -267,216 +267,216 @@
     <Content Include="Resources\Misc\MermanHead.png" />
     <Content Include="Resources\Misc\MermanLegs.png" />
     <Content Include="Resources\Wings\Golden Wings.png" />
-    <Content Include="Tile\Crafting Stations\Adamantite Anvil.png" />
-    <Content Include="Tile\Crafting Stations\Caesium Forge.png" />
-    <Content Include="Tile\Ores\Caesium Ore.png" />
-    <Content Include="Tile\Ores\Coal.png" />
+    <Content Include="Tiles\Crafting Stations\Adamantite Anvil.png" />
+    <Content Include="Tiles\Crafting Stations\Caesium Forge.png" />
+    <Content Include="Tiles\Ores\Caesium Ore.png" />
+    <Content Include="Tiles\Ores\Coal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Adamantite Flail.png" />
+    <Content Include="Items\Weapons\Flails\Adamantite Flail.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Adamantite Flail.json" />
+    <Content Include="Items\Weapons\Flails\Adamantite Flail.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Silver Flail.json" />
+    <Content Include="Items\Weapons\Flails\Silver Flail.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Silver Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Silver Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Berserker Nightmare.json" />
+    <Content Include="Items\Weapons\Flails\Berserker Nightmare.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Projectile\FromNPC\" />
+    <Folder Include="Projectiles\FromNPC\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Berserker Sphere.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Berserker Sphere.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Berserker\Berserker Bar.json" />
+    <Content Include="Items\Materials\Berserker\Berserker Bar.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Berserker\Berserker Ore.json" />
+    <Content Include="Items\Materials\Berserker\Berserker Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Crafting Stations\Berserker Anvil.json" />
+    <Content Include="Items\Crafting Stations\Berserker Anvil.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Crafting Stations\Hallowed Altar.json" />
+    <Content Include="Items\Crafting Stations\Hallowed Altar.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Hallowstone Block.json" />
+    <Content Include="Items\Materials\Hallowstone Block.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Blocks\Hallowstone Block.json" />
+    <Content Include="Tiles\Blocks\Hallowstone Block.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Souls\Soul of Plight.json" />
+    <Content Include="Items\Materials\Souls\Soul of Plight.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Crafting Stations\Hallowed Altar.json" />
+    <Content Include="Tiles\Crafting Stations\Hallowed Altar.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Ores\Berserker Ore.json" />
+    <Content Include="Tiles\Ores\Berserker Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Crafting Stations\Berserker Anvil.json" />
+    <Content Include="Tiles\Crafting Stations\Berserker Anvil.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Cobalt Flail.json" />
+    <Content Include="Items\Weapons\Flails\Cobalt Flail.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Cobalt Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Cobalt Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Eclipse%27s Waning.json" />
+    <Content Include="Items\Weapons\Flails\Eclipse%27s Waning.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Eclipse Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Eclipse Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Moonfury.json" />
+    <Content Include="Items\Weapons\Flails\Moonfury.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Moonfury Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Moonfury Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Heaven%27s Tear.json" />
+    <Content Include="Items\Weapons\Flails\Heaven%27s Tear.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Heaven Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Heaven Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Mythril Flail.json" />
+    <Content Include="Items\Weapons\Flails\Mythril Flail.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Mythril Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Mythril Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Illegal Weapon Instructions.json" />
+    <Content Include="Items\Materials\Illegal Weapon Instructions.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Souls\Soul of Blight.json" />
+    <Content Include="Items\Materials\Souls\Soul of Blight.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Corrupted\Corrupted Ore.json" />
+    <Content Include="Items\Materials\Corrupted\Corrupted Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Corrupted\Corrupted Bar.json" />
+    <Content Include="Items\Materials\Corrupted\Corrupted Bar.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Ores\Corrupted Ore.json" />
+    <Content Include="Tiles\Ores\Corrupted Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Crafting Stations\Resistant Work Bench.json" />
+    <Content Include="Items\Crafting Stations\Resistant Work Bench.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Crafting Stations\Resistant Work Bench.json" />
+    <Content Include="Tiles\Crafting Stations\Resistant Work Bench.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Resistant Wood.json" />
+    <Content Include="Items\Materials\Resistant Wood.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Blocks\Resistant Wood.json" />
+    <Content Include="Tiles\Blocks\Resistant Wood.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Sporalash.json" />
+    <Content Include="Items\Weapons\Flails\Sporalash.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Sporalash Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Sporalash Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Shards\Jungle Shard.json" />
+    <Content Include="Items\Materials\Shards\Jungle Shard.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Jungle\Jungle Bar.json" />
+    <Content Include="Items\Materials\Jungle\Jungle Bar.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Jungle\Jungle Ore.json" />
+    <Content Include="Items\Materials\Jungle\Jungle Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Ores\Jungle Ore.json" />
+    <Content Include="Tiles\Ores\Jungle Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Meteor Masher.json" />
+    <Content Include="Items\Weapons\Flails\Meteor Masher.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Meteor Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Meteor Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Weapons\Flails\Quad Sunfury.json" />
+    <Content Include="Items\Weapons\Flails\Quad Sunfury.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Magmatic\Magmatic Ore.json" />
+    <Content Include="Items\Materials\Magmatic\Magmatic Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Magmatic\Magmatic Bar.json" />
+    <Content Include="Items\Materials\Magmatic\Magmatic Bar.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Ores\Magmatic Ore.json" />
+    <Content Include="Tiles\Ores\Magmatic Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Quad Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Quad Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Projectile\FromPlayer\Flails\Mega Quad Ball.json" />
+    <Content Include="Projectiles\FromPlayer\Flails\Mega Quad Ball.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Other\Shadow Mirror.json" />
+    <Content Include="Items\Other\Shadow Mirror.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Dark Matter\Dark Matter Bar.json" />
+    <Content Include="Items\Materials\Dark Matter\Dark Matter Bar.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Materials\Dark Matter\Dark Matter Ore.json" />
+    <Content Include="Items\Materials\Dark Matter\Dark Matter Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Ores\Dark Matter Ore.json" />
+    <Content Include="Tiles\Ores\Dark Matter Ore.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tile\Crafting Stations\Navigator%27s Array.json" />
+    <Content Include="Tiles\Crafting Stations\Navigator%27s Array.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Crafting Stations\Navigator%27s Array.json" />
+    <Content Include="Items\Crafting Stations\Navigator%27s Array.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item\Potions\Shadow Potion.json" />
+    <Content Include="Items\Potions\Shadow Potion.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Buff\Shadows.json" />
-    <Content Include="Item\Weapons\Spells\Impulse Strike.json" />
-    <Content Include="Projectile\FromPlayer\Spells\Impulse Bolt.json" />
-    <Content Include="Projectile\FromPlayer\Spells\Impulse Trail.json" />
-    <Content Include="Item\Materials\Souls\Soul of Vigor.json" />
-    <Content Include="Item\Materials\Shards\Fire Shard.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Carbon Steel.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Dew of Herbs.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Dew Orb.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Dragon Orb.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Element Diamond.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Element Dust.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Fine Lumber.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Gravel.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Mysterious Page.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Mystical Totem.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Rubybead Herb.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Sandstone.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Scroll of Tome.json" />
-    <Content Include="Item\Materials\Mystical Tomes\Strong Venom.json" />
-    <Content Include="Item\Mystical Tomes\Adventures and Mishaps.json" />
-    <Content Include="Item\Mystical Tomes\Burning Desire.json" />
-    <Content Include="Item\Mystical Tomes\Christmas Tome.json" />
-    <Content Include="Item\Mystical Tomes\Creator%27s Tome.json" />
-    <Content Include="Item\Mystical Tomes\Flanker%27s Tome.json" />
-    <Content Include="Item\Mystical Tomes\Love Up and Down.json" />
-    <Content Include="Item\Mystical Tomes\Mediation%27s Flame.json" />
-    <Content Include="Item\Mystical Tomes\Misty Peach Blossoms.json" />
-    <Content Include="Item\Mystical Tomes\Tale of the Dolt.json" />
-    <Content Include="Item\Mystical Tomes\Tale of the Red Lotus.json" />
-    <Content Include="Item\Mystical Tomes\The Voidlands.json" />
-    <Content Include="Item\Mystical Tomes\Tome of Distance.json" />
-    <Content Include="Item\Mystical Tomes\Tome of the River Spirits.json" />
+    <None Include="Buffs\Shadows.json" />
+    <Content Include="Items\Weapons\Spells\Impulse Strike.json" />
+    <Content Include="Projectiles\FromPlayer\Spells\Impulse Bolt.json" />
+    <Content Include="Projectiles\FromPlayer\Spells\Impulse Trail.json" />
+    <Content Include="Items\Materials\Souls\Soul of Vigor.json" />
+    <Content Include="Items\Materials\Shards\Fire Shard.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Carbon Steel.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Dew of Herbs.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Dew Orb.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Dragon Orb.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Element Diamond.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Element Dust.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Fine Lumber.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Gravel.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Mysterious Page.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Mystical Totem.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Rubybead Herb.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Sandstone.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Scroll of Tome.json" />
+    <Content Include="Items\Materials\Mystical Tomes\Strong Venom.json" />
+    <Content Include="Items\Mystical Tomes\Adventures and Mishaps.json" />
+    <Content Include="Items\Mystical Tomes\Burning Desire.json" />
+    <Content Include="Items\Mystical Tomes\Christmas Tome.json" />
+    <Content Include="Items\Mystical Tomes\Creator%27s Tome.json" />
+    <Content Include="Items\Mystical Tomes\Flanker%27s Tome.json" />
+    <Content Include="Items\Mystical Tomes\Love Up and Down.json" />
+    <Content Include="Items\Mystical Tomes\Mediation%27s Flame.json" />
+    <Content Include="Items\Mystical Tomes\Misty Peach Blossoms.json" />
+    <Content Include="Items\Mystical Tomes\Tale of the Dolt.json" />
+    <Content Include="Items\Mystical Tomes\Tale of the Red Lotus.json" />
+    <Content Include="Items\Mystical Tomes\The Voidlands.json" />
+    <Content Include="Items\Mystical Tomes\Tome of Distance.json" />
+    <Content Include="Items\Mystical Tomes\Tome of the River Spirits.json" />
     <EmbeddedResource Include="ModOptions.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
