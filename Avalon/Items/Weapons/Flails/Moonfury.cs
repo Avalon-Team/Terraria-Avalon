@@ -10,7 +10,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Moonfury.
     /// </summary>
-    [ChainTexture("Moonfury Chain.png", ReplaceFlailChain = true)] // well this is easy
+    [ChainTexture("Moonfury Chain", ReplaceFlailChain = true)] // well this is easy
     public sealed class Moonfury : ModItem
     {
 

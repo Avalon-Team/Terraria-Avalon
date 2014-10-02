@@ -10,7 +10,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Caesium Flail.
     /// </summary>
-    [ChainTexture("Cursed Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Cursed Chain", ReplaceFlailChain = true)]
     public sealed class CaesiumFlail : ModItem
     {
 

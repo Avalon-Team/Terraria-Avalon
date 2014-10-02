@@ -10,7 +10,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Meteor Masher.
     /// </summary>
-    [ChainTexture("Meteor Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Meteor Chain", ReplaceFlailChain = true)]
     public sealed class MeteorMasher : ModItem
     {
 

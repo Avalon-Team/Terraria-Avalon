@@ -63,10 +63,6 @@ namespace Avalon
         /// </summary>
         public const int ExtraSlots = 3;
 
-		Option
-			tomeSkillHotkey    = null,
-			shadowMirrorHotkey = null;
-
         internal static List<BossSpawn> spawns = new List<BossSpawn>();
         readonly static List<int> EmptyIntList = new List<int>(); // only alloc once
 
@@ -75,28 +71,16 @@ namespace Avalon
         /// </summary>
         public static Keys TomeSkillHotkey
         {
-			get
-			{
-				return (Keys)Instance.tomeSkillHotkey.Value;
-			}
-			set
-			{
-				Instance.tomeSkillHotkey.Value = value;
-			}
+			get;
+			private set;
 		}
 		/// <summary>
 		/// Gets or sets the <see cref="ShadowMirror" /> hotkey.
 		/// </summary>
 		public static Keys ShadowMirrorHotkey
 		{
-			get
-			{
-				return (Keys)Instance.shadowMirrorHotkey.Value;
-			}
-			set
-			{
-				Instance.shadowMirrorHotkey.Value = value;
-			}
+			get;
+			private set;
 		}
 
 		/// <summary>
@@ -124,6 +108,9 @@ namespace Avalon
             : base()
         {
             Instance = this;
+
+			TomeSkillHotkey = Keys.R;
+			TomeSkillHotkey = Keys.J;
         }
 
         /// <summary>
@@ -215,13 +202,10 @@ namespace Avalon
             switch (option.name)
             {
                 case "TomeSkillHotkey":
-					// dirty hack so you can change the option from anywhere
-					if (tomeSkillHotkey != option)
-						tomeSkillHotkey  = option;
+					TomeSkillHotkey    = (Keys)option.Value;
 					break;
 				case "ShadowMirrorHotkey":
-					if (shadowMirrorHotkey != option)
-						shadowMirrorHotkey  = option;
+					ShadowMirrorHotkey = (Keys)option.Value;
 					break;
             }
         }

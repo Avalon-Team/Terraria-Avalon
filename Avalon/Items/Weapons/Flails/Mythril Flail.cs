@@ -10,7 +10,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Mythril Flail
     /// </summary>
-    [ChainTexture("Mythril Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Mythril Chain", ReplaceFlailChain = true)]
     public sealed class MythrilFlail : ModItem
     {
 

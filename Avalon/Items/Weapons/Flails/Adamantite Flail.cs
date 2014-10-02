@@ -10,7 +10,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Adamantite Flail
     /// </summary>
-    [ChainTexture("Adamantite Chain.png", ReplaceFlailChain = true)] // well this is easy
+    [ChainTexture("Adamantite Chain", ReplaceFlailChain = true)] // well this is easy
     public sealed class AdamantiteFlail : ModItem
     {
 

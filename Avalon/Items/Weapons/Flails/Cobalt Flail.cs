@@ -10,7 +10,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Cobalt Flail
     /// </summary>
-    [ChainTexture("Cobalt Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Cobalt Chain", ReplaceFlailChain = true)]
     public sealed class CobaltFlail : ModItem
     {
 

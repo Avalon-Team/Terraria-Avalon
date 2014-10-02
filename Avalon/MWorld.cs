@@ -270,7 +270,7 @@ namespace Avalon
             if (Main.dedServ)
                 return;
 
-            Texture2D gWings = modBase.textures["Resources/Wings/Golden Wings.png"];
+            Texture2D gWings = modBase.textures["Resources/Wings/Golden Wings"];
             foreach (Texture2D t in Main.wingsTexture.Values)
                 if (gWings == t)
                 {

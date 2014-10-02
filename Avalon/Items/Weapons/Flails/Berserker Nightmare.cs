@@ -12,7 +12,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Berserker Nightmare.
     /// </summary>
-    [ChainTexture("Berserker Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Berserker Chain", ReplaceFlailChain = true)]
     public sealed class BerserkerNightmare : ModItem
     {
         /// <summary>

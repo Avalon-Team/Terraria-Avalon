@@ -11,7 +11,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Heaven's Tear.
     /// </summary>
-    [ChainTexture("Heaven Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Heaven Chain", ReplaceFlailChain = true)]
     public sealed class HeavensTear : ModItem
     {
 

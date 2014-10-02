@@ -10,7 +10,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Sporalash.
     /// </summary>
-    [ChainTexture("Sporalash Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Sporalash Chain", ReplaceFlailChain = true)]
     public sealed class Sporalash : ModItem
     {
 

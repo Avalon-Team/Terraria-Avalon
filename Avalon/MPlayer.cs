@@ -49,8 +49,8 @@ namespace Avalon
         {
             base.Initialize();
 
-            jungleChestId = TileDef.type["Avalon:Jungle Chest"];
-            hellfireChestId = TileDef.type["Avalon:Hellfire Chest"];
+            //jungleChestId   = TileDef.type["Avalon:Jungle Chest"  ];
+            //hellfireChestId = TileDef.type["Avalon:Hellfire Chest"];
         }
 
         /// <summary>
@@ -89,11 +89,11 @@ namespace Avalon
             if (attr == null)
             {
                 // reset
-                if (Main.chainTexture != modBase.textures["Resources/Chains/Grapple Chain.png"])
-                    Main.chainTexture  = modBase.textures["Resources/Chains/Grapple Chain.png"];
+                if (Main.chainTexture != modBase.textures["Resources/Chains/Grapple Chain"])
+                    Main.chainTexture  = modBase.textures["Resources/Chains/Grapple Chain"];
 
-                if (Main.chain3Texture != modBase.textures["Resources/Chains/Blue Moon Chain.png"])
-                    Main.chain3Texture  = modBase.textures["Resources/Chains/Blue Moon Chain.png"];
+                if (Main.chain3Texture != modBase.textures["Resources/Chains/Blue Moon Chain"])
+                    Main.chain3Texture  = modBase.textures["Resources/Chains/Blue Moon Chain"];
             }
             else
             {
@@ -349,13 +349,13 @@ namespace Avalon
                 player.fireWalk = player.lavaImmune = player.gills = player.accFlipper = player.merman = true;
 
             Main.armorHeadTexture[39] = LavaMerman
-                ? modBase.textures["Resources/Misc/LavaMermanHead.png"] : modBase.textures["Resources/Misc/MermanHead.png"];
+                ? modBase.textures["Resources/Misc/LavaMermanHead"] : modBase.textures["Resources/Misc/MermanHead"];
             Main.armorArmTexture [22] = LavaMerman
-                ? modBase.textures["Resources/Misc/LavaMermanArm.png" ] : modBase.textures["Resources/Misc/MermanArm.png" ];
+                ? modBase.textures["Resources/Misc/LavaMermanArm" ] : modBase.textures["Resources/Misc/MermanArm" ];
             Main.armorBodyTexture[22] = LavaMerman
-                ? modBase.textures["Resources/Misc/LavaMermanBody.png"] : modBase.textures["Resources/Misc/MermanBody.png"];
+                ? modBase.textures["Resources/Misc/LavaMermanBody"] : modBase.textures["Resources/Misc/MermanBody"];
             Main.armorLegTexture [21] = LavaMerman
-                ? modBase.textures["Resources/Misc/LavaMermanLegs.png"] : modBase.textures["Resources/Misc/MermanLegs.png"];
+                ? modBase.textures["Resources/Misc/LavaMermanLegs"] : modBase.textures["Resources/Misc/MermanLegs"];
         }
         void U_Chests()
 		{

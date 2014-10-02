@@ -10,7 +10,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Silver Flail.
     /// </summary>
-    [ChainTexture("Silver Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Silver Chain", ReplaceFlailChain = true)]
     public sealed class SilverFlail : ModItem
     {
 

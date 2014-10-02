@@ -17,7 +17,7 @@ namespace Avalon.UI
         /// Creates a new instance of the <see cref="MysticalTomeSlot" /> class.
         /// </summary>
         public MysticalTomeSlot()
-            : base(AvalonMod.Instance, "Avalon:MysticalTomeSlot", 0, (s, i) =>
+            : base(AvalonMod.Instance, "Equip", 0, (s, i) =>
             {
                 s.MyItem.OnUnEquip(Main.localPlayer, 0);
                 MWorld.localManager = SkillManager.FromItem(MWorld.localTome = i);
@@ -37,8 +37,9 @@ namespace Avalon.UI
             TomeSkillAttribute attr = null;
 
             for (int i = 0; i < it.modEntities.Count; i++)
-                attr = it.modEntities[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
-                    .FirstOrDefault() as TomeSkillAttribute; // there should be only one
+				if ((attr = it.modEntities[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
+						.FirstOrDefault() /* there should be only one */ as TomeSkillAttribute) != null)
+					break;
 
             return base.AllowsItem(it) && ((attr != null && it.CanEquip(Main.localPlayer, 0)) || it.IsBlank());
         }

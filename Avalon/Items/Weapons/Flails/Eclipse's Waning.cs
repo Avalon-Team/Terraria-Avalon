@@ -11,7 +11,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Eclipse's Waning.
     /// </summary>
-    [ChainTexture("Eclipse Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Eclipse Chain", ReplaceFlailChain = true)]
     public sealed class EclipsesWaning : ModItem
     {
 

@@ -12,7 +12,7 @@ namespace Avalon.Items.Weapons.Flails
     /// <summary>
     /// The Quad Sunfury.
     /// </summary>
-    [ChainTexture("Quad Whip Chain.png", ReplaceFlailChain = true)]
+    [ChainTexture("Quad Whip Chain", ReplaceFlailChain = true)]
     public sealed class QuadSunfury : ModItem
     {
         /// <summary>
