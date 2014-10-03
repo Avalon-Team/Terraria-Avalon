@@ -1,4 +1,1 @@
-- hotkey options system? -> not working?
-- issue #3
-
 - whirlwind (need stats & sprites)

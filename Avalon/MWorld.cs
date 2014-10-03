@@ -252,18 +252,20 @@ namespace Avalon
             CatarystDownedCount = EverIceCount = ArmageddonCount = HallowAltarsBroken = 0;
             AvalonMod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
 
-            accessories = new Item        [Main.netMode == 0 ? 1 : Main.numPlayers][];
-            tomes       = new Item        [Main.netMode == 0 ? 1 : Main.numPlayers]  ;
-            managers    = new SkillManager[Main.netMode == 0 ? 1 : Main.numPlayers]  ;
+			int plrs = Main.netMode == 0 ? 1 : Main.numPlayers;
 
-            for (int i = 0; i < accessories.Length; i++)
+			Array.Resize(ref managers   , plrs);
+			Array.Resize(ref accessories, plrs);
+			Array.Resize(ref tomes      , plrs);
+
+            for (int i = 1; i < accessories.Length; i++)
             {
                 accessories[i] = new Item[AvalonMod.ExtraSlots];
 
                 for (int j = 0; j < accessories[i].Length; j++)
                     accessories[i][j] = new Item();
             }
-            for (int i = 0; i < tomes.Length; i++)
+            for (int i = 1; i < tomes.Length; i++)
                 tomes[i] = new Item();
 
             // insert all graphical/UI-related stuff AFTER this check!
@@ -362,6 +364,11 @@ namespace Avalon
         /// <param name="bb">The buffer containing the binary data.</param>
         public override void Save(BinBuffer bb)
         {
+			// kinda hacky: use this as an OnQuit hook
+			Array.Resize(ref managers   , 1);
+			Array.Resize(ref accessories, 1);
+			Array.Resize(ref tomes      , 1);
+
             base.Save(bb);
 
             bb.WriteX(

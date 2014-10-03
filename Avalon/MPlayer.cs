@@ -15,6 +15,7 @@ namespace Avalon
     public sealed class MPlayer : ModPlayer
 	{
 #pragma warning disable 414
+#pragma warning disable 169
 		static float rot = 0f;
         static bool
             isImmuneToSlimes = false,
@@ -29,6 +30,7 @@ namespace Avalon
             skillCD = 0;
         readonly static int[] MUSIC_BOXES = new int[] { -1, 0, 1, 2, 4, 5, -1, 6, 7, 9, 8, 11, 10, 12 };
 #pragma warning restore 414
+#pragma warning restore 169
 
 		Item[] accessories
         {
@@ -137,7 +139,7 @@ namespace Avalon
                 }
             }
         }
-        void U_SpawnBosses()
+        void U_SpawnBosses    ()
         {
             if (NPC.spawnRate <= 0 || !AvalonMod.IsInSuperHardmode || MWorld.CheckForBosses() || player.townNPCs > 0 || Main.invasionType != 0)
                 return;
@@ -148,7 +150,7 @@ namespace Avalon
                 if (AvalonMod.spawns[i].ShouldSpawn(rate, player))
                     AvalonMod.spawns[i].Spawn(player.whoAmI);
         }
-        void U_ExtraAccs()
+        void U_ExtraAccs      ()
         {
             if (!player.active || String.IsNullOrEmpty(player.name) || player.dead || player.ghost)
                 return;
@@ -343,7 +345,7 @@ namespace Avalon
                 }
             }
         }
-        void U_LavaMerman()
+        void U_LavaMerman     ()
         {
             if (LavaMerman)
                 player.fireWalk = player.lavaImmune = player.gills = player.accFlipper = player.merman = true;
@@ -357,7 +359,7 @@ namespace Avalon
             Main.armorLegTexture [21] = LavaMerman
                 ? modBase.textures["Resources/Misc/LavaMermanLegs"] : modBase.textures["Resources/Misc/MermanLegs"];
         }
-        void U_Chests()
+        void U_Chests         ()
 		{
 			// to future me/reader: method call is uncommented (in MidUpdate) for the sake of performance.
 
@@ -381,7 +383,7 @@ namespace Avalon
 			//        Main.chestText = "Hellfire Chest";
 			//}
 		}
-		void U_TileInteract()
+		void U_TileInteract   ()
         {
 			// to future me/reader: method call is uncommented (in MidUpdate) for the sake of performance.
 
@@ -394,7 +396,7 @@ namespace Avalon
                 // p.baseSlideFactor = 0.1f;
             }
         }
-        void U_MysticalTomes()
+        void U_MysticalTomes  ()
         {
             if (MWorld.localTome.IsBlank() || MWorld.localManager == null)
                 return;
@@ -423,15 +425,10 @@ namespace Avalon
         {
             base.Save(bb);
 
-            bb.Write(Main.gameMenu);
+            for (int i = 0; i < accessories.Length; i++)
+                bb.Write(accessories[i]);
 
-            if (!Main.gameMenu)
-            {
-                for (int i = 0; i < accessories.Length; i++)
-                    bb.Write(accessories[i]);
-
-                bb.Write(MWorld.localTome);
-            }
+            bb.Write(MWorld.localTome);
         }
         /// <summary>
         /// Loads data from the player file.
@@ -441,24 +438,21 @@ namespace Avalon
         {
             base.Load(bb);
 
-            if (!bb.ReadBool())
-            {
-                for (int i = 0; i < accessories.Length; i++)
-                    accessories[i] = bb.ReadItem();
+            for (int i = 0; i < accessories.Length; i++)
+                accessories[i] = bb.ReadItem();
 
-                MWorld.localTome = bb.ReadItem();
-            }
+            MWorld.localTome = bb.ReadItem();
         }
 
 #pragma warning disable 1591
-		public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
+		public override void DamageNPC   (NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
 		{
 			base.DamageNPC(npc, hitDir, ref damage, ref knockback, ref crit, ref critMult);
 
 			for (int i = 0; i < accessories.Length; i++)
 				accessories[i].DamageNPC(player, npc, hitDir, ref damage, ref knockback, ref crit, ref critMult);
 		}
-		public override void DealtNPC(NPC npc, int hitDir, int dmgDealt, float knockback, bool crit)
+		public override void DealtNPC    (NPC npc, int hitDir, int dmgDealt, float knockback, bool crit)
 		{
 			base.DealtNPC(npc, hitDir, dmgDealt, knockback, crit);
 
@@ -472,21 +466,21 @@ namespace Avalon
             for (int i = 0; i < accessories.Length; i++)
                 accessories[i].DamagePlayer(npc, player, hitDir, ref damage, ref crit, ref critMult);
         }
-        public override void DealtPlayer(NPC npc, int hitDir, int dmgDealt, bool crit)
+        public override void DealtPlayer (NPC npc, int hitDir, int dmgDealt, bool crit)
         {
             base.DealtPlayer(npc, hitDir, dmgDealt, crit);
 
             for (int i = 0; i < accessories.Length; i++)
                 accessories[i].DealtPlayer(npc, player, hitDir, dmgDealt, crit);
         }
-        public override void DamagePVP(Player p, int hitDir, ref int damage, ref bool crit, ref float critMult)
+        public override void DamagePVP   (Player p, int hitDir, ref int damage, ref bool crit, ref float critMult)
         {
             base.DamagePVP(p, hitDir, ref damage, ref crit, ref critMult);
 
             for (int i = 0; i < accessories.Length; i++)
                 accessories[i].DamagePVP(player, p, hitDir, ref damage, ref crit, ref critMult);
         }
-        public override void DealtPVP(Player p, int hitDir, int dmgDealt, bool crit)
+        public override void DealtPVP    (Player p, int hitDir, int dmgDealt, bool crit)
         {
             base.DealtPVP(p, hitDir, dmgDealt, crit);
 

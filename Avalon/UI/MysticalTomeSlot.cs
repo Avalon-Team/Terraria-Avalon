@@ -34,14 +34,14 @@ namespace Avalon.UI
         /// <returns>true if the <see cref="Item" /> can be placed in the <see cref="ItemSlot" />, false otherwise.</returns>
         public override bool AllowsItem(Item it)
         {
-            TomeSkillAttribute attr = null;
+            //TomeSkillAttribute attr = null;
 
-            for (int i = 0; i < it.modEntities.Count; i++)
-				if ((attr = it.modEntities[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
-						.FirstOrDefault() /* there should be only one */ as TomeSkillAttribute) != null)
-					break;
+			//for (int i = 0; i < it.modEntities.Count; i++)
+				//if ((attr = it.modEntities[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
+				//		.FirstOrDefault() /* there should be only one */ as TomeSkillAttribute) != null)
+				//	break;
 
-            return base.AllowsItem(it) && ((attr != null && it.CanEquip(Main.localPlayer, 0)) || it.IsBlank());
+            return base.AllowsItem(it) && ((SkillManager.FromItem(it) != null && it.CanEquip(Main.localPlayer, 0)) || it.IsBlank());
         }
     }
 }

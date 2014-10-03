@@ -63,6 +63,10 @@ namespace Avalon
         /// </summary>
         public const int ExtraSlots = 3;
 
+		Option
+			tomeSkillHotkey   ,
+			shadowMirrorHotkey;
+
         internal static List<BossSpawn> spawns = new List<BossSpawn>();
         readonly static List<int> EmptyIntList = new List<int>(); // only alloc once
 
@@ -71,16 +75,28 @@ namespace Avalon
         /// </summary>
         public static Keys TomeSkillHotkey
         {
-			get;
-			private set;
+			get
+			{
+				return (Keys)Instance.tomeSkillHotkey.Value;
+			}
+			set
+			{
+				Instance.tomeSkillHotkey.Value = value;
+			}
 		}
 		/// <summary>
 		/// Gets or sets the <see cref="ShadowMirror" /> hotkey.
 		/// </summary>
 		public static Keys ShadowMirrorHotkey
 		{
-			get;
-			private set;
+			get
+			{
+				return (Keys)Instance.shadowMirrorHotkey.Value;
+			}
+			set
+			{
+				Instance.shadowMirrorHotkey.Value = value;
+			}
 		}
 
 		/// <summary>
@@ -108,9 +124,6 @@ namespace Avalon
             : base()
         {
             Instance = this;
-
-			TomeSkillHotkey = Keys.R;
-			TomeSkillHotkey = Keys.J;
         }
 
         /// <summary>
@@ -173,11 +186,28 @@ namespace Avalon
         {
             Invasion.LoadVanilla();
 
-            LoadBiomes();
+            LoadBiomes   ();
             LoadInvasions();
-            LoadSpawns();
+            LoadSpawns   ();
 
-            base.OnLoad();
+			tomeSkillHotkey    = options[0];
+			shadowMirrorHotkey = options[1];
+
+			MWorld.managers    = new SkillManager[1]  ;
+			MWorld.tomes       = new Item        [1]  ;
+			MWorld.accessories = new Item        [1][];
+
+			MWorld.tomes   [0] = new Item();
+
+			for (int i = 0; i < MWorld.accessories.Length; i++)
+			{
+				MWorld.accessories[i] = new Item[ExtraSlots];
+
+				for (int j = 0; j < MWorld.accessories[i].Length; j++)
+					MWorld.accessories[i][j] = new Item();
+			}
+
+			base.OnLoad();
         }
         /// <summary>
         /// Called when the mod is unloaded.
@@ -191,21 +221,23 @@ namespace Avalon
             base.OnUnload();
         }
 
-        /// <summary>
-        /// Called when an option is changed.
-        /// </summary>
-        /// <param name="option">The option that has changed.</param>
-        public override void OptionChanged(Option option)
+		/// <summary>
+		/// Called when an option is changed.
+		/// </summary>
+		/// <param name="option">The option that has changed.</param>
+		public override void OptionChanged(Option option)
         {
             base.OptionChanged(option);
 
             switch (option.name)
             {
-                case "TomeSkillHotkey":
-					TomeSkillHotkey    = (Keys)option.Value;
+                case "TomeSkillHotkey"   :
+					if (tomeSkillHotkey != option)
+						tomeSkillHotkey  = option;
 					break;
 				case "ShadowMirrorHotkey":
-					ShadowMirrorHotkey = (Keys)option.Value;
+					if (shadowMirrorHotkey != option)
+						shadowMirrorHotkey  = option;
 					break;
             }
         }
