@@ -365,9 +365,12 @@ namespace Avalon
         public override void Save(BinBuffer bb)
         {
 			// kinda hacky: use this as an OnQuit hook
-			Array.Resize(ref managers   , 1);
-			Array.Resize(ref accessories, 1);
-			Array.Resize(ref tomes      , 1);
+			if (Main.gameMenu)
+			{
+				Array.Resize(ref managers   , 1);
+				Array.Resize(ref accessories, 1);
+				Array.Resize(ref tomes      , 1);
+			}
 
             base.Save(bb);
 
