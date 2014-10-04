@@ -365,7 +365,7 @@ namespace Avalon
         public override void Save(BinBuffer bb)
         {
 			// kinda hacky: use this as an OnQuit hook
-			if (Main.gameMenu)
+			if (Main.gameMenu) // if ingame, it's a backup save (while playing), not when quitting
 			{
 				Array.Resize(ref managers   , 1);
 				Array.Resize(ref accessories, 1);
