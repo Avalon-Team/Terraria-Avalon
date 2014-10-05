@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\ExtendedSpawning.cs" />
+    <Compile Include="API\StarterSets\StarterSet.cs" />
     <Compile Include="Items\Mystical Tomes\Adventures and Mishaps.cs" />
     <Compile Include="Items\Mystical Tomes\Tome of the River Spirit.cs" />
     <Compile Include="Items\Mystical Tomes\Tome of Distance.cs" />

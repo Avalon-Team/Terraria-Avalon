@@ -6,6 +6,7 @@ using Terraria;
 using TAPI;
 using PoroCYon.MCT.Net;
 using Avalon.API.Items;
+using Avalon.API.StarterSets;
 
 namespace Avalon
 {
@@ -31,6 +32,8 @@ namespace Avalon
         readonly static int[] MUSIC_BOXES = new int[] { -1, 0, 1, 2, 4, 5, -1, 6, 7, 9, 8, 11, 10, 12 };
 #pragma warning restore 414
 #pragma warning restore 169
+
+		int starterSet = -1;
 
 		Item[] accessories
         {
@@ -429,6 +432,8 @@ namespace Avalon
                 bb.Write(accessories[i]);
 
             bb.Write(MWorld.localTome);
+
+			bb.Write((byte)(starterSet == -1 ? 0 : starterSet));
         }
         /// <summary>
         /// Loads data from the player file.
@@ -442,7 +447,32 @@ namespace Avalon
                 accessories[i] = bb.ReadItem();
 
             MWorld.localTome = bb.ReadItem();
+
+			starterSet = bb.ReadByte();
         }
+
+		/// <summary>
+		/// Called when the <see cref="Player" /> is created or when he/she respawns in mediumcore.
+		/// </summary>
+		/// <param name="mediumcoreRespawn">Whether the <see cref="Player" /> is respawning from a mediumcore death or not.</param>
+		public override void OnInventoryReset(bool mediumcoreRespawn)
+		{
+			base.OnInventoryReset(mediumcoreRespawn);
+
+			if (starterSet == -1)
+				starterSet = StarterSet.SelectedSet;
+
+			StarterSet set = StarterSet.Sets[starterSet];
+
+			for (int i = 0; i < set.Items.Length; i++)
+				player.inventory[i].netDefaults(set.Items[i]);
+
+			player.armor[0].SetDefaults(set.ArmourHead);
+			player.armor[1].SetDefaults(set.ArmourBody);
+			player.armor[2].SetDefaults(set.ArmourLegs);
+
+			StarterSet.SelectedSet = 0;
+		}
 
 #pragma warning disable 1591
 		public override void DamageNPC   (NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
