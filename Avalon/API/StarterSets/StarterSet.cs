@@ -19,7 +19,7 @@ namespace Avalon.API.StarterSets
 			new StarterSet(new[] { -15, -13, -16      },   0,   0,   0),
 			// basic with hammer
 			new StarterSet(new[] { -15, -13, -16, -17 },   0,   0,   0),
-			// basic with hammer and wooden armour
+			// basic with hammer and wood armour
 			new StarterSet(new[] { -15, -13, -16, -17 }, 727, 728, 729),
 
 			// copper
@@ -38,6 +38,19 @@ namespace Avalon.API.StarterSets
 			new StarterSet(new[] {  -3,  -1,  -4,  -5 },  92,  83,  74),
 			// platinum
 			new StarterSet(new[] { -45, -43, -46, -47 }, 696, 697, 698),
+		};
+		/// <summary>
+		/// All <see cref="StarterSet" />'s names.
+		/// </summary>
+		public readonly static string[] Names =
+		{
+			"Basic", "Basic with Hammer",
+			"basic wiht Hammer and Wood Armour",
+
+			"Copper", "Tin",
+			"Iron", "Lead",
+			"Silver", "Tungsten",
+			"Gold", "Platinum"
 		};
 
 		internal static int SelectedSet = 0;

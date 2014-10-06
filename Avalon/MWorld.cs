@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using TAPI;
-using PoroCYon.MCT.Content;
 using PoroCYon.MCT.Net;
 using Avalon.API.Items.MysticalTomes;
 using Avalon.UI;
@@ -20,7 +18,7 @@ namespace Avalon
         const int spawnSpaceX = 3, spawnSpaceY = 3;
 
 #pragma warning disable 414
-		static bool needsToLoadRecipes = true, addedWings = false, scanned = false;	// no idea
+		static bool needsToLoadRecipes = true, scanned = false;	// no idea
 #pragma warning restore 414
 
 		internal static bool oldNight = false;
@@ -54,15 +52,6 @@ namespace Avalon
         /// How many times a wraith in the Wraith Invasion was killed.
         /// </summary>
         public static int WraithsDowned = 0;
-
-        /// <summary>
-        /// Gets the ID of the Golden Wings texture.
-        /// </summary>
-        public static int GoldenWings
-        {
-            get;
-            private set;
-        }
 
 #pragma warning disable 414
 		static int grassCounter = 0, jungleEx = 0, gCount = 0;
@@ -271,22 +260,6 @@ namespace Avalon
             // insert all graphical/UI-related stuff AFTER this check!
             if (Main.dedServ)
                 return;
-
-            Texture2D gWings = modBase.textures["Resources/Wings/Golden Wings"];
-            foreach (Texture2D t in Main.wingsTexture.Values)
-                if (gWings == t)
-                {
-                    addedWings = true;
-                    break;
-                }
-
-            if (!addedWings)
-            {
-                GoldenWings = Main.dedServ ? Main.wingsTexture.Count :  ObjectLoader.AddWingsToGame(gWings);
-
-                addedWings = true;
-            }
-
         }
         /// <summary>
         /// Called after the world is updated

@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Terraria;
 using TAPI;
 using PoroCYon.MCT;
+using PoroCYon.MCT.Content;
 using PoroCYon.MCT.Net;
 using Avalon.API.Items.MysticalTomes;
 using Avalon.API.World;
 using Avalon.Items.Other;
+using Avalon.UI;
 
 namespace Avalon
 {
@@ -67,7 +70,9 @@ namespace Avalon
 			tomeSkillHotkey   ,
 			shadowMirrorHotkey;
 
-        internal static List<BossSpawn> spawns = new List<BossSpawn>();
+		static bool addedWings = false;
+
+		internal static List<BossSpawn> spawns = new List<BossSpawn>();
         readonly static List<int> EmptyIntList = new List<int>(); // only alloc once
 
         /// <summary>
@@ -116,11 +121,20 @@ namespace Avalon
             internal set;
         }
 
-        /// <summary>
-        /// Creates a new instance of the <see cref="AvalonMod" /> class.
-        /// </summary>
-        /// <remarks>Called by the mod loader.</remarks>
-        public AvalonMod()
+		/// <summary>
+		/// Gets the ID of the Golden Wings texture.
+		/// </summary>
+		public static int GoldenWings
+		{
+			get;
+			private set;
+		}
+
+		/// <summary>
+		/// Creates a new instance of the <see cref="AvalonMod" /> class.
+		/// </summary>
+		/// <remarks>Called by the mod loader.</remarks>
+		public AvalonMod()
             : base()
         {
             Instance = this;
@@ -190,6 +204,8 @@ namespace Avalon
             LoadInvasions();
             LoadSpawns   ();
 
+			base.OnLoad();
+
 			tomeSkillHotkey    = options[0];
 			shadowMirrorHotkey = options[1];
 
@@ -207,8 +223,27 @@ namespace Avalon
 					MWorld.accessories[i][j] = new Item();
 			}
 
-			base.OnLoad();
-        }
+			// insert all graphical/UI-related stuff AFTER this check!
+			if (Main.dedServ)
+				return;
+
+			Texture2D gWings = textures["Resources/Wings/Golden Wings"];
+			foreach (Texture2D t in Main.wingsTexture.Values)
+				if (gWings == t)
+				{
+					addedWings = true;
+					break;
+				}
+
+			if (!addedWings)
+			{
+				GoldenWings = Main.dedServ ? Main.wingsTexture.Count : ObjectLoader.AddWingsToGame(gWings);
+
+				addedWings = true;
+			}
+
+			StarterSetSelectionHandler.Init();
+		}
         /// <summary>
         /// Called when the mod is unloaded.
         /// </summary>
