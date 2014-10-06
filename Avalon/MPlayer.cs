@@ -13,7 +13,7 @@ namespace Avalon
     /// <summary>
     /// Global player stuff
     /// </summary>
-    public sealed class MPlayer : ModPlayer
+    public sealed partial class MPlayer : ModPlayer
 	{
 #pragma warning disable 414
 #pragma warning disable 169
@@ -165,189 +165,17 @@ namespace Avalon
                 if (acc == null || acc.IsBlank())
                     continue;
 
-                player.statDefense += acc.defense  ;
-                player.lifeRegen   += acc.lifeRegen;
+				ItemEffects(player, acc);
 
-                if (acc.prefix != null && acc.prefix.id > 0 /*&& !acc.prefix.Equals(Prefix.None)*/ && acc.prefix.id < Defs.prefixes.Count)
-                    acc.prefix.ApplyToPlayer(player);
+				//player.statDefense += acc.defense  ;
+				//player.lifeRegen   += acc.lifeRegen;
 
-                acc.Effects(player);
+				//if (acc.prefix != null && acc.prefix.id > 0 /*&& !acc.prefix.Equals(Prefix.None)*/ && acc.prefix.id < Defs.prefixes.Count)
+				//	acc.prefix.ApplyToPlayer(player);
 
-                switch (acc.type)
-                {
-                    #region vanilla accs
-                    case 238: //Wizard Hat
-                        player.magicDamage += .15f;
-                        break;
-                    case 111: //Band of Starpower
-                        player.statManaMax2 += 20;
-                        break;
-                    case 268: //Diving Helmet
-                        player.accDivingHelm = true;
-                        break;
-                    case 15: //Copper Watch
-                        if (player.accWatch < 1)
-                            player.accWatch = 1;
-                        break;
-                    case 16: //Silver Watch
-                        if (player.accWatch < 2)
-                            player.accWatch = 2;
-                        break;
-                    case 17: //Gold Watch
-                        if (player.accWatch < 3)
-                            player.accWatch = 3;
-                        break;
-                    case 18: //Depth Meter
-                        if (player.accDepthMeter < 1)
-                            player.accDepthMeter = 1;
-                        break;
-                    case 53: //Cloud in a Bottle
-                        player.doubleJump = true;
-                        break;
-                    case 54: //Hermes Boots
-                        //if (player.baseMaxSpeed < 6f)
-                        //    player.baseMaxSpeed = 6f;
-                        break;
-                    case 128: //Rocket Boots
-                        if (player.rocketBoots == 0)
-                            player.rocketBoots = 1;
-                        break;
-                    case 156: //Cobalt Shield
-                        player.noKnockback = true;
-                        break;
-                    case 158: //Lucky Horseshoe
-                        player.noFallDmg = true;
-                        break;
-                    case 159: //Shiny Red Balloon
-                        player.jumpBoost = true;
-                        break;
-                    case 187: //Flipper
-                        player.accFlipper = true;
-                        break;
-                    case 211: //Feral Claws
-                        player.meleeSpeed += .12f;
-                        break;
-                    case 223: //Nature's Gift
-                        player.manaCost -= .06f;
-                        break;
-                    case 285: //Aglet
-                        player.moveSpeed += .05f;
-                        break;
-                    case 212: //Anklet of the Wind
-                        player.moveSpeed += .1f;
-                        break;
-                    case 267: //Guide Voodoo Doll
-                        player.killGuide = true;
-                        break;
-                    case 193: //Obsidian Skull
-                        player.fireWalk = true;
-                        break;
-                    case 485: //Moon Charm
-                        player.wolfAcc = true;
-                        break;
-                    case 486: //Ruler
-                        player.rulerAcc = true;
-                        break;
-                    case 393: //Compass
-                        player.accCompass = 1;
-                        break;
-                    case 394: //Diving Gear
-                        player.accFlipper = player.accDivingHelm = true;
-                        break;
-                    case 395: //GPS
-                        player.accWatch = 3;
-                        player.accDepthMeter = player.accCompass = 1;
-                        break;
-                    case 396: //Obsidian Horseshoe
-                        player.noFallDmg = player.fireWalk = true;
-                        break;
-                    case 397: //Obsidian Shield
-                        player.noKnockback = player.fireWalk = true;
-                        break;
-                    case 399: //Cloud in a Balloon
-                        player.jumpBoost = player.doubleJump = true;
-                        break;
-                    case 405: //Spectre Boots
-                        //if (player.baseMaxSpeed < 6f)
-                        //    player.baseMaxSpeed = 6f;
-                        if (player.rocketBoots == 0)
-                            player.rocketBoots = 2;
-                        break;
-                    case 407: //Toolbelt
-                        if (player.blockRange < 1)
-                            player.blockRange = 1;
-                        break;
-                    case 489: //Sorcerer Emblem
-                        player.magicDamage += .15f;
-                        break;
-                    case 490: //Warrior Emblem
-                        player.meleeDamage += .15f;
-                        break;
-                    case 491: //Ranger Emblem
-                        player.rangedDamage += .15f;
-                        break;
-                    case 492: //Demon Wings
-                        if (player.wings == 0)
-                            player.wings = 1;
-                        break;
-                    case 493: //Angel Wings
-                        if (player.wings == 0)
-                            player.wings = 2;
-                        break;
-                    case 497: //Neptune's Shell
-                        player.accMerman = true;
-                        break;
-                    case 535: //Philosopher's Stone
-                        player.pStone = true;
-                        break;
-                    case 536: //Titan Glove
-                        player.kbGlove = true;
-                        break;
-                    case 532: //Star Cloak
-                        player.starCloak = true;
-                        break;
-                    case 554: //Cross Necklace
-                        player.longInvince = true;
-                        break;
-                    case 555: //Mana Flower
-                        player.manaFlower = true;
-                        player.manaCost -= .08f;
-                        break;
-
-                        // 1.2 accs?
-                    #endregion
-
-                    default:
-                        if (Main.myPlayer == player.whoAmI)
-                        {
-                            if (acc.type != 576 || acc.type > 603)
-                                break;
-
-                            if (acc.type == 576 && Main.rand.Next(18000) == 0 &&
-                                !WavebankDef.current.StartsWith("Vanilla:") ||
-                                (WavebankDef.current.StartsWith("Vanilla:") && String.IsNullOrEmpty(WavebankDef.current)))
-                            {
-                                int id = String.IsNullOrEmpty(WavebankDef.current) ? 0 : Convert.ToInt32(WavebankDef.current.Substring("Vanilla:".Length));
-
-                                int mid = id <= MUSIC_BOXES.Length - 1 ? MUSIC_BOXES[id] : -1;
-                                if (mid <= -1)
-                                    break;
-
-                                acc.SetDefaults(562 + mid, false);
-                                BinBuffer bb = new BinBuffer(new BinBufferByte());
-                                bb.Write((byte)player.whoAmI);
-								acc.Save(bb);
-
-                                bb.Pos = 0;
-                                NetHelper.SendModData(modBase, NetMessages.SetMusicBox, toSend: bb.ReadBytes());
-                            }
-                            if (acc.type >= 562 && acc.type <= 574)
-                                WavebankDef.musicBox = "Vanilla:" + (acc.type - 562);
-                        }
-                        break;
-                }
-            }
-        }
+				//acc.Effects(player);
+			}
+		}
         void U_LavaMerman     ()
         {
             if (LavaMerman)
