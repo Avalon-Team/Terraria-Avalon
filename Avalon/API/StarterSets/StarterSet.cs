@@ -35,7 +35,7 @@ namespace Avalon.API.StarterSets
 			// tungsten
 			new StarterSet(new[] { -39, -37, -40, -41 }, 693, 694, 695),
 			// gold
-			new StarterSet(new[] {  -3,  -1,  -4,  -5 },  92,  83,  74),
+			new StarterSet(new[] {  -3,  -1,  -4,  -5 },  92,  83,  79),
 			// platinum
 			new StarterSet(new[] { -45, -43, -46, -47 }, 696, 697, 698),
 		};
@@ -44,8 +44,8 @@ namespace Avalon.API.StarterSets
 		/// </summary>
 		public readonly static string[] Names =
 		{
-			"Basic", "Basic with Hammer",
-			"basic wiht Hammer and Wood Armour",
+			"Basic", "Basic w/ Hammer",
+			"Basic w/ Hammer and Armour",
 
 			"Copper", "Tin",
 			"Iron", "Lead",

@@ -11,7 +11,7 @@ using PoroCYon.MCT.Net;
 using Avalon.API.Items.MysticalTomes;
 using Avalon.API.World;
 using Avalon.Items.Other;
-using Avalon.UI;
+using Avalon.UI.Menus;
 
 namespace Avalon
 {

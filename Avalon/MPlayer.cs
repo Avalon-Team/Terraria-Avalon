@@ -471,6 +471,11 @@ namespace Avalon
 			player.armor[1].SetDefaults(set.ArmourBody);
 			player.armor[2].SetDefaults(set.ArmourLegs);
 
+			for (int i = 0; i < MWorld.localAccessories.Length; i++)
+				MWorld.localAccessories[i] = new Item();
+
+			MWorld.localTome = new Item();
+
 			StarterSet.SelectedSet = 0;
 		}
 

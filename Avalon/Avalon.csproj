@@ -111,8 +111,9 @@
     <Compile Include="Items\Weapons\Flails\Caesium Flail.cs" />
     <Compile Include="Items\Weapons\Spells\Impulse Strike.cs" />
     <Compile Include="UI\ExtraAccessorySlot.cs" />
+    <Compile Include="UI\Menus\StarterSetDisplayer.cs" />
     <Compile Include="UI\MysticalTomeSlot.cs" />
-    <Compile Include="UI\StarterSetSelectionHandler.cs" />
+    <Compile Include="UI\Menus\StarterSetSelectionHandler.cs" />
     <Compile Include="UI\TomeSlotLayer.cs" />
     <Compile Include="_MCTImport\Content\ObjectLoader.cs" />
     <Compile Include="_MCTImport\Invasion.cs" />
