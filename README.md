@@ -1,4 +1,4 @@
 Terraria Avalon
 ===============
 
-The Terraria Avalon mod - http://www.terrariaonline.com/threads/87058/
+The Terraria Avalon mod - http://forums.terraria.org/index.php?threads/378/
