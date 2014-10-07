@@ -7,6 +7,7 @@ using TAPI;
 using PoroCYon.MCT.Net;
 using Avalon.API.Items.MysticalTomes;
 using Avalon.UI;
+using Avalon.World;
 
 namespace Avalon
 {
@@ -438,7 +439,7 @@ namespace Avalon
         {
             base.WorldGenModifyHardmodeTaskList(list);
 
-
+            list.Add(new DynamicTask("Avalon:Heartstone", Gen.GenerateHeartstone));
         }
 
         /// <summary>

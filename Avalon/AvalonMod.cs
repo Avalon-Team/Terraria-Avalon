@@ -11,6 +11,7 @@ using PoroCYon.MCT.Net;
 using Avalon.API.Items.MysticalTomes;
 using Avalon.API.World;
 using Avalon.Items.Other;
+using Avalon.NPCs;
 using Avalon.UI.Menus;
 
 namespace Avalon
@@ -244,6 +245,16 @@ namespace Avalon
 
 			StarterSetSelectionHandler.Init();
 		}
+        /// <summary>
+        /// Called when all mods are loaded.
+        /// </summary>
+        [CallPriority(Single.PositiveInfinity)]
+        public override void OnAllModsLoaded()
+        {
+            base.OnAllModsLoaded();
+
+            VanillaDrop.InitDrops();
+        }
         /// <summary>
         /// Called when the mod is unloaded.
         /// </summary>

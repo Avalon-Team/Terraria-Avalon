@@ -90,6 +90,7 @@
     <Compile Include="MPlayer_AccEffects.cs" />
     <Compile Include="MUI.cs" />
     <Compile Include="NPCs\Baits\Lava Mite.cs" />
+    <Compile Include="NPCs\VanillaDrop.cs" />
     <Compile Include="UI\AccessorySlotLayer.cs" />
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="API\Items\Attributes.cs" />
@@ -118,10 +119,12 @@
     <Compile Include="UI\MysticalTomeSlot.cs" />
     <Compile Include="UI\Menus\StarterSetSelectionHandler.cs" />
     <Compile Include="UI\TomeSlotLayer.cs" />
+    <Compile Include="World\DynamicTask.cs" />
+    <Compile Include="World\Gen.cs" />
     <Compile Include="_MCTImport\Content\ObjectLoader.cs" />
     <Compile Include="_MCTImport\Invasion.cs" />
     <Compile Include="_MCTImport\Net\NetHelper.cs" />
-    <Compile Include="MNPC.cs" />
+    <Compile Include="NPCs\MNPC.cs" />
     <Compile Include="AvalonMod.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="MWorld.cs" />
@@ -151,6 +154,7 @@
     <Content Include="Items\Materials\Dark Matter\Dark Matter Bar.png" />
     <Content Include="Items\Materials\Dark Matter\Dark Matter Ore.png" />
     <Content Include="Items\Materials\Hallowstone Block.png" />
+    <Content Include="Items\Materials\Heartstone.png" />
     <Content Include="Items\Materials\Illegal Weapon Instructions.png" />
     <Content Include="Items\Materials\Jungle\Jungle Ore.png" />
     <Content Include="Items\Materials\Mystical Tomes\Carbon Steel.png" />
@@ -231,6 +235,7 @@
     <Content Include="Tiles\Crafting Stations\Hallowed Altar.png" />
     <Content Include="Tiles\Ores\Corrupted Ore.png" />
     <Content Include="Tiles\Ores\Dark Matter Ore.png" />
+    <Content Include="Tiles\Ores\Heartstone.png" />
     <Content Include="Tiles\Ores\Jungle Ore.png" />
     <Content Include="Tiles\Ores\Magmatic Ore.png" />
     <EmbeddedResource Include="ModInfo.json" />
@@ -489,7 +494,9 @@
     <Content Include="Items\Mystical Tomes\Tome of the River Spirits.json" />
     <EmbeddedResource Include="ModOptions.json" />
     <Content Include="Items\Baits\Lava Mite.json" />
+    <Content Include="Items\Materials\Heartstone.json" />
     <None Include="NPCs\Baits\Lava Mite.json" />
+    <None Include="Tiles\Ores\Heartstone.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
