@@ -1,0 +1,13 @@
+﻿{
+	"code": "NPCs.LavaMite",
+	"displayName": "Lava Mite",
+	"size": [ 20, 16 ],
+	"aiStyle": 66,
+	"animationType": 377, /* grasshopper */
+	"frameCount": 2,
+	"lifeMax": 5,
+	"soundHit": 1,
+	"soundKilled": 1,
+	"lavaImmune": true,
+	"catchItem": "Avalon:Lava Mite"
+}

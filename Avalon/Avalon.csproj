@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="API\ExtendedSpawning.cs" />
     <Compile Include="API\StarterSets\StarterSet.cs" />
+    <Compile Include="Items\Baits\Lava Mite.cs" />
     <Compile Include="Items\Mystical Tomes\Adventures and Mishaps.cs" />
     <Compile Include="Items\Mystical Tomes\Tome of the River Spirit.cs" />
     <Compile Include="Items\Mystical Tomes\Tome of Distance.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Items\Mystical Tomes\Burning Desire.cs" />
     <Compile Include="MPlayer_AccEffects.cs" />
     <Compile Include="MUI.cs" />
+    <Compile Include="NPCs\Baits\Lava Mite.cs" />
     <Compile Include="UI\AccessorySlotLayer.cs" />
     <Compile Include="API\Biomes\Attributes.cs" />
     <Compile Include="API\Items\Attributes.cs" />
@@ -135,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Buffs\Shadows.png" />
+    <Content Include="Items\Baits\Lava Mite.png" />
     <Content Include="Items\Crafting Stations\Adamantite Anvil.json" />
     <Content Include="Items\Crafting Stations\Berserker Anvil.png" />
     <Content Include="Items\Crafting Stations\Caesium Forge.json" />
@@ -205,6 +208,7 @@
     <Content Include="Items\Materials\Steel\Steel Chain.json" />
     <Content Include="Items\Weapons\Flails\Sporalash.png" />
     <Content Include="Items\Weapons\Spells\Impulse Strike.png" />
+    <Content Include="NPCs\Baits\Lava Mite.png" />
     <Content Include="Projectiles\FromPlayer\Flails\Berserker Sphere.png" />
     <Content Include="Projectiles\FromPlayer\Flails\Cobalt Ball.png" />
     <Content Include="Projectiles\FromPlayer\Flails\Eclipse Ball.png" />
@@ -292,6 +296,8 @@
     <Content Include="Items\Weapons\Flails\Berserker Nightmare.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="NPCs\Bosses\" />
+    <Folder Include="NPCs\Normal\" />
     <Folder Include="Projectiles\FromNPC\" />
   </ItemGroup>
   <ItemGroup>
@@ -482,6 +488,8 @@
     <Content Include="Items\Mystical Tomes\Tome of Distance.json" />
     <Content Include="Items\Mystical Tomes\Tome of the River Spirits.json" />
     <EmbeddedResource Include="ModOptions.json" />
+    <Content Include="Items\Baits\Lava Mite.json" />
+    <None Include="NPCs\Baits\Lava Mite.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
