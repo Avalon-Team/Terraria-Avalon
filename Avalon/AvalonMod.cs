@@ -267,11 +267,11 @@ namespace Avalon
             base.OnUnload();
         }
 
-		/// <summary>
-		/// Called when an option is changed.
-		/// </summary>
-		/// <param name="option">The option that has changed.</param>
-		public override void OptionChanged(Option option)
+        /// <summary>
+        /// Called when an option is changed.
+        /// </summary>
+        /// <param name="option">The option that has changed.</param>
+        public override void OptionChanged(Option option)
         {
             base.OptionChanged(option);
 

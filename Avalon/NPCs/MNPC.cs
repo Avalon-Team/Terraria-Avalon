@@ -54,69 +54,12 @@ namespace Avalon.NPCs
         {
             if (VanillaDrop.Drops.ContainsKey(npc.type))
             {
-                VanillaDrop drop = VanillaDrop.Drops[npc.type];
+                VanillaDrop[] dropArr = VanillaDrop.Drops[npc.type];
 
-                if (Main.rand.NextDouble() > drop.Chance)
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, drop.Type, drop.Amount, false, -1, true);
+                for (int i = 0; i < dropArr.Length; i++)
+                    if (Main.rand.NextDouble() < dropArr[i].Chance)
+                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, dropArr[i].Type, dropArr[i].Amount(), false, -1, true);
             }
-
-            return true;
-
-            // see VanillaDrop.cs for implementation
-
-#pragma warning disable 162
-            if (npc.type == NPCDef.byName["Vanilla:Paladin"].type && Main.rand.Next(99) == 0)
-#pragma warning restore 162
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, (int)npc.width, (int)npc.height, ItemDef.byName["AvalonMod:Throwing Paladin's Hammer"].type, 1, false, 0);
-                
-            }
-            #region SzGamer227's Ammo thread
-            if (npc.type == NPCDef.byName["Vanilla:Goblin Archer"].type)
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, (int)npc.width, (int)npc.height, ItemDef.byName["Vanilla:Arrow"].type, Main.rand.Next(0, 6), false, 0);
-                
-            }
-            if (npc.type == NPCDef.byName["Vanilla:Pirate Crossbower"].type)
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, (int)npc.width, (int)npc.height, ItemDef.byName["Vanilla:Arrow"].type, Main.rand.Next(0, 12), false, 0);
-                
-            }
-            if (npc.type == NPCDef.byName["Vanilla:Skeleton Archer"].type)
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, (int)npc.width, (int)npc.height, ItemDef.byName["Vanilla:Flaming Arrow"].type, Main.rand.Next(0, 4), false, 0);
-                
-            }
-            if (npc.type == NPCDef.byName["Vanilla:Snowman Gangsta"].type)
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, (int)npc.width, (int)npc.height, ItemDef.byName["Vanilla:Silver Bullet"].type, Main.rand.Next(0, 5), false, 0);
-                
-            }
-            if (npc.type == NPCDef.byName["Vanilla:Tactical Skeleton"].type)
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, (int)npc.width, (int)npc.height, ItemDef.byName["Vanilla:Silver Bullet"].type, Main.rand.Next(0, 20), false, 0);
-                
-            }
-            if (npc.type == NPCDef.byName["Vanilla:Pirate Deadeye"].type)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:Silver Bullet"].type, Main.rand.Next(0, 6), false, 0);
-            if (npc.type == NPCDef.byName["Vanilla:Pirate Captain"].type)
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:Silver Bullet"].type, Main.rand.Next(5, 60), false, 0);
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:Cannonball"   ].type, Main.rand.Next(0, 10), false, 0);
-            }
-            if (npc.type == NPCDef.byName["Vanilla:Elf Copter"       ].type)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:Silver Bullet"       ].type, Main.rand.Next(0, 10), false, 0);
-            if (npc.type == NPCDef.byName["Vanilla:Skeleton Sniper"  ].type)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:High Velocity Bullet"].type, Main.rand.Next(0, 17), false, 0);
-            if (npc.type == NPCDef.byName["Vanilla:Skeleton Commando"].type)
-            {
-
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:Rocket I"  ].type, Main.rand.Next(0, 4), false, 0);
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:Rocket II" ].type, Main.rand.Next(0, 3), false, 0);
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:Rocket III"].type, Main.rand.Next(0, 2), false, 0);
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemDef.byName["Vanilla:Rocket IV" ].type, Main.rand.Next(0, 1), false, 0);
-            }
-            #endregion
 
             return base.PreNPCLoot();
         }
