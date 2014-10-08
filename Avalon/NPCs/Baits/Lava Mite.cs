@@ -12,18 +12,6 @@ namespace Avalon.NPCs.Baits
 	public sealed class LavaMite : ModNPC
 	{
 		/// <summary>
-		/// Called after <see cref="NPC.AI" /> is called.
-		/// </summary>
-		public override void PostAI()
-		{
-			base.PostAI();
-
-			// float in lava
-			if (npc.lavaWet)
-				npc.position.Y -= 0.025f;
-		}
-
-		/// <summary>
 		/// Checks whether the spawning mechanism should spawn an <see cref="NPC" /> or not.
 		/// </summary>
 		/// <param name="x">The X position of the spawn place (in tiles).</param>
@@ -33,7 +21,7 @@ namespace Avalon.NPCs.Baits
 		/// <returns>true if the <see cref="NPC" /> should spawn; otherwise, false.</returns>
 		public override bool CanSpawn(int x, int y, int type, Player spawnedOn)
 		{
-			return Biome.Biomes["Hell"].Check(spawnedOn);// && Main.rand.Next(-1) == 0; // need a rarity value
+			return Biome.Biomes["Hell"].Check(spawnedOn) && Main.rand.Next(13) == 0;
 		}
 	}
 }
