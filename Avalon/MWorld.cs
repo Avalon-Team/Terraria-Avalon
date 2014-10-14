@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using TAPI;
-using PoroCYon.MCT.Content;
 using PoroCYon.MCT.Net;
 using Avalon.API.Items.MysticalTomes;
 using Avalon.UI;
+using Avalon.World;
 
 namespace Avalon
 {
@@ -19,9 +18,11 @@ namespace Avalon
     {
         const int spawnSpaceX = 3, spawnSpaceY = 3;
 
-        static bool needsToLoadRecipes = true, addedWings = false, scanned = false; // no idea
+#pragma warning disable 414
+		static bool needsToLoadRecipes = true, scanned = false;	// no idea
+#pragma warning restore 414
 
-        internal static bool oldNight = false;
+		internal static bool oldNight = false;
 
         /// <summary>
         /// Wether UltraOblivion has already been killed or not.
@@ -53,17 +54,10 @@ namespace Avalon
         /// </summary>
         public static int WraithsDowned = 0;
 
-        /// <summary>
-        /// Gets the ID of the Golden Wings texture.
-        /// </summary>
-        public static int GoldenWings
-        {
-            get;
-            private set;
-        }
-
-        static int grassCounter = 0, jungleEx = 0, gCount = 0;
-        static int jungleX = -1, jungleY = -1, lOceanY = -1, rOceanY = -1, hellY;
+#pragma warning disable 414
+		static int grassCounter = 0, jungleEx = 0, gCount = 0;
+#pragma warning restore 414
+		static int jungleX = -1, jungleY = -1, lOceanY = -1, rOceanY = -1, hellY;
 
         /// <summary>
         /// Gets the position of the Jungle (in tile coordinates).
@@ -187,17 +181,6 @@ namespace Avalon
         }
 
         /// <summary>
-        /// Creates a new instance of the MWorld class
-        /// </summary>
-        /// <param name="base">The ModBase which belongs to the ModWorld instance</param>
-        /// <remarks>Called by the mod loader</remarks>
-        public MWorld(ModBase @base)
-            : base(@base)
-        {
-
-        }
-
-        /// <summary>
         /// Corrects a Y position so the tile at the given position is inactive.
         /// </summary>
         /// <param name="x">The X coördinate.</param>
@@ -257,41 +240,27 @@ namespace Avalon
             base.Initialize();
 
             CatarystDownedCount = EverIceCount = ArmageddonCount = HallowAltarsBroken = 0;
-            Mod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
+            AvalonMod.IsInSuperHardmode = UltraOblivionDowned = SpawnedBerserkerOre = false;
 
-            accessories = new Item        [Main.netMode == 0 ? 1 : Main.numPlayers][];
-            tomes       = new Item        [Main.netMode == 0 ? 1 : Main.numPlayers]  ;
-            managers    = new SkillManager[Main.netMode == 0 ? 1 : Main.numPlayers]  ;
+			int plrs = Main.netMode == 0 ? 1 : Main.numPlayers;
 
-            for (int i = 0; i < accessories.Length; i++)
+			Array.Resize(ref managers   , plrs);
+			Array.Resize(ref accessories, plrs);
+			Array.Resize(ref tomes      , plrs);
+
+            for (int i = 1; i < accessories.Length; i++)
             {
-                accessories[i] = new Item[Mod.ExtraSlots];
+                accessories[i] = new Item[AvalonMod.ExtraSlots];
 
                 for (int j = 0; j < accessories[i].Length; j++)
                     accessories[i][j] = new Item();
             }
-            for (int i = 0; i < tomes.Length; i++)
+            for (int i = 1; i < tomes.Length; i++)
                 tomes[i] = new Item();
 
             // insert all graphical/UI-related stuff AFTER this check!
             if (Main.dedServ)
                 return;
-
-            Texture2D gWings = modBase.textures["Resources/Wings/Golden Wings.png"];
-            foreach (Texture2D t in Main.wingsTexture.Values)
-                if (gWings == t)
-                {
-                    addedWings = true;
-                    break;
-                }
-
-            if (!addedWings)
-            {
-                GoldenWings = Main.dedServ ? Main.wingsTexture.Count :  ObjectLoader.AddWingsToGame(gWings);
-
-                addedWings = true;
-            }
-
         }
         /// <summary>
         /// Called after the world is updated
@@ -300,7 +269,7 @@ namespace Avalon
         {
             base.PostUpdate();
 
-            if (!Mod.IsInSuperHardmode && !UltraOblivionDowned)
+            if (!AvalonMod.IsInSuperHardmode && !UltraOblivionDowned)
                 return;
 
             NPC n, n2;
@@ -309,12 +278,12 @@ namespace Avalon
             {
                 n = Main.npc[i];
 
-                if (n.type == 94 && n.active && Mod.IsInSuperHardmode)
+                if (n.type == 94 && n.active && AvalonMod.IsInSuperHardmode)
                     for (int j = 0; j < Main.npc.Length; j++)
                     {
                         n2 = Main.npc[j];
 
-                        if (n2.type == Defs.npcs["Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
+                        if (n2.type == NPCDef.byName["Avalon:Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
                         {
                             Make3x3Circle((int)n.position.X / 16, (int)n.position.Y / 16, TileDef.type["Oblivion Ore"]);
 
@@ -328,12 +297,12 @@ namespace Avalon
                         }
                     }
 
-                if (n.type == Defs.npcs["Guardian Corruptor"].type && n.active && UltraOblivionDowned)
+                if (n.type == NPCDef.byName["Avalon:Guardian Corruptor"].type && n.active && UltraOblivionDowned)
                     for (int j = 0; j < Main.npc.Length; j++)
                     {
                         n2 = Main.npc[j];
 
-                        if (n2.type == Defs.npcs["Aegis Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
+                        if (n2.type == NPCDef.byName["Avalon:Aegis Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
                         {
                             Make3x3Circle((int)n.position.X / 16, (int)n.position.Y / 16, TileDef.type["Berserker Ore"]);
 
@@ -349,18 +318,7 @@ namespace Avalon
             }
 
             if (WraithsDowned >= 200)
-                Mod.Wraiths.Stop();
-        }
-
-        /// <summary>
-        /// Called when a Player joins the sever
-        /// </summary>
-        /// <param name="index">The whoAmI of the Player who is joining</param>
-        public override void PlayerConnected(int index)
-        {
-            base.PlayerConnected(index);
-
-            NetHelper.SendModData(modBase, NetMessages.RequestCustomSlots, index, -1, Main.myPlayer);
+                AvalonMod.Wraiths.Stop();
         }
 
         /// <summary>
@@ -369,10 +327,18 @@ namespace Avalon
         /// <param name="bb">The buffer containing the binary data.</param>
         public override void Save(BinBuffer bb)
         {
+			// kinda hacky: use this as an OnQuit hook
+			if (Main.gameMenu) // if ingame, it's a backup save (while playing), not when quitting
+			{
+				Array.Resize(ref managers   , 1);
+				Array.Resize(ref accessories, 1);
+				Array.Resize(ref tomes      , 1);
+			}
+
             base.Save(bb);
 
             bb.WriteX(
-                Mod.IsInSuperHardmode,
+                AvalonMod.IsInSuperHardmode,
                 UltraOblivionDowned,
                 SpawnedBerserkerOre,
                 scanned);
@@ -403,13 +369,13 @@ namespace Avalon
 
             for (int i = 0; i < accessories.Length; i++)
             {
-                accessories[i] = new Item[Mod.ExtraSlots];
+                accessories[i] = new Item[AvalonMod.ExtraSlots];
 
-                for (int j = 0; j < Mod.ExtraSlots; j++)
+                for (int j = 0; j < AvalonMod.ExtraSlots; j++)
                     accessories[i][j] = new Item();
             }
 
-            Mod.IsInSuperHardmode = bb.ReadBool();
+            AvalonMod.IsInSuperHardmode = bb.ReadBool();
             UltraOblivionDowned = bb.ReadBool();
             SpawnedBerserkerOre = bb.ReadBool();
             scanned = bb.ReadBool();
@@ -462,7 +428,7 @@ namespace Avalon
         {
             base.WorldGenModifyHardmodeTaskList(list);
 
-
+            list.Add(new DynamicTask("Avalon:Heartstone", Gen.GenerateHeartstone));
         }
 
         /// <summary>

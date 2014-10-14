@@ -10,33 +10,43 @@ namespace PoroCYon.MCT.Content
     {
         internal static int AddWingsToGame(Texture2D texture)
         {
-            if (Main.dedServ)
-                return 1;
+			if (Main.dedServ)
+				return -1;
 
-            int id = Main.wingsTexture.Count;
+			int id = Main.wingsTexture.Count;
 
-            if (Main.wingsTexture.ContainsValue(texture))
-            {
-                foreach (KeyValuePair<int, Texture2D> kvp in Main.wingsTexture)
-                    if (kvp.Value == texture)
-                    {
-                        if (Main.wingsLoaded.ContainsKey(id))
-                            Main.wingsLoaded[id] = true;
-                        else
-                            Main.wingsLoaded.Add(id, true);
+			if (Main.wingsTexture.ContainsValue(texture))
+			{
+				foreach (KeyValuePair<int, Texture2D> kvp in Main.wingsTexture)
+					if (kvp.Value == texture)
+					{
+						if (id < 0 || id >= Main.wingsLoaded.Length)
+							Array.Resize(ref Main.wingsLoaded, Math.Max(Main.wingsLoaded.Length, id) + 1);
 
-                        id = kvp.Key;
-                    }
-            }
-            else
-                Main.wingsTexture.Add(id, texture);
+						Main.wingsLoaded[id] = true;
 
-            if (Main.wingsLoaded.ContainsKey(id))
-                Main.wingsLoaded[id] = true;
-            else
-                Main.wingsLoaded.Add(id, true);
+						//if (Main.wingsLoaded.ContainsKey(id))
+						//    Main.wingsLoaded[id] = true;
+						//else
+						//    Main.wingsLoaded.Add(id, true);
 
-            return id;
-        }
+						id = kvp.Key;
+					}
+			}
+			else
+				Main.wingsTexture.Add(id, texture);
+
+			if (id < 0 || id >= Main.wingsLoaded.Length)
+				Array.Resize(ref Main.wingsLoaded, Math.Max(Main.wingsLoaded.Length, id) + 1);
+
+			Main.wingsLoaded[id] = true;
+
+			//if (Main.wingsLoaded.ContainsKey(id))
+			//    Main.wingsLoaded[id] = true;
+			//else
+			//    Main.wingsLoaded.Add(id, true);
+
+			return id;
+		}
     }
 }

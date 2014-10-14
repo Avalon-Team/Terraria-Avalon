@@ -1,0 +1,13 @@
+﻿{
+    "displayName": "Heartstone",
+    "size": [ 16, 16 ],
+    "useStyle": 1,
+    "useTime": 10,
+    "useAnimation": 15,
+    "maxStack": 999,
+    "createTile": "Avalon:Heartstone",
+    "consumable": true,
+    "autoReuse": true,
+    "useTurn": true,
+    "value": [ 0, 0, 15, 0 ]
+}

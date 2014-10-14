@@ -51,17 +51,12 @@ namespace Avalon.API.Items.MysticalTomes
         {
             TomeSkillAttribute attr = null;
 
-            for (int i = 0; i < it.allSubClasses.Length; i++)
-                attr = it.allSubClasses[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
-                    .FirstOrDefault() as TomeSkillAttribute; // there should be only one
+            for (int i = 0; i < it.modEntities.Count; i++)
+				if ((attr = it.modEntities[i].GetType().GetCustomAttributes(typeof(TomeSkillAttribute), true)
+						.FirstOrDefault() as TomeSkillAttribute) != null) // there should be only one
+					return attr.Instantiate();
 
-            if (attr == null)
-                return null;
-
-            if (attr == null)
-                return null;
-
-            return attr.Instantiate();
+			return null;
         }
     }
 }

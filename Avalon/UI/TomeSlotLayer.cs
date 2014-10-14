@@ -29,7 +29,10 @@ namespace Avalon.UI
         {
             Instance = this;
 
-            slot = new MysticalTomeSlot();
+			slot = new MysticalTomeSlot()
+			{
+				position = new Vector2(Main.screenWidth - 186f, 100f)
+			};
         }
 
         /// <summary>
@@ -38,7 +41,8 @@ namespace Avalon.UI
         /// <param name="sb"></param>
         protected override void OnDraw(SpriteBatch sb)
         {
-            slot.UpdateAndDraw(sb, new Vector2(Main.screenWidth - 186f, 100f));
+            slot.Update(  );
+			slot.Draw  (sb);
         }
     }
 }

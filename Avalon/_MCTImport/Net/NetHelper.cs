@@ -27,7 +27,7 @@ namespace PoroCYon.MCT.Net
         {
             SendModData(@base, message, -1, -1, toSend);
         }
-        internal static void SendModData(ModBase @base, int message, params object[] toSend)
+        internal static void SendModData(ModBase @base, int  message, params object[] toSend)
         {
             SendModData(@base, message, -1, -1, toSend);
         }
@@ -35,178 +35,189 @@ namespace PoroCYon.MCT.Net
         {
             SendModData(@base, Convert.ToInt32(message), remoteClient, ignoreClient, toSend);
         }
-        internal static void SendModData(ModBase @base, int message, int remoteClient, int ignoreClient, params object[] toSend)
-        {
-            if (Main.netMode == 0)
-                return;
+		internal static void SendModData(ModBase @base, int message, int remoteClient, int ignoreClient, params object[] toSend)
+		{
+			if (Main.netMode == 0)
+				return;
 
-            int num = 256;
-            if (Main.netMode == 2 && remoteClient >= 0)
-                num = remoteClient;
+			int num = 256;
+			if (Main.netMode == 2 && remoteClient >= 0)
+				num = remoteClient;
 
-            lock (NetMessage.buffer[num])
-            {
-                BinBuffer bb = new BinBuffer(new BinBufferByte(NetMessage.buffer[num].writeBuffer, false));
-                bb.Pos = 4; //for size
-                bb.WriteX((byte)100, (byte)@base.modIndex, (byte)message);
+			lock (NetMessage.buffer[num])
+			{
+				BinBuffer bb = new BinBuffer(new BinBufferByte(NetMessage.buffer[num].writeBuffer, false));
+				bb.Pos = 4;	//for size
+				bb.WriteX((byte)100, (byte)Mods.mods.IndexOf(@base.mod), (byte)message);
 
-                // write stuff here
+				// write stuff here
 
-                for (int i = 0; i < toSend.Length; i++)
-                {
-                    Type t = toSend[i].GetType();
+				for (int i = 0; i < toSend.Length; i++)
+				{
+					Type t = toSend[i].GetType();
 
-                    #region primitives
-                    if (t == typeof(byte))
-                        bb.Write((byte)toSend[i]);
-                    else if (t == typeof(sbyte))
-                        bb.Write((sbyte)toSend[i]);
+					#region primitives
+					if (t == typeof(byte))
+						bb.Write((byte)toSend[i]);
+					else if (t == typeof(sbyte))
+						bb.Write((sbyte)toSend[i]);
 
-                    else if (t == typeof(ushort))
-                        bb.Write((ushort)toSend[i]);
-                    else if (t == typeof(short))
-                        bb.Write((short)toSend[i]);
+					else if (t == typeof(ushort))
+						bb.Write((ushort)toSend[i]);
+					else if (t == typeof(short))
+						bb.Write((short)toSend[i]);
 
-                    else if (t == typeof(int))
-                        bb.Write((int)toSend[i]);
-                    else if (t == typeof(uint))
-                        bb.Write((uint)toSend[i]);
+					else if (t == typeof(int))
+						bb.Write((int)toSend[i]);
+					else if (t == typeof(uint))
+						bb.Write((uint)toSend[i]);
 
-                    else if (t == typeof(long))
-                        bb.Write((long)toSend[i]);
-                    else if (t == typeof(ulong))
-                        bb.Write((ulong)toSend[i]);
+					else if (t == typeof(long))
+						bb.Write((long)toSend[i]);
+					else if (t == typeof(ulong))
+						bb.Write((ulong)toSend[i]);
 
-                    else if (t == typeof(float))
-                        bb.Write((float)toSend[i]);
-                    else if (t == typeof(double))
-                        bb.Write((double)toSend[i]);
-                    else if (t == typeof(decimal))
-                        bb.Write((decimal)toSend[i]);
+					else if (t == typeof(float))
+						bb.Write((float)toSend[i]);
+					else if (t == typeof(double))
+						bb.Write((double)toSend[i]);
+					else if (t == typeof(decimal))
+						bb.Write((decimal)toSend[i]);
 
-                    else if (t == typeof(DateTime))
-                        bb.Write((DateTime)toSend[i]);
-                    else if (t == typeof(TimeSpan))
-                        bb.Write((TimeSpan)toSend[i]);
+					else if (t == typeof(DateTime))
+						bb.Write((DateTime)toSend[i]);
+					else if (t == typeof(TimeSpan))
+						bb.Write((TimeSpan)toSend[i]);
 
-                    else if (t == typeof(BigInteger))
-                        bb.Write((BigInteger)toSend[i]);
-                    else if (t == typeof(Complex))
-                        bb.Write((Complex)toSend[i]);
+					else if (t == typeof(BigInteger))
+						bb.Write((BigInteger)toSend[i]);
+					else if (t == typeof(Complex))
+						bb.Write((Complex)toSend[i]);
 
-                    else if (t == typeof(MemoryStream))
-                    {
-                        bb.Write(((MemoryStream)toSend[i]).ToArray().Length);
-                        bb.Write(((MemoryStream)toSend[i]).ToArray());
-                    }
-                    else if (t == typeof(BinBuffer))
-                    {
-                        bb.Write(((BinBuffer)toSend[i]).BytesLeft());
-                        bb.Write(((BinBuffer)toSend[i]));
-                    }
-                    else if (t == typeof(BinBufferBuffer) || t.IsSubclassOf(typeof(BinBufferBuffer)))
-                    {
-                        bb.Write(((BinBufferBuffer)toSend[i]).BytesLeft());
-                        bb.Write((new BinBuffer((BinBufferBuffer)toSend[i])));
-                    }
+					else if (t == typeof(MemoryStream))
+					{
+						bb.Write(((MemoryStream)toSend[i]).ToArray().Length);
+						bb.Write(((MemoryStream)toSend[i]).ToArray());
+					}
+					else if (t == typeof(BinBuffer))
+					{
+						bb.Write(((BinBuffer)toSend[i]).BytesLeft);
+						bb.Write(((BinBuffer)toSend[i]));
+					}
+					else if (t == typeof(BinBufferAbstract) || t.IsSubclassOf(typeof(BinBufferAbstract)))
+					{
+						bb.Write(((BinBufferAbstract)toSend[i]).BytesLeft());
+						bb.Write((new BinBuffer((BinBufferAbstract)toSend[i])));
+					}
 
-                    else if (t == typeof(Vector2))
-                        bb.Write((Vector2)toSend[i]);
-                    else if (t == typeof(Color))
-                        bb.Write((Color)toSend[i]);
-                    else if (t == typeof(Item))
-                        bb.Write((Item)toSend[i]);
-                    #endregion
+					else if (t == typeof(Vector2))
+						bb.Write((Vector2)toSend[i]);
+					else if (t == typeof(Color))
+						bb.Write((Color)toSend[i]);
+					else if (t == typeof(Item))
+						bb.Write((Item)toSend[i]);
+					#endregion
 
-                    #region value type -> can read from memory
-                    else if (t.IsValueType && (t.IsExplicitLayout || t.IsLayoutSequential) && !t.IsGenericType)
-                    {
-                        // this is probably lunacy
-                        int size = Marshal.SizeOf(toSend[i]);
+					#region value type -> can read from memory
+					else if (t.IsValueType && (t.IsExplicitLayout || t.IsLayoutSequential) && !t.IsGenericType)
+					{
+						// this is probably lunacy
+						int size = Marshal.SizeOf(toSend[i]);
 
-                        GCHandle argHandle = GCHandle.Alloc(toSend[i], GCHandleType.Pinned);
-                        IntPtr offset = argHandle.AddrOfPinnedObject();
+						GCHandle argHandle = GCHandle.Alloc(toSend[i], GCHandleType.Pinned);
+						IntPtr offset = argHandle.AddrOfPinnedObject();
 
-                        bb.Write(size);
-                        for (IntPtr ptr = offset; ptr.ToInt64() < offset.ToInt64() + size; ptr += 1)
-                            bb.Write(Marshal.ReadByte(ptr));
+						bb.Write(size);
+						for (IntPtr ptr = offset; ptr.ToInt64() < offset.ToInt64() + size; ptr += 1)
+							bb.Write(Marshal.ReadByte(ptr));
 
-                        argHandle.Free(); // HELLO.
-                    }
-                    #endregion
+						argHandle.Free();
 
-                    #region serilizable -> can use binaryformatter
-                    else if (t.IsSerializable || t.GetInterface("System.Runtime.Serialization.ISerializable") != null)
-                    {
-                        BinaryFormatter bf = new BinaryFormatter();
-                        MemoryStream ms = new MemoryStream();
-                        bf.Serialize(ms, toSend[i]);
-                        bb.Write(ms.ToArray().Length);
-                        bb.Write(ms.ToArray());
-                        ms.Close();
-                    }
-                    #endregion
-                    else
-                        throw new ArgumentException("Object must be a primitive, struct, or serializable.", "toSend[" + i + "]");
-                }
+						//IntPtr ptr = IntPtr.Zero;
+						//Marshal.StructureToPtr(toSend[i], ptr, false);
+						//int size = Marshal.SizeOf(toSend[i]);
 
-                #region send some other stuff
-                int pos = bb.Pos;
-                bb.Pos = 0;
-                bb.Write(pos - 4);
-                bb.Pos = pos;
+						//bb.Write(size);
 
-                if (Main.netMode == 1)
-                    if (!Netplay.clientSock.tcpClient.Connected)
-                        goto End;
+						//for (IntPtr addr = ptr; addr.ToInt64() < ptr.ToInt64() + size; addr += 1) // read byte per byte
+						//    bb.Write(Marshal.ReadByte(addr));
+					}
+					#endregion
 
-                try
-                {
-                    NetMessage.buffer[num].spamCount++;
-                    Main.txMsg++;
-                    Main.txData += pos;
-                    Main.txMsgType[100]++;
-                    Main.txDataType[100] += pos;
-                    Netplay.clientSock.networkStream.BeginWrite(NetMessage.buffer[num].writeBuffer, 0, pos, new AsyncCallback(Netplay.clientSock.ClientWriteCallBack), Netplay.clientSock.networkStream);
-                }
-                catch
-                {
-                    goto End;
-                }
+					#region serilizable -> can use binaryformatter
+					else if (t.IsSerializable || t.GetInterface("System.Runtime.Serialization.ISerializable") != null)
+					{
+						BinaryFormatter bf = new BinaryFormatter();
+						MemoryStream ms = new MemoryStream();
+						bf.Serialize(ms, toSend[i]);
+						bb.Write(ms.ToArray().Length);
+						bb.Write(ms.ToArray());
+						ms.Close();
+					}
+					#endregion
+					else
+						throw new ArgumentException("Object must be a primitive, struct, or serializable.", "toSend[" + i + "]");
+				}
 
-                if (remoteClient == -1)
-                    for (int i = 0; i < 256; i++)
-                        if (i != ignoreClient && NetMessage.buffer[i].broadcast && Netplay.serverSock[i].tcpClient.Connected)
-                            try
-                            {
-                                NetMessage.buffer[i].spamCount++;
-                                Main.txMsg++;
-                                Main.txData += pos;
-                                Main.txMsgType[100]++;
-                                Main.txDataType[100] += pos;
-                                Netplay.serverSock[i].networkStream.BeginWrite(NetMessage.buffer[num].writeBuffer, 0, pos, new AsyncCallback(Netplay.serverSock[i].ServerWriteCallBack), Netplay.serverSock[i].networkStream);
-                            }
-                            catch { }
+				#region send some other stuff
+				int pos = bb.Pos;
+				bb.Pos = 0;
+				bb.Write(pos - 4);
+				bb.Pos = pos;
 
-                        else if (Netplay.serverSock[remoteClient].tcpClient.Connected)
-                            try
-                            {
-                                NetMessage.buffer[remoteClient].spamCount++;
-                                Main.txMsg++;
-                                Main.txData += pos;
-                                Main.txMsgType[100]++;
-                                Main.txDataType[100] += pos;
-                                Netplay.serverSock[remoteClient].networkStream.BeginWrite(NetMessage.buffer[num].writeBuffer, 0, pos, new AsyncCallback(Netplay.serverSock[remoteClient].ServerWriteCallBack), Netplay.serverSock[remoteClient].networkStream);
-                            }
-                            catch { }
+				if (Main.netMode == 1)
+					if (!Netplay.clientSock.tcpClient.Connected)
+						goto End;
 
-            End:
-                NetMessage.buffer[num].writeLocked = false;
-                #endregion
-            }
-        }
+				try
+				{
+					NetMessage.buffer[num].spamCount++;
+					Main.txMsg++;
+					Main.txData += pos;
+					Main.txMsgType[100]++;
+					Main.txDataType[100] += pos;
+					Netplay.clientSock.networkStream.BeginWrite(NetMessage.buffer[num].writeBuffer, 0, pos, new AsyncCallback(Netplay.clientSock.ClientWriteCallBack), Netplay.clientSock.networkStream);
+				}
+				catch
+				{
+					goto End;
+				}
 
-        internal static object ReadObject(Type t, BinBuffer bb)
+				if (remoteClient == -1)
+					for (int i = 0; i < 256; i++)
+						if (i != ignoreClient && NetMessage.buffer[i].broadcast && Netplay.serverSock[i].tcpClient.Connected)
+							try
+							{
+								NetMessage.buffer[i].spamCount++;
+								Main.txMsg++;
+								Main.txData += pos;
+								Main.txMsgType[100]++;
+								Main.txDataType[100] += pos;
+								Netplay.serverSock[i].networkStream.BeginWrite(NetMessage.buffer[num].writeBuffer, 0, pos, new AsyncCallback(Netplay.serverSock[i].ServerWriteCallBack), Netplay.serverSock[i].networkStream);
+							}
+							catch (Exception)
+							{ }
+
+						else if (Netplay.serverSock[remoteClient].tcpClient.Connected)
+							try
+							{
+								NetMessage.buffer[remoteClient].spamCount++;
+								Main.txMsg++;
+								Main.txData += pos;
+								Main.txMsgType[100]++;
+								Main.txDataType[100] += pos;
+								Netplay.serverSock[remoteClient].networkStream.BeginWrite(NetMessage.buffer[num].writeBuffer, 0, pos, new AsyncCallback(Netplay.serverSock[remoteClient].ServerWriteCallBack), Netplay.serverSock[remoteClient].networkStream);
+							}
+							catch (Exception)
+							{ }
+
+				End:
+				NetMessage.buffer[num].writeLocked = false;
+				#endregion
+			}
+		}
+
+		internal static object ReadObject   (Type t, BinBuffer bb)
         {
             object ret = null;
 
@@ -252,7 +263,7 @@ namespace PoroCYon.MCT.Net
                 ret = new MemoryStream(bb.ReadBytes(bb.ReadInt()));
             else if (t == typeof(BinBuffer))
                 ret = new BinBuffer(new BinBufferByte(bb.ReadBytes(bb.ReadInt())));
-            else if (t == typeof(BinBufferBuffer))
+            else if (t == typeof(BinBufferAbstract))
                 ret = new BinBuffer(new BinBufferByte(bb.ReadBytes(bb.ReadInt())));
 
             else if (t == typeof(Vector2))
@@ -296,9 +307,9 @@ namespace PoroCYon.MCT.Net
 
             return ret;
         }
-        internal static T ReadObject<T>(BinBuffer bb)
+        internal static T      ReadObject<T>(        BinBuffer bb)
         {
-            return (T)(dynamic)ReadObject(typeof(T), bb);
+            return (T)ReadObject(typeof(T), bb);
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿{
+    "code": "Items.Baits.LavaMite",
+    "displayName": "Lava Mite",
+    "size": [ 20, 16 ],
+	"useStyle": 1,
+	"noUseGraphic": true,
+	"consumable": true,
+    "useTime": 15,
+    "useAnimation": 15,
+    "maxStack": 999,
+    "rare": 2,
+	"value": [ 0, 0, 10, 0 ],
+	"bait": 45,
+	"makeNpc": "Avalon:Lava Mite"
+}

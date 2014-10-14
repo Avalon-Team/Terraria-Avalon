@@ -143,17 +143,17 @@ namespace PoroCYon.MCT
         {
             invasion.ID = ++invasionNextType;
 
-            invasions.Add(@base.modName + ":" + internalName, invasion);
-            invasionTypes.Add(invasion.ID, @base.modName + ":" + internalName);
+            invasions.Add(@base.mod.InternalName + ":" + internalName, invasion);
+            invasionTypes.Add(invasion.ID, @base.mod.InternalName + ":" + internalName);
 
             return invasion.ID;
         }
 
         internal static void LoadVanilla()
         {
-            Load(Mod.Instance, "Vanilla:Goblin Army" , new GoblinArmyInv());
-            Load(Mod.Instance, "Vanilla:Frost Legion", new FrostLegionInv());
-            Load(Mod.Instance, "Vanilla:Pirates"     , new PiratesInv());
+            Load(AvalonMod.Instance, "Vanilla:Goblin Army" , new GoblinArmyInv());
+            Load(AvalonMod.Instance, "Vanilla:Frost Legion", new FrostLegionInv());
+            Load(AvalonMod.Instance, "Vanilla:Pirates"     , new PiratesInv());
         }
     }
 

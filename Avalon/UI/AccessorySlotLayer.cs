@@ -47,6 +47,7 @@ namespace Avalon.UI
                 }
             }
         }
+
         /// <summary>
         /// Gets the item slot content.
         /// </summary>
@@ -56,8 +57,8 @@ namespace Avalon.UI
             private set;
         }
 
-        ExtraAccessorySlot[] slots = new ExtraAccessorySlot[Mod.ExtraSlots];
-        Item[] items = new Item[Mod.ExtraSlots];
+        ExtraAccessorySlot[] slots = new ExtraAccessorySlot[AvalonMod.ExtraSlots];
+        Item[] items = new Item[AvalonMod.ExtraSlots];
 
         internal AccessorySlotLayer()
             : base("Avalon:AccessorySlotLayer")
@@ -65,7 +66,10 @@ namespace Avalon.UI
             Instance = this;
 
             for (int i = 0; i < slots.Length; i++)
-                slots[i] = new ExtraAccessorySlot(i);
+                slots[i] = new ExtraAccessorySlot(i)
+				{
+					position = new Vector2(Main.screenWidth - 235f - i / 3 * 96f, 364f + (i % 3) * 48f)
+				};
 
             Slots = new Items();
         }
@@ -76,12 +80,11 @@ namespace Avalon.UI
         /// <param name="sb"></param>
         protected override void OnDraw(SpriteBatch sb)
         {
-            float
-                x = Main.screenWidth - 139f,
-                y = 364f;
-
             for (int i = 0; i < slots.Length; i++)
-                slots[i].UpdateAndDraw(sb, new Vector2(x - i / 3 * 48f, y + (i % 3) * 48f));
+			{
+				slots[i].Update(  );
+				slots[i].Draw  (sb);
+			}
         }
     }
 }
