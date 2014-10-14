@@ -19,9 +19,9 @@ namespace Avalon.UI
         public ExtraAccessorySlot(int index)
             : base(AvalonMod.Instance, "Equip", index, (s, i) =>
             {
-                MWorld.localAccessories[s.index].OnUnEquip(Main.localPlayer, s.index);
+                MWorld.localAccessories[s.index].OnUnEquip(Main.localPlayer, s);
                 MWorld.localAccessories[s.index] = i;
-                MWorld.localAccessories[s.index].OnEquip  (Main.localPlayer, s.index);
+                MWorld.localAccessories[s.index].OnEquip  (Main.localPlayer, s);
             }, s => MWorld.localAccessories[s.index])
 		{
 
@@ -34,7 +34,7 @@ namespace Avalon.UI
         /// <returns>true if the <see cref="Item" /> can be placed in the <see cref="ItemSlot" />, false otherwise.</returns>
         public override bool AllowsItem(Item i)
         {
-            return base.AllowsItem(i) && ((i.accessory && i.CanEquip(Main.localPlayer, index)) || i.IsBlank());
+            return base.AllowsItem(i) && ((i.accessory && i.CanEquip(Main.localPlayer, this)) || i.IsBlank());
         }
     }
 }

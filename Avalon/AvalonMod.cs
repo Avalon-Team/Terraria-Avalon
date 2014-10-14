@@ -17,37 +17,6 @@ using Avalon.UI.Menus;
 namespace Avalon
 {
     /// <summary>
-    /// All Avalon NetMessages.
-    /// </summary>
-    public enum NetMessages
-    {
-        /// <summary>
-        /// Start the Wraith Invasion
-        /// </summary>
-        StartWraithInvasion,
-        /// <summary>
-        /// Something not really obvious
-        /// </summary>
-        SetMusicBox,
-        /// <summary>
-        /// Request tiles when teleporting with the <see cref="Items.Other.ShadowMirror" />.
-        /// </summary>
-        RequestTiles,
-        /// <summary>
-        /// Request the content of the extra accessory slots and the tome slot.
-        /// </summary>
-        RequestCustomSlots,
-        /// <summary>
-        /// Send the content of the extra accessory slots and the tome slot. Usually sent as a response to <see cref="RequestCustomSlots" />.
-        /// </summary>
-        SendCustomSlots,
-        /// <summary>
-        /// Activates a <see cref="SkillManager" />.
-        /// </summary>
-        ActivateSkill
-    }
-
-    /// <summary>
     /// The entry point of the Avalon mod.
     /// </summary>
     /// <remarks>Like 'Program' but for a mod</remarks>
@@ -139,59 +108,6 @@ namespace Avalon
             : base()
         {
             Instance = this;
-        }
-
-        /// <summary>
-        /// When the mod receives data from a peer connection.
-        /// </summary>
-        /// <param name="msg">The message type.</param>
-        /// <param name="bb">The content of the message.</param>
-        public override void NetReceive(byte msg, BinBuffer bb)
-        {
-            // commonly used vars
-            int id;
-
-            switch ((NetMessages)msg)
-            {
-                case NetMessages.StartWraithInvasion:
-                    // todo
-                    break;
-                case NetMessages.SetMusicBox:
-                    // todo
-                    break;
-                case NetMessages.RequestTiles:
-                    NetMessage.SendTileSquare(bb.ReadInt(), bb.ReadInt(), bb.ReadInt(), bb.ReadInt());
-                    break;
-                case NetMessages.RequestCustomSlots:
-                    BinBuffer itemB = new BinBuffer();
-
-                    itemB.Write (Main.myPlayer);
-                    itemB.WriteX(MWorld.localAccessories);
-                    itemB.Write (MWorld.localTome);
-
-                    itemB.Pos = 0;
-
-                    NetHelper.SendModData(this, NetMessages.SendCustomSlots, bb.ReadInt(), -1, itemB.ReadBytes());
-                    break;
-                case NetMessages.SendCustomSlots:
-                    id = bb.ReadInt();
-
-                    for (int i = 0; i < ExtraSlots; i++)
-                        MWorld.accessories[id][i] = bb.ReadItem();
-
-                    MWorld.tomes   [id] = bb.ReadItem();
-                    MWorld.managers[id] = SkillManager.FromItem(MWorld.tomes[id]);
-                    break;
-                case NetMessages.ActivateSkill:
-                    id = bb.ReadInt();
-
-                    if (MWorld.managers[id] == null)
-                        MWorld.managers[id] = SkillManager.FromItem(MWorld.tomes[id]);
-
-                    if (MWorld.managers[id] != null)
-                        MWorld.managers[id].Activate(Main.player[id]); // id is both client id and player id.
-                    break;
-            }
         }
 
         /// <summary>

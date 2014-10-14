@@ -322,17 +322,6 @@ namespace Avalon
         }
 
         /// <summary>
-        /// Called when a Player joins the sever
-        /// </summary>
-        /// <param name="index">The whoAmI of the Player who is joining</param>
-        public override void PlayerConnected(int index)
-        {
-            base.PlayerConnected(index);
-
-            NetHelper.SendModData(modBase, NetMessages.RequestCustomSlots, index, -1, Main.myPlayer);
-        }
-
-        /// <summary>
         /// Writes binary data to a world save file. Called when the world is closed.
         /// </summary>
         /// <param name="bb">The buffer containing the binary data.</param>

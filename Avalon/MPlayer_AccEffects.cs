@@ -9,7 +9,7 @@ namespace Avalon
 {
 	partial class MPlayer
 	{
-		void _OldItemEffects(Player player, Item acc)
+		/*void _OldItemEffects(Player player, Item acc)
 		{
 			switch (acc.type)
 			{
@@ -172,7 +172,7 @@ namespace Avalon
 							acc.SetDefaults(562 + mid, false);
 							BinBuffer bb = new BinBuffer(new BinBufferByte());
 							bb.Write((byte)player.whoAmI);
-							acc.Save(bb);
+							acc.Write(bb);
 
 							bb.Pos = 0;
 							NetHelper.SendModData(modBase, NetMessages.SetMusicBox, toSend: bb.ReadBytes());
@@ -183,7 +183,7 @@ namespace Avalon
 					break;
 					#endregion
 			}
-		}
+		}*/
 
 		void ItemEffects(Player player, Item acc)
 		{
@@ -700,7 +700,7 @@ namespace Avalon
 			}
 			if (acc.type == 2375)
 			{
-				player.accTackleBox = true;
+				player.accTackleBox = 1;
 			}
 			if (acc.type == 2423)
 			{
@@ -833,7 +833,7 @@ namespace Avalon
 			if (acc.type == 1595)
 			{
 				player.statManaMax2 += 20;
-				player.magicCuffs = true;
+				player.magicCuffs = Math.Max(player.magicCuffs, 1f);
 			}
 			if (acc.type == 2219)
 			{
@@ -847,7 +847,7 @@ namespace Avalon
 			if (acc.type == 2221)
 			{
 				player.manaMagnet = true;
-				player.magicCuffs = true;
+				player.magicCuffs = Math.Max(player.magicCuffs, 1f);
 			}
 			if (player.whoAmI == Main.myPlayer && acc.type == 1923)
 			{
@@ -856,7 +856,7 @@ namespace Avalon
 			}
 			if (acc.type == 1247)
 			{
-				player.starCloak = true;
+				player.starCloak = Math.Max(player.starCloak, 3);
 				player.bee = true;
 			}
 			if (acc.type == 1248)
@@ -867,7 +867,7 @@ namespace Avalon
 			}
 			if (acc.type == 854)
 			{
-				player.discount = true;
+				player.discountVanilla *= 0.8f;
 			}
 			if (acc.type == 855)
 			{
@@ -892,7 +892,7 @@ namespace Avalon
 			}
 			if (acc.type == 156)
 			{
-				player.noKnockback = true;
+				player.knockbackResist = 0f;
 			}
 			if (acc.type == 158)
 			{
@@ -988,12 +988,12 @@ namespace Avalon
 			}
 			if (acc.type == 862)
 			{
-				player.starCloak = true;
+				player.starCloak = Math.Max(player.starCloak, 3);
 				player.longInvince = true;
 			}
 			if (acc.type == 860)
 			{
-				player.pStone = true;
+				player.pStoneVanilla *= 0.75f;
 			}
 			if (acc.type == 863)
 			{
@@ -1044,7 +1044,7 @@ namespace Avalon
 			}
 			if (acc.type == 397)
 			{
-				player.noKnockback = true;
+                player.knockbackResist = 0f;
 				player.fireWalk = true;
 			}
 			if (acc.type == 399)
@@ -1094,14 +1094,14 @@ namespace Avalon
 				player.wallSpeed += 0.5f;
 			}
 			if (acc.type == 897)
-			{
-				player.kbGlove = true;
+            {
+                player.knockbackMeleeModVanilla *= 2f;
 				player.meleeSpeed += 0.12f;
 			}
 			if (acc.type == 1343)
-			{
-				player.kbGlove = true;
-				player.meleeSpeed += 0.09f;
+            {
+                player.knockbackMeleeModVanilla *= 2f;
+                player.meleeSpeed += 0.09f;
 				player.meleeDamage += 0.09f;
 				player.magmaStone = true;
 			}
@@ -1131,12 +1131,12 @@ namespace Avalon
 				player.magmaStone = true;
 			}
 			if (acc.type == 1323)
-			{
-				player.lavaRose = true;
-			}
+            {
+                player.lavaRoseVanilla *= 0.625f;
+            }
 			if (acc.type == 938)
 			{
-				player.noKnockback = true;
+				player.knockbackResist = 0f;
 
 				if (player.statLife > player.statLifeMax2 * 0.25f)
 				{
@@ -1162,7 +1162,7 @@ namespace Avalon
 			}
 			if (acc.type == 936)
 			{
-				player.kbGlove = true;
+				player.knockbackMeleeModVanilla *= 0.75f;
 				player.meleeSpeed += 0.12f;
 				player.meleeDamage += 0.12f;
 			}
@@ -1327,7 +1327,7 @@ namespace Avalon
 			}
 			if (acc.type == 1613)
 			{
-				player.noKnockback = true;
+				player.knockbackResist = 0f;
 				player.fireWalk = true;
 				player.buffImmune[33] = true;
 				player.buffImmune[36] = true;
@@ -1345,15 +1345,15 @@ namespace Avalon
 			}
 			if (acc.type == 535)
 			{
-				player.pStone = true;
+				player.pStoneVanilla *= 0.75f;
 			}
 			if (acc.type == 536)
-			{
-				player.kbGlove = true;
-			}
+            {
+                player.knockbackResist = 0f;
+            }
 			if (acc.type == 532)
 			{
-				player.starCloak = true;
+                player.starCloak = Math.Max(player.starCloak, 3);
 			}
 			if (acc.type == 554)
 			{

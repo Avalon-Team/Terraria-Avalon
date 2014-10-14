@@ -19,9 +19,9 @@ namespace Avalon.UI
         public MysticalTomeSlot()
             : base(AvalonMod.Instance, "Equip", 0, (s, i) =>
             {
-                s.MyItem.OnUnEquip(Main.localPlayer, 0);
+                s.MyItem.OnUnEquip(Main.localPlayer, s);
                 MWorld.localManager = SkillManager.FromItem(MWorld.localTome = i);
-                MWorld.localTome.OnEquip(Main.localPlayer, 0);
+                MWorld.localTome.OnEquip(Main.localPlayer, s);
             }, s => MWorld.localTome)
         {
 
@@ -41,7 +41,7 @@ namespace Avalon.UI
 				//		.FirstOrDefault() /* there should be only one */ as TomeSkillAttribute) != null)
 				//	break;
 
-            return base.AllowsItem(it) && ((SkillManager.FromItem(it) != null && it.CanEquip(Main.localPlayer, 0)) || it.IsBlank());
+            return base.AllowsItem(it) && ((SkillManager.FromItem(it) != null && it.CanEquip(Main.localPlayer, this)) || it.IsBlank());
         }
     }
 }

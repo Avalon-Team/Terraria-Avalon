@@ -87,6 +87,7 @@
     <Compile Include="Items\Mystical Tomes\Creator%27s Tome.cs" />
     <Compile Include="Items\Mystical Tomes\Christmas Tome.cs" />
     <Compile Include="Items\Mystical Tomes\Burning Desire.cs" />
+    <Compile Include="MNet.cs" />
     <Compile Include="MPlayer_AccEffects.cs" />
     <Compile Include="MUI.cs" />
     <Compile Include="NPCs\Baits\Lava Mite.cs" />
