@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.MythrilFlail",
+    "code": "Items.Weapons.Melee.Flails.MythrilFlail",
     "displayName": "Mythril Flail",
 
     "size": [ 32, 32 ],

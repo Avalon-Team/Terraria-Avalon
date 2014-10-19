@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.Sporalash",
+    "code": "Items.Weapons.Melee.Flails.Sporalash",
     "displayName": "Sporalash",
     "size": [ 32, 32 ],
     "useStyle": 5,

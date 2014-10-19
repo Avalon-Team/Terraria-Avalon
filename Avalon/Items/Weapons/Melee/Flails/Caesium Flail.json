@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.CaesiumFlail",
+    "code": "Items.Weapons.Melee.Flails.CaesiumFlail",
     "displayName": "Caesium Flail",
     "size": [ 32, 32 ],
     "useStyle": 5,

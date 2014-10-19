@@ -41,8 +41,11 @@ namespace Avalon.UI
         /// <param name="sb"></param>
         protected override void OnDraw(SpriteBatch sb)
         {
-            slot.Update(  );
-			slot.Draw  (sb);
+            if (Main.playerInventory)
+            {
+                slot.Update(  );
+			    slot.Draw  (sb);
+            }
         }
     }
 }

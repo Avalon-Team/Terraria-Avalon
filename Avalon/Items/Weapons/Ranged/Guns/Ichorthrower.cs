@@ -16,6 +16,15 @@ namespace Avalon.Weapons.Ranged.Guns
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>
+        public override bool CanUse(Player p)
+        {
+            return p.inventory.Any(i => !i.IsBlank() && i.type == 1332);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public override bool ConsumeAmmo(Player p)
         {
             return Main.rand.Next(6) == 0;

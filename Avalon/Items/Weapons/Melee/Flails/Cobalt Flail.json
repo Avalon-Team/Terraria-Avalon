@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.CobaltFlail",
+    "code": "Items.Weapons.Melee.Flails.CobaltFlail",
     "displayName": "Cobalt Flail",
 
     "size": [ 32, 32 ],

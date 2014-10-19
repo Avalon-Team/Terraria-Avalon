@@ -18,7 +18,7 @@ namespace Avalon.Projectiles.FromPlayer.Throwables
         /// <returns></returns>
         public override bool OnTileCollide(ref Vector2 velocityChange) 
         {
-            projectile.velocity = Vector2.Zero;
+            velocityChange = projectile.velocity = Vector2.Zero;
 
             return false;
         }

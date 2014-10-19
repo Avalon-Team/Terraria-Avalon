@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.EclipsesWaning",
+    "code": "Items.Weapons.Melee.Flails.EclipsesWaning",
     "displayName": "Eclipse's Waning",
     "size": [ 32, 32 ],
     "useStyle": 5,

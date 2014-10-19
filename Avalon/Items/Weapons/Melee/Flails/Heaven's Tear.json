@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.HeavensTear",
+    "code": "Items.Weapons.Melee.Flails.HeavensTear",
     "displayName": "Heaven's Tear",
     "size": [ 32, 32 ],
     "useStyle": 5,

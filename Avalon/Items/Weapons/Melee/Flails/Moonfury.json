@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.Moonfury",
+    "code": "Items.Weapons.Melee.Flails.Moonfury",
     "displayName": "Moonfury",
     "size": [ 32, 32 ],
     "useStyle": 5,

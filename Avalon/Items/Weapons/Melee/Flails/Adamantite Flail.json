@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.AdamantiteFlail",
+    "code": "Items.Weapons.Melee.Flails.AdamantiteFlail",
     "displayName": "Adamantite Flail",
 
     "size": [ 32, 32 ],

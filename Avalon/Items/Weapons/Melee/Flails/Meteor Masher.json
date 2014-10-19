@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.MeteorMasher",
+    "code": "Items.Weapons.Melee.Flails.MeteorMasher",
     "displayName": "Meteor Masher",
     "size": [ 32, 32 ],
     "useStyle": 5,

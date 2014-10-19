@@ -1,5 +1,5 @@
 ﻿{
-    "code": "Items.Weapons.Flails.BerserkerNightmare",
+    "code": "Items.Weapons.Melee.Flails.BerserkerNightmare",
     "displayName": "Berserker Nightmare",
     "size": [ 34, 32 ],
     "useStyle": 5,
