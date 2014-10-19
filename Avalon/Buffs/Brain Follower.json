@@ -1,0 +1,9 @@
+{
+    "code": "Buffs.BrainFollower",
+	"displayName": "Brain Follower",
+	"toolTip": "An eerie brain floats near you.",
+	"debuff": false,
+	"vanityPet": true,
+	"lightPet": false,
+	"enchantment": false
+}

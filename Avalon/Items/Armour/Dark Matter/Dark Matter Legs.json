@@ -1,0 +1,15 @@
+{
+	"displayName": "Dark Matter Legs",
+	"size": [22,18],
+	"rare": 9,
+	"value": [0,1,0,0],
+	"armorLegs": true,
+	"defense": 20,
+	"setName": "DarkMatter",
+	"recipes":
+	[{
+		"items": { "Dirt Block": 1 },  
+		"tiles": [ "Work Bench" ], 
+		"creates": 1
+	}]
+}

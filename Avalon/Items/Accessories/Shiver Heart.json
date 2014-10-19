@@ -1,0 +1,26 @@
+{
+	"code": "Items.Accessories.ShiverHeart",
+	"displayName": "Shiver Heart",
+	"rare": 5,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 26, 26 ],
+	"maxStack": 1,
+	"value": [ 0, 0, 54, 0 ],
+	"rare": 5,
+	"tooltip": [ "Weak to water, but regeneration in lava" ],
+	"accessory": true,
+
+	"recipes": [
+		{
+			"items": {
+				"Life Crystal": 1,
+				"Soul of Fright": 10,
+				"Ice Block": 25
+			},
+			"tiles": [
+				"Anvil"
+			],
+			"creates": 1
+		}
+	]
+}

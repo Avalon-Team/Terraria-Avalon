@@ -1,0 +1,33 @@
+{
+	"code": "Items.Weapons.Ranged.Cannons.VertebraeCannon",
+	"displayName": "Vertebrae Cannon",
+	"rare": 6,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 68, 28 ],
+	"consumable": false,
+	"autoReuse": true,
+	"shoot": "Avalon:Vertebrae Rivet",
+	"useSound": 14,
+	"useStyle": 5,
+	"useTime": 20,
+	"useAnimation": 20,
+	"reuseDelay": 0,
+	"shootSpeed": 26,
+	"noMelee": true,
+	"damage": 75,
+	"knockback": 4,
+	"ranged": true,
+	"maxStack": 1,
+	"tooltip": "A bloody cannon that uses Vertebrae",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

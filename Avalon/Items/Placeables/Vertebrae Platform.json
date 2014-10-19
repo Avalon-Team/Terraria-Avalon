@@ -1,20 +1,19 @@
 {
-	"displayName": "Heartstone",
-	"size": [ 20, 20 ],
+	"internalName": "Vertebrae Platform",
+	"displayName": "Vertebrae Platform",
+	"size": [ 24, 14 ],
 	"maxStack": 999,
-	"value": [ 0, 0, 1, 0 ],
-	"rare": 4,
+	"value": [ 0, 0, 0, 0 ],
+	"rare": 0,
 	"useStyle": 1,
 	"useAnimation": 15,
 	"useTime": 10,
 	"autoReuse": true,
 	"useTurn": true,
-	"tooltip": "A shiny heart of Heartstone",
-	"createTile": "Avalon:Heartstone",
+	"createTile": "Avalon:Vertebrae Platform",
 	"consumable": true,
-	"tileBoost": 0,
-	"recipes": /*Remove in final version.*/
-	[
+	"tileBoost": 2,
+	"recipes": [
 		{
 			"items": {
 				"Dirt Block": 1

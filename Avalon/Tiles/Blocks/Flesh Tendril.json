@@ -1,0 +1,23 @@
+{
+	"internalName": "Flesh Tendril",
+	"displayName": "Flesh Tendril",
+	"size": [ 1, 1 ],
+	"frameWidth": 16,
+	"frameHeight": 16,
+	"frameImportant": false,
+	"placementOrigin": [ 0, 0 ],
+	"sheetColumns": 13,
+	"sheetRows": 6,
+	"solid": false,
+	"solidTop": false,
+	"blocksLight": false,
+	"blocksSun": false,
+	"mergeDirt": false,
+	"placementConditions": "placeTouching",
+	"drop": "Avalon:Flesh Tendril",
+	"breaksByPick": true,
+	"rope": true,
+	"dust": 5,
+	"sound": 0,
+	"soundGroup": 0
+}

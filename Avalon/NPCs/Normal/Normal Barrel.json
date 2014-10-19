@@ -1,0 +1,48 @@
+{
+	"code": "NPCs.Normal.NormalBarrel",
+
+	"size": [ 44, 32 ],
+	"scale": 1.0,
+	"npcSlots": 1,
+	"frameCount": 1,
+	"aiStyle": 0,
+
+	"friendly": false,
+	"townNPC": false,
+	"boss": false,
+
+	"lifeMax": 50,
+	"damage": 0,
+	"defense": 4,
+	"knockBackResist": 0,
+	"value": [ 0, 0, 0, 0 ],
+
+	"dontTakeDamage": false,
+	"lavaImmune": false,
+	"noGravity": false,
+	"noTileCollide": false,
+	"behindTiles": false,
+	"soundHit": 13,
+	"soundKilled": 19,
+
+	"drops": [
+		{
+			"choose": [
+				{
+					"item": "Silver Coin",
+					"stack": [ 1, 20 ]
+				},
+				{
+					"item": "Torch",
+					"stack": [ 1, 30 ]
+				},
+				{
+					"item": "Rope",
+					"stack": [ 1, 60 ]
+				}
+
+			],
+			"chance": 1.0
+		}
+	]
+}

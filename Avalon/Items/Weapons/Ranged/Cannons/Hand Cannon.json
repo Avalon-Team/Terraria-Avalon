@@ -1,0 +1,33 @@
+{
+	"code": "HandCannon",
+	"displayName": "Hand Cannon",
+	"rare": 6,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 46, 28 ],
+	"consumable": false,
+	"autoReuse": true,
+	"noMelee": true,
+	"shoot": 162,
+	"useSound": 14,
+	"useStyle": 5,
+	"useTime": 20,
+	"useAnimation": 20,
+	"reuseDelay": 30,
+	"shootSpeed": 13,
+	"damage": 105,
+	"knockback": 4,
+	"ranged": true,
+	"maxStack": 1,
+	"tooltip": "A cannon for a pair of hands",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

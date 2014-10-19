@@ -1,0 +1,16 @@
+{
+	"displayName": "Bullseye55's Helmet",
+	"size": [22,19],
+	"rare": 9,
+	"value": [0,0,54,0],
+	"armorHead": true,
+	"hairType": 0,
+	"defense": 55,
+	"setName": "Bullseye55",
+	"recipes":
+	[{
+		"items": { "Dirt Block": 1 },  
+		"tiles": [ "Work Bench" ], 
+		"creates": 1
+	}]
+}

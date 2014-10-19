@@ -93,13 +93,13 @@ namespace Avalon.NPCs
         {
             drops = new Dictionary<int, VanillaDrop[]>()
             {
-                //{
-                //    npc("Vanilla:Paladin"),
-                //    new[]
-                //    {
-                //        new VanillaDrop(item("AvalonMod:Throwing Paladin's Hammer"), 0.01f, 1)
-                //    }
-                //},
+                {
+                    npc("Vanilla:Paladin"),
+                    new[]
+                    {
+                        new VanillaDrop(item("Avalon:Throwing Paladin's Hammer"), 0.01f, 1)
+                    }
+                },
                 {
                     npc("Vanilla:Goblin Archer"),
                     new[]

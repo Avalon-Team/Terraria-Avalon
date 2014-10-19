@@ -1,0 +1,25 @@
+{
+	"code": "Items.Potions.MedicineBottle",
+	"displayName": "Medicine Bottle",
+	"rare": 3,
+	"value": [ 0, 0, 5, 0 ],
+	"size": [ 14, 24 ],
+	"consumable": true,
+	"useTime": 40,
+	"useAnimation": 40,
+	"maxStack": 24,
+	"useSound": 3,
+	"tooltip": [ "Restores 90-130 Health", "No potion sickness" ],
+	"useStyle": 2,
+	"recipes": [
+		{
+			"items": {
+				"Vanilla:Vitamins": 3
+			},
+			"tiles": [
+				"Bottle"
+			],
+			"creates": 1
+		}
+	]
+}

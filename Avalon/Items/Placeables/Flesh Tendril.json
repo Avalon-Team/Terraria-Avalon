@@ -1,0 +1,28 @@
+{
+	"displayName": "Flesh Tendril",
+	"size": [ 10, 32 ],
+	"maxStack": 999,
+	"value": [ 0, 0, 0, 5 ],
+	"rare": 0,
+	"useStyle": 1,
+	"useAnimation": 15,
+	"useTime": 10,
+	"autoReuse": true,
+	"useTurn": true,
+	"tooltip": "A sturdy tendril of organs",
+	"createTile": "Avalon:Flesh Tendril",
+	"consumable": true,
+	"tileBoost": 0,
+	"recipes": [
+		{
+			"items": {
+				"Crimstone Block": 10,
+				"Rope": 20
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 20
+		}
+	]
+}

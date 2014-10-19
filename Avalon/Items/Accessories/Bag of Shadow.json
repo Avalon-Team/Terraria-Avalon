@@ -1,0 +1,24 @@
+{
+	"code": "Items.Accessories.BagOfShadow",
+	"displayName": "Bag of Shadow",
+	"rare": 3,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 24, 28 ],
+	"maxStack": 1,
+	"value": [ 0, 0, 20, 0 ],
+	"rare": 3,
+	"tooltip": [ "Pure darkness, all in a bag" ],
+	"accessory": true,
+
+	"recipes": [
+		{
+			"items": {
+				"Wood": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

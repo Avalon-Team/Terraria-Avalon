@@ -1,0 +1,11 @@
+{
+	"size": [ 20, 20 ],
+	"scale": 1,
+	"timeLeft": 3600,
+	"aiStyle": 14,
+	"friendly": true,
+	"penetrate": 6,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 1
+}

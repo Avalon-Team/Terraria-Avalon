@@ -1,6 +1,6 @@
 {
-	"internalName": "Heartstone",
-	"displayName": "Heartstone",
+	"internalName": "Dark Matter Soil",
+	"displayName": "Dark Matter Soil",
 	"size": [ 1, 1 ],
 	"frameWidth": 16,
 	"frameHeight": 16,
@@ -14,9 +14,9 @@
 	"blocksSun": true,
 	"mergeDirt": true,
 	"placementConditions": "placeTouching",
-	"drop": "Avalon:Heartstone",
+	"drop": "Avalon:Dark Matter Soil",
 	"breaksByPick": true,
-	"dust": 60,
-	"sound": 21,
+	"dust": 27,
+	"sound": 14,
 	"soundGroup": 0
 }

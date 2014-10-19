@@ -1,0 +1,11 @@
+{
+	"code": "Projectiles.FromPlayer.Spells.FreezeBolt",
+	"size": [ 16, 16 ],
+	"scale": 1,
+	"timeLeft": 3600,
+	"friendly": true,
+	"penetrate": 12,
+	"tileCollide": true,
+	"magic": true,
+	"frameCount": 1
+}

@@ -1,0 +1,12 @@
+{
+	"code": "Projectiles.FromPlayer.Throwables.IchorGrenade",
+	"size": [ 24, 26 ],
+	"scale": 1,
+	"timeLeft": 360,
+	"aiStyle": 16,
+	"friendly": true,
+	"penetrate": 1,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 1
+}

@@ -1,0 +1,21 @@
+{
+	"internalName": "Vertebrae Platform",
+	"displayName": "Vertebrae Platform",
+	"size": [ 1, 1 ],
+	"frameWidth": 16,
+	"frameHeight": 16,
+	"sheetColumns": 8,
+	"sheetRows": 1,
+	"frameImportant": true,
+	"solid": false,
+	"solidTop": true,
+	"blocksLight": false,
+	"blocksSun": false,
+	"mergeDirt": false,
+	"platform": true,
+	"drop": "Avalon:Vertebrae Platform",
+	"breaksByPick": true,
+	"sound": 1,
+	"soundGroup": 0,
+	"dust": 5
+}

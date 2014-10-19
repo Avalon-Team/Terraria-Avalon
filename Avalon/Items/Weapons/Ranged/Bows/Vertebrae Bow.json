@@ -1,0 +1,31 @@
+{
+	"code": "Items.Weapons.Ranged.Bows.VertebraeBow",
+	"displayName": "Vertebrae Bow",
+	"rare": 4,
+	"value": [ 0, 0, 25, 0 ],
+	"size": [ 20, 40 ],
+	"consumable": false,
+	"autoReuse": true,
+	"useAmmo": 1,
+	"shoot": 278,
+	"useSound": 5,
+	"useStyle": 5,
+	"useTime": 20,
+	"useAnimation": 20,
+	"shootSpeed": 7,
+	"knockback": 4.5,
+	"damage": 39,
+	"ranged": true,
+	"maxStack": 1,
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

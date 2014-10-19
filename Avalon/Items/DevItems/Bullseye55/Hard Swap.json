@@ -1,0 +1,24 @@
+{
+	"code": "Items.DevItems.Bullseye55.HardSwap",
+	"displayName": "Hard Swap",
+	"rare": 9,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 38, 32 ],
+	"consumable": false,
+	"useTime": 300,
+	"useAnimation": 300,
+	"maxStack": 1,
+	"useSound": "Electronic 1",
+	"tooltip": "Swaps the world to Hardmode, or resets it to Pre-Hardmode",
+	"useStyle": 2,
+	"recipes": [
+		{
+			"items": { 
+				"Dirt Block": 1 },
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

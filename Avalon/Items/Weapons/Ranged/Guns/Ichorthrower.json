@@ -1,0 +1,32 @@
+{
+	"code": "Items.Weapons.Ranged.Guns.Ichorthrower",
+	"displayName": "Ichorthrower",
+	"rare": 6,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 54, 24 ],
+	"consumable": false,
+	"autoReuse": true,
+	"useAmmo": 23,
+	"shoot": "Avalon:Ichorthrower",
+	"useSound": 13,
+	"useStyle": 5,
+	"useTime": 5,
+	"useAnimation": 30,
+	"shootSpeed": 20,
+	"knockback": 1,
+	"damage": 27,
+	"ranged": true,
+	"maxStack": 1,
+	"tooltip": "Sprays an ichor stream",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

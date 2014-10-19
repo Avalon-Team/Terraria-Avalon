@@ -1,0 +1,32 @@
+{
+	"code": "Items.Weapons.Ranged.Guns.CursedFlamethrower",
+	"displayName": "Cursed Flamethrower",
+	"rare": 6,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 54, 26 ],
+	"consumable": false,
+	"autoReuse": true,
+	"useAmmo": 23,
+	"shoot": "Avalon:Cursed Flamethrower",
+	"useSound": 13,
+	"useStyle": 5,
+	"useTime": 5,
+	"useAnimation": 30,
+	"shootSpeed": 20,
+	"knockback": 1,
+	"damage": 33,
+	"ranged": true,
+	"maxStack": 1,
+	"tooltip": "Ignites with an unholy fire",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

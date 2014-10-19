@@ -1,0 +1,24 @@
+{
+	"code": "Items.Accessories.BagOfBlood",
+	"displayName": "Bag of Blood",
+	"rare": 3,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 24, 28 ],
+	"maxStack": 1,
+	"value": [ 0, 0, 20, 0 ],
+	"rare": 3,
+	"tooltip": [ "Feels squishy and gory" ],
+	"accessory": true,
+
+	"recipes": [
+		{
+			"items": {
+				"Wood": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

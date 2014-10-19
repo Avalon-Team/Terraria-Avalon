@@ -1,0 +1,12 @@
+{
+	"code": "Projectiles.FromPlayer.Arrows.VertebraeRivet",
+	"size": [ 14, 30 ],
+	"scale": 1,
+	"timeLeft": 3600,
+	"aiStyle": 1,
+	"friendly": true,
+	"penetrate": 1,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 1
+}

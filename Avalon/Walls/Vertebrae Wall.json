@@ -1,0 +1,8 @@
+{
+	"house": true,
+	"dungeon": false,
+	"light": false,
+	"blend": 0,
+	"drop": "AvalonMod:Vertebrae Wall",
+	"dust": 5
+}

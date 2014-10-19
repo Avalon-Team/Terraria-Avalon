@@ -1,0 +1,12 @@
+{
+	"code": "Projectiles.FromPlayer.Explosions.IchorExplosion",
+	"size": [ 65, 65 ],
+	"scale": 1,
+	"timeLeft": 10,
+	"aiStyle": 16,
+	"friendly": true,
+	"penetrate": 1,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 1
+}

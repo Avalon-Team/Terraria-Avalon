@@ -1,0 +1,37 @@
+{
+	"code": "NPCs.Normal.Crawleye",
+
+	"size": [ 64, 24 ],
+	"scale": 1.0,
+	"npcSlots": 1,
+	"frameCount": 2,
+	"animationType": 2,
+	"aiStyle": 3,
+	"displayName": "Crawleye",
+
+	"friendly": false,
+	"townNPC": false,
+	"boss": false,
+
+	"lifeMax": 50,
+	"damage": 12,
+	"defense": 6,
+	"knockBackResist": 1.0,
+	"value": [ 0, 0, 1, 10 ],
+
+	"dontTakeDamage": false,
+	"lavaImmune": false,
+	"noGravity": false,
+	"noTileCollide": false,
+	"behindTiles": false,
+	"soundHit": 13,
+	"soundKilled": 19,
+
+	"drops": [
+		{
+			"item": "Vertebrae",
+			"stack": 1,
+			"chance": 0.33
+		}
+	]
+}

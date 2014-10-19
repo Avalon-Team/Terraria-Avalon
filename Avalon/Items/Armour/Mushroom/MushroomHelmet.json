@@ -1,0 +1,16 @@
+{
+	"displayName": "Mushroom Helmet",
+	"size": [40,40],
+	"rare": 1,
+	"value": [0,0,6,0],
+	"armorHead": true,
+	"hairType": 0,
+	"defense": 2,
+	"setName": "Mushroom",
+	"recipes":
+	[{
+		"items": { "Dirt Block": 1 },  
+		"tiles": [ "Work Bench" ], 
+		"creates": 1
+	}]
+}

@@ -1,0 +1,28 @@
+{
+	"displayName": "Throwing Paladin's Hammer",
+	"size": [ 38, 38 ],
+	"rare": 8,
+	"value": [ 0, 0, 54, 0 ],
+	"consumable": false,
+	"shoot": "Avalon:Throwing Paladin's Hammer",
+	"useStyle": 1,
+	"useTime": 14,
+	"useAnimation": 14,
+	"useSound": 1,
+	"shootSpeed": 13,
+	"damage": 90,
+	"ranged": true,
+	"maxStack": 1,
+	"tooltip": "Throwable Paladin's Hammer",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

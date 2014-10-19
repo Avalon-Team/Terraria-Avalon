@@ -1,0 +1,28 @@
+{
+	"displayName": "Zapper Bullet",
+	"size": [ 12, 12 ],
+	"rare": 7,
+	"value": [ 0, 0, 0, 80 ],
+	"maxStack": 999,
+	"value": [ 0, 0, 0, 5 ],
+	"rare": 8,
+	"tooltip": "A bullet that fires a beam at nearby enemies",
+	"shoot": "Avalon:Zapper Bullet",
+	"damage": 1,
+	"ammo": 14,
+	"ranged": true,
+	"consumable": true,
+	"shootSpeed": 2,
+
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 150
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"code": "NPCs.Normal.DMSpearwormBody",
+
+	"size": [ 30, 48 ],
+	"scale": 1.0,
+	"npcSlots": 0,
+	"frameCount": 1,
+	"displayName": "Dark Matter Spearworm",
+
+	"friendly": false,
+	"townNPC": false,
+	"boss": false,
+
+	"lifeMax": 900,
+	"damage": 100,
+	"defense": 50,
+	"knockBackResist": 1.0,
+	"value": [ 0, 0, 0, 0 ],
+
+	"dontTakeDamage": false,
+	"lavaImmune": true,
+	"noGravity": true,
+	"noTileCollide": true,
+	"behindTiles": false,
+	"soundHit": 9,
+	"soundKilled": 5
+}

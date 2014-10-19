@@ -1,0 +1,15 @@
+{
+	"displayName": "Mushroom Leggings",
+	"size": [40,40],
+	"rare": 1,
+	"value": [0,0,6,0],
+	"armorLegs": true,
+	"defense": 3,
+	"setName": "Mushroom",
+	"recipes":
+	[{
+		"items": { "Dirt Block": 1 },  
+		"tiles": [ "Work Bench" ], 
+		"creates": 1
+	}]
+}

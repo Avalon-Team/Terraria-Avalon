@@ -1,0 +1,12 @@
+{
+	"code": "Projectiles.FromPlayer.Bullets.SoulEater",
+	"size": [ 38, 26 ],
+	"scale": 1,
+	"timeLeft": 3600,
+	"friendly": true,
+	"penetrate": -1,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 4,
+	"aiStyle": 39
+}

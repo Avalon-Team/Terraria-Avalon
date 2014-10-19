@@ -1,0 +1,46 @@
+{
+	"code": "BlackLancer",
+
+	"size": [ 46, 48 ],
+	"scale": 1.0,
+	"npcSlots": 1,
+	"frameCount": 15,
+	"animationType": 256,
+	"aiStyle": 26,
+	"displayName": "Black Lancer",
+
+	"friendly": false,
+	"townNPC": false,
+	"boss": false,
+
+	"lifeMax": 1200,
+	"damage": 100,
+	"defense": 30,
+	"knockBackResist": 0.0,
+
+	"dontTakeDamage": false,
+	"lavaImmune": true,
+	"noGravity": false,
+	"noTileCollide": false,
+	"behindTiles": false,
+	"soundHit": 4,
+	"soundKilled": 2,
+
+	"drops": [
+		{
+			"item": "Gel",
+			"stack": [ 3, 8 ],
+			"chance": 1.0
+		},
+		{
+			"item": "Vertebrae",
+			"stack": [ 2, 4 ],
+			"chance": 0.15
+		},
+		{
+			"item": "Vertebrae",
+			"stack": 1,
+			"chance": 1.00
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"code": "NPCs.Normal.Crimper",
+
+	"size": [ 44, 32 ],
+	"scale": 1.0,
+	"npcSlots": 1,
+	"frameCount": 2,
+	"animationType": 71,
+	"aiStyle": 1,
+	"displayName": "Crimper",
+
+	"friendly": false,
+	"townNPC": false,
+	"boss": false,
+
+	"lifeMax": 400,
+	"damage": 80,
+	"defense": 20,
+	"knockback": 10,
+	"knockBackResist": 1.0,
+	"value": [ 0, 0, 3, 21 ],
+
+	"dontTakeDamage": false,
+	"lavaImmune": false,
+	"noGravity": false,
+	"noTileCollide": false,
+	"behindTiles": false,
+	"soundHit": 13,
+	"soundKilled": 19,
+
+	"drops": [
+		{
+			"item": "Vertebrae",
+			"stack": [ 1, 5 ],
+			"chance": 0.33
+		}
+	]
+}

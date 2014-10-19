@@ -1,0 +1,22 @@
+{
+	"displayName": "Brain in a Bottle",
+	"code": "Items.Potions.BrainInABottle",
+	"size": [ 24, 32 ],
+	"useStyle": 4,
+	"useAnimation": 5,
+	"useTime": 5,
+	"maxStack": 1,
+	"scale": 1,
+	"tooltip": "An eerie brain is in the jar",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

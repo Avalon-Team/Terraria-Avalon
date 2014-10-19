@@ -1,0 +1,37 @@
+{
+	"code": "NPCs.Normal.BunnyBones",
+
+	"size": [ 28, 28 ],
+	"scale": 1.0,
+	"npcSlots": 1,
+	"frameCount": 7,
+	"animationType": 46,
+	"aiStyle": 26,
+	"displayName": "Bunny Bones",
+
+	"friendly": false,
+	"townNPC": false,
+	"boss": false,
+
+	"lifeMax": 45,
+	"damage": 36,
+	"defense": 8,
+	"knockBackResist": 1.0,
+	"value": [ 0, 0, 1, 0 ],
+
+	"dontTakeDamage": false,
+	"lavaImmune": false,
+	"noGravity": false,
+	"noTileCollide": false,
+	"behindTiles": false,
+	"soundHit": 2,
+	"soundKilled": 2,
+
+	"drops": [
+		{
+			"item": "Bone",
+			"stack": [ 1, 8 ],
+			"chance": 1
+		}
+	]
+}

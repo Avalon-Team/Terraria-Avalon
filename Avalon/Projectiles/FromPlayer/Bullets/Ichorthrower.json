@@ -1,0 +1,12 @@
+{
+	"code": "Projectiles.FromPlayer.Bullets.Ichorthrower",
+	"size": [ 10, 10 ],
+	"scale": 1,
+	"timeLeft": 30,
+	"aiStyle": 1,
+	"friendly": true,
+	"penetrate": 5,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 1
+}

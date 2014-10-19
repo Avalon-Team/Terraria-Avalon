@@ -1,0 +1,31 @@
+{
+	"code": "Items.DevItems.Bulseye55.Bullseye55DevWarhammer",
+	"displayName": "Bullseye55's Dev Warhammer",
+	"rare": 9,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 48, 48 ],
+	"maxStack": 1,
+	"value": [ 0, 0, 0, 0 ],
+	"rare": 7,
+	"tooltip": "Bullseye55's Dev Hammer",
+	"useStyle": 1,
+	"useAnimation": 7,
+	"useTime": 7,
+	"damage": 50,
+	"knockBack": 3,
+	"autoReuse": true,
+	"useTurn": true,
+	"ranged": true,
+	"hammer": 1000,
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

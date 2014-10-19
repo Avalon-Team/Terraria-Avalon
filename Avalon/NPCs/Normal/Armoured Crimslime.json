@@ -1,0 +1,47 @@
+{
+	"code": "NPCs.Normal.ArmouredCrimslime",
+
+	"size": [ 44, 32 ],
+	"scale": 1.0,
+	"npcSlots": 1,
+	"frameCount": 2,
+	"animationType": 71,
+	"aiStyle": 1,
+	"displayName": "Armoured Crimslime",
+
+	"friendly": false,
+	"townNPC": false,
+	"boss": false,
+
+	"lifeMax": 100,
+	"damage": 75,
+	"defense": 60,
+	"knockBackResist": 0.9,
+	"value": [ 0, 0, 5, 0 ],
+
+	"dontTakeDamage": false,
+	"lavaImmune": false,
+	"noGravity": false,
+	"noTileCollide": false,
+	"behindTiles": false,
+	"soundHit": 13,
+	"soundKilled": 19,
+
+	"drops": [
+		{
+			"item": "Gel",
+			"stack": [ 3, 8 ],
+			"chance": 1.0
+		},
+		{
+			"item": "Vertebrae",
+			"stack": [ 0, 4 ],
+			"chance": 1.00
+		},
+		{
+			"item": "Avalon:Vertebrae Staff",
+			"stack": 1,
+			"chance": 0.01
+		}
+	]
+}

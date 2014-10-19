@@ -1,0 +1,15 @@
+{
+	"displayName": "Bullseye55's Leggings",
+	"size": [22,12],
+	"rare": 9,
+	"value": [0,0,54,0],
+	"armorLegs": true,
+	"defense": 55,
+	"setName": "Bullseye55",
+	"recipes":
+	[{
+		"items": { "Dirt Block": 1 },  
+		"tiles": [ "Work Bench" ], 
+		"creates": 1
+	}]
+}

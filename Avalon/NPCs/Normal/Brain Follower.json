@@ -1,0 +1,15 @@
+{
+	"displayName": "Brain Follower",
+	"code": "NPCs.Normal.BrainFollower",
+	"frameCount": 4,
+	"size": [ 20, 20 ],
+	"lifeMax": 100,
+	"defense": 200,
+	"scale": 1.0,
+	"friendly": true,
+	"noTileCollide": true,
+	"noGravity": true,
+	"knockBackResist": 0,
+	"dontTakeDamage": true,
+	"hostile": true
+}

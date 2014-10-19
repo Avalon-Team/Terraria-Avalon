@@ -1,0 +1,22 @@
+{
+	"code": "Items.Armour.DarkMatter.DarkMatterChest",
+	"displayName": "Dark Matter Chest",
+	"size": [ 34, 24 ],
+	"rare": 9,
+	"value": [ 0, 1, 0, 0 ],
+	"armorBody": true,
+	"hasHands": true,
+	"defense": 25,
+	"setName": "DarkMatter",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"code": "Projectiles.FromPlayer.IchorGlob",
+	"size": [ 10, 10 ],
+	"scale": 1,
+	"timeLeft": 3600,
+	"aiStyle": 54,
+	"friendly": true,
+	"penetrate": 1,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 1
+}

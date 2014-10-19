@@ -1,0 +1,30 @@
+{
+	"displayName": "Ichor Gatling Cannon",
+	"size": [ 78, 38 ],
+	"rare": 9,
+	"value": [ 0, 0, 0, 0 ],
+	"consumable": false,
+	"autoReuse": true,
+	"shoot": "Avalon:Ichor Glob",
+	"useSound": 38,
+	"useStyle": 5,
+	"useTime": 2,
+	"useAnimation": 10,
+	"reuseDelay": 8,
+	"shootSpeed": 16,
+	"damage": 45,
+	"ranged": true,
+	"maxStack": 1,
+	"tooltip": "Bullseye55 Developer Item",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

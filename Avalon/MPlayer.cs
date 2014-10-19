@@ -352,7 +352,7 @@ namespace Avalon
         }
 #pragma warning restore 1591
 
-        bool CheckHurtTile()
+        bool CheckHurtTile ()
         {
             return player.armor.Count(i =>
                 i.type == ItemDef.byName["Avalon:Tome of Luck"      ].type ||

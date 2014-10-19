@@ -1,0 +1,12 @@
+{
+	"code": "Projectiles.FromPlayer.Throwables.TPaladinsHammer",
+	"size": [ 38, 38 ],
+	"scale": 1,
+	"timeLeft": 3600,
+	"aiStyle": 2,
+	"friendly": true,
+	"penetrate": 5,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 1
+}

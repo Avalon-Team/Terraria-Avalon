@@ -1,0 +1,13 @@
+{
+	"code": "Projectiles.FromPlayer.Bullets.BloodBall",
+	"size": [ 16, 16 ],
+	"scale": 1,
+	"timeLeft": 1800,
+	"aiStyle": -1,
+	"friendly": false,
+	"hostile": true,
+	"penetrate": 1,
+	"tileCollide": true,
+	"ranged": true,
+	"frameCount": 1
+}

@@ -1,0 +1,26 @@
+{
+	"displayName": "Ichor Grenade",
+	"size": [ 24, 26 ],
+	"consumable": true,
+	"shoot": "Avalon:Ichor Grenade",
+	"useStyle": 1,
+	"useTime": 44,
+	"useAnimation": 44,
+	"useSound": 1,
+	"shootSpeed": 5,
+	"damage": 80,
+	"ranged": true,
+	"maxStack": 250,
+	"tooltip": "Produces an explosion of Ichor",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

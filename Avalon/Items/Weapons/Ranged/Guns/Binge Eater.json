@@ -1,0 +1,31 @@
+{
+	"displayName": "Binge Eater",
+	"size": [ 46, 26 ],
+	"rare": 8,
+	"value": [ 0, 1, 0, 0 ],
+	"consumable": false,
+	"shoot": "Avalon:Binge Eater",
+	"autoReuse": false,
+	"channel": true,
+	"useStyle": 5,
+	"useTime": 15,
+	"useAnimation": 15,
+	"useSound": 10,
+	"shootSpeed": 10,
+	"knockback": 0.5,
+	"damage": 60,
+	"ranged": true,
+	"maxStack": 1,
+	"tooltip": "Fires a Crimera that homes in on enemies and grows bigger",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

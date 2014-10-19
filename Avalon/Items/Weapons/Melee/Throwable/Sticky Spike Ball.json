@@ -1,0 +1,29 @@
+{
+	"displayName": "Sticky Spike Ball",
+	"size": [ 20, 20 ],
+	"rare": 0,
+	"value": [ 0, 0, 0, 37 ],
+	"consumable": true,
+	"shoot": "Avalon:Sticky Spike Ball",
+	"useStyle": 1,
+	"useTime": 15,
+	"useAnimation": 15,
+	"useSound": 1,
+	"shootSpeed": 5,
+	"damage": 21,
+	"ranged": true,
+	"maxStack": 999,
+	"tooltip": "A sticky spike ball",
+	"recipes": [
+		{
+			"items": {
+				"Gel": 1,
+				"Spike Ball": 4
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 4
+		}
+	]
+}

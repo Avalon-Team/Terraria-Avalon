@@ -1,0 +1,37 @@
+{
+	"code": "NPCs.Normal.CursedFlamer",
+
+	"size": [ 30, 74 ],
+	"scale": 1.0,
+	"npcSlots": 1,
+	"frameCount": 2,
+	"animationType": 23,
+	"aiStyle": 5,
+	"displayName": "Cursed Flamer",
+
+	"friendly": false,
+	"townNPC": false,
+	"boss": false,
+
+	"lifeMax": 225,
+	"damage": 56,
+	"defense": 38,
+	"knockBackResist": 0.40,
+	"value": [ 0, 0, 5, 0 ],
+
+	"dontTakeDamage": false,
+	"lavaImmune": false,
+	"noGravity": true,
+	"noTileCollide": false,
+	"behindTiles": false,
+	"soundHit": 1,
+	"soundKilled": 1,
+
+	"drops": [
+		{
+			"item": "Cursed Flame",
+			"stack": [ 2, 5 ],
+			"chance": 1.00
+		}
+	]
+}

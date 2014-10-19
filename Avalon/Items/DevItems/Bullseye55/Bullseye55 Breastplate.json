@@ -1,0 +1,22 @@
+{
+	"code": "DevItems.Bullseye55.Bullseye55Breastplate",
+	"displayName": "Bullseye55's Breastplate",
+	"rare": 9,
+	"value": [ 0, 0, 54, 0 ],
+	"size": [ 40, 20 ],
+	"armorBody": true,
+	"hasHands": true,
+	"defense": 55,
+	"setName": "Bullseye55",
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}

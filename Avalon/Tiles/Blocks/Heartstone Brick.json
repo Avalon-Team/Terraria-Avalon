@@ -1,6 +1,6 @@
 {
-	"internalName": "Heartstone",
-	"displayName": "Heartstone",
+	"internalName": "Heartstone Brick",
+	"displayName": "Heartstone Brick",
 	"size": [ 1, 1 ],
 	"frameWidth": 16,
 	"frameHeight": 16,
@@ -14,7 +14,7 @@
 	"blocksSun": true,
 	"mergeDirt": true,
 	"placementConditions": "placeTouching",
-	"drop": "Avalon:Heartstone",
+	"drop": "Avalon:Heartstone Brick",
 	"breaksByPick": true,
 	"dust": 60,
 	"sound": 21,

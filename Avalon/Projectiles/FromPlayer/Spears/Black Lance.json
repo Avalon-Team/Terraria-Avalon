@@ -1,0 +1,11 @@
+{
+	"code": "Projectiles.FromPlayer.Spears.BlackLance",
+	"size": [ 104, 30 ],
+	"scale": 1,
+	"friendly": false,
+	"timeLeft": 999999,
+	"hostile": true,
+	"penetrate": 0,
+	"tileCollide": false,
+	"frameCount": 1
+}

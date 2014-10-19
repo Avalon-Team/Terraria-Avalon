@@ -1,0 +1,29 @@
+{
+	"displayName": "Vertebrae Staff",
+	"size": [ 42, 42 ],
+	"rare": 3,
+	"value": [ 0, 0, 10, 0 ],
+	"maxStack": 1,
+	"value": [ 0, 0, 54, 0 ],
+	"rare": 3,
+	"useStyle": 1,
+	"useAnimation": 15,
+	"useTime": 10,
+	"autoReuse": true,
+	"useTurn": true,
+	"tooltip": "Places vertebrae blocks",
+	"createTile": "Avalon:Vertebrae Block",
+	"tileWand": "Vanilla:Vertebrae", /* This can be any item, it's effectively the 'ammo' of the wand. */
+	"tileBoost": 3,
+	"recipes": [
+		{
+			"items": {
+				"Dirt Block": 1
+			},
+			"tiles": [
+				"Work Bench"
+			],
+			"creates": 1
+		}
+	]
+}
