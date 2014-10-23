@@ -216,15 +216,16 @@ namespace Avalon
 		}
 		void U_TileInteract   ()
         {
-			// to future me/reader: method call is uncommented (in MidUpdate) for the sake of performance.
+			// to future me/reader: method call is uncommented (in MidUpdate) for the sake of performance (tiles are missing).
 
-			TileHurtPlayer(player, TileDef.type["Avalon:Magmatic Ore"], 20, CheckHurtMagma, " got burned...");
-            TileHurtPlayer(player, TileDef.type["Avalon:Dark Matter"], 30, null, " got burned...");
-            TileHurtPlayer(player, TileDef.type["Avalon:Black Sand"], 20, null, " got stuck in sand...", -1);
+			TileHurtPlayer(player, TileDef.byName["Avalon:Magmatic Ore"], 20, CheckHurtMagma, " got burned...");
+            TileHurtPlayer(player, TileDef.byName["Avalon:Dark Matter" ], 30, null, " got burned...");
+            TileHurtPlayer(player, TileDef.byName["Avalon:Black Sand"  ], 20, null, " got stuck in sand...", -1);
 
-            if (TouchesTile(player, 0, new[] { (int)TileDef.type["Avalon:Ice Block"] }))
+            if (TouchesTile(player, 0, new[] { (int)TileDef.byName["Avalon:Ice Block"] }))
             {
-                // p.baseSlideFactor = 0.1f;
+                player.sliding = true;
+                //player.baseSlideFactor = 0.1f;
             }
         }
         void U_MysticalTomes  ()

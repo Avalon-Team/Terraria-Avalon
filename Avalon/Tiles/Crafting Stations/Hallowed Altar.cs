@@ -40,7 +40,7 @@ namespace Avalon.Tiles.CraftingStations
         {
             base.Update();
 
-            if (!Main.tile[position.X, position.Y].active() || Main.tile[position.X, position.Y].type != TileDef.type["Avalon:Hallowed Altar"])
+            if (!Main.tile[position.X, position.Y].active() || Main.tile[position.X, position.Y].type != TileDef.byName["Avalon:Hallowed Altar"])
                 return;
 
             Vector2 vel = possVels[Main.rand.Next(possVels.Length)];

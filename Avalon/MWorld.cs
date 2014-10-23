@@ -285,7 +285,7 @@ namespace Avalon
 
                         if (n2.type == NPCDef.byName["Avalon:Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
                         {
-                            Make3x3Circle((int)n.position.X / 16, (int)n.position.Y / 16, TileDef.type["Oblivion Ore"]);
+                            Make3x3Circle((int)n.position.X / 16, (int)n.position.Y / 16, TileDef.byName["Oblivion Ore"]);
 
                             n.active = n2.active = false;
                             n.NPCLoot();
@@ -304,7 +304,7 @@ namespace Avalon
 
                         if (n2.type == NPCDef.byName["Avalon:Aegis Hallowor"].type && n2.active && n.Hitbox.Intersects(n2.Hitbox))
                         {
-                            Make3x3Circle((int)n.position.X / 16, (int)n.position.Y / 16, TileDef.type["Berserker Ore"]);
+                            Make3x3Circle((int)n.position.X / 16, (int)n.position.Y / 16, TileDef.byName["Berserker Ore"]);
 
                             n.active = n2.active = false;
                             n.NPCLoot();

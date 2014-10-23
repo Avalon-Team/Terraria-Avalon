@@ -58,7 +58,7 @@ namespace Avalon.Projectiles.FromPlayer.Spells
         public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
         {
             if (Main.rand.Next(10) == 1)
-                npc.AddBuff(BuffDef.type["Avalon:Freeze"], 300, true);
+                npc.AddBuff(BuffDef.byName["Avalon:Freeze"], 300, true);
         }
         /// <summary>
         /// 

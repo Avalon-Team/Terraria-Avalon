@@ -49,8 +49,11 @@ namespace Avalon
         /// </summary>
         /// <param name="bb">The content of the message.</param>
         /// <param name="msg">The message type.</param>
-        public override void NetReceive(BinBuffer bb, int msg)
+        /// <param name="buffer">The <see cref="MessageBuffer" /> that received the message.</param>
+        public override void NetReceive(BinBuffer bb, int msg, MessageBuffer buffer)
         {
+            base.NetReceive(bb, msg, buffer);
+
             // commonly used vars
             int id;
 

@@ -50,7 +50,7 @@ namespace Avalon.NPCs.Normal
 
             bool buffOn = false;
             for (int i = 0; i < Main.player[npc.target].buffType.Length; i++)
-                if (Main.player[npc.target].buffType[i] == BuffDef.type["Avalon:Brain Follower"])
+                if (Main.player[npc.target].buffType[i] == BuffDef.byName["Avalon:Brain Follower"])
                 {
                     buffOn = true;
 

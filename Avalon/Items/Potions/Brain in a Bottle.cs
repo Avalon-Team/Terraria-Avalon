@@ -18,7 +18,7 @@ namespace Avalon.Items.Potions
         /// <returns></returns>
 		public override bool? UseItem(Player p)
 		{
-            p.AddBuff(BuffDef.type["Avalon:Brain Follower"], 300, true);
+            p.AddBuff(BuffDef.byName["Avalon:Brain Follower"], 300, true);
             NPC.NewNPC((int)p.position.X + p.width / 2, (int)p.position.Y + p.height / 2, NPCDef.byName["Avalon:Dark Matter Spearworm Head"].type, 1);
             return null;
 		}

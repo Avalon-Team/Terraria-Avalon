@@ -20,7 +20,7 @@ namespace Avalon.World
                 WorldGen.OreRunner(
                     WorldGen.genRand.Next(100, Main.maxTilesX - 100),
                     WorldGen.genRand.Next((int)Main.rockLayer, Main.maxTilesY - 150),
-                    WorldGen.genRand.Next(2, 4), WorldGen.genRand.Next(1, 5), TileDef.type["Avalon:Heartstone"]);
+                    WorldGen.genRand.Next(2, 4), WorldGen.genRand.Next(1, 5), TileDef.byName["Avalon:Heartstone"]);
         }
     }
 }

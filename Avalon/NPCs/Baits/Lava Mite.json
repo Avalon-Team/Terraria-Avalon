@@ -1,5 +1,5 @@
 ﻿{
-	"code": "NPCs.LavaMite",
+	"code": "NPCs.Baits.LavaMite",
 	"displayName": "Lava Mite",
 	"size": [ 20, 16 ],
 	"aiStyle": 66,
