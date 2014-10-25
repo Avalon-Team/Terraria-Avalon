@@ -21,8 +21,6 @@ namespace Avalon.NPCs.Normal
         /// <returns></returns>
         public override bool CanSpawn(int x, int y, int type, Player p)
         {
-            Main.NewText("Working!"); // or not...
-
             return Main.localPlayer.zoneBlood && Main.hardMode && Main.rand.Next(7) == 1;
         }
 
