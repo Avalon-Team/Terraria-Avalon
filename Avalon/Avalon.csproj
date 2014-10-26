@@ -71,6 +71,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Events\DateEvent.cs" />
+    <Compile Include="API\Events\IEvent.cs" />
     <Compile Include="API\ExtendedSpawning.cs" />
     <Compile Include="API\StarterSets\StarterSet.cs" />
     <Compile Include="Buffs\Brain Follower.cs" />

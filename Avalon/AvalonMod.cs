@@ -7,12 +7,12 @@ using Terraria;
 using TAPI;
 using PoroCYon.MCT;
 using PoroCYon.MCT.Content;
-using PoroCYon.MCT.Net;
 using Avalon.API.Items.MysticalTomes;
 using Avalon.API.World;
 using Avalon.Items.Other;
 using Avalon.NPCs;
 using Avalon.UI.Menus;
+using Avalon.API.Events;
 
 namespace Avalon
 {
@@ -113,9 +113,10 @@ namespace Avalon
         /// <summary>
         /// Called when the mod is loaded.
         /// </summary>
-        public override void OnLoad  ()
+        public override void OnLoad()
         {
-            Invasion.LoadVanilla();
+            Invasion .LoadVanilla();
+            DateEvent.LoadVanilla();
 
             LoadBiomes   ();
             LoadInvasions();

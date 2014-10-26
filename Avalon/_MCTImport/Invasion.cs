@@ -6,18 +6,21 @@ using Terraria;
 using TAPI;
 using PoroCYon.MCT.Net;
 using Avalon;
+using Avalon.API.Events;
 
 namespace PoroCYon.MCT
 {
     /// <summary>
     /// An invasion. Does only manage active/inactive state and displayed text, not the NPCs spawning.
     /// </summary>
-    public abstract class Invasion
+    public abstract class Invasion : IEvent
     {
         static int invasionNextType = 0;
 
-        internal static Dictionary<string, Invasion> invasions = new Dictionary<string, Invasion>();
-        internal static Dictionary<int, string> invasionTypes = new Dictionary<int, string>();
+        internal static Dictionary<string, Invasion> invasions     = new Dictionary<string, Invasion>();
+        internal static Dictionary<int   , string  > invasionTypes = new Dictionary<int   , string  >();
+
+        internal bool active;
 
         /// <summary>
         /// Gets the ID of the invasion.
@@ -27,13 +30,28 @@ namespace PoroCYon.MCT
             get;
             internal set;
         }
+
         /// <summary>
-        /// Gets wether the invasion is active or not.
+        /// Gets or sets whether the invasion is active orn ot.
         /// </summary>
         public bool IsActive
         {
-            get;
-            internal set;
+            get
+            {
+                return active;
+            }
+            set
+            {
+                if (active == value)
+                    return;
+
+                active = value;
+
+                if (value)
+                    Start();
+                else
+                    Stop ();
+            }
         }
 
         /// <summary>
@@ -110,7 +128,7 @@ namespace PoroCYon.MCT
         /// <summary>
         /// Stops all invasions.
         /// </summary>
-        public virtual void Stop()
+        public virtual void Stop ()
         {
             Main.invasionSize = 0;
 
@@ -151,13 +169,16 @@ namespace PoroCYon.MCT
 
         internal static void LoadVanilla()
         {
-            Load(AvalonMod.Instance, "Vanilla:Goblin Army" , new GoblinArmyInv());
-            Load(AvalonMod.Instance, "Vanilla:Frost Legion", new FrostLegionInv());
-            Load(AvalonMod.Instance, "Vanilla:Pirates"     , new PiratesInv());
+            invasions.Add("Vanilla:Goblin Army" , new GoblinArmy ());
+            invasions.Add("Vanilla:Frost Legion", new FrostLegion());
+            invasions.Add("Vanilla:Pirates"     , new Pirates    ());
+
+            for (int i = 0; i < 3; i++)
+                invasionTypes.Add(++invasionNextType, invasions.ElementAt(invasionNextType - 1).Key);
         }
     }
 
-    class GoblinArmyInv : Invasion
+    class GoblinArmy : Invasion
     {
         public override string DisplayName
         {
@@ -167,7 +188,7 @@ namespace PoroCYon.MCT
             }
         }
     }
-    class FrostLegionInv : Invasion
+    class FrostLegion : Invasion
     {
         public override string DisplayName
         {
@@ -177,7 +198,7 @@ namespace PoroCYon.MCT
             }
         }
     }
-    class PiratesInv : Invasion
+    class Pirates : Invasion
     {
         public override string DisplayName
         {
@@ -202,7 +223,7 @@ namespace PoroCYon.MCT
             }
         }
 
-        internal PiratesInv()
+        internal Pirates()
             : base()
         {
             StartText = d => DisplayName + " are coming from the " + d + "!";
