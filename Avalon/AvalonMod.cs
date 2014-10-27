@@ -181,6 +181,11 @@ namespace Avalon
 
             spawns.Clear();
 
+            Invasion.invasions    .Clear();
+            Invasion.invasionTypes.Clear();
+
+            DateEvent.events.Clear();
+
             base.OnUnload();
         }
 

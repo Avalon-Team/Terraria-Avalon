@@ -6,6 +6,9 @@ using TAPI;
 
 namespace Avalon.NPCs.Normal
 {
+    /// <summary>
+    /// The Veteworm's head NPC.
+    /// </summary>
     public sealed class VertewormHead : ModNPC
     {
         bool hasTail = false;

@@ -74,6 +74,8 @@
     <Compile Include="API\Events\DateEvent.cs" />
     <Compile Include="API\Events\IEvent.cs" />
     <Compile Include="API\ExtendedSpawning.cs" />
+    <Compile Include="API\Items\DevItems\DevArmour.cs" />
+    <Compile Include="API\Items\DevItems\DevItem.cs" />
     <Compile Include="API\StarterSets\StarterSet.cs" />
     <Compile Include="Buffs\Brain Follower.cs" />
     <Compile Include="Buffs\Freeze.cs" />
@@ -85,6 +87,9 @@
     <Compile Include="Items\DevItems\Bullseye55\Bullseye55 Breastplate.cs" />
     <Compile Include="Items\DevItems\Bullseye55\Bullseye55 Dev Pickaxe.cs" />
     <Compile Include="Items\DevItems\Bullseye55\Bullseye55 Dev Warhammer.cs" />
+    <Compile Include="Items\DevItems\Bullseye55\Bullseye55 Helmet.cs" />
+    <Compile Include="Items\DevItems\Bullseye55\Bullseye55 Leggings.cs" />
+    <Compile Include="Items\DevItems\DEV_DATA.cs" />
     <Compile Include="Items\DevItems\Bullseye55\Hard Swap.cs" />
     <Compile Include="Items\Mystical Tomes\Adventures and Mishaps.cs" />
     <Compile Include="Items\Mystical Tomes\Tome of the River Spirit.cs" />
