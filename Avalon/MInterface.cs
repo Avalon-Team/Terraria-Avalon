@@ -54,7 +54,14 @@ namespace Avalon
                     {
                         Item.NewItem(Main.player[Main.myPlayer].position, Vector2.Zero, ItemDef.byName["Vanilla:Rotten Chunk"].type, Main.rand.Next(2, 6));
                     }
-                    slot.MyItem = ItemDef.byType[0];
+                    if (slot.MyItem.stack > 1)
+                    {
+                        slot.MyItem.stack--;
+                    }
+                    else
+                    {
+                        slot.MyItem = ItemDef.byType[0];
+                    }
                     return false;
                 }
                 else if (slot.MyItem.type == ItemDef.byName["Corrupt Crate"].type)
@@ -91,11 +98,19 @@ namespace Avalon
                     {
                         Item.NewItem(Main.player[Main.myPlayer].position, Vector2.Zero, ItemDef.byName["Vanilla:Vertebrae"].type, Main.rand.Next(2, 6));
                     }
-                    slot.MyItem = ItemDef.byType[0];
+                    if (slot.MyItem.stack > 1)
+                    {
+                        slot.MyItem.stack--;
+                    }
+                    else
+                    {
+                        slot.MyItem = ItemDef.byType[0];
+                    }
                     return false;
                 }
+                return true;
             }
-            return true;
+            return false;
         }
     }
 }
